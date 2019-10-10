@@ -1,0 +1,130 @@
+<Project>
+  <Name>PO_Project</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Sheet1</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Obra</Name>
+        <Access>Public</Access>
+        <Location left="23" top="76" />
+        <Size width="275" height="307" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static int _nObra</Member>
+        <Member type="Field">private int _exemplares</Member>
+        <Member type="Field">private String _titulo</Member>
+        <Member type="Field">private float _preço</Member>
+        <Member type="Field">private String _categoria</Member>
+        <Member type="Method">public void removeObra()</Member>
+        <Member type="Method">public void novaCategoria(String novaCat)</Member>
+        <Member type="Method">public void alteraExemplares(int exemplares)</Member>
+        <Member type="Method">public boolean haExemplares()</Member>
+        <Member type="Method">public int tempoRequesito()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Livro</Name>
+        <Access>Public</Access>
+        <Location left="490" top="74" />
+        <Size width="267" height="146" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String _autor</Member>
+        <Member type="Field">private String _iSBN</Member>
+        <Member type="Method">public void Livro()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DVD</Name>
+        <Access>Public</Access>
+        <Location left="490" top="235" />
+        <Size width="267" height="146" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String _realizador</Member>
+        <Member type="Field">private String _numeroIGAC</Member>
+        <Member type="Method">public void DVD()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Utente</Name>
+        <Access>Public</Access>
+        <Location left="23" top="478" />
+        <Size width="402" height="307" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static int _nUtente</Member>
+        <Member type="Field">private String _nome</Member>
+        <Member type="Field">private String _email</Member>
+        <Member type="Field">private boolean _situation</Member>
+        <Member type="Field">private String _classification</Member>
+        <Member type="Method">public void Utente()</Member>
+        <Member type="Method">public void alteraClassificação(String novaClassification)</Member>
+        <Member type="Method">public int requesitarObra(int nObra)</Member>
+        <Member type="Method">public int tempoClassification()</Member>
+        <Member type="Method">public void devolverObra(Obra nObra)</Member>
+        <Member type="Method">public void verificaUtente()</Member>
+        <Member type="Method">public void removerUtente()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>0*</Text>
+        <Location left="177" top="391" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Class">
+        <Name>Notificações</Name>
+        <Access>Public</Access>
+        <Location left="508" top="478" />
+        <Size width="253" height="200" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int _numero</Member>
+        <Member type="Field">int _</Member>
+        <Member type="Method">public void visualizar()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Requesições</Name>
+        <Access>Public</Access>
+        <Location left="508" top="705" />
+        <Size width="258" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void Rquesições()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>353</X>
+          <Y>140</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="3" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
