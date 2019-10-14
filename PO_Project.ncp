@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>Obra</Name>
         <Access>Public</Access>
-        <Location left="666" top="106" />
+        <Location left="562" top="56" />
         <Size width="275" height="307" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private static int _nObra</Member>
@@ -20,12 +20,13 @@
         <Member type="Method">public void alteraExemplares(int exemplares)</Member>
         <Member type="Method">public boolean haExemplares()</Member>
         <Member type="Method">public int tempoRequesito()</Member>
+        <Member type="Method">public void devolverObra()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Livro</Name>
         <Access>Public</Access>
-        <Location left="1133" top="106" />
+        <Location left="1029" top="56" />
         <Size width="267" height="146" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String _autor</Member>
@@ -37,7 +38,7 @@
       <Entity type="Class">
         <Name>DVD</Name>
         <Access>Public</Access>
-        <Location left="1133" top="267" />
+        <Location left="1029" top="217" />
         <Size width="267" height="146" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String _realizador</Member>
@@ -49,7 +50,7 @@
       <Entity type="Class">
         <Name>Utente</Name>
         <Access>Public</Access>
-        <Location left="666" top="510" />
+        <Location left="562" top="460" />
         <Size width="402" height="315" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private static int _nUtente</Member>
@@ -70,25 +71,26 @@
       </Entity>
       <Entity type="Comment">
         <Text>0*</Text>
-        <Location left="821" top="424" />
+        <Location left="717" top="374" />
         <Size width="50" height="50" />
       </Entity>
       <Entity type="Class">
         <Name>Notificações</Name>
         <Access>Public</Access>
-        <Location left="226" top="640" />
+        <Location left="122" top="590" />
         <Size width="253" height="200" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int _numero</Member>
         <Member type="Field">private String[] _notificações</Member>
         <Member type="Method">public void visualizar()</Member>
         <Member type="Method">public void devolveObra()</Member>
+        <Member type="Method">public void emprestaObra()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Requisições</Name>
         <Access>Public</Access>
-        <Location left="246" top="141" />
+        <Location left="142" top="91" />
         <Size width="357" height="227" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public void Requisições()</Member>
@@ -102,8 +104,101 @@
       </Entity>
       <Entity type="Comment">
         <Text>0*</Text>
-        <Location left="509" top="674" />
+        <Location left="405" top="624" />
         <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Class">
+        <Name>Obra</Name>
+        <Access>Public</Access>
+        <Location left="2015" top="1714" />
+        <Size width="423" height="308" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static int _nObra</Member>
+        <Member type="Field">private int _exemplares</Member>
+        <Member type="Field">private String _titulo</Member>
+        <Member type="Field">private float _preço</Member>
+        <Member type="Field">private String _categoria</Member>
+        <Member type="Method">public void removeObra()</Member>
+        <Member type="Method">public void novaCategoria(String novaCat)</Member>
+        <Member type="Method">public void alteraExemplares(int exemplares)</Member>
+        <Member type="Method">public boolean haExemplares()</Member>
+        <Member type="Method">public int tempoRequesito()</Member>
+        <Member type="Method">public void devolverObra()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Utente</Name>
+        <Access>Public</Access>
+        <Location left="2015" top="1051" />
+        <Size width="402" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static int _nUtente</Member>
+        <Member type="Field">private String _nome</Member>
+        <Member type="Field">private String _email</Member>
+        <Member type="Field">private boolean _situation</Member>
+        <Member type="Field">private String _classification</Member>
+        <Member type="Field">int _multa</Member>
+        <Member type="Method">public void Utente()</Member>
+        <Member type="Method">public void alteraClassificação(String novaClassification)</Member>
+        <Member type="Method">public void alteraSituação(String novaClassification)</Member>
+        <Member type="Method">public int requesitarObra(int nObra)</Member>
+        <Member type="Method">public int tempoClassification()</Member>
+        <Member type="Method">public void devolverObra(Obra nObra)</Member>
+        <Member type="Method">public void verificaUtente()</Member>
+        <Member type="Method">public void removerUtente()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Notificações</Name>
+        <Access>Public</Access>
+        <Location left="2650" top="1114" />
+        <Size width="253" height="200" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int _numero</Member>
+        <Member type="Field">private String[] _notificações</Member>
+        <Member type="Method">public void visualizar()</Member>
+        <Member type="Method">public void devolveObra()</Member>
+        <Member type="Method">public void emprestaObra()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Requisições</Name>
+        <Access>Public</Access>
+        <Location left="2040" top="1434" />
+        <Size width="357" height="227" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void Requisições()</Member>
+        <Member type="Method">public boolean verificaSituação()</Member>
+        <Member type="Method">public boolean verificaDisponiblidade()</Member>
+        <Member type="Method">public boolean verificaNobras()</Member>
+        <Member type="Method">public boolean verificaCategoria()</Member>
+        <Member type="Method">public boolean verificaPreco()</Member>
+        <Member type="Method">public int obterDataDevolução()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DVD</Name>
+        <Access>Public</Access>
+        <Location left="2628" top="1880" />
+        <Size width="267" height="146" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String _realizador</Member>
+        <Member type="Field">private String _numeroIGAC</Member>
+        <Member type="Method">public void DVD()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Livro</Name>
+        <Access>Public</Access>
+        <Location left="2628" top="1714" />
+        <Size width="267" height="146" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String _autor</Member>
+        <Member type="Field">private String _iSBN</Member>
+        <Member type="Method">public void Livro()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
@@ -111,8 +206,8 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>996</X>
-          <Y>170</Y>
+          <X>892</X>
+          <Y>120</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -127,8 +222,8 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>810</X>
-          <Y>477</Y>
+          <X>706</X>
+          <Y>427</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Association" first="3" second="5">
@@ -137,12 +232,86 @@
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="6" second="0">
+      <Relationship type="Association" first="9" second="10">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
+        <EndMultiplicity>0*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="11">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="11" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="9" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1938</X>
+          <Y>1340</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1*</StartMultiplicity>
+        <EndMultiplicity>0*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="8" second="13">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2482</X>
+          <Y>1787</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2588</X>
+          <Y>1787</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="8" second="12">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2482</X>
+          <Y>1957</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2603</X>
+          <Y>1957</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
       </Relationship>
     </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Sheet2</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Comment">
+        <Text>0*</Text>
+        <Location left="529" top="694" />
+        <Size width="50" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>0*</Text>
+        <Location left="841" top="444" />
+        <Size width="50" height="50" />
+      </Entity>
+    </Entities>
+    <Relationships />
   </ProjectItem>
 </Project>
