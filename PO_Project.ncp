@@ -64,7 +64,7 @@
       </Entity>
       <Entity type="Comment">
         <Text>0*</Text>
-        <Location left="717" top="374" />
+        <Location left="717" top="371" />
         <Size width="50" height="50" />
       </Entity>
       <Entity type="Class">
@@ -200,6 +200,11 @@
         <Member type="Method">public void alteraSituação(String novaClassification)</Member>
         <Member type="Method">public int tempoClassification()</Member>
         <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>_utilizadoresInteressados[]: Utente</Text>
+        <Location left="2015" top="1983" />
+        <Size width="423" height="101" />
       </Entity>
     </Entities>
     <Relationships>
