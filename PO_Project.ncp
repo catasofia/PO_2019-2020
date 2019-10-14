@@ -50,23 +50,16 @@
       <Entity type="Class">
         <Name>Utente</Name>
         <Access>Public</Access>
-        <Location left="562" top="460" />
-        <Size width="402" height="315" />
+        <Location left="562" top="459" />
+        <Size width="252" height="196" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private static int _nUtente</Member>
         <Member type="Field">private String _nome</Member>
         <Member type="Field">private String _email</Member>
-        <Member type="Field">private boolean _situation</Member>
-        <Member type="Field">private String _classification</Member>
-        <Member type="Field">int _multa</Member>
         <Member type="Method">public void Utente()</Member>
-        <Member type="Method">public void alteraClassificação(String novaClassification)</Member>
-        <Member type="Method">public void alteraSituação(String novaClassification)</Member>
         <Member type="Method">public int requesitarObra(int nObra)</Member>
-        <Member type="Method">public int tempoClassification()</Member>
         <Member type="Method">public void devolverObra(Obra nObra)</Member>
         <Member type="Method">public void verificaUtente()</Member>
-        <Member type="Method">public void removerUtente()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Comment">
@@ -77,7 +70,7 @@
       <Entity type="Class">
         <Name>Notificações</Name>
         <Access>Public</Access>
-        <Location left="122" top="590" />
+        <Location left="191" top="393" />
         <Size width="253" height="200" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int _numero</Member>
@@ -129,23 +122,16 @@
       <Entity type="Class">
         <Name>Utente</Name>
         <Access>Public</Access>
-        <Location left="2015" top="1051" />
-        <Size width="402" height="315" />
+        <Location left="2067" top="1133" />
+        <Size width="250" height="196" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private static int _nUtente</Member>
         <Member type="Field">private String _nome</Member>
         <Member type="Field">private String _email</Member>
-        <Member type="Field">private boolean _situation</Member>
-        <Member type="Field">private String _classification</Member>
-        <Member type="Field">int _multa</Member>
         <Member type="Method">public void Utente()</Member>
-        <Member type="Method">public void alteraClassificação(String novaClassification)</Member>
-        <Member type="Method">public void alteraSituação(String novaClassification)</Member>
         <Member type="Method">public int requesitarObra(int nObra)</Member>
-        <Member type="Method">public int tempoClassification()</Member>
         <Member type="Method">public void devolverObra(Obra nObra)</Member>
         <Member type="Method">public void verificaUtente()</Member>
-        <Member type="Method">public void removerUtente()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -198,6 +184,21 @@
         <Member type="Field">private String _iSBN</Member>
         <Member type="Method">public void Livro()</Member>
         <Member type="Method">public void NewMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Pontuacao</Name>
+        <Access>Public</Access>
+        <Location left="2015" top="829" />
+        <Size width="349" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private boolean _situation</Member>
+        <Member type="Field">private String _classification</Member>
+        <Member type="Field">int _multa</Member>
+        <Member type="Method">public void Pontuacao()</Member>
+        <Member type="Method">public void alteraClassificação(String novaClassification)</Member>
+        <Member type="Method">public void alteraSituação(String novaClassification)</Member>
+        <Member type="Method">public int tempoClassification()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
@@ -255,8 +256,8 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>1938</X>
-          <Y>1340</Y>
+          <X>1990</X>
+          <Y>1422</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -294,6 +295,21 @@
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="9" second="14">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2190</X>
+          <Y>1108</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2190</X>
+          <Y>1050</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
     </Relationships>
   </ProjectItem>
