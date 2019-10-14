@@ -203,7 +203,7 @@
       </Entity>
       <Entity type="Comment">
         <Text>_utilizadoresInteressados[]: Utente</Text>
-        <Location left="2015" top="1983" />
+        <Location left="2015" top="2010" />
         <Size width="423" height="101" />
       </Entity>
     </Entities>
