@@ -99,9 +99,10 @@
         <Name>Requisicoes</Name>
         <Access>Public</Access>
         <Location left="1142" top="352" />
-        <Size width="361" height="247" />
+        <Size width="361" height="264" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int _dataRequisicao</Member>
+        <Member type="Field">private int _dataDevolucao</Member>
         <Member type="Constructor">public Requisicoes(Utente utente, Obra obra, int dia)</Member>
         <Member type="Method">public boolean verificaSituacao(Utente utente)</Member>
         <Member type="Method">public boolean verificaDisponiblidade(Obra obra)</Member>
