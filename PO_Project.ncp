@@ -10,20 +10,20 @@
         <Location left="692" top="402" />
         <Size width="390" height="315" />
         <Collapsed>False</Collapsed>
+        <Member type="Method">public int mostrarData()</Member>
+        <Member type="Method">public void avancarData(int nvData)</Member>
         <Member type="Method">public void registarUtente(String nome, String email)</Member>
         <Member type="Method">public void mostrarUtente(int utenteID)</Member>
         <Member type="Method">public void mostrarUtentes()</Member>
         <Member type="Method">public void ordenarUtentesNome()</Member>
         <Member type="Method">public void mostrarNotificacoes(int iDUtente)</Member>
         <Member type="Method">public void pagarMulta(int iDUtente)</Member>
-        <Member type="Method">public void registarObra(String titulo)</Member>
         <Member type="Method">public void mostrarObra(int obraID)</Member>
         <Member type="Method">public void mostrarObras()</Member>
+        <Member type="Method">public void registarObra(String titulo)</Member>
         <Member type="Method">public void efetuaPesquisa()</Member>
         <Member type="Method">public void requisitarObra(int iDUtente, int iDObra)</Member>
         <Member type="Method">public void devolverObra(int iDUtente, int iDObra)</Member>
-        <Member type="Method">public int mostrarData()</Member>
-        <Member type="Method">public void avancarData(int nvData)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -180,19 +180,19 @@
         <Location left="692" top="10" />
         <Size width="391" height="298" />
         <Collapsed>False</Collapsed>
+        <Member type="Method">public int mostrarData()</Member>
+        <Member type="Method">public void avançarData(int nvData)</Member>
         <Member type="Method">public void registarUtente(String nome, String email)</Member>
         <Member type="Method">public void mostrarUtente(int utenteID)</Member>
         <Member type="Method">public void mostrarUtentes()</Member>
         <Member type="Method">public void mostrarNotificacoes(int iDUtente)</Member>
-        <Member type="Method">public void registarObra(String titulo)</Member>
+        <Member type="Method">public void pagarMulta()</Member>
         <Member type="Method">public void mostrarObra(int obraID)</Member>
         <Member type="Method">public void mostrarObras()</Member>
+        <Member type="Method">public void registarObra(String titulo)</Member>
         <Member type="Method">public void efetuaPesquisa()</Member>
         <Member type="Method">public void requisitarObra(int iDUtente, int iDObra)</Member>
         <Member type="Method">public void devolverObra(int iDUtente, int iDObra)</Member>
-        <Member type="Method">public int mostrarData()</Member>
-        <Member type="Method">public void avançarData(int nvData)</Member>
-        <Member type="Method">public void pagarMulta()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Comment">
@@ -206,6 +206,8 @@ Nelson Trindade, Nº93743
     </Entities>
     <Relationships>
       <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -214,6 +216,8 @@ Nelson Trindade, Nº93743
         <EndMultiplicity>0*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -229,11 +233,13 @@ Nelson Trindade, Nº93743
           <Y>1141</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
+        <AssociationType>Aggregation</AssociationType>
         <EndRole>_pontuacao</EndRole>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="1" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -246,8 +252,6 @@ Nelson Trindade, Nº93743
         <EndMultiplicity>0*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="0" second="8">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -262,6 +266,8 @@ Nelson Trindade, Nº93743
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
       <Relationship type="Association" first="5" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -272,6 +278,8 @@ Nelson Trindade, Nº93743
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="5">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Bidirectional</Direction>
@@ -279,6 +287,8 @@ Nelson Trindade, Nº93743
         <StartMultiplicity>1</StartMultiplicity>
       </Relationship>
       <Relationship type="Association" first="5" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Bidirectional</Direction>
@@ -288,6 +298,8 @@ Nelson Trindade, Nº93743
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="2" second="9">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -303,6 +315,8 @@ Nelson Trindade, Nº93743
         <EndRole>_categoria</EndRole>
       </Relationship>
       <Relationship type="Association" first="3" second="10">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -310,12 +324,16 @@ Nelson Trindade, Nº93743
         <EndRole>_classificacao</EndRole>
       </Relationship>
       <Relationship type="Association" first="11" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
