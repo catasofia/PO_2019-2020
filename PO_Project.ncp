@@ -30,7 +30,7 @@
         <Name>Utente</Name>
         <Access>Public</Access>
         <Location left="1322" top="775" />
-        <Size width="298" height="291" />
+        <Size width="298" height="304" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int _nUtente</Member>
         <Member type="Field">private String _nome</Member>
@@ -69,7 +69,7 @@
       <Entity type="Class">
         <Name>Pontuacao</Name>
         <Access>Public</Access>
-        <Location left="1657" top="1007" />
+        <Location left="1672" top="1013" />
         <Size width="332" height="247" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private boolean _situacao</Member>
@@ -87,7 +87,7 @@
       <Entity type="Class">
         <Name>Notificacao</Name>
         <Access>Public</Access>
-        <Location left="1260" top="1212" />
+        <Location left="1262" top="1229" />
         <Size width="293" height="162" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String _tipo</Member>
@@ -100,7 +100,7 @@
       <Entity type="Class">
         <Name>Requisicoes</Name>
         <Access>Public</Access>
-        <Location left="703" top="775" />
+        <Location left="707" top="762" />
         <Size width="361" height="264" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int _dataRequisicao</Member>
@@ -145,7 +145,7 @@
       <Entity type="Class">
         <Name>Tempo</Name>
         <Access>Public</Access>
-        <Location left="1718" top="412" />
+        <Location left="1723" top="412" />
         <Size width="190" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int _dia</Member>
@@ -167,7 +167,7 @@
       <Entity type="Enum">
         <Name>Classificacoes</Name>
         <Access>Public</Access>
-        <Location left="1716" top="829" />
+        <Location left="1756" top="842" />
         <Size width="163" height="112" />
         <Collapsed>False</Collapsed>
         <Value>FALTOSO</Value>
@@ -206,6 +206,8 @@ Nelson Trindade, Nº 93743
     </Entities>
     <Relationships>
       <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -214,6 +216,8 @@ Nelson Trindade, Nº 93743
         <EndMultiplicity>0*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -222,25 +226,21 @@ Nelson Trindade, Nº 93743
         <EndMultiplicity>0*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="1" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>1510</X>
-          <Y>1141</Y>
-        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
         <EndRole>_pontuacao</EndRole>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="1" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>1362</X>
-          <Y>1104</Y>
+          <X>1408</X>
+          <Y>1108</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -248,8 +248,6 @@ Nelson Trindade, Nº 93743
         <EndMultiplicity>0*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="0" second="8">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -264,16 +262,20 @@ Nelson Trindade, Nº 93743
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
       <Relationship type="Association" first="5" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>880</X>
-          <Y>746</Y>
+          <X>884</X>
+          <Y>733</Y>
         </BendPoint>
         <Direction>Bidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="5">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Bidirectional</Direction>
@@ -281,6 +283,8 @@ Nelson Trindade, Nº 93743
         <StartMultiplicity>1</StartMultiplicity>
       </Relationship>
       <Relationship type="Association" first="5" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Bidirectional</Direction>
@@ -290,11 +294,13 @@ Nelson Trindade, Nº 93743
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="2" second="9">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>136</X>
-          <Y>805</Y>
+          <Y>807</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
           <X>136</X>
@@ -305,6 +311,8 @@ Nelson Trindade, Nº 93743
         <EndRole>_categoria</EndRole>
       </Relationship>
       <Relationship type="Association" first="3" second="10">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -312,12 +320,16 @@ Nelson Trindade, Nº 93743
         <EndRole>_classificacao</EndRole>
       </Relationship>
       <Relationship type="Association" first="11" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
