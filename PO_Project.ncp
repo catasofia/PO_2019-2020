@@ -71,17 +71,18 @@
         <Name>Pontuacao</Name>
         <Access>Public</Access>
         <Location left="1672" top="1013" />
-        <Size width="332" height="247" />
+        <Size width="332" height="264" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private boolean _situacao</Member>
         <Member type="Field">private int _multa</Member>
         <Member type="Constructor">public Pontuacao()</Member>
+        <Member type="Method">public boolean obterSituacao()</Member>
         <Member type="Method">public Classificacoes obterClassificacao()</Member>
         <Member type="Method">public int obterMulta()</Member>
-        <Member type="Method">public void alteraClassificacao(Classificacoes nvClassif)</Member>
         <Member type="Method">public void alteraSituacao()</Member>
-        <Member type="Method">public void desejaPagar()</Member>
+        <Member type="Method">public void alteraClassificacao(Classificacoes nvClassif)</Member>
         <Member type="Method">public void alteraMulta(int valor)</Member>
+        <Member type="Method">public void desejaPagar()</Member>
         <Member type="Method">public void pagarMulta()</Member>
         <Modifier>None</Modifier>
       </Entity>
@@ -120,7 +121,7 @@
       <Entity type="Class">
         <Name>DVD</Name>
         <Access>Public</Access>
-        <Location left="359" top="1214" />
+        <Location left="360" top="1213" />
         <Size width="300" height="162" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String _realizador</Member>
@@ -133,7 +134,7 @@
       <Entity type="Class">
         <Name>Livro</Name>
         <Access>Public</Access>
-        <Location left="42" top="1214" />
+        <Location left="43" top="1213" />
         <Size width="246" height="162" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String _autor</Member>
@@ -200,7 +201,7 @@
         <Text>Grupo 51
 Catarina Sousa, Nº 93695
 Nelson Trindade, Nº 93743
-Turno 3ºFeira / 13h00 / 1-22</Text>
+Turno 3ªFeira / 13h00 / 1-22</Text>
         <Location left="46" top="42" />
         <Size width="344" height="121" />
       </Entity>
