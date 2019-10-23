@@ -16,7 +16,7 @@ public class LibraryManager{
   }
 
   public void avançarData(int nvData){
-    _tempo.alteraDia(int nvData);
+    _tempo.alteraDia(nvData);
   }
 
   public void registarUtente(String nome, String email){
@@ -31,6 +31,10 @@ public class LibraryManager{
   public void mostrarUtentes(){
     for (int i=0;i<=_nUtentes;i++)
       _utentes[i].mostrarUtente();
+  }
+
+  public void static main(String[] argv){
+    mostrarData();
   }
 
 }
