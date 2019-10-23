@@ -1,11 +1,11 @@
-public class Pontuacao extends Enum<Classificacoes>{
+public class Pontuacao{
     private boolean _situacao;
     private int _multa;
     private Classificacoes _classificacao;
 
     public Pontuacao(){
         _situacao = true;
-        _classificacao = NORMAL;
+        _classificacao = Classificacoes.NORMAL;
         _multa = 0;
     }
 
@@ -27,20 +27,14 @@ public class Pontuacao extends Enum<Classificacoes>{
         _situacao = true;
     }
 
-    public void alteraClassificacao(Classificacoes nvClassif){
-
-    }
+    //public void alteraClassificacao(Classificacoes nvClassif){}
 
     public void alteraMulta(int valor){
         _multa = valor;
         //multa += valor;
     }
 
-    //public void desejaPagar(){
+    //public void desejaPagar(){}
 
-    //}
-
-    //public void pagarMulta(){
-
-    //}
+    //public void pagarMulta(){}
 }

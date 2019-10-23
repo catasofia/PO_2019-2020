@@ -21,7 +21,7 @@ public class LibraryManager{
 
   public void registarUtente(String nome, String email){
     _nUtentes++;
-    _utentes[_nUtentes] = new Utente(nome,email);
+    _utentes[_nUtentes] = new Utente(_nUtentes,nome,email);
   }
 
   public void mostrarUtente(int iDUtente){
