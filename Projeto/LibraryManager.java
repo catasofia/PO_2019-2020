@@ -20,8 +20,7 @@ public class LibraryManager{
   }
 
   public void registarUtente(String nome, String email){
-    _nUtentes++;
-    _utentes[_nUtentes] = new Utente(_nUtentes,nome,email);
+    _utentes[++_nUtentes] = new Utente(_nUtentes,nome,email);
   }
 
   public void mostrarUtente(int iDUtente){
@@ -33,11 +32,22 @@ public class LibraryManager{
       _utentes[i].mostrarUtente();
   }
 
+  public void mostrarNotificacoes(int iDUtente){
+    _utentes[iDUtente].mostrarNotificacoes();
+  }
+
+  public void pagarMulta(int iDUtente){}
+
+
+
+
   public static void main(String argv[]){
     LibraryManager Library = new LibraryManager();
 
     Library.registarUtente("Nelson", "trindade.nelson99@gmail.com");
+    Library._utentes[1]._notificacoes[0] = new Notificacao("ok","User Criado");
     Library.mostrarUtente(1);
+    Library.mostrarNotificacoes(1);
     Library.avançarData(2);
     System.out.println(Library.mostrarData());
   }
