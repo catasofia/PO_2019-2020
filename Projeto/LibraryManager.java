@@ -33,7 +33,7 @@ public class LibraryManager{
       _utentes[i].mostrarUtente();
   }
 
-  public void static main(String[] argv){
+  public static void main(String[] argv){
     mostrarData();
   }
 

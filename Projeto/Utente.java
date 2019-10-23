@@ -26,6 +26,6 @@ public class Utente{
     }
 
     public void mostrarUtente(){
-        System.out.println(_iDUtente + " - " + _nome + " - " + _email) //FALTAM COISAS
+        System.out.println(_iDUtente + " - " + _nome + " - " + _email); //FALTAM COISAS
     }
 }
