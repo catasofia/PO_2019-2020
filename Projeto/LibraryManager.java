@@ -33,8 +33,12 @@ public class LibraryManager{
       _utentes[i].mostrarUtente();
   }
 
-  public static void main(String[] argv){
-    System.out.println(mostrarData());
-  }
+  public static void main(String argv[]){
+    LibraryManager Library = new LibraryManager();
 
+    Library.registarUtente("Nelson", "trindade.nelson99@gmail.com");
+    Library.mostrarUtente(1);
+    Library.avançarData(2);
+    System.out.println(Library.mostrarData());
+  }
 }

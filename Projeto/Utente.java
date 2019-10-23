@@ -7,6 +7,7 @@ public class Utente{
     //private Requisicoes _requisicoes;
 
     public Utente(int iDUtente, String nome, String email){
+        _iDUtente=iDUtente;
         _nome = nome;
         _email = email;
         _pontuacao = new Pontuacao();
