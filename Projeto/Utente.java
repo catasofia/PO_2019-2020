@@ -1,4 +1,3 @@
-
 public class Utente{
     private int _iDUtente;
     private String _nome;
@@ -10,6 +9,8 @@ public class Utente{
     public Utente(int iDUtente, String nome, String email){
         _nome = nome;
         _email = email;
+        _pontuacao = new Pontuacao();
+
     }
 
     public int obterIDUtente(){

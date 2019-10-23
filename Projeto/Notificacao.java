@@ -1,5 +1,3 @@
-
-
 public class Notificacao{
     private String _tipo;
     private String _mensagem;
@@ -9,11 +7,11 @@ public class Notificacao{
         _mensagem = mensagem;
     }
 
-    public obterTipo(){
+    public String obterTipo(){
         return _tipo;
     }
 
-    public obterMensagem(){
+    public String obterMensagem(){
         return _mensagem;
     }
 }

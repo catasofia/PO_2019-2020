@@ -1,12 +1,12 @@
-
 public Pontuacao extends Enum<Classificacoes>{
     private boolean _situacao;
     private int _multa;
     private Classificaoes _classificacao;
 
-    public Pontuacao(boolean situacao, int multa){
-        _situacao = situacao;
-        _multa = multa;
+    public Pontuacao(){
+        _situacao = true;
+        _classificacao = NORMAL;
+        _multa = 0;
     }
 
     public boolean obterSituacao(){
