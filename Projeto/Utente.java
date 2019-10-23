@@ -4,7 +4,7 @@ public class Utente{
     private String _email;
     private Pontuacao _pontuacao;
     private Notificacao _notificacoes;
-    private Requisicoes _requisicoes;
+    //private Requisicoes _requisicoes;
 
     public Utente(int iDUtente, String nome, String email){
         _nome = nome;
@@ -17,7 +17,7 @@ public class Utente{
         return _iDUtente;
     }
 
-    public Strign obterNome(){
+    public String obterNome(){
         return _nome;
     }
     

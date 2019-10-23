@@ -12,7 +12,7 @@ public class LibraryManager{
   }
 
   public int mostrarData(){
-    return _tempo.obterDia;
+    return _tempo.obterDia();
   }
 
   public void avançarData(int nvData){
