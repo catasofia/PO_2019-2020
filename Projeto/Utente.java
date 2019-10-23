@@ -27,6 +27,10 @@ public class Utente{
         return _email;
     }
 
+    public Pontuacao obterPontuacao(){
+        return _pontuacao;
+    }
+
     public void mostrarUtente(){
         System.out.println(_iDUtente + " - " + _nome + " - " + _email); //FALTAM COISAS
     }

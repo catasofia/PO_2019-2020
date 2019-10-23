@@ -19,7 +19,7 @@ public class Obra{
     return _exemplares;
   }
 
-  public String obterPreco(){
+  public int obterPreco(){
     return _preco;
   }
 
@@ -31,7 +31,7 @@ public class Obra{
     _exemplares=nExemplares;
   }
 
-  public void verificaDisponibilidade(){}
+  public boolean verificaDisponibilidade(){return true;}
 
   public void pesquisaTermo(String termo){}
 

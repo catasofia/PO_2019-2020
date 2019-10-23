@@ -3,12 +3,14 @@ public class LibraryManager{
   private int _nObras;
   private Utente[] _utentes;
   private Tempo _tempo;
+  private Requisicoes[] _requicoes;
 
   public LibraryManager(){
     _nUtentes = 0;
     _nObras = 0;
     _tempo = new Tempo();
     _utentes = new Utente[10];
+    _requicoes = new Requisicoes[10];
   }
 
   public int mostrarData(){
@@ -33,7 +35,7 @@ public class LibraryManager{
   }
 
   public void mostrarNotificacoes(int iDUtente){
-    _utentes[iDUtente].mostrarNotificacoes();
+    _utentes[iDUtente].mostrarNotificacao(0);
   }
 
   public void pagarMulta(int iDUtente){}
@@ -45,10 +47,12 @@ public class LibraryManager{
     LibraryManager Library = new LibraryManager();
 
     Library.registarUtente("Nelson", "trindade.nelson99@gmail.com");
-    Library._utentes[1]._notificacoes[0] = new Notificacao("ok","User Criado");
+    //Library._utentes[1]._notificacoes[0] = new Notificacao("ok","User Criado");
     Library.mostrarUtente(1);
     Library.mostrarNotificacoes(1);
     Library.avançarData(2);
     System.out.println(Library.mostrarData());
+
+    System.out.println(Library._utentes[1].obterPontuacao().obterSitucao());
   }
 }
