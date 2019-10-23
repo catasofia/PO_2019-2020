@@ -34,7 +34,7 @@ public class LibraryManager{
   }
 
   public static void main(String[] argv){
-    mostrarData();
+    System.out.println(mostrarData());
   }
 
 }
