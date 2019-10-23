@@ -1,7 +1,7 @@
-public Pontuacao{
+public class Pontuacao extends Enum<Classificacoes>{
     private boolean _situacao;
     private int _multa;
-    private enum<Classificacoes> _classificacao;
+    private Classificacoes _classificacao;
 
     public Pontuacao(){
         _situacao = true;
