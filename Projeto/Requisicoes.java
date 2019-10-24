@@ -5,13 +5,13 @@ public class Requisicoes{
   private Obra _obra;
 
   public Requisicoes(Utente utente, Obra obra, int dia){
-    _utente=utente;
-    _obra=obra;
-    _dataRequisicao=dia;
+    _utente = utente;
+    _obra = obra;
+    _dataRequisicao = dia;
   }
 
   public boolean verificaSituacao(Utente utente){
-    _utente.obterPontuacao().obterSitucao();
+    _utente.obterPontuacao().obterSituacao();
   }
   
   public boolean verificaDisponiblidade(Obra obra){

@@ -5,8 +5,8 @@ public class Livro extends Obra{
   public Livro(int exemplares, String titulo, int preco, 
     Categoria cat, String autor, String iSBN){
       super(exemplares, titulo, preco, cat);
-      _autor=autor;
-      _iSBN=iSBN;
+      _autor = autor;
+      _iSBN = iSBN;
   }
 
   public String obterAutor(){

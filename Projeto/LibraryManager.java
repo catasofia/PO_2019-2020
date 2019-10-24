@@ -3,14 +3,14 @@ public class LibraryManager{
   private int _nObras;
   private Utente[] _utentes;
   private Tempo _tempo;
-  private Requisicoes[] _requicoes;
+  private Requisicoes[] _requisicoes;
 
   public LibraryManager(){
     _nUtentes = 0;
     _nObras = 0;
     _tempo = new Tempo();
     _utentes = new Utente[10];
-    _requicoes = new Requisicoes[10];
+    _requisicoes = new Requisicoes[10];
   }
 
   public int mostrarData(){
@@ -30,7 +30,7 @@ public class LibraryManager{
   }
 
   public void mostrarUtentes(){
-    for (int i=0;i<=_nUtentes;i++)
+    for (int i = 0;i <= _nUtentes; i++)
       _utentes[i].mostrarUtente();
   }
 
@@ -53,6 +53,6 @@ public class LibraryManager{
     Library.avançarData(2);
     System.out.println(Library.mostrarData());
 
-    System.out.println(Library._utentes[1].obterPontuacao().obterSitucao());
+    System.out.println(Library._utentes[1].obterPontuacao().obterSituacao());
   }
 }

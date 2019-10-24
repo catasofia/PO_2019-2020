@@ -24,11 +24,11 @@ public class Obra{
   }
 
   public boolean existemExemplares(){
-    return _exemplares!=0;
+    return _exemplares != 0;
   }
   
   public void alteraExemplares(int nExemplares){
-    _exemplares=nExemplares;
+    _exemplares = nExemplares;
   }
 
   public boolean verificaDisponibilidade(){return true;}
