@@ -10,7 +10,7 @@ public class Tempo{
 	}
 
 	public void alteraDia(int nvDia){
-			if (nvDia > 0 && _dia>0)
+			if (nvDia > 0 && _dia>=0)
 					_dia += nvDia;
 	}
 
