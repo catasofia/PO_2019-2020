@@ -1,7 +1,9 @@
 package m19.app.main;
 
 import m19.core.LibraryManager;
-
+import m19.app.exception.FileOpenFailedException;
+import java.io.IOException;
+import java.io.FileNotFoundException;
 import pt.tecnico.po.ui.Command;
 
 // FIXME import other core concepts
