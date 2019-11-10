@@ -1,10 +1,12 @@
 package m19.app.main;
 
+import pt.tecnico.po.ui.Command;
+import pt.tecnico.po.ui.DialogException;
+import pt.tecnico.po.ui.Input;
 import m19.core.LibraryManager;
 import m19.app.exception.FileOpenFailedException;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import pt.tecnico.po.ui.Command;
 
 // FIXME import other core concepts
 // FIXME import other ui concepts
@@ -15,7 +17,7 @@ import pt.tecnico.po.ui.Command;
 public class DoOpen extends Command<LibraryManager> {
 
   // FIXME define input fields if needed
-
+  //private Input<String> _file;   FUI EU QUE PUS
   /**
    * @param receiver
    */
@@ -28,9 +30,13 @@ public class DoOpen extends Command<LibraryManager> {
   @Override
   public final void execute() throws DialogException {
     try {
+      //_form.parse();    FUI EU QUE PUS
+      //_receiver.setFileName(_file.value());        FUI EU QUE PUS
+      //_receiver.open(_file.value());    FUI EU QUE PUS
+
       // FIXME implement command
     } catch (FileNotFoundException fnfe) {
-      throw new FileOpenFailedException(/* fill with the missing file name*/);
+      throw new FileOpenFailedException(fnfe  /*FUI EU QUE PUS *//* fill with the missing file name*/);
     } catch (ClassNotFoundException | IOException e) {
       e.printStackTrace();
     }

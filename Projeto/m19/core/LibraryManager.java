@@ -1,3 +1,11 @@
+package m19.core;
+
+import java.io.Serializable;
+import java.io.IOException;
+
+import m19.core.exception.MissingFileAssociationException;
+import m19.core.exception.BadEntrySpecificationException;
+
 public class LibraryManager{
   private int _nUtentes;
   private int _nObras;
@@ -42,7 +50,7 @@ public class LibraryManager{
 
 
 
-
+/*
   public static void main(String argv[]){
     LibraryManager Library = new LibraryManager();
 
@@ -54,5 +62,5 @@ public class LibraryManager{
     System.out.println(Library.mostrarData());
 
     System.out.println(Library._utentes[1].obterPontuacao().obterSituacao());
-  }
+  }*/
 }

@@ -1,3 +1,4 @@
+package m19.core;
 public class Notificacao{
     private String _tipo;
     private String _mensagem;

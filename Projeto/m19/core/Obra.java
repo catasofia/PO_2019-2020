@@ -1,3 +1,4 @@
+package m19.core;
 public class Obra{
   private int _exemplares;
   private String _titulo;

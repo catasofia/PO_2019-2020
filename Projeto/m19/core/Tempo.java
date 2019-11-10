@@ -1,3 +1,4 @@
+package m19.core;
 public class Tempo{
 	private int _dia;
 

@@ -1,3 +1,4 @@
+package m19.core;
 public class Pontuacao{
     private boolean _situacao;
     private int _multa;

@@ -1,3 +1,5 @@
+package m19.core;
+
 public class Utente{
     private int _iDUtente;
     private String _nome;

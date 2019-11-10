@@ -1,3 +1,4 @@
+package m19.core;
 public class Requisicoes{
   private int _dataRequisicao;
   private int _dataDevolucao;
