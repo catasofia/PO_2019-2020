@@ -12,7 +12,8 @@ public class Requisicoes{
   }
 
   public boolean verificaSituacao(Utente utente){
-    _utente.obterPontuacao().obterSituacao();
+    //_utente.obterPontuacao().obterSituacao();
+    return true;
   }
   
   public boolean verificaDisponiblidade(Obra obra){

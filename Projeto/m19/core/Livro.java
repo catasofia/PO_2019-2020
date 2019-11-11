@@ -1,3 +1,5 @@
+package m19.core;
+
 public class Livro extends Obra{
   private String _autor;
   private String _iSBN;
