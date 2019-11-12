@@ -11,12 +11,14 @@ import java.util.List;
 
 
 public class Obra{
+  private int _idObra;
   private int _exemplares;
   private String _titulo;
   private int _preco;
   private Categoria _categoria;
 
-  public Obra(int exemplares, String titulo, int preco, Categoria categoria){
+  public Obra(int idObra,int exemplares, String titulo, int preco, Categoria categoria){
+    _idObra=idObra;
     _exemplares=exemplares;
     _titulo=titulo;
     _preco=preco;
@@ -41,6 +43,10 @@ public class Obra{
   
   protected void alteraExemplares(int nExemplares){
     _exemplares = nExemplares;
+  }
+
+  protected void mostrarObra(){
+    System.out.println(_idObra+" "+_exemplares+" "+_categoria+" "+_titulo+" "+_preco+" "+_categoria+" ");
   }
 
   protected boolean verificaDisponibilidade(){return true;}

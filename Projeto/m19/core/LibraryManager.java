@@ -20,20 +20,10 @@ import m19.app.exception.*;
  */
 public class LibraryManager {
 
-  private Library _library;
+  private Library _library = new Library();
   private String _file;
 
 
-
-
-  public LibraryManager(){
-    _library = new Library();
-  }
-
-  protected int mostrarData(){
-    return _library.mostrarData();
-  }
-  
   // FIXME define methods
 
   public String getFileName(){
@@ -45,6 +35,54 @@ public class LibraryManager {
   }
   
   public void open(String file) throws IOException, FileNotFoundException, ClassNotFoundException{}
+
+  public int mostrarData(){
+    return _library.mostrarData();
+  }
+  public void avançarData(int tempo){
+    _library.avançarData(tempo);
+  }
+
+  public void registarUtente(String nome, String email){
+    _library.registarUtente(nome, email);
+  }
+
+  public void mostrarUtente(int id){
+    _library.mostrarUtente(id);
+  }
+
+  public void mostrarUtentes(){
+    _library.mostrarUtentes();
+  }
+
+  public void mostrarNotificacao(int iDNotificacao){
+    //Não necessario
+  }
+
+  public void pagarMulta(){}
+
+  /*public void registarObra(int exemplares, String titulo, int preco, Categoria categoria){
+    _obras.add(new Obra(_nObras++,titulo))
+  }*/
+
+  public void mostrarObra(int obraID){
+    _library.mostrarObra(obraID);
+  }
+
+  public void mostrarObras(){
+    _library.mostrarObras();
+  }
+
+  public void efetuaPesquisa(){}
+
+  /*+requisitarObra(iDUtente: int, iDObra: int) : void
+  +devolverObra(iDUtente: int, iDObra: int) : void
+*/
+
+
+
+
+
 
 
   /**

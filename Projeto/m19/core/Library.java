@@ -39,12 +39,53 @@ public class Library implements Serializable {
   protected int mostrarData(){
     return _tempo.obterDia();
   }
+  protected void avançarData(int tempo){
+    _tempo.alteraDia(tempo);
+  }
+
+  protected void registarUtente(String nome, String email){
+    _utentes.add(new Utente(_nUtentes++,nome, email));
+  }
+
+  protected void mostrarUtente(int id){
+    _utentes.get(id).mostrarUtente(); //FALTAM COISAS
+  }
+
+  protected void mostrarUtentes(){
+    for (Utente utente:_utentes)
+      utente.mostrarUtente(); //FALTAM COISAS
+  }
+
+  protected void mostrarNotificacao(int iDNotificacao){
+    //Não necessario
+  }
+
+  protected void pagarMulta(){}
+
+  /*protected void registarObra(int exemplares, String titulo, int preco, Categoria categoria){
+    _obras.add(new Obra(_nObras++,titulo))
+  }*/
+
+  protected void mostrarObra(int obraID){
+    _obras.get(obraID).mostrarObra();
+  }
+
+  protected void mostrarObras(){
+    for (Obra obra:_obras)
+      obra.mostrarObra(); //FALTAM COISAS
+  }
+
+  protected void efetuaPesquisa(){}
+
+  /*+requisitarObra(iDUtente: int, iDObra: int) : void
+  +devolverObra(iDUtente: int, iDObra: int) : void
+*/
 
 
 
 
 
-  
+
   /**
    * Read the text input file at the beginning of the program and populates the
    * instances of the various possible types (books, DVDs, users).

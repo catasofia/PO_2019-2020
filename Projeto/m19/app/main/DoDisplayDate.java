@@ -11,7 +11,6 @@ import pt.tecnico.po.ui.Command;
  * 4.1.2. Display the current date.
  */
 public class DoDisplayDate extends Command<LibraryManager> {
-
   /**
    * @param receiver
    */
@@ -22,7 +21,7 @@ public class DoDisplayDate extends Command<LibraryManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    // FIXME define method
+    System.out.println(Message.currentDate(_receiver.mostrarData()));
   }
   
 }
