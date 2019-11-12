@@ -10,6 +10,8 @@ import m19.core.exception.MissingFileAssociationException;
 import m19.core.exception.BadEntrySpecificationException;
 import m19.core.exception.ImportFileException;
 
+import java.io.*;
+
 import m19.app.exception.*;
 
 // FIXME import other system types
@@ -32,6 +34,22 @@ public class LibraryManager {
 
   public void setFileName(String file){
     _file=file;
+  }
+
+  public void guardarComo(String filename) throws FileNotFoundException, IOException {
+    if (filename == null){
+      throw new FileNotFoundException();
+    }
+    _file = filename;
+
+    try{
+      ObjectOutputStream save = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(_file))); //ver estas cenas definidas;
+      save.writeObject(_library);     //escreve no objeto
+      save.close();                   //fecha o objeto
+    } catch (FileNotFoundException e ) {
+      throw new FileNotFoundException(_file);
+    } catch (IOException e) {
+      e.printStackTrace(); }
   }
   
   public void open(String file) throws IOException, FileNotFoundException, ClassNotFoundException{}
