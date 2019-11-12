@@ -3,8 +3,14 @@ package m19.app.main;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
+
 import m19.core.LibraryManager;
-import m19.app.exception.FileOpenFailedException;
+import m19.app.exception.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.io.FileNotFoundException;
+import java.io.Serializable;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 
@@ -16,7 +22,7 @@ import java.io.FileNotFoundException;
  */
 public class DoOpen extends Command<LibraryManager> {
 
-  // FIXME define input fields if needed
+  // FIXME define inputif needed
   private Input<String> _file;  // FUI EU QUE PUS
   /**
    * @param receiver
@@ -41,8 +47,9 @@ public class DoOpen extends Command<LibraryManager> {
       }
       _display.display();*/
       // FIXME implement command
+      
     } catch (FileNotFoundException fnfe) {
-      throw new FileOpenFailedException(fnfe /* fill with the missing file name*/);
+      throw new FileOpenFailedException(_receiver.getFileName());
     } catch (ClassNotFoundException | IOException e) {
       e.printStackTrace();
     }

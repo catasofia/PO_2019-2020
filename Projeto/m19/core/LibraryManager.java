@@ -1,6 +1,7 @@
 package m19.core;
 
 import java.io.IOException;
+import java.net.ProtocolException;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.FileNotFoundException;
@@ -19,30 +20,32 @@ import m19.app.exception.*;
  */
 public class LibraryManager {
 
-  private Library _library = new Library();  // FIXME initialize this attribute done;
-  private int _nUtentes;
-  private int _nObras;
-  private Tempo _tempo;
-  private List<Utente> _utentes;
-  private List<Requisicoees> _requisicoes;
-  private List<Obra> _obras;
+  private Library _library;
+  private String _file;
+
 
 
 
   public LibraryManager(){
-    _nUtentes = 0;
-    _nObras = 0;
-    _tempo = new Tempo();
-    _utentes = new ArrayList<Utente>();
-    _requisicoes = new ArrayList<Requisicoes>();
-    _obras = new ArrayList<Obra>();
+    _library = new Library();
   }
 
   protected int mostrarData(){
-    return Library.mostrarData();
+    return _library.mostrarData();
   }
   
   // FIXME define methods
+
+  public String getFileName(){
+    return _file;
+  }
+
+  public void setFileName(String file){
+    _file=file;
+  }
+  
+  public void open(String file){}
+
 
   /**
    * Serialize the persistent state of this application.

@@ -10,32 +10,33 @@ public class Pontuacao{
         _multa = 0;
     }
 
-    public boolean obterSituacao(){
+    protected boolean obterSituacao(){
         return _situacao;
     }
 
-    public Classificacoes obterClassificacao(){
+    protected Classificacoes obterClassificacao(){
         return _classificacao;
     }
 
-    public int obterMulta(){
+    protected int obterMulta(){
         return _multa;
     }
 
-    public void alteraSituacao(){
+    protected void alteraSituacao(){
         if (_situacao)
             _situacao = false;
-        _situacao = true;
+        else 
+            _situacao = true;
     }
 
-    //public void alteraClassificacao(Classificacoes nvClassif){}
+    //protected void alteraClassificacao(Classificacoes nvClassif){}
 
-    public void alteraMulta(int valor){
+    protected void alteraMulta(int valor){
         _multa = valor;
         //multa += valor;
     }
 
-    //public void desejaPagar(){}
+    //protected void desejaPagar(){}
 
-    //public void pagarMulta(){}
+    //protected void pagarMulta(){}
 }

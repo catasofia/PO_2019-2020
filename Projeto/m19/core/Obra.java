@@ -1,4 +1,15 @@
 package m19.core;
+
+import java.io.IOException;
+import m19.core.exception.*;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Obra{
   private int _exemplares;
   private String _titulo;
@@ -12,28 +23,28 @@ public class Obra{
     _categoria=categoria;
   }
 
-  public String obterTitulo(){
+  protected String obterTitulo(){
     return _titulo;
   }
 
-  public int obterExemplares(){
+  protected int obterExemplares(){
     return _exemplares;
   }
 
-  public int obterPreco(){
+  protected int obterPreco(){
     return _preco;
   }
 
-  public boolean existemExemplares(){
-    return _exemplares != 0;
+  protected boolean existemExemplares(){
+    return (_exemplares != 0);
   }
   
-  public void alteraExemplares(int nExemplares){
+  protected void alteraExemplares(int nExemplares){
     _exemplares = nExemplares;
   }
 
-  public boolean verificaDisponibilidade(){return true;}
+  protected boolean verificaDisponibilidade(){return true;}
 
-  public void pesquisaTermo(String termo){}
+  protected void pesquisaTermo(String termo){};
 
 }

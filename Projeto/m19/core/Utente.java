@@ -1,47 +1,57 @@
 package m19.core;
 
+import java.io.IOException;
+import m19.core.exception.*;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Utente{
     private int _iDUtente;
     private String _nome;
     private String _email;
     private Pontuacao _pontuacao;
-    private Notificacao[] _notificacoes;
-    //private Requisicoes _requisicoes;
+    private List<Notificacao> _notificacoes;
+    private List<Requisicoes> _requisicoes;
 
     public Utente(int iDUtente, String nome, String email){
         _iDUtente=iDUtente;
         _nome = nome;
         _email = email;
         _pontuacao = new Pontuacao();
-        _notificacoes = new Notificacao[10];
+        //_notificacoes = new List<Notificacao>(); DA ERRO
 
     }
 
-    public int obterIDUtente(){
+    protected int obterIDUtente(){
         return _iDUtente;
     }
 
-    public String obterNome(){
+    protected String obterNome(){
         return _nome;
     }
     
-    public String obterEmail(){
+    protected String obterEmail(){
         return _email;
     }
 
-    public Pontuacao obterPontuacao(){
+    protected Pontuacao obterPontuacao(){
         return _pontuacao;
     }
 
-    public void mostrarUtente(){
+    protected void mostrarUtente(){
         System.out.println(_iDUtente + " - " + _nome + " - " + _email); //FALTAM COISAS
     }
 
-    public void mostrarNotificacao(int iDNotificacao){
-        System.out.println(_notificacoes[iDNotificacao].obterMensagem());
+    protected void mostrarNotificacao(int iDNotificacao){
+        System.out.println(_notificacoes.get(iDNotificacao).obterMensagem());
     }
     /*
-    public void mostrarNotificacoes(){
+    protected void mostrarNotificacoes(){
         for(int i=0;i<10;i++)
             mostrarNotificacao(i);
     }*/
