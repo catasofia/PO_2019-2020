@@ -1,11 +1,15 @@
 package m19.core;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.io.FileNotFoundException;
 
 import m19.core.exception.MissingFileAssociationException;
 import m19.core.exception.BadEntrySpecificationException;
 import m19.core.exception.ImportFileException;
+
+import m19.app.exception.*;
 
 // FIXME import other system types
 // FIXME import other project (core) types
@@ -15,11 +19,28 @@ import m19.core.exception.ImportFileException;
  */
 public class LibraryManager {
 
-  private Library _library;  // FIXME initialize this attribute
+  private Library _library = new Library();  // FIXME initialize this attribute done;
+  private int _nUtentes;
+  private int _nObras;
+  private Tempo _tempo;
+  private List<Utente> _utentes;
+  private List<Requisicoees> _requisicoes;
+  private List<Obra> _obras;
 
-  // FIXME define other attributes
 
-  // FIXME define contructor(s)
+
+  public LibraryManager(){
+    _nUtentes = 0;
+    _nObras = 0;
+    _tempo = new Tempo();
+    _utentes = new ArrayList<Utente>();
+    _requisicoes = new ArrayList<Requisicoes>();
+    _obras = new ArrayList<Obra>();
+  }
+
+  protected int mostrarData(){
+    return Library.mostrarData();
+  }
   
   // FIXME define methods
 

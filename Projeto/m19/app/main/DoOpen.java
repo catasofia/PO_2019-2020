@@ -17,12 +17,13 @@ import java.io.FileNotFoundException;
 public class DoOpen extends Command<LibraryManager> {
 
   // FIXME define input fields if needed
-  //private Input<String> _file;   FUI EU QUE PUS
+  private Input<String> _file;  // FUI EU QUE PUS
   /**
    * @param receiver
    */
   public DoOpen(LibraryManager receiver) {
     super(Label.OPEN, receiver);
+    _file = _form.addStringInput(Message.openFile());
     // FIXME initialize input fields if needed
   }
 
@@ -30,13 +31,18 @@ public class DoOpen extends Command<LibraryManager> {
   @Override
   public final void execute() throws DialogException {
     try {
-      //_form.parse();    FUI EU QUE PUS
-      //_receiver.setFileName(_file.value());        FUI EU QUE PUS
-      //_receiver.open(_file.value());    FUI EU QUE PUS
+      _form.parse();    //FUI EU QUE PUS
+      _receiver.setFileName(_file.value());        //FUI EU QUE PUS
+      _receiver.open(_file.value());    //FUI EU QUE PUS
 
+      /*List<String> lista = _receiver.readAllNotification();
+      for(String s: lista){
+        _display.addLine(s);
+      }
+      _display.display();*/
       // FIXME implement command
     } catch (FileNotFoundException fnfe) {
-      throw new FileOpenFailedException(fnfe  /*FUI EU QUE PUS *//* fill with the missing file name*/);
+      throw new FileOpenFailedException(fnfe /* fill with the missing file name*/);
     } catch (ClassNotFoundException | IOException e) {
       e.printStackTrace();
     }
