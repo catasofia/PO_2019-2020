@@ -62,9 +62,10 @@ public class Library implements Serializable {
     Collections.sort(_utentes, new Comparator<Utente>() {
         @Override
         public int compare(Utente o1, Utente o2) {
-            return Integer.parseInt(o1.obterNome()) - Integer.parseInt(o2.obterNome());
+          return Integer.parseInt(o1.obterNome()) - Integer.parseInt(o2.obterNome());
         }
       });
+      //System.out.println("eidkjlx");
     for (Utente utente:_utentes)
       utente.mostrarUtente(); //FALTAM COISAS
   }
