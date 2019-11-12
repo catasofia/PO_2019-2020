@@ -43,6 +43,10 @@ public class LibraryManager {
     _library.avançarData(tempo);
   }
 
+  public int totalUtentes(){
+    return _library.totalUtentes();
+  }
+
   public void registarUtente(String nome, String email){
     _library.registarUtente(nome, email);
   }

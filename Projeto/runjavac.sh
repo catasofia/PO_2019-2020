@@ -6,7 +6,7 @@ FAIL=0
 javac -cp po-uilib.jar:. `find m19 -name "*.java"`
 java -cp po-uilib.jar:. m19.app.App
 
-rm -rf *.class
+rm -rf `find m19 -name "*.class"`
 #for x in tests/*.in; do
 #    NUM=$[$NUM+1]
 #    if [ -e ${x%.in}.import ]; then

@@ -2,9 +2,11 @@ package m19.core;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
+import java.util.*;
 
 import m19.core.exception.MissingFileAssociationException;
 import m19.core.exception.BadEntrySpecificationException;
@@ -43,6 +45,10 @@ public class Library implements Serializable {
     _tempo.alteraDia(tempo);
   }
 
+  protected int totalUtentes(){
+    return _nUtentes;
+  }
+
   protected void registarUtente(String nome, String email){
     _utentes.add(new Utente(_nUtentes++,nome, email));
   }
@@ -52,6 +58,13 @@ public class Library implements Serializable {
   }
 
   protected void mostrarUtentes(){
+    List<String> lst = new ArrayList<>();
+    Collections.sort(_utentes, new Comparator<Utente>() {
+        @Override
+        public int compare(Utente o1, Utente o2) {
+            return Integer.parseInt(o1.obterNome()) - Integer.parseInt(o2.obterNome());
+        }
+      });
     for (Utente utente:_utentes)
       utente.mostrarUtente(); //FALTAM COISAS
   }

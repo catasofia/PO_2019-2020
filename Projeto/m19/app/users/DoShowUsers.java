@@ -2,6 +2,7 @@ package m19.app.users;
 
 import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
+import pt.tecnico.po.ui.Input;
 import pt.tecnico.po.ui.DialogException;
 // FIXME import other core concepts
 // FIXME import other ui concepts
@@ -10,7 +11,6 @@ import pt.tecnico.po.ui.DialogException;
  * 4.2.4. Show all users.
  */
 public class DoShowUsers extends Command<LibraryManager> {
-
   /**
    * @param receiver
    */
@@ -21,7 +21,7 @@ public class DoShowUsers extends Command<LibraryManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    // FIXME implement command
+    _receiver.mostrarUtentes();
   }
   
 }
