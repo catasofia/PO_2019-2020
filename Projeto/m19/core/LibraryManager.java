@@ -5,6 +5,7 @@ import java.net.ProtocolException;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.FileNotFoundException;
+import java.io.NotSerializableException;
 
 import m19.core.exception.MissingFileAssociationException;
 import m19.core.exception.BadEntrySpecificationException;
