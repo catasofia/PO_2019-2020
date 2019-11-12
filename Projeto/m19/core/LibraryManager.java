@@ -44,7 +44,7 @@ public class LibraryManager {
     _file=file;
   }
   
-  public void open(String file){}
+  public void open(String file) throws IOException, FileNotFoundException, ClassNotFoundException{}
 
 
   /**

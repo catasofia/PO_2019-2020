@@ -48,7 +48,7 @@ public class DoOpen extends Command<LibraryManager> {
       _display.display();*/
       // FIXME implement command
       
-    } catch (FileNotFoundException fnfe) {
+    } catch (FileNotFoundException fnfe){
       throw new FileOpenFailedException(_receiver.getFileName());
     } catch (ClassNotFoundException | IOException e) {
       e.printStackTrace();
