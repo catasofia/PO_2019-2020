@@ -71,7 +71,7 @@ public class Library implements Serializable {
 
 
     for (Utente utente:_utentes){
-      a += utente.mostrarUtente(); //FALTAM COISAS
+      a += utente.mostrarUtente() + "\n"; //FALTAM COISAS
     }
     
     return a;
