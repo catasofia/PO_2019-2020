@@ -16,9 +16,9 @@ public abstract class Obra{
   private int _exemplaresDisponiveis;
   private String _titulo;
   private int _preco;
-  private String _categoria;
+  private Categoria _categoria;
 
-  public Obra(int idObra,int exemplares, String titulo, int preco, String categoria){
+  public Obra(int idObra,int exemplares, String titulo, int preco, Categoria categoria){
     _idObra=idObra;
     _exemplares=exemplares;
     _exemplaresDisponiveis=exemplares;
@@ -47,9 +47,9 @@ public abstract class Obra{
     return _exemplaresDisponiveis;
   }
 
-  protected String obterCategoria(){
-    if (_categoria.equals("FICTION")) return "Ficção";
-    return "";
+  protected Categoria obterCategoria(){
+  //  if (_categoria.equals("FICTION")) return "Ficção";
+    return _categoria;
   }
   
   protected boolean existemExemplares(){

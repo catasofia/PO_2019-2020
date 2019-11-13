@@ -56,6 +56,11 @@ public class Library implements Serializable {
   protected void registarUtente(String nome, String email){
     _utentes.add(new Utente(_nUtentes++,nome, email));
   }
+  
+  protected void registarLivro(String titulo, String autor, int preco, 
+  Categoria cat, String iSBN,int exemplares){
+    _obras.add(new Livro(_nObras++, titulo, autor, preco, cat, iSBN, exemplares));
+  }
 
   protected Obra obterObra(int id){
     for(Obra o: _obras){
@@ -116,6 +121,8 @@ public class Library implements Serializable {
   protected void registarObra(Obra obra){
     _obras.add(obra);
   }
+
+
 
   protected String mostrarObras(){
     String a="";
