@@ -1,8 +1,13 @@
 package m19.core;
-public class Pontuacao{
+
+import java.io.Serializable;
+
+public class Pontuacao implements Serializable{
     private boolean _situacao;
     private int _multa;
     private Classificacoes _classificacao;
+
+    private static final long serialVersionUID = 201901101348L;
 
     public Pontuacao(){
         _situacao = true;

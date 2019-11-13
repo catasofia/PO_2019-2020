@@ -1,9 +1,14 @@
 package m19.core;
-public class Notificacao{
+
+import java.io.Serializable;
+
+public class Notificacao implements Serializable{
     private int _id;
     private String _tipo;
     private String _mensagem;
 
+    private static final long serialVersionUID = 201901101348L;
+    
     public Notificacao(String tipo, String mensagem){
         _tipo = tipo;
         _mensagem = mensagem;

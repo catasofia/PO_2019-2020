@@ -1,6 +1,7 @@
 package m19.core;
 
 import java.io.IOException;
+import java.io.Serializable;
 
 import m19.app.exception.NoSuchUserException;
 import m19.core.Notificacao;
@@ -13,13 +14,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Utente{
+public class Utente implements Serializable{
     private int _iDUtente;
     private String _nome;
     private String _email;
     private Pontuacao _pontuacao;
     private List<Notificacao> _notificacoes;
     private List<Requisicoes> _requisicoes;
+
+    private static final long serialVersionUID = 201901101348L;
 
     public Utente(int iDUtente, String nome, String email){
         _iDUtente=iDUtente;

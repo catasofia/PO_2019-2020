@@ -21,8 +21,8 @@ import m19.core.exception.*;
 /**
  * The façade class.
  */
-public class LibraryManager {
-
+public class LibraryManager implements Serializable{
+  private static final long serialVersionUID = 201901101348L;
   private Library _library = new Library();
   private String _file;
 
@@ -37,7 +37,7 @@ public class LibraryManager {
     _file=file;
   }
 
-  public void guardarComo(String filename) throws FileNotFoundException, IOException {
+  public void guardarComo(String filename) throws FileNotFoundException, IOException{
     if (filename == null){
       throw new FileNotFoundException();
     }
@@ -52,7 +52,7 @@ public class LibraryManager {
     } catch (IOException e) {
       e.printStackTrace(); }
   }
-  
+
   public void open(String file) throws IOException, FileNotFoundException, ClassNotFoundException{
     //open file
     //_library.importFile(file);
@@ -63,6 +63,7 @@ public class LibraryManager {
     _library = newLibrary;
   }
 
+  
   public int mostrarData(){
     return _library.mostrarData();
   }

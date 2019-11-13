@@ -1,8 +1,11 @@
 package m19.core;
 
+import java.io.Serializable;
 
-public class Tempo{
+public class Tempo implements Serializable{
 	private int _dia;
+
+	private static final long serialVersionUID = 201901101348L;
 
 	public Tempo(){
 		_dia = 0;

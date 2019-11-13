@@ -9,6 +9,10 @@ import java.io.Serializable;
 import java.util.*;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.*;
+
+import m19.app.exception.*;
+import m19.core.exception.*;
 
 import m19.core.exception.MissingFileAssociationException;
 import m19.app.exception.NoSuchUserException;

@@ -1,6 +1,8 @@
 package m19.core;
 
 import java.io.IOException;
+import java.io.Serializable;
+
 import m19.core.exception.*;
 
 import java.util.Collections;
@@ -10,13 +12,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class Obra{
+public abstract class Obra implements Serializable{
   private int _idObra;
   private int _exemplares;
   private int _exemplaresDisponiveis;
   private String _titulo;
   private int _preco;
   private Categoria _categoria;
+
+  private static final long serialVersionUID = 201901101348L;
 
   public Obra(int idObra,int exemplares, String titulo, int preco, Categoria categoria){
     _idObra=idObra;

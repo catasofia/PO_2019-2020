@@ -1,9 +1,13 @@
 package m19.core;
-public class Requisicoes{
+
+import java.io.Serializable;
+
+public class Requisicoes implements Serializable{
   private int _dataRequisicao;
   private int _dataDevolucao;
   private Utente _utente;
   private Obra _obra;
+  private static final long serialVersionUID = 201901101348L;
 
   public Requisicoes(Utente utente, Obra obra, int dia){
     _utente = utente;
