@@ -1,22 +1,21 @@
 *** tests/A-02-03-M-ok.out	2019-11-13 10:10:45.280583483 +0000
---- tests/A-02-03-M-ok.outhyp	2019-11-13 14:33:42.653188744 +0000
+--- tests/A-02-03-M-ok.outhyp	2019-11-13 15:30:19.579020997 +0000
 ***************
-*** 12,21 ****
+*** 12,20 ****
   2 - Mostrar todas as obras
   3 - Efectuar pesquisa de termos
   0 - Sair
 ! Escolha uma opção: 0 - 10 de  10 - DVD - Era uma vez na Amadora - 20 - Ficção - Fernando Fonseca - 200505550
 ! 1 - 10 de  10 - DVD - 48 Horas para o Exame - 12 - Ficção - Orlando Fonseca - 200505553
 ! 2 - 5 de  5 - DVD - Lumiar Selvagem - 20 - Ficção - Pedro Fonseca - 200505551
-! Menu de obras
+  Menu de obras
   1 - Mostrar obra
   2 - Mostrar todas as obras
-  3 - Efectuar pesquisa de termos
 --- 12,18 ----
   2 - Mostrar todas as obras
   3 - Efectuar pesquisa de termos
   0 - Sair
-! Escolha uma opção: Menu de obras
+! Escolha uma opção: OKOKOK
+  Menu de obras
   1 - Mostrar obra
   2 - Mostrar todas as obras
-  3 - Efectuar pesquisa de termos

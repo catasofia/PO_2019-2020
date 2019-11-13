@@ -62,6 +62,11 @@ public class Library implements Serializable {
     _obras.add(new Livro(_nObras++, titulo, autor, preco, cat, iSBN, exemplares));
   }
 
+  protected void registarDVD(String titulo, String realizador, int preco, 
+  Categoria cat, String numeroIGAC,int exemplares){
+    _obras.add(new DVD(_nObras++, titulo, realizador, preco, cat, numeroIGAC, exemplares));
+  }
+
   protected Obra obterObra(int id){
     for(Obra o: _obras){
       if(o.obterID() == id){
@@ -157,10 +162,9 @@ public class Library implements Serializable {
    * @throws IOException
    */
   void importFile(String filename) throws BadEntrySpecificationException, IOException {
-    Parser parse;
+    Parser parse=new Parser(this);
     parse.parseFile(filename);
-    reader.close();
-
+    
     // FIXME implement method
   }
 }

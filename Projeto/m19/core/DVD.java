@@ -3,9 +3,9 @@ public class DVD extends Obra{
   private String _realizador;
   private String _numeroIGAC;
 
-  public DVD(int id,int exemplares, String titulo, int preco, 
-    Categoria cat, String realizador, String numeroIGAC){
-      super(id, exemplares, titulo, preco, cat);
+  public DVD(int id,String titulo, String realizador, int preco, 
+  Categoria cat, String numeroIGAC,int exemplares){
+      super(id,exemplares, titulo, preco, cat);
       _realizador=realizador;
       _numeroIGAC=numeroIGAC;
   }

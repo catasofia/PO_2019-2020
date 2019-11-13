@@ -48,10 +48,12 @@ public class Parser {
   private void parseDVD(String[] components, String line) throws BadEntrySpecificationException {
     if (components.length != 7)
       throw new BadEntrySpecificationException("Wrong number of fields (6) in " + line);
-    Dvd dvd = new Dvd(components[1], components[2], Integer.parseInt(components[3]),
-                      Categoria.valueOf(components[4]), Integer.parseInt(components[5]),
-                      Integer.parseInt(components[6]));
-    
+    //Dvd dvd = new Dvd(components[1], components[2], Integer.parseInt(components[3]),
+     //                 Categoria.valueOf(components[4]), Integer.parseInt(components[5]),
+       //               Integer.parseInt(components[6]));
+    _library.registarDVD(components[1], components[2], Integer.parseInt(components[3]),
+                    Categoria.valueOf(components[4]), /*Integer.parseInt*/(components[5]),
+                    Integer.parseInt(components[6]));
     // add dvd to _library
   }
 
@@ -63,7 +65,7 @@ public class Parser {
                          Categoria.valueOf(components[4]), Integer.parseInt(components[5]),
                          Integer.parseInt(components[6]));*/
     _library.registarLivro(components[1], components[2], Integer.parseInt(components[3]),
-    Categoria.valueOf(components[4]), Integer.parseInt(components[5]),
+    Categoria.valueOf(components[4]), /*Integer.parseInt*/(components[5]),
     Integer.parseInt(components[6]));
     // add book to _library
   }
