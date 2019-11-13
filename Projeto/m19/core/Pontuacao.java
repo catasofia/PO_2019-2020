@@ -33,7 +33,13 @@ public class Pontuacao{
 
     protected void alteraMulta(int valor){
         _multa = valor;
-        //multa += valor;
+    }
+
+    protected String mostrarPontuacao(){
+        String aux=_classificacao + " - ";
+        if (_situacao==true) aux+="ACTIVO";
+        else aux+= "SUSPENSO - EUR - "+_multa+"\n";
+        return aux;
     }
 
     //protected void desejaPagar(){}

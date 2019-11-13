@@ -1,5 +1,6 @@
 package m19.core;
 public class Notificacao{
+    private int _id;
     private String _tipo;
     private String _mensagem;
 
@@ -15,4 +16,9 @@ public class Notificacao{
     public String obterMensagem(){
         return _mensagem;
     }
+
+    public int obterID(){
+        return _id;
+    }
+    
 }

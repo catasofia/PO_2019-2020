@@ -53,8 +53,8 @@ public class Library implements Serializable {
     _utentes.add(new Utente(_nUtentes++,nome, email));
   }
 
-  protected void mostrarUtente(int id){
-    _utentes.get(id).mostrarUtente(); //FALTAM COISAS
+  protected String mostrarUtente(int id){
+    return _utentes.get(id).mostrarUtente(); //FALTAM COISAS
   }
 
   protected void mostrarUtentes(){
@@ -65,13 +65,8 @@ public class Library implements Serializable {
           return o1.obterNome().compareTo(o2.obterNome());
         }
       });
-      //System.out.println("eidkjlx");
     for (Utente utente:_utentes)
       utente.mostrarUtente(); //FALTAM COISAS
-  }
-
-  protected void mostrarNotificacao(int iDNotificacao){
-    //Não necessario
   }
 
   protected void pagarMulta(){}
@@ -86,10 +81,15 @@ public class Library implements Serializable {
 
   protected void mostrarObras(){
     for (Obra obra:_obras)
-      obra.mostrarObra(); //FALTAM COISAS
+      obra.mostrarObra();
   }
 
   protected void efetuaPesquisa(){}
+
+  protected void verificaUtentes(){
+    for(Utente i : _utentes)
+      i.verificaUtente();
+  }
 
   /*+requisitarObra(iDUtente: int, iDObra: int) : void
   +devolverObra(iDUtente: int, iDObra: int) : void

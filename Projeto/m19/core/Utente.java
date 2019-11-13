@@ -1,6 +1,8 @@
 package m19.core;
 
 import java.io.IOException;
+
+import m19.core.Notificacao;
 import m19.core.exception.*;
 
 import java.util.Collections;
@@ -23,8 +25,6 @@ public class Utente{
         _nome = nome;
         _email = email;
         _pontuacao = new Pontuacao();
-        //_notificacoes = new List<Notificacao>(); DA ERRO
-
     }
 
     protected int obterIDUtente(){
@@ -43,16 +43,27 @@ public class Utente{
         return _pontuacao;
     }
 
-    protected void mostrarUtente(){
-        System.out.println(_iDUtente + " - " + _nome + " - " + _email); //FALTAM COISAS
+    protected String mostrarUtente(){
+        String aux = _iDUtente + " - " + _nome + " - " + _email + " - ";
+        aux += _pontuacao.mostrarPontuacao(); //FALTAM COISAS
+        return aux;
     }
 
     protected void mostrarNotificacao(int iDNotificacao){
         System.out.println(_notificacoes.get(iDNotificacao).obterMensagem());
     }
-    /*
+    
     protected void mostrarNotificacoes(){
-        for(int i=0;i<10;i++)
-            mostrarNotificacao(i);
-    }*/
+        for(Notificacao i: _notificacoes)
+            this.mostrarNotificacao(i.obterID());
+    }
+
+    protected void verificaUtente(){
+        //Verifica se Utente tem obras que ja devia de ter entregue, altera pontuaçao, etc..
+        
+    }
+
+    protected void addNotificacao(String tipo, String mensagem){
+        _notificacoes.add(new Notificacao(tipo, mensagem));
+    }
 }

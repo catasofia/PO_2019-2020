@@ -25,7 +25,7 @@ public class DoShowUser extends Command<LibraryManager> {
   @Override
   public final void execute() throws DialogException {
     _form.parse();
-    _receiver.mostrarUtente(_id.value());
+    _display.addLine(_receiver.mostrarUtente(_id.value()));
   }
 
 }

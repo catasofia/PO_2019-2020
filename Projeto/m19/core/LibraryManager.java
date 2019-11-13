@@ -53,7 +53,10 @@ public class LibraryManager {
       e.printStackTrace(); }
   }
   
-  public void open(String file) throws IOException, FileNotFoundException, ClassNotFoundException{}
+  public void open(String file) throws IOException, FileNotFoundException, ClassNotFoundException{
+    //open file
+
+  }
 
   public int mostrarData(){
     return _library.mostrarData();
@@ -70,23 +73,19 @@ public class LibraryManager {
     _library.registarUtente(nome, email);
   }
 
-  public void mostrarUtente(int id){
-    _library.mostrarUtente(id);
+  public String mostrarUtente(int id){
+    return _library.mostrarUtente(id);
   }
 
   public void mostrarUtentes(){
     _library.mostrarUtentes();
   }
 
-  public void mostrarNotificacao(int iDNotificacao){
-    //Não necessario
+  public void verificaUtentes(){
+    _library.verificaUtentes();
   }
 
   public void pagarMulta(){}
-
-  /*public void registarObra(int exemplares, String titulo, int preco, Categoria categoria){
-    _obras.add(new Obra(_nObras++,titulo))
-  }*/
 
   public void mostrarObra(int obraID){
     _library.mostrarObra(obraID);

@@ -28,6 +28,7 @@ public class DoAdvanceDate extends Command<LibraryManager> {
   public final void execute() {
     _form.parse();
     _receiver.avançarData(_tempo.value());
+    _receiver.verificaUtentes();
   }
   
 }

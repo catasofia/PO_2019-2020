@@ -21,7 +21,8 @@ public class DoDisplayDate extends Command<LibraryManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    System.out.println(Message.currentDate(_receiver.mostrarData()));
+    _display.addLine(Message.currentDate(_receiver.mostrarData()));
+    _display.display();
   }
   
 }
