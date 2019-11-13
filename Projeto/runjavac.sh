@@ -9,6 +9,7 @@ javac -cp po-uilib.jar:. `find m19 -name "*.java"`
 #rm -rf `find m19 -name "*.class"`
 for x in tests/*.in; do
     NUM=$[$NUM+1]
+    echo $x;
     if [ -e ${x%.in}.import ]; then
         java -cp :po-uilib.jar:. -Dimport=${x%.in}.import -Din=$x -Dout=${x%.in}.outhyp m19.app.App;
     else

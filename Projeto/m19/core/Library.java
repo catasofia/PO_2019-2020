@@ -77,12 +77,10 @@ public class Library implements Serializable {
   }
   
   protected Utente obterUtente(int id) {
-    for (Utente u: _utentes){
-        if (u.obterIDUtente() == id){
-            return u;
-        }
-    }
-    return null;
+    if(id<_nUtentes)
+      return _utentes.get(id);
+    else return null;
+    
 }
 
   protected String mostrarObra(int id) throws NoSuchWorkException{

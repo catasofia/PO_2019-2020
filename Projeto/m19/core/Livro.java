@@ -18,8 +18,8 @@ public class Livro extends Obra{
     return _iSBN;
   }
   protected String mostrarObra(){
-    return super.obterID()+" - "+super.obterExemlaresDisponiveis()+" de "+super.obterExemplares()+" - Livro - "+
-    super.obterTitulo()+" - "+super.obterPreco()+" - "+super.obterCategoria()+" - "+
-    _autor+" - "+_iSBN;
+    return super.obterID()+" - "+super.obterExemlaresDisponiveis()+" de "+
+    super.obterExemplares()+" - Livro - "+super.obterTitulo()+" - "+super.obterPreco()+
+    " - "+super.obterCategoria().getCategoria()+" - "+_autor+" - "+_iSBN+"\n";
   }
 }

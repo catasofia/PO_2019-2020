@@ -60,13 +60,9 @@ public abstract class Obra{
     _exemplares = nExemplares;
   }
 
-  /*abstract*/ protected String mostrarObra(){
-    String aux = _idObra + " - " + _exemplaresDisponiveis +"de" + _exemplares + " - " 
-    /*+ tipo*/  + " - " + _titulo + " - " + _preco + " - " + _categoria /*+ infor adicional*/ ;
-    return aux;
-  }
+  abstract protected String mostrarObra();
 
-  protected boolean verificaDisponibilidade(){return true;}
+  protected boolean verificaDisponibilidade(){return _exemplaresDisponiveis!=0;}
 
   protected void pesquisaTermo(String termo){};
 
