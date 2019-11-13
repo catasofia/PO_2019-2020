@@ -94,8 +94,9 @@ public class Library implements Serializable {
 
   protected String mostrarUtentes(){
     String a="";
+    List<Utente> utentes = new ArrayList<>(_utentes); 
 
-    Collections.sort(_utentes, new Comparator<Utente>() {
+    Collections.sort(utentes, new Comparator<Utente>() {
         @Override
         public int compare(Utente o1, Utente o2) {
           return o1.obterNome().compareTo(o2.obterNome());
@@ -103,7 +104,7 @@ public class Library implements Serializable {
       });
 
 
-    for (Utente utente:_utentes){
+    for (Utente utente:utentes){
       a += utente.mostrarUtente() + "\n"; //FALTAM COISAS
     }
     
