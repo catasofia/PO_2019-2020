@@ -42,7 +42,7 @@ public class Pontuacao implements Serializable{
 
     protected String mostrarPontuacao(){
         String aux=_classificacao + " - ";
-        if (_situacao==true) aux+="ACTIVO";
+        if (_situacao==true) aux+="ACTIVO\n";
         else aux+= "SUSPENSO - EUR - "+_multa+"\n";
         return aux;
     }

@@ -1,9 +1,6 @@
 package m19.core;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Arrays;
-import java.util.List;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.*;
@@ -40,12 +37,11 @@ public class Library implements Serializable {
     _nUtentes = 0;
     _nObras = 0;
     _tempo = new Tempo();
-    _utentes = new HashMap<Integer, Utente>();
-    _requisicoes = new HashMap<Integer, Requisicoes>();
-    _obras = new HashMap<Integer, Obra>();
+    _utentes = new LinkedHashMap<>();
+    _requisicoes = new LinkedHashMap<>();
+    _obras = new LinkedHashMap<>();
   }
 
-  // FIXME define methods
   protected int mostrarData(){
     return _tempo.obterDia();
   }
@@ -72,10 +68,8 @@ public class Library implements Serializable {
   }
 
   protected Obra obterObra(int id){
-    for(Obra o: _obras.keyset()){
-      if(o.obterID() == id){
-        return o;
-      }
+    if(id<_nObras){
+      return _obras.get(id);
     }
     return null;
   }
@@ -88,49 +82,48 @@ public class Library implements Serializable {
 }
 
   protected String mostrarObra(int id) throws NoSuchWorkException{
-    /*Obra o = obterObra(id);
+    Obra o = obterObra(id);
     if (o != null)
-      return _obras.get(id).mostrarObra();
+      return o.mostrarObra();
     else
-      throw new NoSuchWorkException(id); */return "";
+      throw new NoSuchWorkException(id);
   }
 
   protected String mostrarUtente(int id) throws NoSuchUserException{
     Utente u = obterUtente(id);
     if(u != null)
-      return _utentes.get(id).mostrarUtente(); //FALTAM COISAS
+      return u.mostrarUtente(); //FALTAM COISAS
     else 
       throw new NoSuchUserException(id);
   }
 
 
   protected String mostrarUtentes(){
-    /*String a="";
-    List<Utente> utentes = new ArrayList<>(_utentes); 
+    String a="";
+    List<Utente> utentes = new ArrayList<>(_utentes.values());
 
     Collections.sort(utentes, new Comparator<Utente>() {
-        @Override
-        public int compare(Utente o1, Utente o2) {
-          return o1.obterNome().compareTo(o2.obterNome());
-        }
-      });
-
-
-    for (Utente utente:utentes){
-      a += utente.mostrarUtente() + "\n"; //FALTAM COISAS
-    }
-    
-    return a;*/return "";
+      @Override
+      public int compare(Utente o1, Utente o2) {
+        return o1.obterNome().compareTo(o2.obterNome());
+      }
+    });
+  
+    for (Utente utente:utentes)
+      a+= utente.mostrarUtente();
+    return a;
   }
 
   protected void pagarMulta(){}
 
   
   protected String mostrarObras(){
-    /*String a="";
-    for (Obra obra:_obras)
+    String a="";
+    Collection<Obra> values = _obras.values();
+    for (Obra obra : values) {
       a+=obra.mostrarObra();
-    return a;*/return "";
+    }
+    return a;
   }
 
   protected void efetuaPesquisa(){}
