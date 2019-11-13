@@ -1,7 +1,7 @@
 package m19.core;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Arrays;
 import java.util.List;
 import java.io.FileNotFoundException;
@@ -32,17 +32,17 @@ public class Library implements Serializable {
   private int _nUtentes;
   private int _nObras;
   private Tempo _tempo;
-  private List<Utente> _utentes;
-  private List<Requisicoes> _requisicoes;
-  private List<Obra> _obras;
+  private HashMap<Integer, Utente> _utentes;
+  private HashMap<Integer, Requisicoes> _requisicoes;
+  private HashMap<Integer, Obra> _obras;
 
   public Library(){
     _nUtentes = 0;
     _nObras = 0;
     _tempo = new Tempo();
-    _utentes = new ArrayList<Utente>();
-    _requisicoes = new ArrayList<Requisicoes>();
-    _obras = new ArrayList<Obra>();
+    _utentes = new HashMap<Integer, Utente>();
+    _requisicoes = new HashMap<Integer, Requisicoes>();
+    _obras = new HashMap<Integer, Obra>();
   }
 
   // FIXME define methods
@@ -58,21 +58,21 @@ public class Library implements Serializable {
   }
 
   protected void registarUtente(String nome, String email){
-    _utentes.add(new Utente(_nUtentes++,nome, email));
+    _utentes.put(_nUtentes,new Utente(_nUtentes++,nome, email));
   }
   
   protected void registarLivro(String titulo, String autor, int preco, 
   Categoria cat, String iSBN,int exemplares){
-    _obras.add(new Livro(_nObras++, titulo, autor, preco, cat, iSBN, exemplares));
+    _obras.put(_nObras, new Livro(_nObras++, titulo, autor, preco, cat, iSBN, exemplares));
   }
 
   protected void registarDVD(String titulo, String realizador, int preco, 
   Categoria cat, String numeroIGAC,int exemplares){
-    _obras.add(new DVD(_nObras++, titulo, realizador, preco, cat, numeroIGAC, exemplares));
+    _obras.put(_nObras, new DVD(_nObras++, titulo, realizador, preco, cat, numeroIGAC, exemplares));
   }
 
   protected Obra obterObra(int id){
-    for(Obra o: _obras){
+    for(Obra o: _obras.keyset()){
       if(o.obterID() == id){
         return o;
       }
@@ -88,11 +88,11 @@ public class Library implements Serializable {
 }
 
   protected String mostrarObra(int id) throws NoSuchWorkException{
-    Obra o = obterObra(id);
+    /*Obra o = obterObra(id);
     if (o != null)
       return _obras.get(id).mostrarObra();
     else
-      throw new NoSuchWorkException(id); 
+      throw new NoSuchWorkException(id); */return "";
   }
 
   protected String mostrarUtente(int id) throws NoSuchUserException{
@@ -105,7 +105,7 @@ public class Library implements Serializable {
 
 
   protected String mostrarUtentes(){
-    String a="";
+    /*String a="";
     List<Utente> utentes = new ArrayList<>(_utentes); 
 
     Collections.sort(utentes, new Comparator<Utente>() {
@@ -120,29 +120,24 @@ public class Library implements Serializable {
       a += utente.mostrarUtente() + "\n"; //FALTAM COISAS
     }
     
-    return a;
+    return a;*/return "";
   }
 
   protected void pagarMulta(){}
 
-  protected void registarObra(Obra obra){
-    _obras.add(obra);
-  }
-
-
-
+  
   protected String mostrarObras(){
-    String a="";
+    /*String a="";
     for (Obra obra:_obras)
       a+=obra.mostrarObra();
-    return a;
+    return a;*/return "";
   }
 
   protected void efetuaPesquisa(){}
 
   protected void verificaUtentes(){
-    for(Utente i : _utentes)
-      i.verificaUtente();
+    /*for(Utente i : _utentes)
+      i.verificaUtente();*/
   }
 
   /*+requisitarObra(iDUtente: int, iDObra: int) : void
