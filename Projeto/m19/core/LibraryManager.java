@@ -100,14 +100,6 @@ public class LibraryManager implements Serializable{
 
   public void efetuaPesquisa(){}
 
-  /*+requisitarObra(iDUtente: int, iDObra: int) : void
-  +devolverObra(iDUtente: int, iDObra: int) : void
-*/
-
-
-
-
-
 
 
   /**

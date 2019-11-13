@@ -42,13 +42,7 @@ public class Library implements Serializable {
     _obras = new LinkedHashMap<>();
   }
 
-  protected int mostrarData(){
-    return _tempo.obterDia();
-  }
-  protected void avançarData(int tempo){
-    _tempo.alteraDia(tempo);
-  }
-
+  //==================== Utente ====================
   protected int totalUtentes(){
     return _nUtentes;
   }
@@ -56,47 +50,17 @@ public class Library implements Serializable {
   protected void registarUtente(String nome, String email){
     _utentes.put(_nUtentes,new Utente(_nUtentes++,nome, email));
   }
-  
-  protected void registarLivro(String titulo, String autor, int preco, 
-  Categoria cat, String iSBN,int exemplares){
-    _obras.put(_nObras, new Livro(_nObras++, titulo, autor, preco, cat, iSBN, exemplares));
-  }
 
-  protected void registarDVD(String titulo, String realizador, int preco, 
-  Categoria cat, String numeroIGAC,int exemplares){
-    _obras.put(_nObras, new DVD(_nObras++, titulo, realizador, preco, cat, numeroIGAC, exemplares));
-  }
-
-  protected Obra obterObra(int id){
-    if(id<_nObras){
-      return _obras.get(id);
-    }
-    return null;
-  }
-  
   protected Utente obterUtente(int id) {
-    if(id<_nUtentes)
-      return _utentes.get(id);
+    if (id<_nUtentes) return _utentes.get(id);
     else return null;
-    
-}
-
-  protected String mostrarObra(int id) throws NoSuchWorkException{
-    Obra o = obterObra(id);
-    if (o != null)
-      return o.mostrarObra();
-    else
-      throw new NoSuchWorkException(id);
   }
 
   protected String mostrarUtente(int id) throws NoSuchUserException{
     Utente u = obterUtente(id);
-    if(u != null)
-      return u.mostrarUtente(); //FALTAM COISAS
-    else 
-      throw new NoSuchUserException(id);
+    if(u != null) return u.mostrarUtente(); 
+    else throw new NoSuchUserException(id);
   }
-
 
   protected String mostrarUtentes(){
     String a="";
@@ -114,32 +78,57 @@ public class Library implements Serializable {
     return a;
   }
 
-  protected void pagarMulta(){}
-
-  
-  protected String mostrarObras(){
-    String a="";
-    Collection<Obra> values = _obras.values();
-    for (Obra obra : values) {
-      a+=obra.mostrarObra();
-    }
-    return a;
-  }
-
-  protected void efetuaPesquisa(){}
-
   protected void verificaUtentes(){
     /*for(Utente i : _utentes)
       i.verificaUtente();*/
   }
 
-  /*+requisitarObra(iDUtente: int, iDObra: int) : void
-  +devolverObra(iDUtente: int, iDObra: int) : void
-*/
+  protected void pagarMulta(){}
 
 
+  //==================== Obra ====================
+  protected void registarLivro(String titulo, String autor, int preco, 
+  Categoria cat, String iSBN,int exemplares){
+    _obras.put(_nObras, new Livro(_nObras++, titulo, autor, preco, cat, iSBN, exemplares));
+  }
+
+  protected void registarDVD(String titulo, String realizador, int preco, 
+  Categoria cat, String numeroIGAC,int exemplares){
+    _obras.put(_nObras, new DVD(_nObras++, titulo, realizador, preco, cat, numeroIGAC, exemplares));
+  }
+
+  protected Obra obterObra(int id){
+    if (id<_nObras) return _obras.get(id);
+    else return null;
+  }
+
+  protected String mostrarObra(int id) throws NoSuchWorkException{
+    Obra o = obterObra(id);
+    if (o != null)
+      return o.mostrarObra();
+    else
+      throw new NoSuchWorkException(id);
+  }
+
+  protected String mostrarObras(){
+    String a="";
+    Collection<Obra> values = _obras.values();
+    for (Obra obra : values)
+      a+=obra.mostrarObra();
+    return a;
+  }
+
+  protected void efetuaPesquisa(){}
 
 
+  //==================== Tempo ====================
+  protected int mostrarData(){
+    return _tempo.obterDia();
+  }
+
+  protected void avançarData(int tempo){
+    _tempo.alteraDia(tempo);
+  }
 
 
   /**
@@ -154,8 +143,6 @@ public class Library implements Serializable {
   void importFile(String filename) throws BadEntrySpecificationException, IOException {
     Parser parse=new Parser(this);
     parse.parseFile(filename);
-    
-    // FIXME implement method
   }
 }
 
