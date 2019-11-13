@@ -5,7 +5,7 @@ import java.io.IOexception;
 import java.io.FileReader;
 import java.io.Reader;
 
-import m19.core.exception.BadEntrySpecificationEception;
+import m19.core.exception.BadEntrySpecificationException;
 
 public class Parser {
 
@@ -40,14 +40,14 @@ public class Parser {
         break;
         
       default:
-        throw new BadEntrySpecificationEception("Invalid type " + components[0] +
+        throw new BadEntrySpecificationException("Invalid type " + components[0] +
                                                 " in line " + line);
     }
   }
 
   private void parseDVD(String[] components, String line) throws BadEntrySpecificationException {
     if (components.length != 7)
-      throw new throws BadEntrySpecificationEception("Wrong number of fields (6) in " + line);
+      throw new BadEntrySpecificationException("Wrong number of fields (6) in " + line);
     Dvd dvd = new Dvd(components[1], components[2], Integer.parseInt(components[3]),
                       Category.valueOf(components[4]), Integer.parseInt(components[5]),
                       Integer.parseInt(components[6]));
@@ -57,7 +57,7 @@ public class Parser {
 
   private void parseBook(String[] components, String line) throws BadEntrySpecificationException {
     if (components.length != 7)
-      throw new throws BadEntrySpecificationEception("Wrong number of fields (6) in " + line);
+      throw new throws BadEntrySpecificationException("Wrong number of fields (6) in " + line);
 
     Book book = new Book(components[1], components[2], Integer.parseInt(components[3]),
                          Category.valueOf(components[4]), Integer.parseInt(components[5]),
@@ -68,7 +68,7 @@ public class Parser {
 
   private void parseUser(String[] components, String line) throws BadEntrySpecificationException {
     if (components.length != 3)
-      throw new throws BadEntrySpecificationEception("Wrong number of fields (2) in " + line);
+      throw new throws BadEntrySpecificationException("Wrong number of fields (2) in " + line);
     User user = new User(components[1], components[2]);
     
     // add user to _library

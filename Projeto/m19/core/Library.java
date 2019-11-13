@@ -150,25 +150,10 @@ public class Library implements Serializable {
    * @throws IOException
    */
   void importFile(String filename) throws BadEntrySpecificationException, IOException {
-    try (FileReader reader = new FileReader(filename);
-      BufferedReader br = new BufferedReader(reader)){
-      
-      String line=br.readLine();
+    Parser parse;
+    parse.parseFile(filename);
+    reader.close();
 
-      while ( line!= null) {
-        String[] parts=line.split(":");
-        if (parts[0].equals("USER"))
-          registarUtente(parts[1], parts[2]);
-        else if (parts[0].equals("BOOK"))
-          registarObra(new Livro(_nObras++,parts[1],parts[2],Integer.parseInt(parts[3]),
-          parts[4],parts[5],Integer.parseInt(parts[6])));
-        line = br.readLine();
-      }
-      reader.close();
-
-    } catch (IOException e) {
-      System.err.format("IOException: %s%n", e);
-    }
     // FIXME implement method
   }
 }
