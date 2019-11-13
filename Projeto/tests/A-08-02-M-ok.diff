@@ -1,24 +1,7 @@
 *** tests/A-08-02-M-ok.out	2019-10-28 12:43:38.000000000 +0000
---- tests/A-08-02-M-ok.outhyp	2019-11-13 00:12:22.007594729 +0000
+--- tests/A-08-02-M-ok.outhyp	2019-11-13 01:42:51.983594729 +0000
 ***************
-*** 14,20 ****
-  4 - Mostrar notificações de utente
-  5 - Saldar multa de utente
-  0 - Sair
-! Escolha uma opção: Introduza o nome do utente: Introduza o endereço de correio do utente: Novo utente criado com o número 3.
-  Menu de Gestão de Utentes
-  1 - Registar utente
-  2 - Mostrar utente
---- 14,20 ----
-  4 - Mostrar notificações de utente
-  5 - Saldar multa de utente
-  0 - Sair
-! Escolha uma opção: Introduza o nome do utente: Introduza o endereço de correio do utente: Novo utente criado com o número 0.
-  Menu de Gestão de Utentes
-  1 - Registar utente
-  2 - Mostrar utente
-***************
-*** 22,32 ****
+*** 22,31 ****
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
@@ -26,15 +9,14 @@
 ! 1 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
 ! 2 - Obi-Wan Kenobi - obiwan@jedi.org - NORMAL - ACTIVO
 ! 3 - R2D2 - r2d2@irobots.com - NORMAL - ACTIVO
-! Menu de Gestão de Utentes
+  Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
-  3 - Listar utentes
 --- 22,28 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: Menu de Gestão de Utentes
+! Escolha uma opção: 0 - Darth Vader - darth@dark.force.com - NORMAL - ACTIVO1 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO2 - Obi-Wan Kenobi - obiwan@jedi.org - NORMAL - ACTIVO3 - R2D2 - r2d2@irobots.com - NORMAL - ACTIVO
+  Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
-  3 - Listar utentes

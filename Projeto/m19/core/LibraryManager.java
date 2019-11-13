@@ -77,8 +77,8 @@ public class LibraryManager {
     return _library.mostrarUtente(id);
   }
 
-  public void mostrarUtentes(){
-    _library.mostrarUtentes();
+  public String mostrarUtentes(){
+    return _library.mostrarUtentes();
   }
 
   public void verificaUtentes(){
@@ -91,8 +91,8 @@ public class LibraryManager {
     _library.mostrarObra(obraID);
   }
 
-  public void mostrarObras(){
-    _library.mostrarObras();
+  public String mostrarObras(){
+    return _library.mostrarObras();
   }
 
   public void efetuaPesquisa(){}

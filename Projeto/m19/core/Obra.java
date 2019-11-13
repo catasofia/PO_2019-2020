@@ -10,16 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Obra{
+public abstract class Obra{
   private int _idObra;
   private int _exemplares;
+  private int _exemplaresDisponiveis;
   private String _titulo;
   private int _preco;
-  private Categoria _categoria;
+  private String _categoria;
 
-  public Obra(int idObra,int exemplares, String titulo, int preco, Categoria categoria){
+  public Obra(int idObra,int exemplares, String titulo, int preco, String categoria){
     _idObra=idObra;
     _exemplares=exemplares;
+    _exemplaresDisponiveis=exemplares;
     _titulo=titulo;
     _preco=preco;
     _categoria=categoria;
@@ -37,6 +39,19 @@ public class Obra{
     return _preco;
   }
 
+  protected int obterID(){
+    return _idObra;
+  }
+
+  protected int obterExemlaresDisponiveis(){
+    return _exemplaresDisponiveis;
+  }
+
+  protected String obterCategoria(){
+    if (_categoria.equals("FICTION")) return "Ficção";
+    return "";
+  }
+  
   protected boolean existemExemplares(){
     return (_exemplares != 0);
   }
@@ -45,9 +60,7 @@ public class Obra{
     _exemplares = nExemplares;
   }
 
-  protected void mostrarObra(){
-    System.out.println(_idObra+" "+_exemplares+" "+_categoria+" "+_titulo+" "+_preco+" "+_categoria+" ");
-  }
+  abstract protected String mostrarObra();
 
   protected boolean verificaDisponibilidade(){return true;}
 

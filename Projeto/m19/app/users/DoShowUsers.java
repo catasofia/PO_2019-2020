@@ -21,7 +21,8 @@ public class DoShowUsers extends Command<LibraryManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    _receiver.mostrarUtentes();
+    _display.addLine(_receiver.mostrarUtentes());
+    _display.display();
   }
   
 }

@@ -21,6 +21,7 @@ public class DoDisplayWorks extends Command<LibraryManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    // FIXME implement command
+    _display.addLine(_receiver.mostrarObras());
+    _display.display();
   }
 }

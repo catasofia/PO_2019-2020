@@ -7,6 +7,8 @@ import java.util.List;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.*;
+import java.io.FileReader;
+import java.io.BufferedReader;
 
 import m19.core.exception.MissingFileAssociationException;
 import m19.core.exception.BadEntrySpecificationException;
@@ -57,31 +59,39 @@ public class Library implements Serializable {
     return _utentes.get(id).mostrarUtente(); //FALTAM COISAS
   }
 
-  protected void mostrarUtentes(){
-    List<String> lst = new ArrayList<>();
+  protected String mostrarUtentes(){
+    String a="";
+
     Collections.sort(_utentes, new Comparator<Utente>() {
         @Override
         public int compare(Utente o1, Utente o2) {
           return o1.obterNome().compareTo(o2.obterNome());
         }
       });
-    for (Utente utente:_utentes)
-      utente.mostrarUtente(); //FALTAM COISAS
+
+
+    for (Utente utente:_utentes){
+      a += utente.mostrarUtente(); //FALTAM COISAS
+    }
+    
+    return a;
   }
 
   protected void pagarMulta(){}
 
-  /*protected void registarObra(int exemplares, String titulo, int preco, Categoria categoria){
-    _obras.add(new Obra(_nObras++,titulo))
-  }*/
-
-  protected void mostrarObra(int obraID){
-    _obras.get(obraID).mostrarObra();
+  protected void registarObra(Obra obra){
+    _obras.add(obra);
   }
 
-  protected void mostrarObras(){
+  protected String mostrarObra(int obraID){
+    return _obras.get(obraID).mostrarObra();
+  }
+
+  protected String mostrarObras(){
+    String a="";
     for (Obra obra:_obras)
-      obra.mostrarObra();
+      a+=obra.mostrarObra();
+    return a;
   }
 
   protected void efetuaPesquisa(){}
@@ -110,7 +120,26 @@ public class Library implements Serializable {
    * @throws IOException
    */
   void importFile(String filename) throws BadEntrySpecificationException, IOException {
+    try (FileReader reader = new FileReader(filename);
+      BufferedReader br = new BufferedReader(reader)){
+      
+      String line=br.readLine();
+
+      while ( line!= null) {
+        String[] parts=line.split(":");
+        if (parts[0].equals("USER"))
+          registarUtente(parts[1], parts[2]);
+        else if (parts[0].equals("BOOK"))
+          registarObra(new Livro(_nObras++,parts[1],parts[2],Integer.parseInt(parts[3]),
+          parts[4],parts[5],Integer.parseInt(parts[6])));
+        line = br.readLine();
+      }
+      reader.close();
+
+    } catch (IOException e) {
+      System.err.format("IOException: %s%n", e);
+    }
     // FIXME implement method
   }
-
 }
+
