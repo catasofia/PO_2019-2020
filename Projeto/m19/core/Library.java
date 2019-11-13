@@ -11,6 +11,8 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 
 import m19.core.exception.MissingFileAssociationException;
+import m19.app.exception.NoSuchUserException;
+import m19.app.exception.NoSuchWorkException;
 import m19.core.exception.BadEntrySpecificationException;
 
 // FIXME import other system types
@@ -55,9 +57,40 @@ public class Library implements Serializable {
     _utentes.add(new Utente(_nUtentes++,nome, email));
   }
 
-  protected String mostrarUtente(int id){
-    return _utentes.get(id).mostrarUtente(); //FALTAM COISAS
+  protected Obra obterObra(int id){
+    for(Obra o: _obras){
+      if(o.obterID() == id){
+        return o;
+      }
+    }
+    return null;
   }
+  
+  protected Utente obterUtente(int id) {
+    for (Utente u: _utentes){
+        if (u.obterIDUtente() == id){
+            return u;
+        }
+    }
+    return null;
+}
+
+  protected String mostrarObra(int id) throws NoSuchWorkException{
+    Obra o = obterObra(id);
+    if (o != null)
+      return _obras.get(id).mostrarObra();
+    else
+      throw new NoSuchWorkException(id); 
+  }
+
+  protected String mostrarUtente(int id) throws NoSuchUserException{
+    Utente u = obterUtente(id);
+    if(u != null)
+      return _utentes.get(id).mostrarUtente(); //FALTAM COISAS
+    else 
+      throw new NoSuchUserException(id);
+  }
+
 
   protected String mostrarUtentes(){
     String a="";
@@ -81,10 +114,6 @@ public class Library implements Serializable {
 
   protected void registarObra(Obra obra){
     _obras.add(obra);
-  }
-
-  protected String mostrarObra(int obraID){
-    return _obras.get(obraID).mostrarObra();
   }
 
   protected String mostrarObras(){

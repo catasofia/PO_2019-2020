@@ -10,10 +10,10 @@ import java.io.NotSerializableException;
 import m19.core.exception.MissingFileAssociationException;
 import m19.core.exception.BadEntrySpecificationException;
 import m19.core.exception.ImportFileException;
-
 import java.io.*;
 
 import m19.app.exception.*;
+import m19.core.exception.*;
 
 // FIXME import other system types
 // FIXME import other project (core) types
@@ -76,7 +76,7 @@ public class LibraryManager {
     _library.registarUtente(nome, email);
   }
 
-  public String mostrarUtente(int id){
+  public String mostrarUtente(int id) throws NoSuchUserException{
     return _library.mostrarUtente(id);
   }
 
@@ -90,8 +90,8 @@ public class LibraryManager {
 
   public void pagarMulta(){}
 
-  public void mostrarObra(int obraID){
-    _library.mostrarObra(obraID);
+  public String mostrarObra(int obraID) throws NoSuchWorkException{
+    return _library.mostrarObra(obraID);
   }
 
   public String mostrarObras(){

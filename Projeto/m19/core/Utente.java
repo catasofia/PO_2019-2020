@@ -2,6 +2,7 @@ package m19.core;
 
 import java.io.IOException;
 
+import m19.app.exception.NoSuchUserException;
 import m19.core.Notificacao;
 import m19.core.exception.*;
 
@@ -47,6 +48,7 @@ public class Utente{
         String aux = _iDUtente + " - " + _nome + " - " + _email + " - ";
         aux += _pontuacao.mostrarPontuacao(); //FALTAM COISAS
         return aux;
+
     }
 
     protected void mostrarNotificacao(int iDNotificacao){
