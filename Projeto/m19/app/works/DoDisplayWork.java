@@ -1,5 +1,6 @@
 package m19.app.works;
 
+import m19.app.exception.NoSuchWorkException;
 import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
@@ -27,8 +28,11 @@ public class DoDisplayWork extends Command<LibraryManager> {
   @Override
   public final void execute() throws DialogException {
     // FIXME implement command
-    _form.parse();
-    _display.popup(_receiver.mostrarObra(_id.value()));
+    try{
+      _form.parse();
+      _display.popup(_receiver.mostrarObra(_id.value()));
+    } catch (NoSuchWorkException e){
+      throw new NoSuchWorkException(_id.value());
+    }
   }
-  
 }

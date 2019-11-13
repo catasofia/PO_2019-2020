@@ -1,5 +1,6 @@
 package m19.app.users;
 
+import m19.app.exception.NoSuchUserException;
 import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
@@ -24,7 +25,11 @@ public class DoShowUser extends Command<LibraryManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() throws DialogException {
-    _form.parse();
+    try{
+      _form.parse();
     _display.popup(_receiver.mostrarUtente(_id.value()));
+    } catch (NoSuchUserException e){
+      throw new NoSuchUserException(_id.value());
+    }
   }
 }
