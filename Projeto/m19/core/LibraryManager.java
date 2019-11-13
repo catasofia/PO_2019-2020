@@ -55,7 +55,10 @@ public class LibraryManager {
   
   public void open(String file) throws IOException, FileNotFoundException, ClassNotFoundException{
     //open file
-
+    ObjectInputStream novoFich = new ObjectInputStream(new FileInputStream(file));
+    Library newLibrary = (Library)novoFich.readObject();
+    novoFich.close();
+    _library = newLibrary;
   }
 
   public int mostrarData(){

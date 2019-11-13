@@ -1,5 +1,5 @@
-*** tests/A-04-03-M-ok.out	2019-10-28 12:43:38.000000000 +0000
---- tests/A-04-03-M-ok.outhyp	2019-11-13 01:42:49.975594729 +0000
+*** tests/A-04-03-M-ok.out	2019-11-13 10:10:45.280583483 +0000
+--- tests/A-04-03-M-ok.outhyp	2019-11-13 10:13:20.928023032 +0000
 ***************
 *** 12,25 ****
   2 - Mostrar todas as obras
@@ -26,7 +26,7 @@
   3 - Efectuar pesquisa de termos
 ***************
 *** 28,33 ****
---- 21,35 ----
+--- 21,36 ----
   1 - Abrir dados
   2 - Guardar dados
   3 - Ver data
@@ -35,7 +35,8 @@
 + 6 - Menu de gestão de obras
 + 7 - Menu de gestão de requisições
 + 0 - Sair
-+ Escolha uma opção: Ficheiro a abrir: Menu Principal
++ Escolha uma opção: Ficheiro a abrir: Abrir dados: Operação inválida: O ficheiro '5' não existe.
++ Menu Principal
 + 1 - Abrir dados
 + 2 - Guardar dados
 + 3 - Ver data
