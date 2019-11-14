@@ -11,7 +11,8 @@ public enum Category{
     _category = value;
   }
 
-  protected String getCategory() {
+  @Override
+  public String toString() {
       return _category;
   }
 }
