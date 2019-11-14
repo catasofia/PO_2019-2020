@@ -43,8 +43,10 @@ public class Library implements Serializable {
   }
 
   //==================== Utente ====================
-  protected void registarUtente(String nome, String email){
-    _utentes.put(_nextUserID,new Utente(_nextUserID++,nome, email));
+  protected void registarUtente(String nome, String email) throws UserRegistFailedException{
+    if(!nome.isEmpty() && !email.isEmpty())
+      _utentes.put(_nextUserID,new Utente(_nextUserID++,nome, email));
+    else throw new UserRegistFailedException(nome, email);
   }
 
   protected int getNextUtente(){
@@ -139,7 +141,7 @@ public class Library implements Serializable {
    * @throws BadEntrySpecificationException
    * @throws IOException
    */
-  void importFile(String filename) throws BadEntrySpecificationException, IOException {
+  void importFile(String filename) throws BadEntrySpecificationException, IOException, UserRegistFailedException {
     Parser parse=new Parser(this);
     parse.parseFile(filename);
   }

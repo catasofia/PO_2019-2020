@@ -36,19 +36,11 @@ public class LibraryManager implements Serializable{
   public void setFileName(String file){
     _file=file;
   }
-
-  
-  public void open(String file) throws IOException, FileNotFoundException, ClassNotFoundException{
-    ObjectInputStream novoFich = new ObjectInputStream(new FileInputStream(file));
-    Library newLibrary = (Library)novoFich.readObject();
-    novoFich.close();
-    _library = newLibrary;
-  }
-
   
   public int mostrarData(){
     return _library.mostrarData();
   }
+
   public void avançarData(int tempo){
     _library.avançarData(tempo);
   }
@@ -57,7 +49,7 @@ public class LibraryManager implements Serializable{
     return _library.getNextUtente();
   }
 
-  public void registarUtente(String nome, String email){
+  public void registarUtente(String nome, String email) throws UserRegistFailedException{
     _library.registarUtente(nome, email);
   }
 
@@ -95,7 +87,7 @@ public class LibraryManager implements Serializable{
      */
   public void save() throws FileNotFoundException, IOException {
     try{
-    saveAs(_file);
+      saveAs(_file);
     } /*catch (FileNotFoundException e ) {
       throw new FileNotFoundException(filename);
     }*/ catch (IOException e) {
@@ -140,7 +132,10 @@ public class LibraryManager implements Serializable{
    * @throws ClassNotFoundException 
    */
   public void load(String filename) throws FileNotFoundException, IOException, ClassNotFoundException {
-    // FIXME implement method
+    ObjectInputStream novoFich = new ObjectInputStream(new FileInputStream(filename));
+    Library newLibrary = (Library)novoFich.readObject();
+    novoFich.close();
+    _library = newLibrary;
   }
 
   /**
@@ -149,7 +144,7 @@ public class LibraryManager implements Serializable{
    * @param datafile the filename of the file with the textual represntation of the state of this application.
    * @throws ImportFileException if it happens some error during the parsing of the textual representation.
    */
-  public void importFile(String datafile) throws ImportFileException {
+  public void importFile(String datafile) throws ImportFileException{
     try {
       _library.importFile(datafile);
     } catch (IOException | BadEntrySpecificationException e) {

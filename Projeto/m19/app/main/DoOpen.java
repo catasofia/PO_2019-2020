@@ -39,7 +39,7 @@ public class DoOpen extends Command<LibraryManager> {
     try {
       _form.parse();    //FUI EU QUE PUS
       _receiver.setFileName(_file.value());        //FUI EU QUE PUS
-      _receiver.open(_file.value());    //FUI EU QUE PUS
+      _receiver.load(_file.value());    //FUI EU QUE PUS
 
       /*List<String> lista = _receiver.readAllNotification();
       for(String s: lista){
@@ -54,5 +54,4 @@ public class DoOpen extends Command<LibraryManager> {
       e.printStackTrace();
     }
   }
-
 }

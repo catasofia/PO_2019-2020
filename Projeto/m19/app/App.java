@@ -4,6 +4,7 @@ import static pt.tecnico.po.ui.Dialog.IO;
 
 import m19.core.LibraryManager;
 import m19.core.exception.ImportFileException;
+import m19.core.exception.UserRegistFailedException;
 
 /**
  * Main driver for the library management application.
@@ -12,7 +13,7 @@ public class App {
   /**
    * @param args
    */
-  public static void main(String[] args) {
+  public static void main(String[] args){
     LibraryManager mgr = new LibraryManager();
 
     String datafile = System.getProperty("import"); //$NON-NLS-1$
