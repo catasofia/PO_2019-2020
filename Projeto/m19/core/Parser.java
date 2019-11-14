@@ -6,7 +6,9 @@ import java.io.FileReader;
 import java.io.Reader;
 import java.io.Serializable;
 
+import m19.app.exception.UserRegistrationFailedException;
 import m19.core.exception.BadEntrySpecificationException;
+import m19.core.exception.UserRegistFailedException;
 
 public class Parser{
 
@@ -16,7 +18,7 @@ public class Parser{
     _library = lib;
   }
 
-  void parseFile(String filename) throws IOException, BadEntrySpecificationException {
+  void parseFile(String filename) throws IOException, BadEntrySpecificationException{
     try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
       String line;
 
@@ -25,14 +27,13 @@ public class Parser{
     }
   }
 
-  private void parseLine(String line) throws BadEntrySpecificationException {
+  private void parseLine(String line) throws BadEntrySpecificationException{
     String[] components = line.split(":");
 
     switch(components[0]) {
       case "DVD":
         parseDVD(components, line);
         break;
-
       case "BOOK":
         parseBook(components, line);
         break;
@@ -71,11 +72,13 @@ public class Parser{
     // add book to _library
   }
 
-  private void parseUser(String[] components, String line) throws BadEntrySpecificationException {
+  private void parseUser(String[] components, String line) throws BadEntrySpecificationException{
     if (components.length != 3)
       throw new BadEntrySpecificationException("Wrong number of fields (2) in " + line);
     //Utente user = new Utente(_library.totalUtentes(),components[1], components[2]);
-    _library.registarUtente(components[1], components[2]);
+      _library.registarUtente(components[1], components[2]);
+    
+    
     // add user to _library
     // Pode ser necessário ter um try-catch adicional neste método
   }

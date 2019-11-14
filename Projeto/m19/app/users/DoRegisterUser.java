@@ -1,6 +1,7 @@
 package m19.app.users;
 
 import m19.core.LibraryManager;
+import m19.core.exception.UserRegistFailedException;
 import m19.app.exception.UserRegistrationFailedException;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
@@ -35,6 +36,13 @@ public class DoRegisterUser extends Command<LibraryManager> {
       _display.display();
     }
     else throw new UserRegistrationFailedException(_nome.value(), _email.value());
+
+    /*try{
+      _receiver.registarUtente(_nome.value(), _email.value());
+      _display.addLine(Message.userRegistrationSuccessful(_receiver.totalUtentes() - 1));
+    } catch (UserRegistFailedException e){
+      throw new UserRegistrationFailedException(e.getName(), e.getEmail());
+    }*/
   
   }
 }
