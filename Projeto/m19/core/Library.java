@@ -26,33 +26,33 @@ public class Library implements Serializable {
 
   /** Serial number for serialization. */
   private static final long serialVersionUID = 201901101348L;
-  private int _nUtentes;
-  private int _nObras;
+  private int _nextUserID;
+  private int _nextObraID;
   private Tempo _tempo;
   private HashMap<Integer, Utente> _utentes;
   private HashMap<Integer, Requisicoes> _requisicoes;
   private HashMap<Integer, Obra> _obras;
 
   public Library(){
-    _nUtentes = 0;
-    _nObras = 0;
+    _nextUserID = 0;
+    _nextObraID = 0;
     _tempo = new Tempo();
-    _utentes = new LinkedHashMap<>();
-    _requisicoes = new LinkedHashMap<>();
-    _obras = new LinkedHashMap<>();
+    _utentes = new HashMap<>();
+    _requisicoes = new HashMap<>();
+    _obras = new HashMap<>();
   }
 
   //==================== Utente ====================
-  protected int totalUtentes(){
-    return _nUtentes;
-  }
-
   protected void registarUtente(String nome, String email){
-    _utentes.put(_nUtentes,new Utente(_nUtentes++,nome, email));
+    _utentes.put(_nextUserID,new Utente(_nextUserID++,nome, email));
   }
 
+  protected int getNextUtente(){
+    return _nextUserID;
+  }
+  
   protected Utente obterUtente(int id) {
-    if (id<_nUtentes) return _utentes.get(id);
+    if (id<_nextUserID) return _utentes.get(id);
     else return null;
   }
 
@@ -89,16 +89,16 @@ public class Library implements Serializable {
   //==================== Obra ====================
   protected void registarLivro(String titulo, String autor, int preco, 
   Categoria cat, String iSBN,int exemplares){
-    _obras.put(_nObras, new Livro(_nObras++, titulo, autor, preco, cat, iSBN, exemplares));
+    _obras.put(_nextObraID, new Livro(_nextObraID++, titulo, autor, preco, cat, iSBN, exemplares));
   }
 
   protected void registarDVD(String titulo, String realizador, int preco, 
   Categoria cat, String numeroIGAC,int exemplares){
-    _obras.put(_nObras, new DVD(_nObras++, titulo, realizador, preco, cat, numeroIGAC, exemplares));
+    _obras.put(_nextObraID, new DVD(_nextObraID++, titulo, realizador, preco, cat, numeroIGAC, exemplares));
   }
 
   protected Obra obterObra(int id){
-    if (id<_nObras) return _obras.get(id);
+    if (id<_nextObraID) return _obras.get(id);
     else return null;
   }
 
@@ -112,9 +112,8 @@ public class Library implements Serializable {
 
   protected String mostrarObras(){
     String a="";
-    Collection<Obra> values = _obras.values();
-    for (Obra obra : values)
-      a+=obra.mostrarObra();
+    for (int i=0;i<_nextObraID;i++)
+      if (obterObra(i)!=null) a+=_obras.get(i).mostrarObra();
     return a;
   }
 

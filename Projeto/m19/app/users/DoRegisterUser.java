@@ -32,7 +32,7 @@ public class DoRegisterUser extends Command<LibraryManager> {
     _form.parse();
     if (!_nome.value().isEmpty() && !_email.value().isEmpty()){ 
       _receiver.registarUtente(_nome.value(),_email.value());
-      _display.addLine(Message.userRegistrationSuccessful(_receiver.totalUtentes()-1));
+      _display.addLine(Message.userRegistrationSuccessful(_receiver.nextUtente()-1));
       _display.display();
     }
     else throw new UserRegistrationFailedException(_nome.value(), _email.value());

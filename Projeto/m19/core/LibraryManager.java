@@ -52,9 +52,9 @@ public class LibraryManager implements Serializable{
   public void avançarData(int tempo){
     _library.avançarData(tempo);
   }
-  
-  public int totalUtentes(){
-    return _library.totalUtentes();
+
+  public int nextUtente(){
+    return _library.getNextUtente();
   }
 
   public void registarUtente(String nome, String email){
