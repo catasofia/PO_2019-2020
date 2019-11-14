@@ -1,5 +1,6 @@
 package m19.app.exception;
 
+
 import pt.tecnico.po.ui.DialogException;
 
 /**
@@ -27,5 +28,7 @@ public class NoSuchUserException extends DialogException {
   public String getMessage() {
     return Message.noSuchUser(_id);
   }
+
+
 
 }

@@ -5,6 +5,7 @@ import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
+import m19.core.exception.NoSuchWorkIdException;
 // FIXME import other core concepts
 // FIXME import ui concepts
 
@@ -31,8 +32,8 @@ public class DoDisplayWork extends Command<LibraryManager> {
     try{
       _form.parse();
       _display.popup(_receiver.mostrarObra(_id.value()));
-    } catch (NoSuchWorkException e){
-      throw new NoSuchWorkException(_id.value());
+    } catch (NoSuchWorkIdException e){
+      throw new NoSuchWorkException(e.getId());
     }
   }
 }

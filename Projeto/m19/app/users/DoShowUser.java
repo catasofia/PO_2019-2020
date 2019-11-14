@@ -5,6 +5,7 @@ import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
 import pt.tecnico.po.ui.DialogException;
+import m19.core.exception.NoSuchUserIdException;
 // FIXME import other core concepts
 // FIXME import other ui concepts
 
@@ -24,12 +25,12 @@ public class DoShowUser extends Command<LibraryManager> {
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
-  public final void execute() throws DialogException {
+  public final void execute() throws DialogException, NoSuchUserException {
     try{
       _form.parse();
     _display.popup(_receiver.mostrarUtente(_id.value()));
-    } catch (NoSuchUserException e){
-      throw new NoSuchUserException(_id.value());
+    } catch (NoSuchUserIdException e){
+      throw new NoSuchUserException(e.getId());
     }
   }
 }

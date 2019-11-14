@@ -76,7 +76,7 @@ public class LibraryManager implements Serializable{
     _library.registarUtente(nome, email);
   }
 
-  public String mostrarUtente(int id) throws NoSuchUserException{
+  public String mostrarUtente(int id) throws NoSuchUserIdException{
     return _library.mostrarUtente(id);
   }
 
@@ -90,7 +90,7 @@ public class LibraryManager implements Serializable{
 
   public void pagarMulta(){}
 
-  public String mostrarObra(int obraID) throws NoSuchWorkException{
+  public String mostrarObra(int obraID) throws NoSuchWorkIdException{
     return _library.mostrarObra(obraID);
   }
 

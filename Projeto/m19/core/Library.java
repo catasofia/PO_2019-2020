@@ -56,10 +56,10 @@ public class Library implements Serializable {
     else return null;
   }
 
-  protected String mostrarUtente(int id) throws NoSuchUserException{
+  protected String mostrarUtente(int id) throws NoSuchUserIdException{
     Utente u = obterUtente(id);
     if(u != null) return u.mostrarUtente(); 
-    else throw new NoSuchUserException(id);
+    else throw new NoSuchUserIdException(id);
   }
 
   protected String mostrarUtentes(){
@@ -102,12 +102,12 @@ public class Library implements Serializable {
     else return null;
   }
 
-  protected String mostrarObra(int id) throws NoSuchWorkException{
+  protected String mostrarObra(int id) throws NoSuchWorkIdException{
     Obra o = obterObra(id);
     if (o != null)
       return o.mostrarObra();
     else
-      throw new NoSuchWorkException(id);
+      throw new NoSuchWorkIdException(id);
   }
 
   protected String mostrarObras(){
