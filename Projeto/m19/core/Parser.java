@@ -81,7 +81,7 @@ public class Parser{
     } catch (UserRegistFailedException e){
       throw new UserRegistFailedException(components[1], components[2]);
     }
-
+    //_library.registarUtente(components[1], components[2]);
     
     
     // add user to _library

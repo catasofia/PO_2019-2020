@@ -147,7 +147,7 @@ public class LibraryManager implements Serializable{
   public void importFile(String datafile) throws ImportFileException{
     try {
       _library.importFile(datafile);
-    } catch (IOException | BadEntrySpecificationException e) {
+    } catch (IOException | BadEntrySpecificationException | UserRegistFailedException e) {
       throw new ImportFileException(e);
     }
   }
