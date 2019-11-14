@@ -63,6 +63,6 @@ public abstract class Work implements Serializable{
   
   abstract protected String mostrarObra();
 
-  protected void pesquisaTermo(String termo){};
+  //protected void pesquisaTermo(String termo){};
 
 }

@@ -12,16 +12,9 @@ import java.util.Comparator;
 
 import java.io.FileReader;
 import java.io.BufferedReader;
-import java.io.*;
 
 import m19.app.exception.*;
 import m19.core.exception.*;
-
-import m19.core.exception.MissingFileAssociationException;
-import m19.app.exception.NoSuchUserException;
-import m19.app.exception.NoSuchWorkException;
-import m19.core.exception.BadEntrySpecificationException;
-
 // FIXME import other system types
 // FIXME import project (core) types if needed
 
@@ -35,16 +28,16 @@ public class Library implements Serializable {
   private int _nextUserID;
   private int _nextObraID;
   private Date _date;
-  private HashMap<Integer, User> _utentes;
-  private HashMap<Integer, Request> _requisicoes;
-  private HashMap<Integer, Work> _obras;
+  private Map<Integer, User> _utentes;
+  //private HashMap<Integer, Request> _requisicoes;
+  private Map<Integer, Work> _obras;
 
   public Library(){
     _nextUserID = 0;
     _nextObraID = 0;
     _date = new Date();
     _utentes = new HashMap<>();
-    _requisicoes = new HashMap<>();
+    //_requisicoes = new HashMap<>();
     _obras = new HashMap<>();
   }
 
@@ -64,13 +57,13 @@ public class Library implements Serializable {
     else return null;
   }
 
-  protected String mostrarUtente(int id) throws NoSuchUserIdException{
+  protected String showUser(int id) throws NoSuchUserIdException{
     User u = obterUtente(id);
     if(u != null) return u.showUser(); 
     else throw new NoSuchUserIdException(id);
   }
 
-  protected String mostrarUtentes(){
+  protected String showUsers(){
     String a="";
     List<User> utentes = new ArrayList<>(_utentes.values());
 

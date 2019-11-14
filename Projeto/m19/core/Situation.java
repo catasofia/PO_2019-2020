@@ -42,7 +42,7 @@ public class Situation implements Serializable{
 
     protected String showSituation(){
         String aux=_classification + " - ";
-        if (_situation==true) aux+="ACTIVO\n";
+        if (_situation) aux+="ACTIVO\n";
         else aux+= "SUSPENSO - EUR - "+_fine+"\n";
         return aux;
     }

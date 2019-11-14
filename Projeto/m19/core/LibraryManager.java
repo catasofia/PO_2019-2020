@@ -1,15 +1,9 @@
 package m19.core;
 
-import java.io.IOException;
 import java.net.ProtocolException;
 import java.util.ArrayList;
 import java.util.List;
-import java.io.FileNotFoundException;
-import java.io.NotSerializableException;
 
-import m19.core.exception.MissingFileAssociationException;
-import m19.core.exception.BadEntrySpecificationException;
-import m19.core.exception.ImportFileException;
 import java.io.*;
 
 import m19.app.exception.*;
@@ -45,7 +39,7 @@ public class LibraryManager implements Serializable{
     _library.changeDate(tempo);
   }
 
-  public int nextUtente(){
+  public int getNextUtente(){
     return _library.getNextUtente();
   }
 
@@ -53,12 +47,12 @@ public class LibraryManager implements Serializable{
     _library.registarUtente(nome, email);
   }
 
-  public String mostrarUtente(int id) throws NoSuchUserIdException{
-    return _library.mostrarUtente(id);
+  public String showUser(int id) throws NoSuchUserIdException{
+    return _library.showUser(id);
   }
 
-  public String mostrarUtentes(){
-    return _library.mostrarUtentes();
+  public String showUsers(){
+    return _library.showUsers();
   }
 
   public void verifyUser(){

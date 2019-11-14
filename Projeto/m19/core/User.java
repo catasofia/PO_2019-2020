@@ -19,7 +19,7 @@ public class User implements Serializable{
     private String _email;
     private Situation _situation;
     private List<Notification> _notifications;
-    private List<Request> _requests;
+    //private List<Request> _requests;
 
     private static final long serialVersionUID = 201901101348L;
 
