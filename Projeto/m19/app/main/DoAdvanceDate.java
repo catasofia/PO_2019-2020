@@ -13,22 +13,22 @@ import pt.tecnico.po.ui.Input;
  */
 public class DoAdvanceDate extends Command<LibraryManager> {
 
-  private Input<Integer> _tempo;
+  private Input<Integer> _day;
 
   /**
    * @param receiver
    */
   public DoAdvanceDate(LibraryManager receiver) {
     super(Label.ADVANCE_DATE, receiver);
-    _tempo = _form.addIntegerInput(Message.requestDaysToAdvance());
+    _day = _form.addIntegerInput(Message.requestDaysToAdvance());
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
     _form.parse();
-    _receiver.avançarData(_tempo.value());
-    _receiver.verificaUtentes();
+    _receiver.changeDate(_day.value());
+    _receiver.verifyUser();
   }
   
 }

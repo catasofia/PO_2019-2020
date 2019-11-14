@@ -1,10 +1,10 @@
 package m19.core;
-public class DVD extends Obra{
+public class DVD extends Work{
   private String _realizador;
   private String _numeroIGAC;
 
   public DVD(int id,String titulo, String realizador, int preco, 
-  Categoria cat, String numeroIGAC,int exemplares){
+  Category cat, String numeroIGAC,int exemplares){
       super(id,exemplares, titulo, preco, cat);
       _realizador=realizador;
       _numeroIGAC=numeroIGAC;
@@ -17,8 +17,8 @@ public class DVD extends Obra{
     return _numeroIGAC;
   }
   protected String mostrarObra(){
-    return super.obterID()+" - "+super.obterExemlaresDisponiveis()+" de "+
-    super.obterExemplares()+" - DVD - "+super.obterTitulo()+" - "+super.obterPreco()+
-    " - "+super.obterCategoria().getCategoria()+" - "+_realizador+" - "+_numeroIGAC+"\n";
+    return super.getID()+" - "+super.getCopiesAvailable()+" de "+
+    super.getCopies()+" - DVD - "+super.getTitle()+" - "+super.getPrice()+
+    " - "+super.getCategory().toString()+" - "+_realizador+" - "+_numeroIGAC+"\n";
   }
 }

@@ -3,7 +3,13 @@ package m19.core;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.*;
@@ -28,24 +34,24 @@ public class Library implements Serializable {
   private static final long serialVersionUID = 201901101348L;
   private int _nextUserID;
   private int _nextObraID;
-  private Tempo _tempo;
-  private HashMap<Integer, Utente> _utentes;
-  private HashMap<Integer, Requisicoes> _requisicoes;
-  private HashMap<Integer, Obra> _obras;
+  private Date _date;
+  private HashMap<Integer, User> _utentes;
+  private HashMap<Integer, Request> _requisicoes;
+  private HashMap<Integer, Work> _obras;
 
   public Library(){
     _nextUserID = 0;
     _nextObraID = 0;
-    _tempo = new Tempo();
+    _date = new Date();
     _utentes = new HashMap<>();
     _requisicoes = new HashMap<>();
     _obras = new HashMap<>();
   }
 
-  //==================== Utente ====================
+  //==================== User ====================
   protected void registarUtente(String nome, String email) throws UserRegistFailedException{
     if(!nome.isEmpty() && !email.isEmpty())
-      _utentes.put(_nextUserID,new Utente(_nextUserID++,nome, email));
+      _utentes.put(_nextUserID,new User(_nextUserID++,nome, email));
     else throw new UserRegistFailedException(nome, email);
   }
 
@@ -53,59 +59,59 @@ public class Library implements Serializable {
     return _nextUserID;
   }
   
-  protected Utente obterUtente(int id) {
+  protected User obterUtente(int id) {
     if (id<_nextUserID) return _utentes.get(id);
     else return null;
   }
 
   protected String mostrarUtente(int id) throws NoSuchUserIdException{
-    Utente u = obterUtente(id);
-    if(u != null) return u.mostrarUtente(); 
+    User u = obterUtente(id);
+    if(u != null) return u.showUser(); 
     else throw new NoSuchUserIdException(id);
   }
 
   protected String mostrarUtentes(){
     String a="";
-    List<Utente> utentes = new ArrayList<>(_utentes.values());
+    List<User> utentes = new ArrayList<>(_utentes.values());
 
-    Collections.sort(utentes, new Comparator<Utente>() {
+    Collections.sort(utentes, new Comparator<User>() {
       @Override
-      public int compare(Utente o1, Utente o2) {
-        return o1.obterNome().compareTo(o2.obterNome());
+      public int compare(User o1, User o2) {
+        return o1.getName().compareTo(o2.getName());
       }
     });
   
-    for (Utente utente:utentes)
-      a+= utente.mostrarUtente();
+    for (User utente:utentes)
+      a+= utente.showUser();
     return a;
   }
 
-  protected void verificaUtentes(){
-    /*for(Utente i : _utentes)
+  protected void verifyUser(){
+    /*for(User i : _utentes)
       i.verificaUtente();*/
   }
 
   protected void pagarMulta(){}
 
 
-  //==================== Obra ====================
+  //==================== Work ====================
   protected void registarLivro(String titulo, String autor, int preco, 
-  Categoria cat, String iSBN,int exemplares){
-    _obras.put(_nextObraID, new Livro(_nextObraID++, titulo, autor, preco, cat, iSBN, exemplares));
+  Category cat, String iSBN,int exemplares){
+    _obras.put(_nextObraID, new Book(_nextObraID++, titulo, autor, preco, cat, iSBN, exemplares));
   }
 
   protected void registarDVD(String titulo, String realizador, int preco, 
-  Categoria cat, String numeroIGAC,int exemplares){
+  Category cat, String numeroIGAC,int exemplares){
     _obras.put(_nextObraID, new DVD(_nextObraID++, titulo, realizador, preco, cat, numeroIGAC, exemplares));
   }
 
-  protected Obra obterObra(int id){
+  protected Work obterObra(int id){
     if (id<_nextObraID) return _obras.get(id);
     else return null;
   }
 
   protected String mostrarObra(int id) throws NoSuchWorkIdException{
-    Obra o = obterObra(id);
+    Work o = obterObra(id);
     if (o != null)
       return o.mostrarObra();
     else
@@ -123,12 +129,12 @@ public class Library implements Serializable {
 
 
   //==================== Tempo ====================
-  protected int mostrarData(){
-    return _tempo.obterDia();
+  protected int getDate(){
+    return _date.getDate();
   }
 
-  protected void avançarData(int tempo){
-    _tempo.alteraDia(tempo);
+  protected void changeDate(int nDay){
+    _date.changeDate(nDay);
   }
 
 

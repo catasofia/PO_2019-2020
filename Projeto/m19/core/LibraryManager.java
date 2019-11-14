@@ -37,12 +37,12 @@ public class LibraryManager implements Serializable{
     _file=file;
   }
   
-  public int mostrarData(){
-    return _library.mostrarData();
+  public int getDate(){
+    return _library.getDate();
   }
 
-  public void avançarData(int tempo){
-    _library.avançarData(tempo);
+  public void changeDate(int tempo){
+    _library.changeDate(tempo);
   }
 
   public int nextUtente(){
@@ -61,8 +61,8 @@ public class LibraryManager implements Serializable{
     return _library.mostrarUtentes();
   }
 
-  public void verificaUtentes(){
-    _library.verificaUtentes();
+  public void verifyUser(){
+    _library.verifyUser();
   }
 
   public void pagarMulta(){}

@@ -1,5 +1,6 @@
 package m19.core;
-public enum Classificacoes{
+
+public enum Classification{
 	FALTOSO, 
 	CUMPRIDOR, 
 	NORMAL;

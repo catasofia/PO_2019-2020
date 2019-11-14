@@ -54,7 +54,7 @@ public class Parser{
      //                 Categoria.valueOf(components[4]), Integer.parseInt(components[5]),
        //               Integer.parseInt(components[6]));
     _library.registarDVD(components[1], components[2], Integer.parseInt(components[3]),
-                    Categoria.valueOf(components[4]), /*Integer.parseInt*/(components[5]),
+                    Category.valueOf(components[4]), /*Integer.parseInt*/(components[5]),
                     Integer.parseInt(components[6]));
     // add dvd to _library
   }
@@ -67,7 +67,7 @@ public class Parser{
                          Categoria.valueOf(components[4]), Integer.parseInt(components[5]),
                          Integer.parseInt(components[6]));*/
     _library.registarLivro(components[1], components[2], Integer.parseInt(components[3]),
-    Categoria.valueOf(components[4]), /*Integer.parseInt*/(components[5]),
+    Category.valueOf(components[4]), /*Integer.parseInt*/(components[5]),
     Integer.parseInt(components[6]));
     // add book to _library
   }
