@@ -28,7 +28,7 @@ public class DoShowUser extends Command<LibraryManager> {
   public final void execute() throws DialogException, NoSuchUserException {
     try{
       _form.parse();
-    _display.popup(_receiver.mostrarUtente(_id.value()));
+      _display.popup(_receiver.mostrarUtente(_id.value()));
     } catch (NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());
     }

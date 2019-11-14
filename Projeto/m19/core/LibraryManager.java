@@ -37,22 +37,7 @@ public class LibraryManager implements Serializable{
     _file=file;
   }
 
-  public void guardarComo(String filename) throws FileNotFoundException, IOException{
-    if (filename == null){
-      throw new FileNotFoundException();
-    }
-    _file = filename;
-
-    try{
-      ObjectOutputStream save = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(_file))); //ver estas cenas definidas;
-      save.writeObject(_library);     //escreve no objeto
-      save.close();                   //fecha o objeto
-    } catch (FileNotFoundException e ) {
-      throw new FileNotFoundException(_file);
-    } catch (IOException e) {
-      e.printStackTrace(); }
-  }
-
+  
   public void open(String file) throws IOException, FileNotFoundException, ClassNotFoundException{
     ObjectInputStream novoFich = new ObjectInputStream(new FileInputStream(file));
     Library newLibrary = (Library)novoFich.readObject();
@@ -67,7 +52,7 @@ public class LibraryManager implements Serializable{
   public void avançarData(int tempo){
     _library.avançarData(tempo);
   }
-
+  
   public int totalUtentes(){
     return _library.totalUtentes();
   }
@@ -97,35 +82,52 @@ public class LibraryManager implements Serializable{
   public String mostrarObras(){
     return _library.mostrarObras();
   }
-
+  
   public void efetuaPesquisa(){}
-
-
-
-  /**
-   * Serialize the persistent state of this application.
-   * 
-   * @throws MissingFileAssociationException if the name of the file to store the persistent
-   *         state has not been set yet.
-   * @throws IOException if some error happen during the serialization of the persistent state
-
-   */
+    
+    /**
+     * Serialize the persistent state of this application.
+     * 
+     * @throws MissingFileAssociationException if the name of the file to store the persistent
+     *         state has not been set yet.
+     * @throws IOException if some error happen during the serialization of the persistent state
+     
+     */
   public void save() throws MissingFileAssociationException, IOException {
-    // FIXME implement method
+    try{
+    saveAs(_file);
+    } /*catch (FileNotFoundException e ) {
+      throw new FileNotFoundException(filename);
+    }*/ catch (IOException e) {
+      e.printStackTrace(); 
+    }
+  }
+    
+
+    
+    /**
+     * Serialize the persistent state of this application into the specified file.
+     * 
+     * @param filename the name of the target file
+     *
+     * @throws MissingFileAssociationException if the name of the file to store the persistent
+     *         is not a valid one.
+     * @throws IOException if some error happen during the serialization of the persistent state
+     */
+  public void saveAs(String filename) throws MissingFileAssociationException, IOException {
+    if (filename == null){
+      throw new MissingFileAssociationException();
+    }
+    try{
+      ObjectOutputStream save = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename))); //ver estas cenas definidas;
+      save.writeObject(_library);     //escreve no objeto
+      save.close();                   //fecha o objeto
+    } /*catch (FileNotFoundException e) {
+      throw new FileNotFoundException(filename);
+    }*/ catch (IOException e) {
+      e.printStackTrace(); }
   }
 
-  /**
-   * Serialize the persistent state of this application into the specified file.
-   * 
-   * @param filename the name of the target file
-   *
-   * @throws MissingFileAssociationException if the name of the file to store the persistent
-   *         is not a valid one.
-   * @throws IOException if some error happen during the serialization of the persistent state
-   */
-  public void saveAs(String filename) throws MissingFileAssociationException, IOException {
-    // FIXME implement method
-  }
 
   /**
    * Recover the previously serialized persitent state of this application.

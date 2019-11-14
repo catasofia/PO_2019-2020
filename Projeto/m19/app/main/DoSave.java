@@ -40,10 +40,10 @@ public class DoSave extends Command<LibraryManager> {
     }
     try{
       if(_receiver.getFileName() != null){
-        _receiver.guardarComo(_file2);       //guarda com nome antigo porque ja existe
+        _receiver.save();       //guarda com nome antigo porque ja existe
       }
       else{
-        _receiver.guardarComo(_file1.value());  //guarda com o novo nome recebido do utilizador;
+        _receiver.saveAs(_file1.value());  //guarda com o novo nome recebido do utilizador;
       }      
     } catch (IOException e){
     e.printStackTrace();
