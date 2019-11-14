@@ -93,7 +93,7 @@ public class LibraryManager implements Serializable{
      * @throws IOException if some error happen during the serialization of the persistent state
      
      */
-  public void save() throws MissingFileAssociationException, IOException {
+  public void save() throws FileNotFoundException, IOException {
     try{
     saveAs(_file);
     } /*catch (FileNotFoundException e ) {
@@ -114,12 +114,13 @@ public class LibraryManager implements Serializable{
      *         is not a valid one.
      * @throws IOException if some error happen during the serialization of the persistent state
      */
-  public void saveAs(String filename) throws MissingFileAssociationException, IOException {
+  public void saveAs(String filename) throws FileNotFoundException, IOException {
     if (filename == null){
-      throw new MissingFileAssociationException();
+      throw new FileNotFoundException();
     }
     try{
       ObjectOutputStream save = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename))); //ver estas cenas definidas;
+      _file=filename;
       save.writeObject(_library);     //escreve no objeto
       save.close();                   //fecha o objeto
     } /*catch (FileNotFoundException e) {

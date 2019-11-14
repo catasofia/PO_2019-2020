@@ -1,8 +1,10 @@
 package m19.app.main;
 
 import m19.core.LibraryManager;
+import m19.core.exception.MissingFileAssociationException;
 import pt.tecnico.po.ui.DialogException;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import m19.core.Library;
@@ -30,7 +32,7 @@ public class DoSave extends Command<LibraryManager> {
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
-  public final void execute() {
+  public final void execute(){
     // FIXME implement command
     if(_receiver.getFileName() != null){
       _file2 = _receiver.getFileName();    //ficheiro já existe e guardo na variavel fil2
@@ -47,6 +49,6 @@ public class DoSave extends Command<LibraryManager> {
       }      
     } catch (IOException e){
     e.printStackTrace();
-    }
+    } 
   }
 }
