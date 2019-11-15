@@ -14,4 +14,4 @@ Não fazer
 
 O que falta:
 ==
-+ Exception MissingFileAssociation
++ Exception MissingFileAssociation (Nelson: yes)
