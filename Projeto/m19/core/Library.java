@@ -15,8 +15,6 @@ import java.io.BufferedReader;
 
 import m19.app.exception.*;
 import m19.core.exception.*;
-// FIXME import other system types
-// FIXME import project (core) types if needed
 
 /**
  * Class that represents the library as a whole.

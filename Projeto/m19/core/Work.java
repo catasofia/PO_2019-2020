@@ -1,16 +1,6 @@
 package m19.core;
 
-import java.io.IOException;
 import java.io.Serializable;
-
-import m19.core.exception.*;
-
-import java.util.Collections;
-import java.util.Comparator;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-
 
 public abstract class Work implements Serializable{
   private int _iDObra;

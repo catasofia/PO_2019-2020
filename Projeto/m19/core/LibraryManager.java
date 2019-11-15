@@ -1,16 +1,11 @@
 package m19.core;
 
 import java.net.ProtocolException;
-import java.util.ArrayList;
-import java.util.List;
 
 import java.io.*;
 
 import m19.app.exception.*;
 import m19.core.exception.*;
-
-// FIXME import other system types
-// FIXME import other project (core) types
 
 /**
  * The façade class.

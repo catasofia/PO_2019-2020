@@ -1,16 +1,7 @@
 package m19.core;
 
-import java.io.IOException;
-import java.io.Serializable;
-
-import m19.app.exception.NoSuchUserException;
-import m19.core.exception.*;
-
-import java.util.Collections;
-import java.util.Comparator;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
 
 public class User implements Serializable{
