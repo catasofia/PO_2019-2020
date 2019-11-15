@@ -99,11 +99,11 @@ public class LibraryManager implements Serializable{
     if (filename == null){
       throw new MissingFileAssociationException();
     }
-    try{
-      ObjectOutputStream save = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename))); //ver estas cenas definidas;
+    try(ObjectOutputStream save = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename)))){
+      //ObjectOutputStream save = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename))); //ver estas cenas definidas;
       _file=filename;
       save.writeObject(_library);     //escreve no objeto
-      save.close();                   //fecha o objeto
+      //save.close();                   //fecha o objeto
     } catch (FileNotFoundException e) {
       throw new MissingFileAssociationException(e);
     } catch (IOException e) {
