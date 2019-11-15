@@ -21,7 +21,7 @@ public class DoDisplayWorks extends Command<LibraryManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    _display.addLine(_receiver.mostrarObras());
+    _display.addLine(_receiver.displayWorks());
     _display.display();
   }
 }

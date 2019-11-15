@@ -38,7 +38,7 @@ public class DoRegisterUser extends Command<LibraryManager> {
     else throw new UserRegistrationFailedException(_nome.value(), _email.value());*/
 
     try{
-      _receiver.registarUtente(_nome.value(), _email.value());
+      _receiver.registerUser(_nome.value(), _email.value());
       _display.popup(Message.userRegistrationSuccessful(_receiver.getNextUtente() - 1));
     } catch (UserRegistFailedException e){
       throw new UserRegistrationFailedException(e.getName(), e.getEmail());

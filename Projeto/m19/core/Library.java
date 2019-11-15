@@ -28,97 +28,97 @@ public class Library implements Serializable {
   private int _nextUserID;
   private int _nextObraID;
   private Date _date;
-  private Map<Integer, User> _utentes;
+  private Map<Integer, User> _users;
   //private HashMap<Integer, Request> _requisicoes;
-  private Map<Integer, Work> _obras;
+  private Map<Integer, Work> _works;
 
   public Library(){
     _nextUserID = 0;
     _nextObraID = 0;
     _date = new Date();
-    _utentes = new HashMap<>();
+    _users = new HashMap<>();
     //_requisicoes = new HashMap<>();
-    _obras = new HashMap<>();
+    _works = new HashMap<>();
   }
 
   //==================== User ====================
-  protected void registarUtente(String nome, String email) throws UserRegistFailedException{
-    if(!nome.isEmpty() && !email.isEmpty())
-      _utentes.put(_nextUserID,new User(_nextUserID++,nome, email));
-    else throw new UserRegistFailedException(nome, email);
+  protected void registerUser(String name, String email) throws UserRegistFailedException{
+    if(!name.isEmpty() && !email.isEmpty())
+      _users.put(_nextUserID,new User(_nextUserID++,name, email));
+    else throw new UserRegistFailedException(name, email);
   }
 
   protected int getNextUtente(){
     return _nextUserID;
   }
   
-  protected User obterUtente(int id) {
-    if (id<_nextUserID) return _utentes.get(id);
+  protected User getUser(int id) {
+    if (id<_nextUserID) return _users.get(id);
     else return null;
   }
 
   protected String showUser(int id) throws NoSuchUserIdException{
-    User u = obterUtente(id);
+    User u = getUser(id);
     if(u != null) return u.showUser(); 
     else throw new NoSuchUserIdException(id);
   }
 
   protected String showUsers(){
-    String a="";
-    List<User> utentes = new ArrayList<>(_utentes.values());
+    String a = "";
+    List<User> users = new ArrayList<>(_users.values());
 
-    Collections.sort(utentes, new Comparator<User>() {
+    Collections.sort(users, new Comparator<User>() {
       @Override
       public int compare(User o1, User o2) {
         return o1.getName().compareTo(o2.getName());
       }
     });
   
-    for (User utente:utentes)
-      a+= utente.showUser();
+    for (User utente:users)
+      a += utente.showUser();
     return a;
   }
 
   protected void verifyUser(){
-    /*for(User i : _utentes)
+    /*for(User i : _users)
       i.verificaUtente();*/
   }
 
-  protected void pagarMulta(){}
+  protected void payFine(){}
 
 
   //==================== Work ====================
-  protected void registarLivro(String titulo, String autor, int preco, 
-  Category cat, String iSBN,int exemplares){
-    _obras.put(_nextObraID, new Book(_nextObraID++, titulo, autor, preco, cat, iSBN, exemplares));
+  protected void registerBook(String title, String author, int price, 
+  Category cat, String iSBN,int copies){
+    _works.put(_nextObraID, new Book(_nextObraID++, title, author, price, cat, iSBN, copies));
   }
 
-  protected void registarDVD(String titulo, String realizador, int preco, 
-  Category cat, String numeroIGAC,int exemplares){
-    _obras.put(_nextObraID, new DVD(_nextObraID++, titulo, realizador, preco, cat, numeroIGAC, exemplares));
+  protected void registerDVD(String title, String director, int price, 
+  Category cat, String numeroIGAC,int copies){
+    _works.put(_nextObraID, new DVD(_nextObraID++, title, director, price, cat, numeroIGAC, copies));
   }
 
-  protected Work obterObra(int id){
-    if (id<_nextObraID) return _obras.get(id);
+  protected Work getWork(int id){
+    if (id<_nextObraID) return _works.get(id);
     else return null;
   }
 
-  protected String mostrarObra(int id) throws NoSuchWorkIdException{
-    Work o = obterObra(id);
+  protected String displayWork(int id) throws NoSuchWorkIdException{
+    Work o = getWork(id);
     if (o != null)
-      return o.mostrarObra();
+      return o.displayWork();
     else
       throw new NoSuchWorkIdException(id);
   }
 
-  protected String mostrarObras(){
+  protected String displayWorks(){
     String a="";
-    for (int i=0;i<_nextObraID;i++)
-      if (obterObra(i)!=null) a+=_obras.get(i).mostrarObra();
+    for (int i = 0;i < _nextObraID;i++)
+      if (getWork(i) != null) a += _works.get(i).displayWork();
     return a;
   }
 
-  protected void efetuaPesquisa(){}
+  protected void performSearch(){}
 
 
   //==================== Tempo ====================
@@ -141,7 +141,7 @@ public class Library implements Serializable {
    * @throws IOException
    */
   void importFile(String filename) throws BadEntrySpecificationException, IOException, UserRegistFailedException {
-    Parser parse=new Parser(this);
+    Parser parse = new Parser(this);
     parse.parseFile(filename);
   }
 }

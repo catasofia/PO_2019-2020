@@ -61,7 +61,7 @@ public abstract class Work implements Serializable{
 
   protected boolean areCopiesAvailable(){return _copiesAvailable!=0;}
   
-  abstract protected String mostrarObra();
+  abstract protected String displayWork();
 
   //protected void pesquisaTermo(String termo){};
 

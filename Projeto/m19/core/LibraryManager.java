@@ -28,7 +28,7 @@ public class LibraryManager implements Serializable{
   }
 
   public void setFileName(String file){
-    _file=file;
+    _file = file;
   }
   
   public int getDate(){
@@ -43,8 +43,8 @@ public class LibraryManager implements Serializable{
     return _library.getNextUtente();
   }
 
-  public void registarUtente(String nome, String email) throws UserRegistFailedException{
-    _library.registarUtente(nome, email);
+  public void registerUser(String nome, String email) throws UserRegistFailedException{
+    _library.registerUser(nome, email);
   }
 
   public String showUser(int id) throws NoSuchUserIdException{
@@ -59,17 +59,17 @@ public class LibraryManager implements Serializable{
     _library.verifyUser();
   }
 
-  public void pagarMulta(){}
+  public void payFine(){}
 
-  public String mostrarObra(int obraID) throws NoSuchWorkIdException{
-    return _library.mostrarObra(obraID);
+  public String displayWork(int obraID) throws NoSuchWorkIdException{
+    return _library.displayWork(obraID);
   }
 
-  public String mostrarObras(){
-    return _library.mostrarObras();
+  public String displayWorks(){
+    return _library.displayWorks();
   }
   
-  public void efetuaPesquisa(){}
+  public void performSearch(){}
     
     /**
      * Serialize the persistent state of this application.

@@ -31,7 +31,7 @@ public class DoDisplayWork extends Command<LibraryManager> {
     // FIXME implement command
     try{
       _form.parse();
-      _display.popup(_receiver.mostrarObra(_id.value()));
+      _display.popup(_receiver.displayWork(_id.value()));
     } catch (NoSuchWorkIdException e){
       throw new NoSuchWorkException(e.getId());
     }

@@ -1,25 +1,26 @@
 package m19.core;
 
 public class Book extends Work{
-  private String _autor;
+  private String _author;
   private String _iSBN;
 
-  public Book(int id, String titulo, String autor, int preco, 
-    Category cat, String iSBN,int exemplares){
-      super(id,exemplares, titulo, preco, cat);
-      _autor = autor;
+  public Book(int id, String title, String author, int price, 
+    Category cat, String iSBN,int copies){
+      super(id, copies, title, price, cat);
+      _author = author;
       _iSBN = iSBN;
   }
 
-  public String obterAutor(){
-    return _autor;
+  public String getAuthor(){
+    return _author;
   }
-  public String obterISBN(){
+  public String getISBN(){
     return _iSBN;
   }
-  protected String mostrarObra(){
-    return super.getID()+" - "+super.getCopiesAvailable()+" de "+
-    super.getCopies()+" - Livro - "+super.getTitle()+" - "+super.getPrice()+
-    " - "+super.getCategory().toString()+" - "+_autor+" - "+_iSBN+"\n";
+
+  protected String displayWork(){
+    return super.getID() + " - " + super.getCopiesAvailable() + " de " +
+    super.getCopies() + " - Livro - " + super.getTitle() + " - " + super.getPrice() +
+    " - " + super.getCategory().toString() + " - " + _author + " - " + _iSBN + "\n";
   }
 }

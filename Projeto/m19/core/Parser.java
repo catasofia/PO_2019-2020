@@ -53,7 +53,7 @@ public class Parser{
     //Dvd dvd = new Dvd(components[1], components[2], Integer.parseInt(components[3]),
      //                 Categoria.valueOf(components[4]), Integer.parseInt(components[5]),
        //               Integer.parseInt(components[6]));
-    _library.registarDVD(components[1], components[2], Integer.parseInt(components[3]),
+    _library.registerDVD(components[1], components[2], Integer.parseInt(components[3]),
                     Category.valueOf(components[4]), /*Integer.parseInt*/(components[5]),
                     Integer.parseInt(components[6]));
     // add dvd to _library
@@ -66,7 +66,7 @@ public class Parser{
     /*Livro book = new Livro(components[1], components[2], Integer.parseInt(components[3]),
                          Categoria.valueOf(components[4]), Integer.parseInt(components[5]),
                          Integer.parseInt(components[6]));*/
-    _library.registarLivro(components[1], components[2], Integer.parseInt(components[3]),
+    _library.registerBook(components[1], components[2], Integer.parseInt(components[3]),
     Category.valueOf(components[4]), /*Integer.parseInt*/(components[5]),
     Integer.parseInt(components[6]));
     // add book to _library
@@ -77,7 +77,7 @@ public class Parser{
       throw new BadEntrySpecificationException("Wrong number of fields (2) in " + line);
     //Utente user = new Utente(_library.totalUtentes(),components[1], components[2]);
     try{
-      _library.registarUtente(components[1], components[2]);
+      _library.registerUser(components[1], components[2]);
     } catch (UserRegistFailedException e){
       throw new UserRegistFailedException(components[1], components[2]);
     }
