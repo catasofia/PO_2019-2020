@@ -39,8 +39,8 @@ public class LibraryManager implements Serializable{
     _library.changeDate(tempo);
   }
 
-  public int getNextUtente(){
-    return _library.getNextUtente();
+  public int getNextUser(){
+    return _library.getNextUser();
   }
 
   public void registerUser(String nome, String email) throws UserRegistFailedException{

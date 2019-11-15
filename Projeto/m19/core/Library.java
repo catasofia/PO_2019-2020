@@ -48,7 +48,7 @@ public class Library implements Serializable {
     else throw new UserRegistFailedException(name, email);
   }
 
-  protected int getNextUtente(){
+  protected int getNextUser(){
     return _nextUserID;
   }
   
@@ -74,14 +74,14 @@ public class Library implements Serializable {
       }
     });
   
-    for (User utente:users)
-      a += utente.showUser();
+    for (User user:users)
+      a += user.showUser();
     return a;
   }
 
   protected void verifyUser(){
     /*for(User i : _users)
-      i.verificaUtente();*/
+      i.verificauser();*/
   }
 
   protected void payFine(){}
