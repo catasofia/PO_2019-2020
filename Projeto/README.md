@@ -9,7 +9,8 @@ Fazer
 Não fazer
 ==
 + Requisicoes
-+ 
++ Notificações
++ Multa
 
 O que falta:
-==
++ Exception MissingFileAssociation
