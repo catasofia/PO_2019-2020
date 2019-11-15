@@ -34,12 +34,11 @@ public class DoSave extends Command<LibraryManager> {
   @Override
   public final void execute(){
     // FIXME implement command
-    if(_receiver.getFileName() != null){
+    if(_receiver.getFileName() != null)
       _file2 = _receiver.getFileName();    //ficheiro já existe e guardo na variavel fil2
-    }
-    else{
+    else
       _form.parse();
-    }
+
     try{
       if(_receiver.getFileName() != null){
         _receiver.save();       //guarda com nome antigo porque ja existe
@@ -47,8 +46,9 @@ public class DoSave extends Command<LibraryManager> {
       else{
         _receiver.saveAs(_file1.value());  //guarda com o novo nome recebido do utilizador;
       }      
-    } catch (IOException e){
-    e.printStackTrace();
-    } 
-  }
+    }catch (MissingFileAssociationException e){
+      System.out.println("x");//throw new MissingFileAssociationException();
+    }catch (IOException e){
+      e.printStackTrace();}
+    }
 }
