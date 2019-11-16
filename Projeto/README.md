@@ -11,4 +11,5 @@ Não fazer
 O que falta:
 ==
 + Exception MissingFileAssociation (Nelson: yes)
++ Comentar Funcoes que nao utilizamos
 + Fazer()
