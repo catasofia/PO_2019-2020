@@ -121,10 +121,20 @@ public class LibraryManager implements Serializable{
    * @throws ClassNotFoundException 
    */
   public void load(String filename) throws FileNotFoundException, IOException, ClassNotFoundException {
-    ObjectInputStream novoFich = new ObjectInputStream(new FileInputStream(filename));
+    /*ObjectInputStream novoFich = new ObjectInputStream(new FileInputStream(filename));
     Library newLibrary = (Library)novoFich.readObject();
     novoFich.close();
-    _library = newLibrary;
+    _library = newLibrary;*/
+    try(ObjectInputStream newFile = new ObjectInputStream(new FileInputStream(filename))){
+      Library newLibrary = (Library)newFile.readObject();
+      _library = newLibrary;
+    } catch (FileNotFoundException e){
+      throw new FileNotFoundException();
+    } catch (ClassNotFoundException e){
+      e.printStackTrace();
+    } catch(IOException e){
+      e.printStackTrace();
+    }
   }
 
   /**
