@@ -128,6 +128,7 @@ public class LibraryManager implements Serializable{
     try(ObjectInputStream newFile = new ObjectInputStream(new FileInputStream(filename))){
       Library newLibrary = (Library)newFile.readObject();
       _library = newLibrary;
+      _file = filename;
     } catch (FileNotFoundException e){
       throw new FileNotFoundException();
     } catch (ClassNotFoundException e){

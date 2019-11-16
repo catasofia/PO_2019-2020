@@ -37,7 +37,7 @@ public class DoOpen extends Command<LibraryManager> {
   public final void execute() throws DialogException {
     try {
       _form.parse();    //FUI EU QUE PUS
-      _receiver.setFileName(_file.value());        //FUI EU QUE PUS
+      //_receiver.setFileName(_file.value());        //FUI EU QUE PUS
       _receiver.load(_file.value());    //FUI EU QUE PUS
 
       /*List<String> lista = _receiver.readAllNotification();
@@ -48,7 +48,7 @@ public class DoOpen extends Command<LibraryManager> {
       // FIXME implement command
       
     } catch (FileNotFoundException fnfe){
-      throw new FileOpenFailedException(_receiver.getFileName());
+      throw new FileOpenFailedException(_file.value());
     } catch (ClassNotFoundException | IOException e) {
       e.printStackTrace();
     }
