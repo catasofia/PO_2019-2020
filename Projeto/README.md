@@ -1,6 +1,6 @@
 Fazer
 ==
-+ Retirar //FIXME
++ ...
 
 Não fazer
 ==

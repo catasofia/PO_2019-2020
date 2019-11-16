@@ -1,17 +1,17 @@
 package m19.core;
 
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.FileNotFoundException;
 import java.io.Serializable;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
-import java.io.FileReader;
-import java.io.BufferedReader;
 
 import m19.app.exception.*;
 import m19.core.exception.*;
@@ -27,16 +27,16 @@ public class Library implements Serializable {
   private int _nextObraID;
   private Date _date;
   private Map<Integer, User> _users;
-  //private HashMap<Integer, Request> _requisicoes;
   private Map<Integer, Work> _works;
+  //private HashMap<Integer, Request> _requisicoes;
 
   public Library(){
     _nextUserID = 0;
     _nextObraID = 0;
     _date = new Date();
     _users = new HashMap<>();
-    //_requisicoes = new HashMap<>();
     _works = new HashMap<>();
+    //_requisicoes = new HashMap<>();
   }
 
   //==================== User ====================
@@ -51,7 +51,7 @@ public class Library implements Serializable {
   }
   
   protected User getUser(int id) {
-    if (id<_nextUserID) return _users.get(id);
+    if (id < _nextUserID) return _users.get(id);
     else return null;
   }
 
@@ -78,8 +78,7 @@ public class Library implements Serializable {
   }
 
   protected void verifyUser(){
-    /*for(User i : _users)
-      i.verificauser();*/
+    //TO DO in finall project submition
   }
 
   protected void payFine(){}
@@ -97,7 +96,7 @@ public class Library implements Serializable {
   }
 
   protected Work getWork(int id){
-    if (id<_nextObraID) return _works.get(id);
+    if (id < _nextObraID) return _works.get(id);
     else return null;
   }
 
@@ -110,8 +109,8 @@ public class Library implements Serializable {
   }
 
   protected String displayWorks(){
-    String a="";
-    for (int i = 0;i < _nextObraID;i++)
+    String a = "";
+    for (int i = 0;i < _nextObraID; i++)
       if (getWork(i) != null) a += _works.get(i).displayWork();
     return a;
   }

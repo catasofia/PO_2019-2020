@@ -5,9 +5,6 @@ import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
 
-// FIXME import iother core concepts
-// FIXME import ui concepts
-
 /**
  * 4.1.3. Advance the current date.
  */
