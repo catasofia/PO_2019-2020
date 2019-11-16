@@ -123,9 +123,7 @@ public void payFine(){/*To Do in final project submission*/}
 
     } catch (FileNotFoundException e){
       throw new FileNotFoundException();
-    } catch (ClassNotFoundException e){
-      e.printStackTrace();
-    } catch(IOException e){
+    } catch (ClassNotFoundException | IOException e){
       e.printStackTrace();
     }
   }
