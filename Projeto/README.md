@@ -1,10 +1,6 @@
 Fazer
 ==
-+ Obra
-+ Utente
-+ Guardar e Sair
-+ Data
-+ ...
++ Retirar //FIXME
 
 Não fazer
 ==
@@ -15,3 +11,4 @@ Não fazer
 O que falta:
 ==
 + Exception MissingFileAssociation (Nelson: yes)
++ Fazer()
