@@ -79,7 +79,7 @@ public class Library implements Serializable {
    * 
    * @param id
    *        ID of the User
-   * @throws NoSuchUserIdException
+   * @throws NoSuchUserIdException if the given id has no user associated to it
    * @return a String to show the user associated to the given id
    */
   protected String showUser(int id) throws NoSuchUserIdException{
