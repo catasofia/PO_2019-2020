@@ -45,7 +45,7 @@ public class Library implements Serializable {
    *        name of the User
    * @param email
    *        email of the User
-   * @throws UserRegistFailedException
+   * @throws UserRegistFailedException when the name or the email are empty strings
    */
   protected void registerUser(String name, String email) throws UserRegistFailedException{
     if(!name.isEmpty() && !email.isEmpty())
@@ -220,7 +220,7 @@ public class Library implements Serializable {
    *          name of the file to load
    * @throws BadEntrySpecificationException
    * @throws IOException
-   * @throws UserRegistFailedException
+   * @throws UserRegistFailedException when the name or the email are empty strings
    */
   void importFile(String filename) throws BadEntrySpecificationException, IOException, UserRegistFailedException {
     Parser parse = new Parser(this);
