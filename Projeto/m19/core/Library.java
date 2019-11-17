@@ -55,6 +55,8 @@ public class Library implements Serializable {
 
   /**
    * Get's the _nextUserID private attribute
+   * 
+   * @return next user id
    */
   protected int getNextUser(){
     return _nextUserID;
@@ -65,6 +67,7 @@ public class Library implements Serializable {
    * 
    * @param id
    *        ID of the User
+   * @return user in case of existing
    */
   protected User getUser(int id) {
     if (id < _nextUserID) return _users.get(id);
@@ -77,36 +80,37 @@ public class Library implements Serializable {
    * @param id
    *        ID of the User
    * @throws NoSuchUserIdException
+   * @return a String to show the user associated to the given id
    */
   protected String showUser(int id) throws NoSuchUserIdException{
-    User u = getUser(id);
-    if(u != null) return u.showUser(); 
+    User current_user = getUser(id);
+    if(current_user != null) return current_user.showUser(); 
     else throw new NoSuchUserIdException(id);
   }
 
   /**
    * Shows all users sorted by name
    * 
+   * @return all the users in the library
    */
   protected String showUsers(){
-    String a = "";
+    String allUsers = "";
     List<User> users = new ArrayList<>(_users.values());
 
     Collections.sort(users, new Comparator<User>() {
       @Override
-      public int compare(User o1, User o2) {
-        return o1.getName().compareTo(o2.getName());
+      public int compare(User user1, User user2) {
+        return user1.getName().compareTo(user2.getName());
       }
     });
   
     for (User user:users)
-      a += user.showUser();
-    return a;
+      allUsers += user.showUser();
+    return allUsers;
   }
 
 
   //==================== Work ====================
-
   /**
    * Register a book by its title, author, price, category, iSBN 
    * and number of copies
@@ -127,7 +131,6 @@ public class Library implements Serializable {
   Category cat, String iSBN,int copies){
     _works.put(_nextObraID, new Book(_nextObraID++, title, author, price, cat, iSBN, copies));
   }
-
 
   /**
    * Register a DVD by its title, director, price, category, iGAC 
@@ -169,9 +172,9 @@ public class Library implements Serializable {
    * @throws NoSuchWorkIdException if the given id has no work associated to it
    */
   protected String displayWork(int id) throws NoSuchWorkIdException{
-    Work o = getWork(id);
-    if (o != null)
-      return o.displayWork();
+    Work current_work = getWork(id);
+    if (current_work != null)
+      return current_work.displayWork();
     else
       throw new NoSuchWorkIdException(id);
   }
@@ -180,16 +183,18 @@ public class Library implements Serializable {
    * @return all the works in the library
    */
   protected String displayWorks(){
-    String a = "";
+    String allWorks = "";
     for (int i = 0;i < _nextObraID; i++)
-      if (getWork(i) != null) a += _works.get(i).displayWork();
-    return a;
+      if (getWork(i) != null) allWorks += _works.get(i).displayWork();
+    return allWorks;
   }
 
 
   //==================== Tempo ====================
   /**
    * Returns the current day
+   * 
+   * @return current day
    */
   protected int getDate(){
     return _date.getDate();
@@ -197,6 +202,9 @@ public class Library implements Serializable {
 
   /**
    * Change the current day by adding nDay to the day
+   * 
+   * @param nDay
+   *        number of days to advance
    */
   protected void changeDate(int nDay){
     _date.changeDate(nDay);
