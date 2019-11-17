@@ -48,12 +48,6 @@ public class LibraryManager implements Serializable{
     return _library.showUsers();
   }
 
-  public void verifyUser(){
-    _library.verifyUser();
-  }
-
-public void payFine(){/*To Do in final project submission*/}
-
   public String displayWork(int obraID) throws NoSuchWorkIdException{
     return _library.displayWork(obraID);
   }

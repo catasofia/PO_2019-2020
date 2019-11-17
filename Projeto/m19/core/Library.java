@@ -28,7 +28,6 @@ public class Library implements Serializable {
   private Date _date;
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
-  //private HashMap<Integer, Request> _requisicoes;
 
   public Library(){
     _nextUserID = 0;
@@ -36,31 +35,59 @@ public class Library implements Serializable {
     _date = new Date();
     _users = new HashMap<>();
     _works = new HashMap<>();
-    //_requisicoes = new HashMap<>();
   }
 
   //==================== User ====================
+  /**
+   * Register a User by name and email
+   * 
+   * @param name
+   *        name of the User
+   * @param email
+   *        email of the User
+   * @throws UserRegistFailedException
+   */
   protected void registerUser(String name, String email) throws UserRegistFailedException{
     if(!name.isEmpty() && !email.isEmpty())
       _users.put(_nextUserID,new User(_nextUserID++,name, email));
     else throw new UserRegistFailedException(name, email);
   }
 
+  /**
+   * Get's the _nextUserID private attribute
+   */
   protected int getNextUser(){
     return _nextUserID;
   }
   
+  /**
+   * Returns the User of  by giving a certain ID
+   * 
+   * @param id
+   *        ID of the User
+   */
   protected User getUser(int id) {
     if (id < _nextUserID) return _users.get(id);
     else return null;
   }
 
+  /**
+   * Returns the string to display the User by the given id
+   * 
+   * @param id
+   *        ID of the User
+   * @throws NoSuchUserIdException
+   */
   protected String showUser(int id) throws NoSuchUserIdException{
     User u = getUser(id);
     if(u != null) return u.showUser(); 
     else throw new NoSuchUserIdException(id);
   }
 
+  /**
+   * Shows all users sorted by name
+   * 
+   */
   protected String showUsers(){
     String a = "";
     List<User> users = new ArrayList<>(_users.values());
@@ -76,12 +103,6 @@ public class Library implements Serializable {
       a += user.showUser();
     return a;
   }
-
-  protected void verifyUser(){
-    //TO DO in finall project submition
-  }
-
-  protected void payFine(){}
 
 
   //==================== Work ====================
@@ -115,23 +136,21 @@ public class Library implements Serializable {
     return a;
   }
 
-  protected void performSearch(){}
-
 
   //==================== Tempo ====================
+  /**
+   * Returns the current day
+   */
   protected int getDate(){
     return _date.getDate();
   }
 
+  /**
+   * Change the current day by adding nDay to the day
+   */
   protected void changeDate(int nDay){
     _date.changeDate(nDay);
   }
-
-
-
-
-
-
 
 
   //==================== Files ====================
@@ -143,6 +162,7 @@ public class Library implements Serializable {
    *          name of the file to load
    * @throws BadEntrySpecificationException
    * @throws IOException
+   * @throws UserRegistFailedException
    */
   void importFile(String filename) throws BadEntrySpecificationException, IOException, UserRegistFailedException {
     Parser parse = new Parser(this);

@@ -25,7 +25,7 @@ public class DoAdvanceDate extends Command<LibraryManager> {
   public final void execute() {
     _form.parse();
     _receiver.changeDate(_day.value());
-    _receiver.verifyUser();
+    //_receiver.verifyUser(); - In final project submission
   }
   
 }
