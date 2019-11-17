@@ -13,7 +13,7 @@ import m19.app.exception.UserRegistrationFailedException;
  */
 public class DoRegisterUser extends Command<LibraryManager> {
 
-  private Input<String> _nome;
+  private Input<String> _name;
   private Input<String> _email;
 
   /**
@@ -21,7 +21,7 @@ public class DoRegisterUser extends Command<LibraryManager> {
    */
   public DoRegisterUser(LibraryManager receiver) {
     super(Label.REGISTER_USER, receiver);
-    _nome = _form.addStringInput(Message.requestUserName());
+    _name = _form.addStringInput(Message.requestUserName());
     _email = _form.addStringInput(Message.requestUserEMail());
   }
 
@@ -30,7 +30,7 @@ public class DoRegisterUser extends Command<LibraryManager> {
   public final void execute() throws DialogException {
     _form.parse();
     try{
-      _receiver.registerUser(_nome.value(), _email.value());
+      _receiver.registerUser(_name.value(), _email.value());
       _display.popup(Message.userRegistrationSuccessful(_receiver.getNextUser() - 1));
     } catch (UserRegistFailedException e){
       throw new UserRegistrationFailedException(e.getName(), e.getEmail());
