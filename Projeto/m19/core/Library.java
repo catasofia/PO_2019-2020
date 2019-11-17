@@ -106,21 +106,68 @@ public class Library implements Serializable {
 
 
   //==================== Work ====================
+
+  /**
+   * Register a book by its title, author, price, category, iSBN 
+   * and number of copies
+   * @param title
+   *             title of the book
+   * @param author
+   *             author of the book
+   * @param price
+   *             price of the book
+   * @param cat
+   *             category of the book
+   * @param iSBN
+   *             iSBN number of the book
+   * @param copies
+   *             number of copies of the book 
+   */
   protected void registerBook(String title, String author, int price, 
   Category cat, String iSBN,int copies){
     _works.put(_nextObraID, new Book(_nextObraID++, title, author, price, cat, iSBN, copies));
   }
 
+
+  /**
+   * Register a DVD by its title, director, price, category, iGAC 
+   * and number of copies
+   * @param title
+   *            title of the DVD
+   * @param director
+   *            director of the DVD  
+   * @param price
+   *            price of the DVD
+   * @param cat
+   *            category of the DVD
+   * @param iGACNumber
+   *            iGAC number of the DVD
+   * @param copies
+   *            number of copies of the DVD
+   */
   protected void registerDVD(String title, String director, int price, 
-  Category cat, String numeroIGAC,int copies){
-    _works.put(_nextObraID, new DVD(_nextObraID++, title, director, price, cat, numeroIGAC, copies));
+  Category cat, String iGACNumber,int copies){
+    _works.put(_nextObraID, new DVD(_nextObraID++, title, director, price, cat, iGACNumber, copies));
   }
 
+  /**
+   * @param id
+   *          id of the work
+   * @return the work associated to the given id
+   */
   protected Work getWork(int id){
     if (id < _nextObraID) return _works.get(id);
     else return null;
   }
 
+
+  /**
+   * searches the work according to the given id and displays it
+   * @param id
+   *          id of the work
+   * @return a String to display the work associated to the given id
+   * @throws NoSuchWorkIdException if the given id has no work associated to it
+   */
   protected String displayWork(int id) throws NoSuchWorkIdException{
     Work o = getWork(id);
     if (o != null)
@@ -129,6 +176,9 @@ public class Library implements Serializable {
       throw new NoSuchWorkIdException(id);
   }
 
+  /**
+   * @return all the works in the library
+   */
   protected String displayWorks(){
     String a = "";
     for (int i = 0;i < _nextObraID; i++)
