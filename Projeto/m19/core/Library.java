@@ -1,3 +1,10 @@
+/**
+ * Catarina Sousa, N 93695
+ * Nelson Trindade N 93743
+ * Group: 51
+ * Shift: Tuesdays at 13h
+ */
+
 package m19.core;
 
 import java.io.FileReader;
@@ -63,11 +70,11 @@ public class Library implements Serializable {
   }
   
   /**
-   * Returns the User of  by giving a certain ID
+   * Returns the User of the received ID
    * 
    * @param id
    *        ID of the User
-   * @return user in case of existing
+   * @return user if he exists
    */
   protected User getUser(int id) {
     if (id < _nextUserID) return _users.get(id);
@@ -154,6 +161,7 @@ public class Library implements Serializable {
   }
 
   /**
+   * searches for the work according to the received id
    * @param id
    *          id of the work
    * @return the work associated to the given id
@@ -180,6 +188,7 @@ public class Library implements Serializable {
   }
 
   /**
+   * searches the works sorted by the id and displays them
    * @return all the works in the library
    */
   protected String displayWorks(){
