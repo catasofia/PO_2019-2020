@@ -54,11 +54,6 @@ public class User implements Serializable{
             showNotification(i.getID());
     }
 
-    protected void verifyUser(){
-        //To Do in final project submition
-        //Verifica se Utente tem obras que ja devia de ter entregue, altera pontuaçao, etc..
-    }
-
     protected void addNotification(String tipo, String mensagem){
         _notifications.add(new Notification(tipo, mensagem));
     }

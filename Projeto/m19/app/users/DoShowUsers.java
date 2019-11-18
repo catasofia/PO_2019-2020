@@ -22,5 +22,4 @@ public class DoShowUsers extends Command<LibraryManager> {
     _display.addLine(_receiver.showUsers());
     _display.display();
   }
-  
 }

@@ -5,4 +5,3 @@ public enum Classification{
 	CUMPRIDOR, 
 	NORMAL;
 }
-

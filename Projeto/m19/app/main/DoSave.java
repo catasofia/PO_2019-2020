@@ -44,9 +44,8 @@ public class DoSave extends Command<LibraryManager> {
         _receiver.saveAs(_file1.value());  //guarda com o novo nome recebido do utilizador;
       }      
     }catch (MissingFileAssociationException e){
-      System.out.println("Guardar Ficheiro: Nome de ficheiro ilegivel."); 
-      //throw new MissingFileAssociationException();
+      System.out.println("Guardar Ficheiro: Nome de ficheiro ilegivel.");
     }catch (IOException e){
       e.printStackTrace();}
-    }
+  }
 }

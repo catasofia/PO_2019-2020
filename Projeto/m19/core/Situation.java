@@ -42,10 +42,4 @@ public class Situation implements Serializable{
         else aux += "SUSPENSO - EUR - " + _fine + "\n";
         return aux;
     }
-
-    //protected void alteraClassificacao(Classificacoes nvClassif){}
-    
-    //protected void desejaPagar(){}
-
-    //protected void pagarMulta(){}
 }

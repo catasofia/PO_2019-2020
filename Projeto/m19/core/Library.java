@@ -236,4 +236,3 @@ public class Library implements Serializable {
     parse.parseFile(filename);
   }
 }
-

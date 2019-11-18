@@ -71,5 +71,4 @@ public class Parser{
       throw new UserRegistFailedException(components[1], components[2]);
     }
   }
-
 }

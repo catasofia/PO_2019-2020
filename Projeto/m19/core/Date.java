@@ -17,5 +17,4 @@ public class Date implements Serializable{
 	protected void changeDate(int nDay){
 		if (nDay > 0 && _day >= 0) _day += nDay;
 	}
-
 }
