@@ -13,12 +13,12 @@ public abstract class Work implements Serializable{
   private static final long serialVersionUID = 201901101348L;
 
   public Work(int iDObra,int copies, String title, int price, Category category){
-    _iDObra=iDObra;
-    _copies=copies;
-    _copiesAvailable=copies;
-    _title=title;
-    _price=price;
-    _category=category;
+    _iDObra = iDObra;
+    _copies = copies;
+    _copiesAvailable = copies;
+    _title = title;
+    _price = price;
+    _category = category;
   }
 
   protected String getTitle(){
@@ -49,10 +49,15 @@ public abstract class Work implements Serializable{
     _copiesAvailable = nCopies;
   }
 
-  protected boolean areCopiesAvailable(){return _copiesAvailable!=0;}
+  protected boolean areCopiesAvailable(){
+    return _copiesAvailable != 0;
+  }
   
-  abstract protected String displayWork();
-
-  //protected void pesquisaTermo(String termo){};
+  abstract protected String subClass();
+  protected String displayWork(){
+    return getID() + " - " + getCopiesAvailable() + " de " +
+    getCopies() + " - " + subClass() +" - " + getTitle() + " - " + getPrice() +
+    " - " + getCategory().toString();
+  }
 
 }

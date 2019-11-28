@@ -17,10 +17,11 @@ public class Book extends Work{
   public String getISBN(){
     return _iSBN;
   }
+  protected String subClass(){
+    return "Livro";
+  }
 
   protected String displayWork(){
-    return super.getID() + " - " + super.getCopiesAvailable() + " de " +
-    super.getCopies() + " - Livro - " + super.getTitle() + " - " + super.getPrice() +
-    " - " + super.getCategory().toString() + " - " + _author + " - " + _iSBN + "\n";
+    return super.displayWork() + " - " + _author + " - " + _iSBN + "\n";
   }
 }

@@ -28,26 +28,18 @@ public class Situation implements Serializable{
     }
 
     protected void changeSituation(){
-        if (_situation)
-            _situation = false;
-        else 
-            _situation = true;
+        if (_situation) _situation = false;
+        else _situation = true;
     }
-
-    //protected void alteraClassificacao(Classificacoes nvClassif){}
-
+    
     protected void changeFine(int valor){
         _fine = valor;
     }
-
+    
     protected String showSituation(){
         String aux=_classification + " - ";
-        if (_situation) aux+="ACTIVO\n";
-        else aux+= "SUSPENSO - EUR - "+_fine+"\n";
+        if (_situation) aux += "ACTIVO\n";
+        else aux += "SUSPENSO - EUR - " + _fine + "\n";
         return aux;
     }
-
-    //protected void desejaPagar(){}
-
-    //protected void pagarMulta(){}
 }

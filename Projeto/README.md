@@ -1,17 +1,8 @@
-Fazer
-==
-+ Obra
-+ Utente
-+ Guardar e Sair
-+ Data
-+ ...
-
-Não fazer
-==
-+ Requisicoes
-+ Notificações
-+ Multa
-
-O que falta:
-==
-+ Exception MissingFileAssociation (Nelson: yes)
+# Entrega Final
++ Mudar Nomes
+```
+  iD = id
+  dVD = Dvd
+```
++ Abstract Mostrar Obra
++ E o resto

@@ -7,8 +7,8 @@ public enum Category{
 
   private final String _category;
 
-  private Category(String value) {
-    _category = value;
+  private Category(String category) {
+    _category = category;
   }
 
   @Override

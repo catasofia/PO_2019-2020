@@ -5,9 +5,6 @@ import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
 
-// FIXME import iother core concepts
-// FIXME import ui concepts
-
 /**
  * 4.1.3. Advance the current date.
  */
@@ -28,7 +25,7 @@ public class DoAdvanceDate extends Command<LibraryManager> {
   public final void execute() {
     _form.parse();
     _receiver.changeDate(_day.value());
-    _receiver.verifyUser();
+    //_receiver.verifyUser(); - In final project submission
   }
   
 }

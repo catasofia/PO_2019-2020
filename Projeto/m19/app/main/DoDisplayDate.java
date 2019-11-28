@@ -4,9 +4,6 @@ import m19.core.LibraryManager;
 
 import pt.tecnico.po.ui.Command;
 
-// FIXME import other core concepts
-// FIXME import other ui concepts
-
 /**
  * 4.1.2. Display the current date.
  */
@@ -24,5 +21,4 @@ public class DoDisplayDate extends Command<LibraryManager> {
     _display.addLine(Message.currentDate(_receiver.getDate()));
     _display.display();
   }
-  
 }

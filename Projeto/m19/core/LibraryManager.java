@@ -16,8 +16,6 @@ public class LibraryManager implements Serializable{
   private String _file;
 
 
-  // FIXME define methods
-
   public String getFileName(){
     return _file;
   }
@@ -50,12 +48,6 @@ public class LibraryManager implements Serializable{
     return _library.showUsers();
   }
 
-  public void verifyUser(){
-    _library.verifyUser();
-  }
-
-  public void payFine(){}
-
   public String displayWork(int obraID) throws NoSuchWorkIdException{
     return _library.displayWork(obraID);
   }
@@ -83,9 +75,7 @@ public class LibraryManager implements Serializable{
       e.printStackTrace(); 
     }
   }
-    
-
-    
+      
     /**
      * Serialize the persistent state of this application into the specified file.
      * 
@@ -100,10 +90,9 @@ public class LibraryManager implements Serializable{
       throw new MissingFileAssociationException();
     }
     try(ObjectOutputStream save = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename)))){
-      //ObjectOutputStream save = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename))); //ver estas cenas definidas;
       _file=filename;
       save.writeObject(_library);     //escreve no objeto
-      //save.close();                   //fecha o objeto
+      
     } catch (FileNotFoundException e) {
       throw new MissingFileAssociationException(e);
     } catch (IOException e) {
@@ -121,10 +110,16 @@ public class LibraryManager implements Serializable{
    * @throws ClassNotFoundException 
    */
   public void load(String filename) throws FileNotFoundException, IOException, ClassNotFoundException {
-    ObjectInputStream novoFich = new ObjectInputStream(new FileInputStream(filename));
-    Library newLibrary = (Library)novoFich.readObject();
-    novoFich.close();
-    _library = newLibrary;
+    try(ObjectInputStream newFile = new ObjectInputStream(new FileInputStream(filename))){
+      Library newLibrary = (Library)newFile.readObject();
+      _library = newLibrary;
+      _file = filename;
+
+    } catch (FileNotFoundException e){
+      throw new FileNotFoundException();
+    } catch (ClassNotFoundException | IOException e){
+      e.printStackTrace();
+    }
   }
 
   /**

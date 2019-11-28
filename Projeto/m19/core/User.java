@@ -19,6 +19,7 @@ public class User implements Serializable{
         _name = name;
         _email = email;
         _situation = new Situation();
+        //_notifications = new List<>();
     }
 
     protected int getUserID(){
@@ -39,7 +40,7 @@ public class User implements Serializable{
 
     protected String showUser(){
         String aux = _iDUser + " - " + _name + " - " + _email + " - ";
-        aux += _situation.showSituation(); //FALTAM COISAS
+        aux += _situation.showSituation();
         return aux;
 
     }
@@ -51,11 +52,6 @@ public class User implements Serializable{
     protected void showNotifications(){
         for(Notification i: _notifications)
             showNotification(i.getID());
-    }
-
-    protected void verifyUser(){
-        //Verifica se Utente tem obras que ja devia de ter entregue, altera pontuaçao, etc..
-        
     }
 
     protected void addNotification(String tipo, String mensagem){
