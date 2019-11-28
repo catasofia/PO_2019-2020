@@ -1,10 +1,10 @@
 package m19.core;
 
-public class DVD extends Work{
+public class Dvd extends Work{
   private String _director;
   private String _iGACNumber;
 
-  public DVD(int id, String title, String director, int price, 
+  public Dvd(int id, String title, String director, int price, 
   Category cat, String iGACNumber,int copies){
       super(id, copies, title, price, cat);
       _director = director;
@@ -19,9 +19,11 @@ public class DVD extends Work{
     return _iGACNumber;
   }
 
+  protected String subClass(){
+    return "DVD";
+  }
+
   protected String displayWork(){
-    return super.getID() + " - " + super.getCopiesAvailable() + " de " +
-    super.getCopies() + " - DVD - " + super.getTitle() + " - " + super.getPrice() +
-    " - " + super.getCategory().toString() + " - " + _director + " - " + _iGACNumber + "\n";
+    return super.displayWork() + " - " + _director + " - " + _iGACNumber + "\n";
   }
 }

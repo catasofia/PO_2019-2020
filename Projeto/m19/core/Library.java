@@ -54,7 +54,7 @@ public class Library implements Serializable {
    *        email of the User
    * @throws UserRegistFailedException when the name or the email are empty strings
    */
-  protected void registerUser(String name, String email) throws UserRegistFailedException{
+    void registerUser(String name, String email) throws UserRegistFailedException{
     if(!name.isEmpty() && !email.isEmpty())
       _users.put(_nextUserID,new User(_nextUserID++,name, email));
     else throw new UserRegistFailedException(name, email);
@@ -65,7 +65,7 @@ public class Library implements Serializable {
    * 
    * @return next user id
    */
-  protected int getNextUser(){
+    int getNextUser(){
     return _nextUserID;
   }
   
@@ -76,7 +76,7 @@ public class Library implements Serializable {
    *        ID of the User
    * @return user if he exists
    */
-  protected User getUser(int id) {
+    User getUser(int id) {
     if (id < _nextUserID) return _users.get(id);
     else return null;
   }
@@ -89,7 +89,7 @@ public class Library implements Serializable {
    * @throws NoSuchUserIdException if the given id has no user associated to it
    * @return a String to show the user associated to the given id
    */
-  protected String showUser(int id) throws NoSuchUserIdException{
+    String showUser(int id) throws NoSuchUserIdException{
     User current_user = getUser(id);
     if(current_user != null) return current_user.showUser(); 
     else throw new NoSuchUserIdException(id);
@@ -100,7 +100,7 @@ public class Library implements Serializable {
    * 
    * @return all the users in the library
    */
-  protected String showUsers(){
+    String showUsers(){
     String allUsers = "";
     List<User> users = new ArrayList<>(_users.values());
 
@@ -134,7 +134,7 @@ public class Library implements Serializable {
    * @param copies
    *             number of copies of the book 
    */
-  protected void registerBook(String title, String author, int price, 
+    void registerBook(String title, String author, int price, 
   Category cat, String iSBN,int copies){
     _works.put(_nextObraID, new Book(_nextObraID++, title, author, price, cat, iSBN, copies));
   }
@@ -155,9 +155,9 @@ public class Library implements Serializable {
    * @param copies
    *            number of copies of the DVD
    */
-  protected void registerDVD(String title, String director, int price, 
+    void registerDVD(String title, String director, int price, 
   Category cat, String iGACNumber,int copies){
-    _works.put(_nextObraID, new DVD(_nextObraID++, title, director, price, cat, iGACNumber, copies));
+    _works.put(_nextObraID, new Dvd(_nextObraID++, title, director, price, cat, iGACNumber, copies));
   }
 
   /**
@@ -166,7 +166,7 @@ public class Library implements Serializable {
    *          id of the work
    * @return the work associated to the given id
    */
-  protected Work getWork(int id){
+    Work getWork(int id){
     if (id < _nextObraID) return _works.get(id);
     else return null;
   }
@@ -179,7 +179,7 @@ public class Library implements Serializable {
    * @return a String to display the work associated to the given id
    * @throws NoSuchWorkIdException if the given id has no work associated to it
    */
-  protected String displayWork(int id) throws NoSuchWorkIdException{
+    String displayWork(int id) throws NoSuchWorkIdException{
     Work current_work = getWork(id);
     if (current_work != null)
       return current_work.displayWork();
@@ -191,7 +191,7 @@ public class Library implements Serializable {
    * searches the works sorted by the id and displays them
    * @return all the works in the library
    */
-  protected String displayWorks(){
+  String displayWorks(){
     String allWorks = "";
     for (int i = 0;i < _nextObraID; i++)
       if (getWork(i) != null) allWorks += _works.get(i).displayWork();
@@ -205,7 +205,7 @@ public class Library implements Serializable {
    * 
    * @return current day
    */
-  protected int getDate(){
+  int getDate(){
     return _date.getDate();
   }
 
@@ -215,7 +215,7 @@ public class Library implements Serializable {
    * @param nDay
    *        number of days to advance
    */
-  protected void changeDate(int nDay){
+    void changeDate(int nDay){
     _date.changeDate(nDay);
   }
 

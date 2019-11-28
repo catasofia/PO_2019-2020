@@ -53,6 +53,11 @@ public abstract class Work implements Serializable{
     return _copiesAvailable != 0;
   }
   
-  abstract protected String displayWork();
+  abstract protected String subClass();
+  protected String displayWork(){
+    return getID() + " - " + getCopiesAvailable() + " de " +
+    getCopies() + " - " + subClass() +" - " + getTitle() + " - " + getPrice() +
+    " - " + getCategory().toString();
+  }
 
 }

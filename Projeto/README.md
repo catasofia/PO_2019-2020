@@ -1,15 +1,8 @@
-Fazer
-==
-+ ...
-
-Não fazer
-==
-+ Requisicoes
-+ Notificações
-+ Multa
-
-O que falta:
-==
-+ Exception MissingFileAssociation (Nelson: yes)
-+ Comentar Funcoes que nao utilizamos
-+ Fazer()
+# Entrega Final
++ Mudar Nomes
+```
+  iD = id
+  dVD = Dvd
+```
++ Abstract Mostrar Obra
++ E o resto
