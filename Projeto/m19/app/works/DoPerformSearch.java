@@ -25,7 +25,7 @@ public class DoPerformSearch extends Command<LibraryManager> {
   @Override
   public final void execute() {
     _form.parse();
-    // FIXME implement command
+    _display.popup(_receiver.performSearch(_term.value()));
   }
   
 }

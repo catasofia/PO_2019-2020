@@ -6,56 +6,59 @@ import java.util.List;
 import java.io.Serializable;
 
 
-public class User implements Serializable{
-    private int _iDUser;
-    private String _name;
-    private String _email;
-    private Situation _situation;
-    private List<Notification> _notifications;
-    private Set<Request> _requests;
+public class User implements Serializable, ObserverInterface{
+	private int _iDUser;
+	private String _name;
+	private String _email;
+	private Situation _situation;
+	private List<Notification> _notifications;
+	private Set<Request> _requests;
 
-    private static final long serialVersionUID = 201901101348L;
+	private static final long serialVersionUID = 201901101348L;
 
-    public User(int iDUser, String name, String email){
-        _iDUser=iDUser;
-        _name = name;
-        _email = email;
-        _situation = new Situation();
-        _requests = new HashSet<Request>();
-    }
+	public User(int iDUser, String name, String email){
+			_iDUser=iDUser;
+			_name = name;
+			_email = email;
+			_situation = new Situation();
+			_requests = new HashSet<Request>();
+	}
 
-    protected int getUserID(){
-        return _iDUser;
-    }
+	protected int getUserID(){
+			return _iDUser;
+	}
 
-    protected String getName(){
-        return _name;
-    }
-    
-    protected String getEmail(){
-        return _email;
-    }
+	protected String getName(){
+			return _name;
+	}
+	
+	protected String getEmail(){
+			return _email;
+	}
 
-    protected Situation getSituation(){
-        return _situation;
-    }
+	protected Situation getSituation(){
+			return _situation;
+	}
 
-    protected String showUser(){
-        String aux = _iDUser + " - " + _name + " - " + _email + " - ";
-        aux += _situation.showSituation();
-        return aux;
-    }
+	protected String showUser(){
+			String aux = _iDUser + " - " + _name + " - " + _email + " - ";
+			aux += _situation.showSituation();
+			return aux;
+	}
 
-    protected void showNotification(int iDNotificacao){
-        System.out.println(_notifications.get(iDNotificacao).getMessage());
-    }
-    
-    protected void showNotifications(){
-        for(Notification i: _notifications)
-            showNotification(i.getID());
-    }
+	protected void showNotification(int iDNotificacao){
+			System.out.println(_notifications.get(iDNotificacao).getMessage());
+	}
+	
+	protected void showNotifications(){
+			for(Notification i: _notifications)
+					showNotification(i.getID());
+	}
 
-    /*protected void addNotification(String tipo, String mensagem){
-        _notifications.add(new Notification(tipo, mensagem));
-    }*/
+	@Override
+	public void update(){}
+
+	/*protected void addNotification(String tipo, String mensagem){
+			_notifications.add(new Notification(tipo, mensagem));
+	}*/
 }

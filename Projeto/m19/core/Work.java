@@ -57,6 +57,7 @@ public abstract class Work implements Serializable{
   }
   
   abstract protected String subClass();
+  
   protected String displayWork(){
     return getID() + " - " + getCopiesAvailable() + " de " +
     getCopies() + " - " + subClass() +" - " + getTitle() + " - " + getPrice() +

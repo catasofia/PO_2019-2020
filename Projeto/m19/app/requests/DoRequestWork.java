@@ -28,7 +28,9 @@ public class DoRequestWork extends Command<LibraryManager> {
   @Override
   public final void execute() throws DialogException {
     _form.parse();
-    _receiver.requestWork(_idUser, _idWork);
+    /* try{
+      _receiver.requestWork(_idUser, _idWork);
+    } catch() */
   }
 
 }

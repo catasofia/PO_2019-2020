@@ -30,15 +30,15 @@ public class Library implements Serializable {
 
   /** Serial number for serialization. */
   private static final long serialVersionUID = 201901101348L;
-  private int _nextUserID;
-  private int _nextObraID;
+  private int _nextUserId;
+  private int _nextObraId;
   private Date _date;
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
 
   public Library(){
-    _nextUserID = 0;
-    _nextObraID = 0;
+    _nextUserId = 0;
+    _nextObraId = 0;
     _date = new Date();
     _users = new HashMap<>();
     _works = new HashMap<>();
@@ -56,17 +56,17 @@ public class Library implements Serializable {
    */
     void registerUser(String name, String email) throws UserRegistFailedException{
     if(!name.isEmpty() && !email.isEmpty())
-      _users.put(_nextUserID,new User(_nextUserID++,name, email));
+      _users.put(_nextUserId,new User(_nextUserId++,name, email));
     else throw new UserRegistFailedException(name, email);
   }
 
   /**
-   * Get's the _nextUserID private attribute
+   * Get's the _nextUserId private attribute
    * 
    * @return next user id
    */
     int getNextUser(){
-    return _nextUserID;
+    return _nextUserId;
   }
   
   /**
@@ -77,7 +77,7 @@ public class Library implements Serializable {
    * @return user if he exists
    */
     User getUser(int id) {
-    if (id < _nextUserID) return _users.get(id);
+    if (id < _nextUserId) return _users.get(id);
     else return null;
   }
 
@@ -119,7 +119,7 @@ public class Library implements Serializable {
 
   //==================== Work ====================
   /**
-   * Register a book by its title, author, price, category, iSBN 
+   * Register a book by its title, author, price, category, isbn 
    * and number of copies
    * @param title
    *             title of the book
@@ -129,14 +129,14 @@ public class Library implements Serializable {
    *             price of the book
    * @param cat
    *             category of the book
-   * @param iSBN
-   *             iSBN number of the book
+   * @param isbn
+   *             isbn number of the book
    * @param copies
    *             number of copies of the book 
    */
     void registerBook(String title, String author, int price, 
-  Category cat, String iSBN,int copies){
-    _works.put(_nextObraID, new Book(_nextObraID++, title, author, price, cat, iSBN, copies));
+  Category cat, String isbn,int copies){
+    _works.put(_nextObraId, new Book(_nextObraId++, title, author, price, cat, isbn, copies));
   }
 
   /**
@@ -150,14 +150,14 @@ public class Library implements Serializable {
    *            price of the DVD
    * @param cat
    *            category of the DVD
-   * @param iGACNumber
+   * @param igacNumber
    *            iGAC number of the DVD
    * @param copies
    *            number of copies of the DVD
    */
     void registerDVD(String title, String director, int price, 
-  Category cat, String iGACNumber,int copies){
-    _works.put(_nextObraID, new Dvd(_nextObraID++, title, director, price, cat, iGACNumber, copies));
+  Category cat, String igacNumber,int copies){
+    _works.put(_nextObraId, new Dvd(_nextObraId++, title, director, price, cat, igacNumber, copies));
   }
 
   /**
@@ -167,7 +167,7 @@ public class Library implements Serializable {
    * @return the work associated to the given id
    */
     Work getWork(int id){
-    if (id < _nextObraID) return _works.get(id);
+    if (id < _nextObraId) return _works.get(id);
     else return null;
   }
 
@@ -193,12 +193,29 @@ public class Library implements Serializable {
    */
   String displayWorks(){
     String allWorks = "";
-    for (int i = 0;i < _nextObraID; i++)
-      if (getWork(i) != null) allWorks += _works.get(i).displayWork();
+    for (int i = 0;i < _nextObraId; i++)
+    if (getWork(i) != null) allWorks += _works.get(i).displayWork();
     return allWorks;
   }
+  
 
+  String performSearch(String term){
+    String search = "";
+    for(int id = 0; id < _nextObraId; id++){
+      try {
+        String work = displayWork(id);
+        if (work.toLowerCase().contains(term.toLowerCase()))
+        search += work;
+      } catch(NoSuchWorkIdException e){}
+    }
+    return search;
+  }
 
+  //================== Requests ===================
+  /* void requestWork(){
+    requestWor();
+  } */
+  
   //==================== Tempo ====================
   /**
    * Returns the current day
@@ -236,9 +253,6 @@ public class Library implements Serializable {
     parse.parseFile(filename);
   }
   
-  void requestWork(){
-    requestWor();
-  }
 
 
 }
