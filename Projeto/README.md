@@ -1,10 +1,8 @@
-# Entrega Final
+# Entrega Final  💯 💩
 + Mudar Nomes
 ```
-  iD = id
-  dVD = Dvd
+  OBRA -> WORK
 ```
-+ Abstract Mostrar Obra
 + E o resto
 
 + Padrões de Desenho
@@ -12,4 +10,10 @@
   Works -> template method;
   Requests and notifications -> observer;
   New categories -> decorator;
+```
++ Feito:
+```
+  Perform search;
+  Alguns nomes alterados;
+  mais nada 😉
 ```
