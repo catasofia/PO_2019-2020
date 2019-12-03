@@ -235,4 +235,10 @@ public class Library implements Serializable {
     Parser parse = new Parser(this);
     parse.parseFile(filename);
   }
+  
+  void requestWork(){
+    requestWor();
+  }
+
+
 }

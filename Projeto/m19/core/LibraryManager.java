@@ -135,4 +135,10 @@ public class LibraryManager implements Serializable{
       throw new ImportFileException(e);
     }
   }
+
+
+  public void requestWork(){
+    _library.requestWork();
+  }
+
 }
