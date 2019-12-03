@@ -1,8 +1,8 @@
 package m19.core;
 
 import java.io.Serializable;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.Set;
+import java.util.HashSet;;
 
 public class Request implements Serializable{
   private int _deadline;
