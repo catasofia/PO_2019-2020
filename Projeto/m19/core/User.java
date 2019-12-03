@@ -1,5 +1,7 @@
 package m19.core;
 
+import java.util.Set;
+import java.util.HashSet;
 import java.util.List;
 import java.io.Serializable;
 
@@ -10,7 +12,7 @@ public class User implements Serializable{
     private String _email;
     private Situation _situation;
     private List<Notification> _notifications;
-    //private List<Request> _requests;
+    private Set<Request> _requests;
 
     private static final long serialVersionUID = 201901101348L;
 
@@ -19,7 +21,7 @@ public class User implements Serializable{
         _name = name;
         _email = email;
         _situation = new Situation();
-        //_notifications = new List<>();
+        _requests = new HashSet<Request>();
     }
 
     protected int getUserID(){
@@ -42,7 +44,6 @@ public class User implements Serializable{
         String aux = _iDUser + " - " + _name + " - " + _email + " - ";
         aux += _situation.showSituation();
         return aux;
-
     }
 
     protected void showNotification(int iDNotificacao){
@@ -54,7 +55,7 @@ public class User implements Serializable{
             showNotification(i.getID());
     }
 
-    protected void addNotification(String tipo, String mensagem){
+    /*protected void addNotification(String tipo, String mensagem){
         _notifications.add(new Notification(tipo, mensagem));
-    }
+    }*/
 }

@@ -1,10 +1,11 @@
 package m19.core;
 
 import java.io.Serializable;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Request implements Serializable{
-  private int _dataRequisicao;
-  private int _dataDevolucao;
+  private int _deadline;
   private User _user;
   private Work _work;
   private static final long serialVersionUID = 201901101348L;
@@ -12,8 +13,21 @@ public class Request implements Serializable{
   public Request(User user, Work work, int date){
     _user = user;
     _work = work;
-    _dataRequisicao = date;
+    _work.decreaseCopies(1);
+    _deadline = date;
   }
+
+  User getUser(){
+    return _user;
+  }
+  Work getWork(){
+    return _work;
+  }
+  int getDeadline(){
+    return _deadline;
+  }
+
+
 
   public boolean verifySituation(User user){
     //_user.obterPontuacao().obterSituacao();

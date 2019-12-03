@@ -1,0 +1,20 @@
+*** tests/A-09-01-M-ok.out	2019-11-20 22:21:24.000000000 +0000
+--- tests/A-09-01-M-ok.outhyp	2019-12-03 17:01:34.620000000 +0000
+***************
+*** 35,42 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Mostrar notificações de utente: Operação inválida: O utente 5 não existe.
+! Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+--- 35,41 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes

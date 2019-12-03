@@ -1,6 +1,8 @@
 package m19.core;
 
 import java.io.Serializable;
+import java.util.Set;
+import java.util.HashSet;
 
 public abstract class Work implements Serializable{
   private int _iDObra;
@@ -9,6 +11,7 @@ public abstract class Work implements Serializable{
   private String _title;
   private int _price;
   private Category _category;
+  private Set<Request> _usersRequests;
 
   private static final long serialVersionUID = 201901101348L;
 
@@ -45,8 +48,8 @@ public abstract class Work implements Serializable{
     return _category;
   }
   
-  protected void changeCopies(int nCopies){
-    _copiesAvailable = nCopies;
+  protected void decreaseCopies(int nCopies){
+    _copiesAvailable -= nCopies;
   }
 
   protected boolean areCopiesAvailable(){
