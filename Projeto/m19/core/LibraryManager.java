@@ -148,7 +148,7 @@ public class LibraryManager implements Serializable{
   }
 
   public int returnWork(int userId, int workId){
-    return _library.requestWork(userId, workId);
+    return _library.returnWork(userId, workId);
   }
 
 }

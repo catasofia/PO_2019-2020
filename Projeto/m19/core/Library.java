@@ -226,6 +226,13 @@ public class Library implements Serializable {
   int returnWork(int userId, int workId){
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
+    for (int i=0;i<_requests.size();i++)
+      if (_requests.get(i).getUser() == currentUser
+        && _requests.get(i).getWork() == currentWork){
+        _requests.remove(i);
+        return 0;
+      }
+
     return -1;
   };
 

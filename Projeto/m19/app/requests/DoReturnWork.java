@@ -1,5 +1,6 @@
 package m19.app.requests;
 
+import m19.app.exception.WorkNotBorrowedByUserException;
 import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Input;
 import pt.tecnico.po.ui.Command;
@@ -27,6 +28,8 @@ public class DoReturnWork extends Command<LibraryManager> {
   @Override
   public final void execute() throws DialogException {
     _form.parse();
+    int rc = _receiver.returnWork(_idUser.value(), _idWork.value());
+    if (rc==-1) throw new WorkNotBorrowedByUserException(_idWork.value(), _idUser.value());
     // FIXME implement command
   }
 
