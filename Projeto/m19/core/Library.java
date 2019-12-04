@@ -217,6 +217,7 @@ public class Library implements Serializable {
   int requestWork(int userId, int workId){
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
+    //se for null erro
     Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
     _requests.add(nvRequest);
     return nvRequest.getDeadline();
@@ -225,7 +226,6 @@ public class Library implements Serializable {
   int returnWork(int userId, int workId){
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
-    
     return -1;
   };
 
