@@ -35,7 +35,7 @@ public class Library implements Serializable {
   private Date _date;
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
-  private Map<Work,Request> _requests;
+  private List<Request> _requests;
 
   public Library(){
     _nextUserId = 0;
@@ -43,7 +43,7 @@ public class Library implements Serializable {
     _date = new Date();
     _users = new HashMap<>();
     _works = new HashMap<>();
-    _requests = new HashMap<>();
+    _requests = new ArrayList<>();
   }
 
   //==================== User ====================
@@ -218,12 +218,16 @@ public class Library implements Serializable {
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
     Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
-    _requests.put(currentWork, nvRequest);
+    _requests.add(nvRequest);
     return nvRequest.getDeadline();
   }
   
-  
-
+  int returnWork(int userId, int workId){
+    User currentUser = getUser(userId);
+    Work currentWork = getWork(workId);
+    
+    return -1;
+  };
 
 
   //==================== Tempo ====================
