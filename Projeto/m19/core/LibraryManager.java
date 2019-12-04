@@ -60,10 +60,14 @@ public class LibraryManager implements Serializable{
     return _library.performSearch(term);
   }
   
+  public int requestWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
+    return _library.requestWork(userId, workId);
+  }
+
+  public int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
+    return _library.returnWork(userId, workId);
+  }
   
-  /* public void requestWork(int userId, int workId){
-    _library.requestWork(userId, workId);
-  } */
     /**
      * Serialize the persistent state of this application.
      * 
@@ -140,15 +144,6 @@ public class LibraryManager implements Serializable{
     } catch (IOException | BadEntrySpecificationException | UserRegistFailedException e) {
       throw new ImportFileException(e);
     }
-  }
-
-
-  public int requestWork(int userId, int workId){
-    return _library.requestWork(userId, workId);
-  }
-
-  public int returnWork(int userId, int workId){
-    return _library.returnWork(userId, workId);
   }
 
 }

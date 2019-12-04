@@ -200,7 +200,12 @@ public class Library implements Serializable {
     return allWorks;
   }
   
-
+/**
+ * searchs for the term received in the argument in every work
+ * @param term
+ *          term to search for
+ * @return a String to display all the works that have "term" in its description
+ */
   String performSearch(String term){
     String search = "";
     for(int id = 0; id < _nextObraId; id++){
@@ -214,27 +219,39 @@ public class Library implements Serializable {
   }
 
   //================== Requests ===================
-  int requestWork(int userId, int workId){
+  int requestWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
+    if(currentUser == null)
+      throw new NoSuchUserIdException(userId);
+    else if(currentWork == null)
+      throw new NoSuchWorkIdException(workId);
     //se for null erro
-    Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
-    _requests.add(nvRequest);
-    return nvRequest.getDeadline();
+    if (currentWork.areCopiesAvailable()){
+      Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
+      _requests.add(nvRequest);
+      return nvRequest.getDeadline();
+    }
+    else{
+      return -1;
+    }
   }
   
-  int returnWork(int userId, int workId){
+  int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
+    if(currentUser == null)
+      throw new NoSuchUserIdException(userId);
+    else if(currentWork == null)
+      throw new NoSuchWorkIdException(workId);
     for (int i=0;i<_requests.size();i++)
       if (_requests.get(i).getUser() == currentUser
         && _requests.get(i).getWork() == currentWork){
         _requests.remove(i);
         return 0;
       }
-
     return -1;
-  };
+  }
 
 
   //==================== Tempo ====================
@@ -273,7 +290,4 @@ public class Library implements Serializable {
     Parser parse = new Parser(this);
     parse.parseFile(filename);
   }
-  
-
-
 }

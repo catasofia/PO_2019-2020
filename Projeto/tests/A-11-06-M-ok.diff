@@ -1,5 +1,5 @@
-*** tests/A-11-06-M-ok.out	2019-11-20 22:26:19.000000000 +0000
---- tests/A-11-06-M-ok.outhyp	2019-12-04 18:51:05.206531950 +0000
+*** tests/A-11-06-M-ok.out	2019-12-03 17:06:33.556738066 +0000
+--- tests/A-11-06-M-ok.outhyp	2019-12-04 19:46:17.752218203 +0000
 ***************
 *** 29,35 ****
   1 - Requisitar obra
@@ -18,6 +18,71 @@
   1 - Requisitar obra
   2 - Devolver obra
 ***************
+*** 38,49 ****
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+--- 38,51 ----
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? 
+! Deseja ser avisado quando algum exemplar for devolvido (s/n)? A obra 1 deve ser devolvida no dia -1.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
+! Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+***************
+*** 84,90 ****
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+--- 86,93 ----
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? 
+! Deseja ser avisado quando algum exemplar for devolvido (s/n)? A obra 1 deve ser devolvida no dia -1.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+***************
+*** 126,132 ****
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+--- 129,136 ----
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
+! Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+***************
 *** 146,152 ****
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
@@ -26,7 +91,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 146,152 ----
+--- 150,156 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
