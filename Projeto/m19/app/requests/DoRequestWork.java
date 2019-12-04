@@ -28,9 +28,10 @@ public class DoRequestWork extends Command<LibraryManager> {
   @Override
   public final void execute() throws DialogException {
     _form.parse();
-    /* try{
-      _receiver.requestWork(_idUser, _idWork);
-    } catch() */
+    try{
+      int day = _receiver.requestWork(_idUser.value(), _idWork.value());
+      _display.popup(Message.workReturnDay(_idWork.value(), day));
+    }catch(Exception e) {System.out.println("x");} 
   }
 
 }

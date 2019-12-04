@@ -1,12 +1,7 @@
-*** tests/A-07-10-M-ok.out	2019-12-03 17:06:33.556738066 +0000
---- tests/A-07-10-M-ok.outhyp	2019-12-04 15:00:00.374003624 +0000
+*** tests/A-07-10-M-ok.out	2019-11-20 22:20:39.000000000 +0000
+--- tests/A-07-10-M-ok.outhyp	2019-12-04 17:23:55.854531950 +0000
 ***************
-*** 11,44 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 7 deve ser devolvida no dia 3.
-! Menu de Gestão de Requisições
+*** 16,25 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -14,18 +9,29 @@
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
+  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+--- 16,27 ----
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 7 deve ser devolvida no dia 8.
 ! Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
-! Menu de Gestão de Requisições
++ Escolha uma opção: Número inválido!
+  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+***************
+*** 30,44 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
-! Menu de Gestão de Requisições
+  Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -36,32 +42,17 @@
   Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
---- 11,42 ----
+--- 32,48 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 3.
+  Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Número inválido!
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
+! Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -79,7 +70,7 @@
   1 - Registar utente
   2 - Mostrar utente
   3 - Listar utentes
---- 75,81 ----
+--- 81,87 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair

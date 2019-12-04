@@ -13,8 +13,8 @@ public class Request implements Serializable{
   public Request(User user, Work work, int date){
     _user = user;
     _work = work;
+    _deadline = makeDeadline(date);
     _work.decreaseCopies(1);
-    _deadline = date;
   }
 
   User getUser(){
@@ -27,6 +27,23 @@ public class Request implements Serializable{
     return _deadline;
   }
 
+  int makeDeadline(int day){
+    Classification situation = _user.getSituation().getClassification();
+    int exemplares = _work.getCopiesAvailable();
+    
+    if (situation == Classification.FALTOSO) return 2;
+    //PODE DAR PROBLEMA COM O 0
+    if (exemplares==1)
+      if (situation==Classification.NORMAL) day+=3;
+      else day+=8;
+    else if (exemplares<=5)
+      if (situation==Classification.NORMAL) day+=8;
+      else day+=15;
+    else
+      if (situation==Classification.NORMAL) day+=15;
+      else day+=30;
+    return day;
+  }
 
 
   public boolean verifySituation(User user){

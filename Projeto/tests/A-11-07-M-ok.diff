@@ -1,41 +1,5 @@
-*** tests/A-11-07-M-ok.out	2019-12-03 17:06:33.556738066 +0000
---- tests/A-11-07-M-ok.outhyp	2019-12-04 15:00:04.206003624 +0000
-***************
-*** 11,28 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 2 deve ser devolvida no dia 15.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 3 deve ser devolvida no dia 15.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
---- 11,25 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
+*** tests/A-11-07-M-ok.out	2019-11-20 22:26:19.000000000 +0000
+--- tests/A-11-07-M-ok.outhyp	2019-12-04 17:23:59.290531950 +0000
 ***************
 *** 64,79 ****
   1 - Requisitar obra
@@ -54,7 +18,7 @@
   Escolha uma opção: Menu Principal
   1 - Abrir dados
   2 - Guardar dados
---- 61,76 ----
+--- 64,79 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -80,7 +44,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 87,93 ----
+--- 90,96 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
@@ -101,7 +65,7 @@
   Escolha uma opção: Menu Principal
   1 - Abrir dados
   2 - Guardar dados
---- 108,118 ----
+--- 111,121 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -122,7 +86,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 129,135 ----
+--- 132,138 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
