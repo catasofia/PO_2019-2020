@@ -212,8 +212,9 @@ public class Library implements Serializable {
   }
 
   //================== Requests ===================
-  /* void requestWork(){
-    requestWor();
+  /* void requestWork(int userId, int workId){
+    User currentUser = getUser(userId);
+    currentUser.requestWork(workId);
   } */
   
   //==================== Tempo ====================

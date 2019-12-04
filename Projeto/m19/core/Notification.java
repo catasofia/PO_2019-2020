@@ -7,21 +7,21 @@ import java.util.Observer;
 
 public class Notification implements Serializable, ObservableInterface{
 	private int _iD;
-	private String _type;
+	//private String _type;
 	private String _message;
 	private List<User> _observers;
 
 	private static final long serialVersionUID = 201901101348L;
 
-	public Notification(String type, String message){
-		_type = type;
+	public Notification(/* String type, */ String message){
+		//_type = type;
 		_message = message;
 		_observers = new ArrayList<User>();
 	}
 
-	public String getType(){
+	/* public String getType(){
 		return _type;
-	}
+	} */
 
 	public String getMessage(){
 		return _message;
@@ -44,5 +44,4 @@ public class Notification implements Serializable, ObservableInterface{
 			observer.update(_message);
 		}
 	}
-
 }

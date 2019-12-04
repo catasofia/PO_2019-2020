@@ -59,7 +59,11 @@ public class LibraryManager implements Serializable{
   public String performSearch(String term){
     return _library.performSearch(term);
   }
-    
+  
+  
+  /* public void requestWork(int userId, int workId){
+    _library.requestWork(userId, workId);
+  } */
     /**
      * Serialize the persistent state of this application.
      * 
@@ -138,9 +142,5 @@ public class LibraryManager implements Serializable{
     }
   }
 
-
-  /* public void requestWork(){
-    _library.requestWork();
-  }  */
 
 }
