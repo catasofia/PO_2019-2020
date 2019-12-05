@@ -28,8 +28,9 @@ public class Request implements Serializable{
   }
 
   int makeDeadline(int day){
-    Classification situation = _user.getSituation().getClassification();
-    int exemplares = _work.getCopiesAvailable();
+    int copies = _work.getCopiesAvailable();
+    return day += _user.getDeadline(copies);
+    /* Classification situation = _user.getSituation().getClassification();
     
     if (situation == Classification.FALTOSO) return 2;
     //PODE DAR PROBLEMA COM O 0
@@ -42,7 +43,7 @@ public class Request implements Serializable{
     else
       if (situation==Classification.NORMAL) day+=15;
       else day+=30;
-    return day;
+    return day; */
   }
 
 

@@ -43,7 +43,7 @@ public class DoRequestWork extends Command<LibraryManager> {
       throw new NoSuchUserException(e.getId());
     }catch(NoSuchWorkIdException e){
       throw new NoSuchWorkException(e.getId());
-    }catch(Exception e) {System.out.println("x");} 
+    }
   }
 
 }
