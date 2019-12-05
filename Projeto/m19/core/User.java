@@ -13,7 +13,7 @@ public class User implements Serializable, Observer{
 	private String _email;
 	private Situation _situation;
 	private List<Notification> _notifications;
-	private List<String> _messages;
+	//private List<String> _messages;
 	private Set<Request> _requests;
 	private ClassificationInterface _classification;
 
@@ -25,7 +25,7 @@ public class User implements Serializable, Observer{
 		_email = email;
 		_situation = new Situation();
 		_requests = new HashSet<Request>();
-		_messages = new ArrayList<String>();
+		//_messages = new ArrayList<String>();
 		_notifications = new ArrayList<Notification>();
 		_classification = new Normal();
 	}
@@ -71,8 +71,13 @@ public class User implements Serializable, Observer{
 	}
 
 	@Override
-	public void update(String message){
-		_messages.add(message);
+	public void update(Notification message){
+		_notifications.add(message);
+	}
+
+	@Override
+	public void update(){
+		//altera situação 
 	}
 
 

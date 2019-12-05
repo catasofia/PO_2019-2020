@@ -26,7 +26,7 @@ import m19.core.exception.*;
 /**
  * Class that represents the library as a whole.
  */
-public class Library implements Serializable {
+public class Library implements Serializable, ObservableInterface {
 
   /** Serial number for serialization. */
   private static final long serialVersionUID = 201901101348L;
@@ -36,7 +36,8 @@ public class Library implements Serializable {
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
   private Map<String, Request> _requests;
-
+  private Map<Integer, User> _observers;
+  
   public Library(){
     _nextUserId = 0;
     _nextObraId = 0;
@@ -44,6 +45,7 @@ public class Library implements Serializable {
     _users = new HashMap<>();
     _works = new HashMap<>();
     _requests = new HashMap<>();
+    _observers = new HashMap<>();
   }
 
   //==================== User ====================
@@ -255,7 +257,7 @@ public class Library implements Serializable {
 
     if(currentUser == null) throw new NoSuchUserIdException(userId);
     else if(currentWork == null) throw new NoSuchWorkIdException(workId);
-    if (_requests.remove(hashcodeRequest(userId, workId))==null) return -1;
+    if (_requests.remove(hashcodeRequest(userId, workId)) ==null) return -1;
     currentWork.decreaseCopies(-1);  //Ver melhor
     return 0;
   }
@@ -282,6 +284,24 @@ public class Library implements Serializable {
     
   }
 
+
+
+  //===============================================
+  public void register(User observer){
+    _observers.put(observer.getUserID(), observer);
+  }
+
+  public void unregister(User observer){
+    _observers.remove(observer.getUserID(), observer);
+  }
+
+  public void notifyObservers(String message){
+    Notification notification = new Notification(message);
+    List<User> observers = new ArrayList<>(_observers.values());
+    for(User observer: observers){
+      observer.update(notification);
+    }
+  }
 
   //==================== Files ====================
   /**

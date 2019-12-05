@@ -9,7 +9,7 @@ javac -cp po-uilib.jar:. `find m19 -name "*.java"`
 #rm -rf `find m19 -name "*.class"`
 for x in tests/*.in; do
     NUM=$[$NUM+1]
-    printf "\033[00;34m%s -- " $x
+    printf "\033[01;36m%s -- " $x
     if [ -e ${x%.in}.import ]; then
         java -cp :po-uilib.jar:. -Dimport=${x%.in}.import -Din=$x -Dout=${x%.in}.outhyp m19.app.App;
     else
@@ -33,8 +33,10 @@ done
 rm -f saved*
 
 echo -en "\033[01;32mSUCCESS: " $SUC "of " $NUM " test" "\n"
-echo -en "\033[00;31mFAIL: " $FAIL "of " $NUM " test" "\n"
-printf "\033[01;36m%d" $((100*$SUC/$NUM))
+echo -en "\e[5m"
+echo -en "\033[01;31mFAIL: " $FAIL "of " $NUM " test" "\n"
+echo -en "\e[0m"
+printf "           \033[01;33m%d" $((100*$SUC/$NUM))
 echo "%"
 
 find . -name '*.class' -exec rm -f {} \;
