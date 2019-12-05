@@ -16,6 +16,7 @@ public class User implements Serializable, Observer{
 	//private List<String> _messages;
 	private Set<Request> _requests;
 	private ClassificationInterface _classification;
+	private boolean _active;
 
 	private static final long serialVersionUID = 201901101348L;
 
@@ -28,6 +29,7 @@ public class User implements Serializable, Observer{
 		//_messages = new ArrayList<String>();
 		_notifications = new ArrayList<Notification>();
 		_classification = new Normal();
+		_active = true;
 	}
 
 	protected int getUserID(){
@@ -66,8 +68,16 @@ public class User implements Serializable, Observer{
 		_classification = classification;
 	}
 
+	public ClassificationInterface getClassification(){
+		return _classification;
+	}
+
 	public int getDeadline(int copies){
 		return _classification.getDeadline(copies);
+	}
+
+	public boolean getSituationActive(){
+		return _active;
 	}
 
 	@Override
