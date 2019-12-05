@@ -219,6 +219,7 @@ public class Library implements Serializable {
   }
 
   //================== Requests ===================
+  
   int requestWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
@@ -226,7 +227,6 @@ public class Library implements Serializable {
       throw new NoSuchUserIdException(userId);
     else if(currentWork == null)
       throw new NoSuchWorkIdException(workId);
-    //se for null erro
     if (currentWork.areCopiesAvailable()){
       Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
       _requests.add(nvRequest);
@@ -272,6 +272,7 @@ public class Library implements Serializable {
    */
     void changeDate(int nDay){
     _date.changeDate(nDay);
+    
   }
 
 
