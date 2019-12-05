@@ -16,4 +16,4 @@ function jarM(){
   fi
 }
 
-alias run="./runjavac.sh";
+alias run="./runjavac.sh $*";

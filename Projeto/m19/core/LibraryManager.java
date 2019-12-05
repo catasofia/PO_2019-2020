@@ -67,6 +67,11 @@ public class LibraryManager implements Serializable{
   public int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
     return _library.returnWork(userId, workId);
   }
+
+  public void showNotifications(int userId)throws NoSuchUserIdException{
+    _library.showNotifications(userId);
+  }
+
   
     /**
      * Serialize the persistent state of this application.

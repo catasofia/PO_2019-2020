@@ -118,6 +118,12 @@ public class Library implements Serializable {
     return allUsers;
   }
 
+  void showNotifications(int userId) throws NoSuchUserIdException{
+    User currentUser = _users.get(userId);
+    if (currentUser == null) throw new NoSuchUserIdException(userId);
+    else currentUser.showNotifications();
+  }
+
 
   //==================== Work ====================
   /**
@@ -219,6 +225,8 @@ public class Library implements Serializable {
   }
 
   //================== Requests ===================
+
+  String hashcodeRequest(int userId, int workId){ return "U"+userId+"W"+workId;}
   
   int requestWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
     User currentUser = getUser(userId);
@@ -232,7 +240,7 @@ public class Library implements Serializable {
     if (currentWork.areCopiesAvailable()){
       Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
       //Request_data data = new Request_data(userId,workId);
-      _requests.put("U"+userId+"W"+workId, nvRequest);
+      _requests.put(hashcodeRequest(userId, workId), nvRequest);
       return nvRequest.getDeadline();
     }
     else return -1;
@@ -247,7 +255,8 @@ public class Library implements Serializable {
 
     if(currentUser == null) throw new NoSuchUserIdException(userId);
     else if(currentWork == null) throw new NoSuchWorkIdException(workId);
-    if (_requests.remove("U"+userId+"W"+workId)==null) return -1;
+    if (_requests.remove(hashcodeRequest(userId, workId))==null) return -1;
+    currentWork.decreaseCopies(-1);  //Ver melhor
     return 0;
   }
 

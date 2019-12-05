@@ -1,9 +1,12 @@
 package m19.app.users;
 
 import m19.core.LibraryManager;
+import m19.app.exception.NoSuchUserException;
 import pt.tecnico.po.ui.Input;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
+import m19.core.exception.NoSuchUserIdException;
+
 // FIXME import other core concepts
 // FIXME import other ui concepts
 
@@ -25,7 +28,10 @@ public class DoShowUserNotifications extends Command<LibraryManager> {
   @Override
   public final void execute() throws DialogException {
     _form.parse();
-    // FIXME implement command
+    try{
+      _receiver.showNotifications(_id.value());
+    }catch(NoSuchUserIdException e){
+      throw new NoSuchUserException(e.getId());
+    }
   }
-
 }

@@ -29,13 +29,8 @@ public class Request implements Serializable{
 
   int makeDeadline(int day){
     int copies = _work.getCopiesAvailable();
-    return day += _user.getDeadline(copies);
-  }
-
-
-  public boolean verifySituation(User user){
-    //_user.obterPontuacao().obterSituacao();
-    return true;
+    if (copies != 0) return day += _user.getDeadline(copies);
+    return -1;
   }
   
   public boolean areCopiesAvailable(Work work){

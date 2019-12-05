@@ -34,11 +34,13 @@ public class DoRequestWork extends Command<LibraryManager> {
     _form.parse();
     try{
       int day = _receiver.requestWork(_idUser.value(), _idWork.value());
-      if(day == -1){
-        _display.popup(Message.requestReturnNotificationPreference());
+      if(day == -1){ 
+        Input <Boolean> option = _form.addBooleanInput(Message.requestReturnNotificationPreference());
+        _form.parse();
+        System.out.println(option.value());
         //se a resposta for sim, adicionar ao observer, se for não CAGA nisso
       }
-      _display.popup(Message.workReturnDay(_idWork.value(), day));
+      else _display.popup(Message.workReturnDay(_idWork.value(), day));
     }catch(NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());
     }catch(NoSuchWorkIdException e){

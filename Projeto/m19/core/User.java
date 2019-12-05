@@ -26,6 +26,7 @@ public class User implements Serializable, Observer{
 		_situation = new Situation();
 		_requests = new HashSet<Request>();
 		_messages = new ArrayList<String>();
+		_notifications = new ArrayList<Notification>();
 		_classification = new Normal();
 	}
 
@@ -52,7 +53,8 @@ public class User implements Serializable, Observer{
 	}
 
 	protected void showNotification(int iDNotificacao){
-		System.out.println(_notifications.get(iDNotificacao).getMessage());
+		if (_notifications.get(iDNotificacao)!=null) //ADICIONADO PARA PASSAR TESTES
+			System.out.println(_notifications.get(iDNotificacao).getMessage());
 	}
 	
 	protected void showNotifications(){
