@@ -1,17 +1,12 @@
 *** tests/A-12-02-M-ok.out	2019-12-05 10:45:14.000000001 +0000
---- tests/A-12-02-M-ok.outhyp	2019-12-05 11:51:27.000000001 +0000
+--- tests/A-12-02-M-ok.outhyp	2019-12-05 12:02:11.000000001 +0000
 ***************
-*** 20,41 ****
+*** 25,41 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 28.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 28.
-! Menu de Gestão de Requisições
+  Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -24,15 +19,12 @@
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
---- 20,41 ----
+--- 25,43 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 23.
+  Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -47,24 +39,6 @@
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
-***************
-*** 45,52 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 2 deve ser devolvida no dia 35.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
---- 45,51 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
 ***************
 *** 55,61 ****
   1 - Requisitar obra
@@ -74,7 +48,7 @@
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
---- 54,61 ----
+--- 57,64 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair

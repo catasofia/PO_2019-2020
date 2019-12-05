@@ -1,12 +1,7 @@
 *** tests/A-09-02-M-ok.out	2019-12-05 10:45:14.000000001 +0000
---- tests/A-09-02-M-ok.outhyp	2019-12-05 11:51:26.000000001 +0000
+--- tests/A-09-02-M-ok.outhyp	2019-12-05 12:02:09.000000001 +0000
 ***************
-*** 11,25 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 7 deve ser devolvida no dia 3.
-! Menu de Gestão de Requisições
+*** 16,25 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -17,11 +12,7 @@
   Escolha uma opção: Menu Principal
   1 - Abrir dados
   2 - Guardar dados
---- 11,27 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+--- 16,28 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -44,7 +35,7 @@
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
---- 35,43 ----
+--- 36,44 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -64,7 +55,7 @@
   1 - Registar utente
   2 - Mostrar utente
   3 - Listar utentes
---- 64,70 ----
+--- 65,71 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair

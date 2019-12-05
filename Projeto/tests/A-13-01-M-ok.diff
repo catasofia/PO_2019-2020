@@ -1,32 +1,22 @@
 *** tests/A-13-01-M-ok.out	2019-12-05 10:45:14.000000001 +0000
---- tests/A-13-01-M-ok.outhyp	2019-12-05 11:51:28.000000001 +0000
+--- tests/A-13-01-M-ok.outhyp	2019-12-05 12:02:11.000000001 +0000
 ***************
-*** 20,32 ****
+*** 20,26 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 22.
-! Menu de Gestão de Requisições
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+--- 20,26 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 2 deve ser devolvida no dia 35.
-! Menu de Gestão de Requisições
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 28.
+  Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
-  0 - Sair
---- 20,30 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
 ***************
 *** 62,77 ****
   1 - Requisitar obra
@@ -45,7 +35,7 @@
   Escolha uma opção: Menu Principal
   1 - Abrir dados
   2 - Guardar dados
---- 60,79 ----
+--- 62,81 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -76,7 +66,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 91,98 ----
+--- 93,100 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
@@ -95,7 +85,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 108,115 ----
+--- 110,117 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
@@ -113,7 +103,7 @@
   2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
---- 125,131 ----
+--- 127,133 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO

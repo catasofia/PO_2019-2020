@@ -230,7 +230,7 @@ public class Library implements Serializable {
     if (currentWork.areCopiesAvailable()){
       Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
       _requests.put(new Request_data(userId,workId), nvRequest);
-        System.out.println(_requests.get(new Request_data(userId,workId)).getWork().displayWork());
+      System.out.println(_requests.get(new Request_data(userId,workId)));
 
 
       return nvRequest.getDeadline();

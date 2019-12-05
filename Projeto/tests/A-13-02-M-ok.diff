@@ -1,32 +1,5 @@
 *** tests/A-13-02-M-ok.out	2019-12-05 10:45:14.000000001 +0000
---- tests/A-13-02-M-ok.outhyp	2019-12-05 11:51:28.000000001 +0000
-***************
-*** 11,23 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 2 deve ser devolvida no dia 15.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
---- 11,21 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
+--- tests/A-13-02-M-ok.outhyp	2019-12-05 12:02:11.000000001 +0000
 ***************
 *** 43,58 ****
   1 - Requisitar obra
@@ -45,7 +18,7 @@
   Escolha uma opção: Menu Principal
   1 - Abrir dados
   2 - Guardar dados
---- 41,60 ----
+--- 43,62 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -75,7 +48,7 @@
   2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
   3 - Rey - real.last.jedi@universe.com - NORMAL - ACTIVO
   Menu de Gestão de Utentes
---- 72,78 ----
+--- 74,80 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO

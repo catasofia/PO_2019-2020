@@ -1,32 +1,32 @@
 *** tests/A-12-05-M-ok.out	2019-12-05 10:45:14.000000001 +0000
---- tests/A-12-05-M-ok.outhyp	2019-12-05 11:51:27.000000001 +0000
+--- tests/A-12-05-M-ok.outhyp	2019-12-05 12:02:11.000000001 +0000
 ***************
-*** 20,32 ****
+*** 20,31 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 22.
-! Menu de Gestão de Requisições
+  Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 28.
-! Menu de Gestão de Requisições
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+--- 20,31 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
---- 20,30 ----
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 28.
+  Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 23.
+  Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
 ***************
 *** 72,78 ****
   1 - Requisitar obra
@@ -36,7 +36,7 @@
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
---- 70,78 ----
+--- 72,80 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -55,7 +55,7 @@
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
---- 108,116 ----
+--- 110,118 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
