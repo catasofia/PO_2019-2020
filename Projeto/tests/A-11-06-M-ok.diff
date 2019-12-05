@@ -1,5 +1,36 @@
-*** tests/A-11-06-M-ok.out	2019-11-20 22:26:19.000000000 +0000
---- tests/A-11-06-M-ok.outhyp	2019-12-04 23:39:39.794000000 +0000
+*** tests/A-11-06-M-ok.out	2019-12-05 10:45:14.000000001 +0000
+--- tests/A-11-06-M-ok.outhyp	2019-12-05 11:51:27.000000001 +0000
+***************
+*** 11,26 ****
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+- Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
+- Menu de Gestão de Requisições
+- 1 - Requisitar obra
+- 2 - Devolver obra
+- 0 - Sair
+  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+--- 11,22 ----
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
+! Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
 ***************
 *** 29,35 ****
   1 - Requisitar obra
@@ -9,11 +40,12 @@
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
---- 29,35 ----
+--- 25,32 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 3.
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
+! Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
@@ -31,17 +63,24 @@
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
---- 38,51 ----
+--- 35,55 ----
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
+! Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
+  Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? 
 ! Deseja ser avisado quando algum exemplar for devolvido (s/n)? A obra 1 deve ser devolvida no dia -1.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
+! Menu de Gestão de Requisições
+! 1 - Requisitar obra
+! 2 - Devolver obra
+! 0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
+! Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
 ! Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
@@ -55,7 +94,7 @@
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
---- 86,93 ----
+--- 90,97 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -73,11 +112,12 @@
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
---- 129,136 ----
+--- 133,141 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
+! Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
 ! Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
@@ -91,7 +131,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 150,156 ----
+--- 155,161 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair

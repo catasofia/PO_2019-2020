@@ -35,7 +35,7 @@ public class Library implements Serializable {
   private Date _date;
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
-  private List<Request> _requests;
+  private Map<Request_data, Request> _requests;
 
   public Library(){
     _nextUserId = 0;
@@ -43,7 +43,7 @@ public class Library implements Serializable {
     _date = new Date();
     _users = new HashMap<>();
     _works = new HashMap<>();
-    _requests = new ArrayList<>();
+    _requests = new HashMap<>();
   }
 
   //==================== User ====================
@@ -229,7 +229,10 @@ public class Library implements Serializable {
     //se for null erro
     if (currentWork.areCopiesAvailable()){
       Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
-      _requests.add(nvRequest);
+      _requests.put(new Request_data(userId,workId), nvRequest);
+        System.out.println(_requests.get(new Request_data(userId,workId)).getWork().displayWork());
+
+
       return nvRequest.getDeadline();
     }
     else{
@@ -240,17 +243,12 @@ public class Library implements Serializable {
   int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
-    if(currentUser == null)
-      throw new NoSuchUserIdException(userId);
-    else if(currentWork == null)
-      throw new NoSuchWorkIdException(workId);
-    for (int i=0;i<_requests.size();i++)
-      if (_requests.get(i).getUser() == currentUser
-        && _requests.get(i).getWork() == currentWork){
-        _requests.remove(i);
-        return 0;
-      }
-    return -1;
+    Request_data data = new Request_data(userId,workId);
+
+    if(currentUser == null) throw new NoSuchUserIdException(userId);
+    else if(currentWork == null) throw new NoSuchWorkIdException(workId);
+    if (_requests.remove(data)==null) return -1;
+    return 0;
   }
 
 
