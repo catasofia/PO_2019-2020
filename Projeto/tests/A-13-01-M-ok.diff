@@ -1,5 +1,5 @@
-*** tests/A-13-01-M-ok.out	2019-12-05 10:45:14.000000001 +0000
---- tests/A-13-01-M-ok.outhyp	2019-12-05 12:02:11.000000001 +0000
+*** tests/A-13-01-M-ok.out	2019-12-03 17:06:33.560740065 +0000
+--- tests/A-13-01-M-ok.outhyp	2019-12-05 12:44:48.893360605 +0000
 ***************
 *** 20,26 ****
   1 - Requisitar obra
@@ -35,20 +35,16 @@
   Escolha uma opção: Menu Principal
   1 - Abrir dados
   2 - Guardar dados
---- 62,81 ----
+--- 62,77 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
-! Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
-! Menu de Gestão de Requisições
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Número inválido!
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
-! Devolver obra: Operação inválida: A obra 2 não foi requisitada pelo utente 2.
-! Menu de Gestão de Requisições
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -66,7 +62,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 93,100 ----
+--- 89,96 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
@@ -85,7 +81,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 110,117 ----
+--- 106,113 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
@@ -103,7 +99,7 @@
   2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
---- 127,133 ----
+--- 123,129 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO

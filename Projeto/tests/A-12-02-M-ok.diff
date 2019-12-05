@@ -1,7 +1,7 @@
-*** tests/A-12-02-M-ok.out	2019-12-05 10:45:14.000000001 +0000
---- tests/A-12-02-M-ok.outhyp	2019-12-05 12:02:11.000000001 +0000
+*** tests/A-12-02-M-ok.out	2019-12-03 17:06:33.556738066 +0000
+--- tests/A-12-02-M-ok.outhyp	2019-12-05 12:44:47.536682604 +0000
 ***************
-*** 25,41 ****
+*** 25,31 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -9,51 +9,11 @@
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
---- 25,43 ----
+--- 25,31 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 23.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
-! Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
-! Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-***************
-*** 55,61 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 2 não foi requisitada pelo utente 2.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
---- 57,64 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: -1
-! Devolver obra: Operação inválida: A obra 2 não foi requisitada pelo utente 2.
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra

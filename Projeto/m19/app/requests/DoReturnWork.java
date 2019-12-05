@@ -32,7 +32,6 @@ public class DoReturnWork extends Command<LibraryManager> {
     _form.parse();
     try {
       int rc = _receiver.returnWork(_idUser.value(), _idWork.value());
-      _display.popup(rc);
       if (rc == -1) throw new WorkNotBorrowedByUserException(_idWork.value(), _idUser.value());
     } catch (NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());
