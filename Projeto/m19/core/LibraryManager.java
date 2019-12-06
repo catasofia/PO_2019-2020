@@ -72,7 +72,10 @@ public class LibraryManager implements Serializable{
     _library.showNotifications(userId);
   }
 
-  
+  /*public void addUserInterested(int userid, int worid){
+    _library.register(userid);
+  }*/
+
     /**
      * Serialize the persistent state of this application.
      * 

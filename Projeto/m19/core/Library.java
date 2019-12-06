@@ -248,7 +248,6 @@ public class Library implements Serializable, ObservableInterface {
     else return -1;
   }
 
-
   
   int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
     User currentUser = getUser(userId);

@@ -1,23 +1,5 @@
-*** tests/A-07-11-M-ok.out	2019-12-03 17:06:33.556738066 +0000
---- tests/A-07-11-M-ok.outhyp	2019-12-05 21:07:21.249789999 +0000
-***************
-*** 20,26 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
---- 20,27 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
+*** tests/A-07-11-M-ok.out	2019-11-20 22:20:39.000000000 +0000
+--- tests/A-07-11-M-ok.outhyp	2019-12-06 11:01:20.525003763 +0000
 ***************
 *** 40,55 ****
   4 - Mostrar notificações de utente
@@ -36,7 +18,7 @@
   1 - Registar utente
   2 - Mostrar utente
   3 - Listar utentes
---- 41,54 ----
+--- 40,53 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair

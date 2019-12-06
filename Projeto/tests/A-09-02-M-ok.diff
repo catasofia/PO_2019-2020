@@ -1,89 +1,20 @@
-*** tests/A-09-02-M-ok.out	2019-12-03 17:06:33.556738066 +0000
---- tests/A-09-02-M-ok.outhyp	2019-12-05 21:07:21.734032000 +0000
+*** tests/A-09-02-M-ok.out	2019-11-20 22:21:27.000000000 +0000
+--- tests/A-09-02-M-ok.outhyp	2019-12-06 11:01:22.305003763 +0000
 ***************
-*** 16,26 ****
-  1 - Requisitar obra
-  2 - Devolver obra
+*** 60,67 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Menu Principal
-  1 - Abrir dados
-  2 - Guardar dados
-  3 - Ver data
---- 16,28 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Introduza o número de utente: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-! Menu Principal
-  1 - Abrir dados
-  2 - Guardar dados
-  3 - Ver data
-***************
-*** 29,80 ****
-  6 - Menu de gestão de obras
-  7 - Menu de gestão de requisições
-  0 - Sair
-! Escolha uma opção: Menu de Gestão de Requisições
-! 1 - Requisitar obra
-! 2 - Devolver obra
-! 0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-! 1 - Requisitar obra
-! 2 - Devolver obra
-! 0 - Sair
-! Escolha uma opção: Menu Principal
-! 1 - Abrir dados
-! 2 - Guardar dados
-! 3 - Ver data
-! 4 - Avançar data
-! 5 - Menu de gestão de utentes
-! 6 - Menu de gestão de obras
-! 7 - Menu de gestão de requisições
-! 0 - Sair
-! Escolha uma opção: Menu de Gestão de Utentes
-! 1 - Registar utente
-! 2 - Mostrar utente
-! 3 - Listar utentes
-! 4 - Mostrar notificações de utente
-! 5 - Saldar multa de utente
-! 0 - Sair
-! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
-! 1 - Registar utente
-! 2 - Mostrar utente
-! 3 - Listar utentes
-! 4 - Mostrar notificações de utente
-! 5 - Saldar multa de utente
-! 0 - Sair
 ! Escolha uma opção: Introduza o número de utente: ENTREGA: 7 - 1 de  1 - DVD - The rise of Skywalker - 20 - Técnica e Científica - J. J. Abrams - 200505551
 ! Menu de Gestão de Utentes
-! 1 - Registar utente
-! 2 - Mostrar utente
-! 3 - Listar utentes
-! 4 - Mostrar notificações de utente
-! 5 - Saldar multa de utente
-! 0 - Sair
-! Escolha uma opção: Menu Principal
-! 1 - Abrir dados
-! 2 - Guardar dados
-! 3 - Ver data
-! 4 - Avançar data
-! 5 - Menu de gestão de utentes
-! 6 - Menu de gestão de obras
-! 7 - Menu de gestão de requisições
-! 0 - Sair
-! Escolha uma opção: 
-\ No newline at end of file
---- 31,34 ----
-  6 - Menu de gestão de obras
-  7 - Menu de gestão de requisições
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+--- 60,66 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
+! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes

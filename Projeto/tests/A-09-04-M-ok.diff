@@ -1,5 +1,5 @@
-*** tests/A-09-04-M-ok.out	2019-12-03 17:06:33.556738066 +0000
---- tests/A-09-04-M-ok.outhyp	2019-12-05 21:07:21.854091999 +0000
+*** tests/A-09-04-M-ok.out	2019-11-20 22:21:31.000000000 +0000
+--- tests/A-09-04-M-ok.outhyp	2019-12-06 11:01:22.761003763 +0000
 ***************
 *** 26,32 ****
   1 - Requisitar obra
@@ -18,7 +18,7 @@
   1 - Requisitar obra
   2 - Devolver obra
 ***************
-*** 36,146 ****
+*** 36,42 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -26,111 +26,7 @@
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? Menu de Gestão de Requisições
-! 1 - Requisitar obra
-! 2 - Devolver obra
-! 0 - Sair
-! Escolha uma opção: Menu Principal
-! 1 - Abrir dados
-! 2 - Guardar dados
-! 3 - Ver data
-! 4 - Avançar data
-! 5 - Menu de gestão de utentes
-! 6 - Menu de gestão de obras
-! 7 - Menu de gestão de requisições
-! 0 - Sair
-! Escolha uma opção: Menu de Gestão de Requisições
-! 1 - Requisitar obra
-! 2 - Devolver obra
-! 0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? Menu de Gestão de Requisições
-! 1 - Requisitar obra
-! 2 - Devolver obra
-! 0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? Menu de Gestão de Requisições
-! 1 - Requisitar obra
-! 2 - Devolver obra
-! 0 - Sair
-! Escolha uma opção: Menu Principal
-! 1 - Abrir dados
-! 2 - Guardar dados
-! 3 - Ver data
-! 4 - Avançar data
-! 5 - Menu de gestão de utentes
-! 6 - Menu de gestão de obras
-! 7 - Menu de gestão de requisições
-! 0 - Sair
-! Escolha uma opção: Menu de Gestão de Utentes
-! 1 - Registar utente
-! 2 - Mostrar utente
-! 3 - Listar utentes
-! 4 - Mostrar notificações de utente
-! 5 - Saldar multa de utente
-! 0 - Sair
-! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
-! 1 - Registar utente
-! 2 - Mostrar utente
-! 3 - Listar utentes
-! 4 - Mostrar notificações de utente
-! 5 - Saldar multa de utente
-! 0 - Sair
-! Escolha uma opção: Menu Principal
-! 1 - Abrir dados
-! 2 - Guardar dados
-! 3 - Ver data
-! 4 - Avançar data
-! 5 - Menu de gestão de utentes
-! 6 - Menu de gestão de obras
-! 7 - Menu de gestão de requisições
-! 0 - Sair
-! Escolha uma opção: Menu de Gestão de Requisições
-! 1 - Requisitar obra
-! 2 - Devolver obra
-! 0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-! 1 - Requisitar obra
-! 2 - Devolver obra
-! 0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Menu Principal
-! 1 - Abrir dados
-! 2 - Guardar dados
-! 3 - Ver data
-! 4 - Avançar data
-! 5 - Menu de gestão de utentes
-! 6 - Menu de gestão de obras
-! 7 - Menu de gestão de requisições
-! 0 - Sair
-! Escolha uma opção: Menu de Gestão de Utentes
-! 1 - Registar utente
-! 2 - Mostrar utente
-! 3 - Listar utentes
-! 4 - Mostrar notificações de utente
-! 5 - Saldar multa de utente
-! 0 - Sair
-! Escolha uma opção: Introduza o número de utente: ENTREGA: 1 - 1 de  3 - Livro - Analise Matematica sem Mestre - 19 - Técnica e Científica - Carlos Fonseca - 1234567890
-! ENTREGA: 0 - 1 de  2 - Livro - A arte de sobreviver no 36 - 20 - Ficção - Joao Fonseca - 1234567892
-! ENTREGA: 7 - 1 de  1 - DVD - The rise of Skywalker - 20 - Técnica e Científica - J. J. Abrams - 200505551
-! Menu de Gestão de Utentes
-! 1 - Registar utente
-! 2 - Mostrar utente
-! 3 - Listar utentes
-! 4 - Mostrar notificações de utente
-! 5 - Saldar multa de utente
-! 0 - Sair
-! Escolha uma opção: Menu Principal
-  1 - Abrir dados
-  2 - Guardar dados
-  3 - Ver data
---- 36,57 ----
+--- 36,42 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
@@ -138,30 +34,23 @@
   Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Introduza o número de utente: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? Introduza o número de utente: Introduza o número da obra: Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Deseja ser avisado quando algum exemplar for devolvido (s/n)? Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-! Menu Principal
-  1 - Abrir dados
-  2 - Guardar dados
-  3 - Ver data
 ***************
-*** 149,152 ****
-  6 - Menu de gestão de obras
-  7 - Menu de gestão de requisições
+*** 130,139 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: 
-\ No newline at end of file
---- 60,63 ----
-  6 - Menu de gestão de obras
-  7 - Menu de gestão de requisições
+! Escolha uma opção: Introduza o número de utente: ENTREGA: 1 - 1 de  3 - Livro - Analise Matematica sem Mestre - 19 - Técnica e Científica - Carlos Fonseca - 1234567890
+! ENTREGA: 0 - 1 de  2 - Livro - A arte de sobreviver no 36 - 20 - Ficção - Joao Fonseca - 1234567892
+! ENTREGA: 7 - 1 de  1 - DVD - The rise of Skywalker - 20 - Técnica e Científica - J. J. Abrams - 200505551
+! Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+--- 130,136 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
+! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes

@@ -6,6 +6,7 @@ import m19.app.exception.NoSuchWorkException;
 import m19.core.exception.NoSuchUserIdException;
 import m19.core.exception.NoSuchWorkIdException;
 import pt.tecnico.po.ui.Input;
+import pt.tecnico.po.ui.Form;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
 // FIXME import other core concepts
@@ -34,11 +35,11 @@ public class DoRequestWork extends Command<LibraryManager> {
     _form.parse();
     try{
       int day = _receiver.requestWork(_idUser.value(), _idWork.value());
-      if(day == -1){ 
-        Input <Boolean> option = _form.addBooleanInput(Message.requestReturnNotificationPreference());
-        _form.parse();
-        System.out.println(option.value());
-        //se a resposta for sim, adicionar ao observer, se for não CAGA nisso
+      if(day == -1){
+        Form form = new Form();
+        Input <Boolean> option = form.addBooleanInput(Message.requestReturnNotificationPreference());
+        form.parse();
+        if (option.value()){} //_receiver.addUserInterested(_idUser.value(), _idWork.value());
       }
       else _display.popup(Message.workReturnDay(_idWork.value(), day));
     }catch(NoSuchUserIdException e){
