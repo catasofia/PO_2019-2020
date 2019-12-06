@@ -5,13 +5,13 @@ import java.io.Serializable;
 public class Situation implements Serializable{
     private boolean _situation;
     private int _fine;
-    private Classification _classification;
+    private ClassificationInterface _classification;
 
     private static final long serialVersionUID = 201901101348L;
 
     public Situation(){
         _situation = true;
-        _classification = Classification.NORMAL;
+        _classification = new Normal();
         _fine = 0;
     }
 
@@ -19,7 +19,7 @@ public class Situation implements Serializable{
         return _situation;
     }
 
-    protected Classification getClassification(){
+    protected ClassificationInterface getClassification(){
         return _classification;
     }
 

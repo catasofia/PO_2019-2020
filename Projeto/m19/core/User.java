@@ -79,8 +79,8 @@ public class User implements Serializable, Observer{
 		_classification = classification;
 	}
 
-	public ClassificationInterface getClassification(){
-		return _classification;
+	public String getClassification(){
+		return _classification.toString();
 	}
 
 	public int getDeadline(int copies){
@@ -103,9 +103,8 @@ public class User implements Serializable, Observer{
 
 	public void doPayFine(){
 		_fine = 0;
+		//_active = true;
 	}
 
-	/*protected void addNotification(String tipo, String mensagem){
-			_notifications.add(new Notification(tipo, mensagem));
-	}*/
+
 }
