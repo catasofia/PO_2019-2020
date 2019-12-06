@@ -1,15 +1,7 @@
-*** tests/A-11-06-M-ok.out	2019-11-20 22:26:19.000000000 +0000
---- tests/A-11-06-M-ok.outhyp	2019-12-06 18:53:18.830198975 +0000
+*** tests/A-11-06-M-ok.out	2019-12-03 17:06:33.556738066 +0000
+--- tests/A-11-06-M-ok.outhyp	2019-12-06 19:21:33.877191768 +0000
 ***************
-*** 63,69 ****
-  4 - Mostrar notificações de utente
-  5 - Saldar multa de utente
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: 1 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
-  Menu de Gestão de Utentes
-  1 - Registar utente
-  2 - Mostrar utente
---- 63,69 ----
+*** 146,152 ****
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
@@ -17,37 +9,11 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
-***************
-*** 84,90 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 8.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
---- 84,90 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 15.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-***************
-*** 105,111 ****
+--- 146,152 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: 1 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
-  Menu de Gestão de Utentes
-  1 - Registar utente
-  2 - Mostrar utente
---- 105,111 ----
-  4 - Mostrar notificações de utente
-  5 - Saldar multa de utente
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: 1 - Luke Skywalker - last.jedi@universe.com - CUMPRIDOR - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente

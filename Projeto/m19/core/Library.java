@@ -136,6 +136,10 @@ public class Library implements Serializable/* , ObservableInterface  */{
     else currentUser.doPayFine();
   }
 
+  int getFine(int userId){
+    User currenUser = _users.get(userId);
+    return currenUser.getFine();
+  }
 
   //==================== Work ====================
   /**

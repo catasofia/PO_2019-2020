@@ -1,5 +1,5 @@
-*** tests/A-13-01-M-ok.out	2019-11-20 22:26:59.000000000 +0000
---- tests/A-13-01-M-ok.outhyp	2019-12-06 18:53:20.987276978 +0000
+*** tests/A-13-01-M-ok.out	2019-12-03 17:06:33.560740065 +0000
+--- tests/A-13-01-M-ok.outhyp	2019-12-06 19:21:36.646575770 +0000
 ***************
 *** 20,26 ****
   1 - Requisitar obra
@@ -54,65 +54,76 @@
   1 - Abrir dados
   2 - Guardar dados
 ***************
-*** 88,96 ****
-  4 - Mostrar notificações de utente
+*** 89,130 ****
   5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
+  Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
 ! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR 90
 ! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - SUSPENSO - EUR 25
-  Menu de Gestão de Utentes
-  1 - Registar utente
-  2 - Mostrar utente
---- 89,97 ----
-  4 - Mostrar notificações de utente
-  5 - Saldar multa de utente
-  0 - Sair
-! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - CUMPRIDOR - ACTIVO
-! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR - 110
-! 2 - Luke Skywalker - last.jedi@universe.com - CUMPRIDOR - SUSPENSO - EUR - 25
-  Menu de Gestão de Utentes
-  1 - Registar utente
-  2 - Mostrar utente
-***************
-*** 105,113 ****
-  4 - Mostrar notificações de utente
-  5 - Saldar multa de utente
-  0 - Sair
+! Menu de Gestão de Utentes
+! 1 - Registar utente
+! 2 - Mostrar utente
+! 3 - Listar utentes
+! 4 - Mostrar notificações de utente
+! 5 - Saldar multa de utente
+! 0 - Sair
+! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
+! 1 - Registar utente
+! 2 - Mostrar utente
+! 3 - Listar utentes
+! 4 - Mostrar notificações de utente
+! 5 - Saldar multa de utente
+! 0 - Sair
 ! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
 ! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
 ! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - SUSPENSO - EUR 25
-  Menu de Gestão de Utentes
-  1 - Registar utente
-  2 - Mostrar utente
---- 106,114 ----
-  4 - Mostrar notificações de utente
-  5 - Saldar multa de utente
-  0 - Sair
-! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - CUMPRIDOR - ACTIVO
-! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR - 0
-! 2 - Luke Skywalker - last.jedi@universe.com - CUMPRIDOR - SUSPENSO - EUR - 25
-  Menu de Gestão de Utentes
-  1 - Registar utente
-  2 - Mostrar utente
-***************
-*** 122,130 ****
-  4 - Mostrar notificações de utente
-  5 - Saldar multa de utente
-  0 - Sair
+! Menu de Gestão de Utentes
+! 1 - Registar utente
+! 2 - Mostrar utente
+! 3 - Listar utentes
+! 4 - Mostrar notificações de utente
+! 5 - Saldar multa de utente
+! 0 - Sair
+! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
+! 1 - Registar utente
+! 2 - Mostrar utente
+! 3 - Listar utentes
+! 4 - Mostrar notificações de utente
+! 5 - Saldar multa de utente
+! 0 - Sair
 ! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
 ! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
 ! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 123,131 ----
-  4 - Mostrar notificações de utente
+--- 90,97 ----
   5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - CUMPRIDOR - ACTIVO
-! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR - 0
-! 2 - Luke Skywalker - last.jedi@universe.com - CUMPRIDOR - SUSPENSO - EUR - 0
+  Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
+! 1 - Darth Vader - darth@dark.force.coAm - NORMAL - SUSPENSO - EUR - 110
+! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - SUSPENSO - EUR - 25
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
+***************
+*** 132,144 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Menu Principal
+! 1 - Abrir dados
+! 2 - Guardar dados
+! 3 - Ver data
+! 4 - Avançar data
+! 5 - Menu de gestão de utentes
+! 6 - Menu de gestão de obras
+! 7 - Menu de gestão de requisições
+! 0 - Sair
+! Escolha uma opção: 
+\ No newline at end of file
+--- 99,102 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada

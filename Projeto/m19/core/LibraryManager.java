@@ -63,6 +63,10 @@ public class LibraryManager implements Serializable{
   public void doPayFine(int userId) throws NoSuchUserIdException, UserActiveException{
     _library.doPayFine(userId);
   }
+
+  public int getFine(int userId){
+    return _library.getFine(userId);
+  }
   
   public int requestWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException, RulesFailedException{
     return _library.requestWork(userId, workId);

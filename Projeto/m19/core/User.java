@@ -123,17 +123,21 @@ public class User implements Serializable, Observer{
 
 	@Override
 	public void update(){
-		if (_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==_lastReturns.get(3)==_lastReturns.get(4)==true) _classification = new Responsible();
+		/* if (_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==_lastReturns.get(3)==_lastReturns.get(4)==true) _classification = new Responsible();
 		else if(_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==true){
 			if (_classification.toString() == "Faltoso") _classification = new Normal();}
 		else if (_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==false)
-			_classification = new Faulty();
+			_classification = new Faulty(); */
 
 	}
 
 	public void doPayFine(){
 		_fine = 0;
 		//_active = true;
+	}
+
+	int getFine(){
+		return _fine;
 	}
 
 

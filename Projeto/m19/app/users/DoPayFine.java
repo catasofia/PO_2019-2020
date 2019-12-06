@@ -8,6 +8,8 @@ import m19.core.exception.UserActiveException;
 import pt.tecnico.po.ui.Input;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
+import pt.tecnico.po.ui.Form;
+
 // FIXME import other core concepts
 // FIXME import other ui concepts
 
@@ -29,7 +31,11 @@ public class DoPayFine extends Command<LibraryManager> {
   public final void execute() throws DialogException {
     _form.parse();
     try{
-      _receiver.doPayFine(_id.value());
+      Form form = new Form();
+      Input <Boolean> option = form.addBooleanInput("");
+      form.parse();
+      if (option.value()){_receiver.doPayFine(_id.value());}
+      
     } catch (NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());
     } catch(UserActiveException e){
