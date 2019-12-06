@@ -1,14 +1,10 @@
 package m19.core;
 import m19.core.exception.RulesFailedException;
 
-public class CheckNumberRequests extends Rule{
-	
-	public CheckNumberRequests(User user, Work work){
-		super(user, work);
-	}
+public class CheckNumberRequests implements Rule{
 
-	public void check(){
-		if(super.getUser().getMaxNumber() == super.getUser().getNumberRequests()){
+	public void check(User user, Work work){
+		if(user.getMaxNumber() == user.getNumberRequests()){
 			throw new RulesFailedException(4);
 		}
 	}

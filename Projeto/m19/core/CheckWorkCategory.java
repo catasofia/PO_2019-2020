@@ -2,14 +2,10 @@ package m19.core;
 import m19.core.Category;
 import m19.core.exception.RulesFailedException;
 
-public class CheckWorkCategory extends Rule{
-	
-	public CheckWorkCategory(User user, Work work){
-		super(user, work);
-	}
+public class CheckWorkCategory implements Rule{
 
-	public void check(){
-	if(super.getWork().getCategory() == Category.REFERENCE){
+	public void check(User user, Work work){
+	if(user.getCategory() == Category.REFERENCE){
 		throw new RulesFailedException(5);
 		}
 	}

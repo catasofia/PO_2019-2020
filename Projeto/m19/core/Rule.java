@@ -19,6 +19,6 @@ public interface Rule{
 	public Work getWork(){
 		return _work;
 	} */
-	public void check() throws RulesFailedException;
+	public void check(User user, Work work) throws RulesFailedException;
 }
 
