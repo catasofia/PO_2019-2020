@@ -62,14 +62,17 @@ public class User implements Serializable, Observer{
 		return aux;
 	}
 
-	protected void showNotification(int iDNotificacao){
+	protected String showNotification(int iDNotificacao){
 		if (_notifications.get(iDNotificacao)!=null) //ADICIONADO PARA PASSAR TESTES
-			System.out.println(_notifications.get(iDNotificacao).getMessage());
+			return _notifications.get(iDNotificacao).getMessage();
+		return "";
 	}
 	
-	protected void showNotifications(){
-		for(Notification i: _notifications)
-			showNotification(i.getID());
+	protected String showNotifications(){
+		String str="";
+		for (int i = 0; i<_notifications.size();i++)
+			str+=showNotification(i);
+		return str;
 	}
 
 	public void setClassification(ClassificationInterface classification){

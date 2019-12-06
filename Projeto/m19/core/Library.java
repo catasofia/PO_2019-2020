@@ -36,11 +36,7 @@ public class Library implements Serializable/* , ObservableInterface  */{
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
   private Map<String, Request> _requests;
-<<<<<<< HEAD
-  private Map<User, Work> _observers;
-=======
-  //private Map<Integer, User> _observers;
->>>>>>> fea8a80e6369c21a5415e04883daeb02326cb49b
+  //private Map<User, Work> _observers;
   
   public Library(){
     _nextUserId = 0;
@@ -124,10 +120,10 @@ public class Library implements Serializable/* , ObservableInterface  */{
     return allUsers;
   }
 
-  void showNotifications(int userId) throws NoSuchUserIdException{
+  String showNotifications(int userId) throws NoSuchUserIdException{
     User currentUser = _users.get(userId);
     if (currentUser == null) throw new NoSuchUserIdException(userId);
-    else currentUser.showNotifications();
+    return currentUser.showNotifications();
   }
 
   void doPayFine(int userId) throws NoSuchUserIdException, UserActiveException{
@@ -269,6 +265,7 @@ public class Library implements Serializable/* , ObservableInterface  */{
     else if(currentWork == null) throw new NoSuchWorkIdException(workId);
     if (_requests.remove(hashcodeRequest(userId, workId)) ==null) return -1;
     currentWork.decreaseCopies(-1);  //Ver melhor
+    currentWork.notifyObservers("ENTREGA: "+currentWork.displayWork());
     return 0;
   }
 
@@ -296,7 +293,11 @@ public class Library implements Serializable/* , ObservableInterface  */{
 
 
   //===============================================
-  
+  void addUserInterested(int userId, int workId){
+    Work currentWork = _works.get(workId);
+    currentWork.register(_users.get(userId));
+  }
+
   /* public void register(User observer){
     _observers.put(observer.getUserID(), observer);
   }

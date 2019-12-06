@@ -29,7 +29,7 @@ public class DoShowUserNotifications extends Command<LibraryManager> {
   public final void execute() throws DialogException {
     _form.parse();
     try{
-      _receiver.showNotifications(_id.value());
+      _display.popup(_receiver.showNotifications(_id.value()));
     }catch(NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());
     }

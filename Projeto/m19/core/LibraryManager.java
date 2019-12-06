@@ -72,13 +72,13 @@ public class LibraryManager implements Serializable{
     return _library.returnWork(userId, workId);
   }
 
-  public void showNotifications(int userId)throws NoSuchUserIdException{
-    _library.showNotifications(userId);
+  public String showNotifications(int userId)throws NoSuchUserIdException{
+    return _library.showNotifications(userId);
   }
 
-  /*public void addUserInterested(int userid, int worid){
-    _library.register(userid);
-  }*/
+  public void addUserInterested(int userid, int worid){
+    _library.addUserInterested(userid,worid);
+  }
 
     /**
      * Serialize the persistent state of this application.

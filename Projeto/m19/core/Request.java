@@ -29,7 +29,6 @@ public class Request implements Serializable{
 
   int makeDeadline(int day){
     int copies = _work.getCopies();
-    System.out.println(copies);
     if (copies != 0) return day += _user.getDeadline(copies);
     return -1;
   }
