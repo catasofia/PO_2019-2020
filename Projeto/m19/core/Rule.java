@@ -25,6 +25,6 @@ public abstract class Rule{
 	public User getUser(){
 		return _user;
 	}
-	public abstract void check()/*  throws RulesFailedException */;
+	public abstract void check() /* throws RulesFailedException */;
 }
 

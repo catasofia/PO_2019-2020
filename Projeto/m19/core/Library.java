@@ -26,7 +26,7 @@ import m19.core.exception.*;
 /**
  * Class that represents the library as a whole.
  */
-public class Library implements Serializable, ObservableInterface {
+public class Library implements Serializable/* , ObservableInterface  */{
 
   /** Serial number for serialization. */
   private static final long serialVersionUID = 201901101348L;
@@ -36,7 +36,7 @@ public class Library implements Serializable, ObservableInterface {
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
   private Map<String, Request> _requests;
-  private Map<Integer, User> _observers;
+  //private Map<Integer, User> _observers;
   
   public Library(){
     _nextUserId = 0;
@@ -45,7 +45,7 @@ public class Library implements Serializable, ObservableInterface {
     _users = new HashMap<>();
     _works = new HashMap<>();
     _requests = new HashMap<>();
-    _observers = new HashMap<>();
+    //_observers = new HashMap<>();
   }
 
   //==================== User ====================
@@ -247,10 +247,10 @@ public class Library implements Serializable, ObservableInterface {
       throw new NoSuchWorkIdException(workId);
     
     if (currentWork.areCopiesAvailable()){
-      Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
-      //Request_data data = new Request_data(userId,workId);
-      _requests.put(hashcodeRequest(userId, workId), nvRequest);
-      return nvRequest.getDeadline();
+        Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
+        //Request_data data = new Request_data(userId,workId);
+        _requests.put(hashcodeRequest(userId, workId), nvRequest);
+        return nvRequest.getDeadline();
     }
     else return -1;
   }
@@ -285,15 +285,15 @@ public class Library implements Serializable, ObservableInterface {
    * @param nDay
    *        number of days to advance
    */
-    void changeDate(int nDay){
-    _date.changeDate(nDay);
-    
+  void changeDate(int nDay){
+    _date.changeDate(nDay);  
   }
 
 
 
   //===============================================
-  public void register(User observer){
+  
+  /* public void register(User observer){
     _observers.put(observer.getUserID(), observer);
   }
 
@@ -307,7 +307,7 @@ public class Library implements Serializable, ObservableInterface {
     for(User observer: observers){
       observer.update(notification);
     }
-  }
+  } */
 
   //==================== Files ====================
   /**
