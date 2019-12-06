@@ -59,6 +59,10 @@ public class LibraryManager implements Serializable{
   public String performSearch(String term){
     return _library.performSearch(term);
   }
+
+  public void doPayFine(int userId) throws NoSuchUserIdException, UserActiveException{
+    _library.doPayFine(userId);
+  }
   
   public int requestWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
     return _library.requestWork(userId, workId);

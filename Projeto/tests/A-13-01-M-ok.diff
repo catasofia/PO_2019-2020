@@ -1,5 +1,5 @@
 *** tests/A-13-01-M-ok.out	2019-12-03 17:06:33.560740065 +0000
---- tests/A-13-01-M-ok.outhyp	2019-12-05 21:07:23.863096001 +0000
+--- tests/A-13-01-M-ok.outhyp	2019-12-06 10:44:28.968010448 +0000
 ***************
 *** 20,26 ****
   1 - Requisitar obra
@@ -72,6 +72,24 @@
   1 - Registar utente
   2 - Mostrar utente
 ***************
+*** 98,104 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+--- 98,105 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Saldar multa de utente: Operação inválida: O utente 1 não se encontra suspenso.
+! Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+***************
 *** 106,113 ****
   5 - Saldar multa de utente
   0 - Sair
@@ -81,7 +99,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 106,113 ----
+--- 107,114 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
@@ -91,6 +109,24 @@
   1 - Registar utente
   2 - Mostrar utente
 ***************
+*** 115,121 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+--- 116,123 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Saldar multa de utente: Operação inválida: O utente 2 não se encontra suspenso.
+! Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+***************
 *** 123,129 ****
   5 - Saldar multa de utente
   0 - Sair
@@ -99,7 +135,7 @@
   2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
---- 123,129 ----
+--- 125,131 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO

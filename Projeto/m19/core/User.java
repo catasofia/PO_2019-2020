@@ -14,9 +14,11 @@ public class User implements Serializable, Observer{
 	private Situation _situation;
 	private List<Notification> _notifications;
 	//private List<String> _messages;
-	private Set<Request> _requests;
+	//private Set<Request> _requests;
+	private Set<Integer> _requests;
 	private ClassificationInterface _classification;
 	private boolean _active;
+	private int _fine;
 
 	private static final long serialVersionUID = 201901101348L;
 
@@ -25,11 +27,13 @@ public class User implements Serializable, Observer{
 		_name = name;
 		_email = email;
 		_situation = new Situation();
-		_requests = new HashSet<Request>();
+		_requests = new HashSet<Integer>();
+		//_requests = new HashSet<Request>();
 		//_messages = new ArrayList<String>();
 		_notifications = new ArrayList<Notification>();
 		_classification = new Normal();
 		_active = true;
+		_fine = 0;
 	}
 
 	protected int getUserID(){
@@ -46,6 +50,10 @@ public class User implements Serializable, Observer{
 
 	protected Situation getSituation(){
 		return _situation;
+	}
+
+	protected boolean hasRequest(int workId){
+		return _requests.contains(workId);
 	}
 
 	protected String showUser(){
@@ -90,6 +98,9 @@ public class User implements Serializable, Observer{
 		//altera situação 
 	}
 
+	public void doPayFine(){
+		_fine = 0;
+	}
 
 	/*protected void addNotification(String tipo, String mensagem){
 			_notifications.add(new Notification(tipo, mensagem));

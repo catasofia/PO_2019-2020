@@ -126,6 +126,13 @@ public class Library implements Serializable, ObservableInterface {
     else currentUser.showNotifications();
   }
 
+  void doPayFine(int userId) throws NoSuchUserIdException, UserActiveException{
+    User currentUser = _users.get(userId);
+    if(currentUser == null) throw new NoSuchUserIdException(userId);
+    else if(currentUser.getSituationActive()) throw new UserActiveException(userId);
+    else currentUser.doPayFine();
+  }
+
 
   //==================== Work ====================
   /**

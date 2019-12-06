@@ -1,5 +1,5 @@
 *** tests/A-13-02-M-ok.out	2019-12-03 17:06:33.560740065 +0000
---- tests/A-13-02-M-ok.outhyp	2019-12-05 21:07:23.971150002 +0000
+--- tests/A-13-02-M-ok.outhyp	2019-12-06 10:44:29.084010448 +0000
 ***************
 *** 43,58 ****
   1 - Requisitar obra
@@ -52,3 +52,21 @@
   2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
   3 - Rey - real.last.jedi@universe.com - NORMAL - ACTIVO
   Menu de Gestão de Utentes
+***************
+*** 80,86 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+--- 80,87 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Saldar multa de utente: Operação inválida: O utente 1 não se encontra suspenso.
+! Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
