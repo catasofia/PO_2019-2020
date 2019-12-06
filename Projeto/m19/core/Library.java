@@ -36,7 +36,7 @@ public class Library implements Serializable, ObservableInterface {
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
   private Map<String, Request> _requests;
-  private Map<Integer, User> _observers;
+  private Map<User, Work> _observers;
   
   public Library(){
     _nextUserId = 0;
