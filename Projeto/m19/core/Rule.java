@@ -2,8 +2,8 @@ package m19.core;
 import m19.core.exception.RulesFailedException;
 
 
-public abstract class Rule{
-	private User _user;
+public interface Rule{
+/* 	private User _user;
 	private Work _work;
 	
 
@@ -18,7 +18,7 @@ public abstract class Rule{
 
 	public Work getWork(){
 		return _work;
-	}
-	public abstract void check() throws RulesFailedException;
+	} */
+	public void check() throws RulesFailedException;
 }
 

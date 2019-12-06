@@ -36,6 +36,7 @@ public class Library implements Serializable/* , ObservableInterface  */{
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
   private Map<String, Request> _requests;
+  private List<Rule> _rules;
   //private Map<User, Work> _observers;
   
   public Library(){
@@ -45,6 +46,8 @@ public class Library implements Serializable/* , ObservableInterface  */{
     _users = new HashMap<>();
     _works = new HashMap<>();
     _requests = new HashMap<>();
+    _rules = new ArrayList<>();
+    addRules();
     //_observers = new HashMap<>();
   }
 
@@ -248,12 +251,18 @@ public class Library implements Serializable/* , ObservableInterface  */{
     
     if (currentWork.areCopiesAvailable()){
         Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
+        try{
+          for(Rule rule: _rules){
+          rule.check();
+        }
         //Request_data data = new Request_data(userId,workId);
         _requests.put(hashcodeRequest(userId, workId), nvRequest);
         return nvRequest.getDeadline();
+    } catch (RulesFailedException e){
+      throw new RulesFailedException(userId, workId, e.getRuleIndex());
     }
-    else return -1;
-  }
+  }else return -1;
+}
 
   
   int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
@@ -313,6 +322,20 @@ public class Library implements Serializable/* , ObservableInterface  */{
       observer.update(notification);
     }
   } */
+
+  //==================== Rules ====================
+  
+  void addRules(){
+    _rules.add(new CheckRequestTwice());
+    _rules.add(new CheckUserIsSuspended());
+    _rules.add(new CheckCopiesAvailable());
+    _rules.add(new CheckNumberRequests());
+    _rules.add(new CheckWorkCategory());
+    _rules.add(new CheckWorkPrice());
+  }
+
+
+
 
   //==================== Files ====================
   /**
