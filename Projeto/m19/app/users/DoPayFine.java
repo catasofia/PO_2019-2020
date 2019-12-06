@@ -1,6 +1,10 @@
 package m19.app.users;
 
+import m19.app.exception.NoSuchUserException;
+import m19.app.exception.UserIsActiveException;
 import m19.core.LibraryManager;
+import m19.core.exception.NoSuchUserIdException;
+import m19.core.exception.UserActiveException;
 import pt.tecnico.po.ui.Input;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
@@ -24,7 +28,12 @@ public class DoPayFine extends Command<LibraryManager> {
   @Override
   public final void execute() throws DialogException {
     _form.parse();
-    // FIXME implement command
+    try{
+      _receiver.doPayFine(_id.value());
+    } catch (NoSuchUserIdException e){
+      throw new NoSuchUserException(e.getId());
+    } catch(UserActiveException e){
+      throw new UserIsActiveException(e.getId());
+    }
   }
-
 }
