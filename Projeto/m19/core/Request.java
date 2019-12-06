@@ -14,7 +14,6 @@ public class Request implements Serializable{
     _user = user;
     _work = work;
     _deadline = makeDeadline(date);
-    _work.decreaseCopies(1);
   }
 
   User getUser(){

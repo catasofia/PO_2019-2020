@@ -240,7 +240,7 @@ public class Library implements Serializable/* , ObservableInterface  */{
 
   String hashcodeRequest(int userId, int workId){ return "U"+userId+"W"+workId;}
   
-  int requestWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException{
+  int requestWork(int userId, int workId) throws RulesFailedException ,NoSuchUserIdException, NoSuchWorkIdException{
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
     if(currentUser == null)
@@ -253,10 +253,13 @@ public class Library implements Serializable/* , ObservableInterface  */{
         Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
         try{
           for(Rule rule: _rules){
-          rule.check();
+          rule.check(currentUser, currentWork);
         }
         //Request_data data = new Request_data(userId,workId);
         _requests.put(hashcodeRequest(userId, workId), nvRequest);
+        currentUser._activeRequests.add(currentWork);
+        currentWork.decreaseCopies(1);
+        //user.addWork(workId);
         return nvRequest.getDeadline();
     } catch (RulesFailedException e){
       throw new RulesFailedException(userId, workId, e.getRuleIndex());
@@ -269,12 +272,22 @@ public class Library implements Serializable/* , ObservableInterface  */{
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
     //Request_data data = new Request_data(userId,workId);
-
     if(currentUser == null) throw new NoSuchUserIdException(userId);
     else if(currentWork == null) throw new NoSuchWorkIdException(workId);
-    if (_requests.remove(hashcodeRequest(userId, workId)) ==null) return -1;
+
+    if (_requests.get(hashcodeRequest(userId, workId)) ==null) return -1;
+
+    int deadline = _requests.get(hashcodeRequest(userId, workId)).getDeadline();
+    _requests.remove(hashcodeRequest(userId, workId));
+    //currentUser.removeWork(workId);
+    currentUser._activeRequests.remove(currentWork);
+    currentUser._lastReturns.add(0, !(_date.getDate()>deadline));
     currentWork.decreaseCopies(-1);  //Ver melhor
     currentWork.notifyObservers("ENTREGA: "+currentWork.displayWork());
+     if (_date.getDate()>deadline) {
+      currentUser.changeSituation();
+      currentUser.setFine(5*(_date.getDate()-deadline));
+    } 
     return 0;
   }
 

@@ -1,0 +1,19 @@
+*** tests/A-07-05-M-ok.out	2019-11-20 22:20:39.000000000 +0000
+--- tests/A-07-05-M-ok.outhyp	2019-12-06 18:53:13.835702974 +0000
+***************
+*** 31,37 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: 1 - qw - qw@qw.com - NORMAL - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+--- 31,37 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: 1 - qw - qw@qw.com - CUMPRIDOR - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente

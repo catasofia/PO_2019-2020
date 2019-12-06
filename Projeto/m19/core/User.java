@@ -11,11 +11,11 @@ public class User implements Serializable, Observer{
 	private int _iDUser;
 	private String _name;
 	private String _email;
-	private Situation _situation;
 	private List<Notification> _notifications;
 	//private List<String> _messages;
-	//private Set<Request> _requests;
-	private Set<Work> _requests;
+	//private Set<Request> _activeRequests;
+	public Set<Work> _activeRequests;
+	public List<Boolean> _lastReturns;
 	private ClassificationInterface _classification;
 	private boolean _active;
 	private int _fine;
@@ -26,12 +26,17 @@ public class User implements Serializable, Observer{
 		_iDUser=iDUser;
 		_name = name;
 		_email = email;
-		_situation = new Situation();
-		_requests = new HashSet<Work>();
-		//_requests = new HashSet<Request>();
+		_activeRequests = new HashSet<Work>();
+		//_activeRequests = new HashSet<Request>();
 		//_messages = new ArrayList<String>();
 		_notifications = new ArrayList<Notification>();
 		_classification = new Normal();
+		_lastReturns = new ArrayList<>();
+		_lastReturns.add(true);
+		_lastReturns.add(true);
+		_lastReturns.add(true);
+		_lastReturns.add(false);
+		_lastReturns.add(false);
 		_active = true;
 		_fine = 0;
 	}
@@ -48,21 +53,29 @@ public class User implements Serializable, Observer{
 		return _email;
 	}
 
-	protected Situation getSituation(){
-		return _situation;
-	}
-
 	protected boolean hasRequest(Work work){
-		return _requests.contains(work);
+		return _activeRequests.contains(work);
 	}
 
 	protected int getNumberRequests(){
-		return _requests.size();
+		return _activeRequests.size();
 	}
 
+	protected void changeSituation(){
+		_active = !(_active);
+	}
+
+	protected String showSituation(){
+		String aux=_classification.toString() + " - ";
+		if (_active) aux += "ACTIVO\n";
+		else aux += "SUSPENSO - EUR - " + _fine + "\n";
+		return aux;
+}
+
 	protected String showUser(){
+		update();
 		String aux = _iDUser + " - " + _name + " - " + _email + " - ";
-		aux += _situation.showSituation();
+		aux += showSituation();
 		return aux;
 	}
 
@@ -90,6 +103,10 @@ public class User implements Serializable, Observer{
 	public int getDeadline(int copies){
 		return _classification.getDeadline(copies);
 	}
+	
+	public void setFine(int nFine){
+		_fine+=nFine;
+	}
 
 	public boolean getSituationActive(){
 		return _active;
@@ -106,7 +123,12 @@ public class User implements Serializable, Observer{
 
 	@Override
 	public void update(){
-		//altera situação 
+		if (_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==_lastReturns.get(3)==_lastReturns.get(4)==true) _classification = new Responsible();
+		else if(_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==true){
+			if (_classification.toString() == "Faltoso") _classification = new Normal();}
+		else if (_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==false)
+			_classification = new Faulty();
+
 	}
 
 	public void doPayFine(){

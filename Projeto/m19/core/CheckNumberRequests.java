@@ -3,7 +3,7 @@ import m19.core.exception.RulesFailedException;
 
 public class CheckNumberRequests implements Rule{
 
-	public void check(User user, Work work){
+	public void check(User user, Work work) throws RulesFailedException{
 		if(user.getMaxNumber() == user.getNumberRequests()){
 			throw new RulesFailedException(4);
 		}

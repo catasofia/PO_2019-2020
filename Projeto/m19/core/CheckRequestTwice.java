@@ -1,14 +1,10 @@
 package m19.core;
 import m19.core.exception.RulesFailedException;
 
-public class CheckRequestTwice extends Rule{
-	
-	public CheckRequestTwice(User user, Work work){
-		super(user, work);
-	}
+public class CheckRequestTwice implements Rule{
 
-	public void check(){
-		if(super.getUser().hasRequest(super.getWork())){
+	public void check(User user, Work work) throws RulesFailedException{
+		if(user.hasRequest(work)){
 			throw new RulesFailedException(1);
 		}
 	}

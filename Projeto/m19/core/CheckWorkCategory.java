@@ -4,8 +4,8 @@ import m19.core.exception.RulesFailedException;
 
 public class CheckWorkCategory implements Rule{
 
-	public void check(User user, Work work){
-	if(user.getCategory() == Category.REFERENCE){
+	public void check(User user, Work work) throws RulesFailedException{
+	if(work.getCategory() == Category.REFERENCE){
 		throw new RulesFailedException(5);
 		}
 	}

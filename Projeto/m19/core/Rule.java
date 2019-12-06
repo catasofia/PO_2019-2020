@@ -1,8 +1,10 @@
 package m19.core;
 import m19.core.exception.RulesFailedException;
+import java.io.Serializable;
 
 
-public interface Rule{
+public interface Rule extends Serializable{
+  static final long serialVersionUID = 201901101348L;
 /* 	private User _user;
 	private Work _work;
 	

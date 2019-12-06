@@ -1,5 +1,5 @@
 *** tests/A-13-02-M-ok.out	2019-11-20 22:26:59.000000000 +0000
---- tests/A-13-02-M-ok.outhyp	2019-12-06 15:47:29.867002613 +0000
+--- tests/A-13-02-M-ok.outhyp	2019-12-06 18:53:21.423494978 +0000
 ***************
 *** 43,58 ****
   1 - Requisitar obra
@@ -36,24 +36,30 @@
   1 - Abrir dados
   2 - Guardar dados
 ***************
-*** 70,76 ****
+*** 69,78 ****
+  4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
-  Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
+! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
 ! 1 - Darth Vader - darth@dark.force.coAm - NORMAL - SUSPENSO - EUR 85
-  2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
-  3 - Rey - real.last.jedi@universe.com - NORMAL - ACTIVO
+! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
+! 3 - Rey - real.last.jedi@universe.com - NORMAL - ACTIVO
   Menu de Gestão de Utentes
---- 70,76 ----
+  1 - Registar utente
+  2 - Mostrar utente
+--- 69,78 ----
+  4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
-  Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-! 1 - Darth Vader - darth@dark.force.coAm - NORMAL - ACTIVO
-  2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
-  3 - Rey - real.last.jedi@universe.com - NORMAL - ACTIVO
+! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - CUMPRIDOR - ACTIVO
+! 1 - Darth Vader - darth@dark.force.coAm - CUMPRIDOR - ACTIVO
+! 2 - Luke Skywalker - last.jedi@universe.com - CUMPRIDOR - ACTIVO
+! 3 - Rey - real.last.jedi@universe.com - CUMPRIDOR - ACTIVO
   Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
 ***************
-*** 80,86 ****
+*** 80,96 ****
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
@@ -61,7 +67,17 @@
   1 - Registar utente
   2 - Mostrar utente
   3 - Listar utentes
---- 80,87 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
+! 1 - Darth Vader - darth@dark.force.coAm - NORMAL - ACTIVO
+! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
+! 3 - Rey - real.last.jedi@universe.com - NORMAL - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+--- 80,97 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
@@ -70,3 +86,13 @@
   1 - Registar utente
   2 - Mostrar utente
   3 - Listar utentes
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - CUMPRIDOR - ACTIVO
+! 1 - Darth Vader - darth@dark.force.coAm - CUMPRIDOR - ACTIVO
+! 2 - Luke Skywalker - last.jedi@universe.com - CUMPRIDOR - ACTIVO
+! 3 - Rey - real.last.jedi@universe.com - CUMPRIDOR - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
