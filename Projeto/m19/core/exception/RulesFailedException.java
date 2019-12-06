@@ -25,6 +25,10 @@ public class RulesFailedException extends Exception {
     _ruleIndex = ruleIndex;
   }
 
+  public RulesFailedException(int ruleIndex){
+    _ruleIndex = ruleIndex;
+  }
+
   /**
    * @return index of failed rule
    */

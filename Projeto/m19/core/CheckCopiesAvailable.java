@@ -3,11 +3,13 @@ import m19.core.exception.RulesFailedException;
 
 public class CheckCopiesAvailable extends Rule{
 	
-	public CheckCopiesAvailable(int idUser, int idWork, User user){
-		super(idUser, idWork, user);
+	public CheckCopiesAvailable(User user, Work work){
+		super(user, work);
 	}
 
 	public void check(){
-		
+		if(!super.getWork().areCopiesAvailable()){
+			throw new RulesFailedException(3);
+		}
 	}
 }

@@ -3,28 +3,22 @@ import m19.core.exception.RulesFailedException;
 
 
 public abstract class Rule{
-	private int _idUser;
-	private int _idWork;
 	private User _user;
+	private Work _work;
 	
 
-	public Rule(int idUser, int idWork, User user){
-		_idUser = idUser;
-		_idWork = idWork;
+	public Rule(User user, Work work){
 		_user = user;
-	}
-
-	public int getIdUser(){
-		return _idUser;
-	}
-
-	public int getIdWork(){
-		return _idWork;
+		_work = work;
 	}
 
 	public User getUser(){
 		return _user;
 	}
-	public abstract void check() /* throws RulesFailedException */;
+
+	public Work getWork(){
+		return _work;
+	}
+	public abstract void check() throws RulesFailedException;
 }
 

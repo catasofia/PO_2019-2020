@@ -3,13 +3,13 @@ import m19.core.exception.RulesFailedException;
 
 public class CheckRequestTwice extends Rule{
 	
-	public CheckRequestTwice(int idUser, int idWork, User user){
-		super(idUser, idWork, user);
+	public CheckRequestTwice(User user, Work work){
+		super(user, work);
 	}
 
 	public void check(){
-		/*if(super.getUser().hasRequest(super.getIdWork())){
-			throw new RulesFailedException(super.getIdUser(), super.getIdWork(), 1);
-		}*/
+		if(super.getUser().hasRequest(super.getWork())){
+			throw new RulesFailedException(1);
+		}
 	}
 }

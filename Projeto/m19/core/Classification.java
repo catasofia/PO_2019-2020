@@ -15,6 +15,10 @@ class Normal implements Serializable, ClassificationInterface{
 		else if (copies <= 5) return 8;
 		else return 15;
 	}
+
+	public int getMaxNumber(){
+		return 3;
+	}
 }
 
 class Faulty implements Serializable, ClassificationInterface{
@@ -26,6 +30,10 @@ class Faulty implements Serializable, ClassificationInterface{
 	}
 
 	public int getDeadline(int copies){ return 2; }
+
+	public int getMaxNumber(){
+		return 1;
+	}
 }
 
 class Responsible implements Serializable, ClassificationInterface{
@@ -40,5 +48,9 @@ class Responsible implements Serializable, ClassificationInterface{
 		if (copies == 1) return 8;
 		else if (copies <= 5) return 15;
 		else return 30;
+	}
+
+	public int getMaxNumber(){
+		return 5;
 	}
 }

@@ -15,7 +15,7 @@ public class User implements Serializable, Observer{
 	private List<Notification> _notifications;
 	//private List<String> _messages;
 	//private Set<Request> _requests;
-	private Set<Integer> _requests;
+	private Set<Work> _requests;
 	private ClassificationInterface _classification;
 	private boolean _active;
 	private int _fine;
@@ -27,7 +27,7 @@ public class User implements Serializable, Observer{
 		_name = name;
 		_email = email;
 		_situation = new Situation();
-		_requests = new HashSet<Integer>();
+		_requests = new HashSet<Work>();
 		//_requests = new HashSet<Request>();
 		//_messages = new ArrayList<String>();
 		_notifications = new ArrayList<Notification>();
@@ -52,8 +52,12 @@ public class User implements Serializable, Observer{
 		return _situation;
 	}
 
-	protected boolean hasRequest(int workId){
-		return _requests.contains(workId);
+	protected boolean hasRequest(Work work){
+		return _requests.contains(work);
+	}
+
+	protected int getNumberRequests(){
+		return _requests.size();
 	}
 
 	protected String showUser(){
@@ -89,6 +93,10 @@ public class User implements Serializable, Observer{
 
 	public boolean getSituationActive(){
 		return _active;
+	}
+
+	public int getMaxNumber(){
+		return _classification.getMaxNumber();
 	}
 
 	@Override
