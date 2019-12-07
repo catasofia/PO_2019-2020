@@ -163,7 +163,6 @@ public class User implements Serializable, Observer{
 		int flag = 0;
 		for (int i = 0; i < _requests.size();i++){
 			if (_requests.get(i).daysLate()>0 && _requests.get(i).getState()) flag++;}
-		System.out.println(flag);
 		if (_numRequests==0 && !_active) _active = true;
 		else if (flag!=0) changeSituation();
 	}

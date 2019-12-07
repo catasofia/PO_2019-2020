@@ -233,6 +233,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
         if (work.toLowerCase().contains(term.toLowerCase()))
           search += work;
       } catch (NoSuchWorkIdException e) {
+        //POR AQUI ALGUMA COISA------------------------------
       }
     }
     return search;
