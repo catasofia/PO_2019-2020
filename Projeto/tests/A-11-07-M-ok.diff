@@ -1,34 +1,5 @@
 *** tests/A-11-07-M-ok.out	2019-12-03 17:06:33.556738066 +0000
---- tests/A-11-07-M-ok.outhyp	2019-12-07 16:05:35.045679766 +0000
-***************
-*** 65,76 ****
-  2 - Devolver obra
-  0 - Sair
-  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 60.
-! O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 25.
-! O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
---- 65,78 ----
-  2 - Devolver obra
-  0 - Sair
-  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 60.
-! O utente deseja pagar multa (s/n)? Devolver obra: Operação inválida: O utente 1 não se encontra suspenso.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 25.
-! O utente deseja pagar multa (s/n)? Devolver obra: Operação inválida: O utente 1 não se encontra suspenso.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
+--- tests/A-11-07-M-ok.outhyp	2019-12-07 18:00:55.809240564 +0000
 ***************
 *** 90,96 ****
   4 - Mostrar notificações de utente
@@ -38,7 +9,7 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 92,98 ----
+--- 90,96 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
@@ -46,21 +17,3 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
-***************
-*** 112,118 ****
-  2 - Devolver obra
-  0 - Sair
-  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 25.
-! O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
---- 114,121 ----
-  2 - Devolver obra
-  0 - Sair
-  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 25.
-! O utente deseja pagar multa (s/n)? Devolver obra: Operação inválida: O utente 1 não se encontra suspenso.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair

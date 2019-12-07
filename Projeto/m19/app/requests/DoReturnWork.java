@@ -41,7 +41,7 @@ public class DoReturnWork extends Command<LibraryManager> {
         Form form = new Form();
         Input <Boolean> option = form.addBooleanInput(Message.requestFinePaymentChoice());
         form.parse();
-        System.out.println(option);
+        System.out.println(option.value());
         if (option.value()){
           _receiver.doPayFine(_idUser.value());
         }

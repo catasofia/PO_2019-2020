@@ -62,18 +62,25 @@ public class User implements Serializable, Observer{
 		_numRequests++;
 	}
 
+	
 	int removeWork(Request request, int day){
 		for (int i =0;i<_numRequests;i++)
-			if (_requests.get(i)==request && request.getState()){
-				request.changeState();
-				request.setClosed(day);
-				_requests.set(i,request);
-		_numRequests--;
-	return 0;}
-	return -1;
+		if (_requests.get(i)==request && request.getState()){
+			request.changeState();
+			request.setClosed(day);
+			_requests.set(i,request);
+			_numRequests--;
+			return 0;}
+		return -1;
 	}
-
-
+		
+	boolean hasActiveRequest(Work work){
+		for(int i = 0; i < _requests.size(); i++){
+			if (_requests.get(i).getWork() == work && !_requests.get(i).getState()) //VER ESTA BOSTA -> WTF
+				return true;
+		}
+		return false;
+	}
 
 	protected String showSituation(){
 		String aux=_classification.toString() + " - ";
@@ -153,15 +160,13 @@ public class User implements Serializable, Observer{
 	public void update(int day){
 		Boolean flag = false;
 		for (int i = 0; i < _requests.size();i++)
-			if (_requests.get(i).daysLate() > 0 && _requests.get(i).getState()) flag = true;
+			if (_requests.get(i).daysLate() > 0 && _requests.get(i).getState() && _active) flag = true;
 		if (flag) changeSituation();
 	}
 
-	public void doPayFine(int dia){
-		System.out.println("oi");
+	void doPayFine(){ 
 		_fine = 0;
-		_active = true;
-		update(dia);
+		changeSituation();
 	}
 
 	int getFine(){

@@ -1,9 +1,7 @@
 package m19.core;
 
-public enum Category{
-  REFERENCE("Referência"),
-  FICTION("Ficção"),
-  SCITECH("Técnica e Científica");
+public enum Category {
+  REFERENCE("Referência"), FICTION("Ficção"), SCITECH("Técnica e Científica");
 
   private final String _category;
 
@@ -13,6 +11,6 @@ public enum Category{
 
   @Override
   public String toString() {
-      return _category;
+    return _category;
   }
 }
