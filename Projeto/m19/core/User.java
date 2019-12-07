@@ -160,11 +160,7 @@ public class User implements Serializable, Observer{
 	public void doPayFine(int dia){
 		_fine = 0;
 		System.out.println(_fine);
-		for (int i = 0; i < _requests.size(); i++){
-			if (_requests.get(i).daysLate() > 0 && (_requests.get(i).getState()))
-				_active = false;
-			else _active = true;
-			}
+		_active = true;
 		update(dia);
 	}
 

@@ -1,5 +1,5 @@
 *** tests/A-13-01-M-ok.out	2019-12-03 17:06:33.560740065 +0000
---- tests/A-13-01-M-ok.outhyp	2019-12-07 15:05:58.389679766 +0000
+--- tests/A-13-01-M-ok.outhyp	2019-12-07 15:07:30.257679766 +0000
 ***************
 *** 89,96 ****
   5 - Saldar multa de utente
@@ -20,18 +20,20 @@
   1 - Registar utente
   2 - Mostrar utente
 ***************
-*** 107,113 ****
+*** 106,113 ****
+  5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
 ! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - SUSPENSO - EUR 25
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 107,113 ----
+--- 106,113 ----
+  5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR 0
 ! 2 - Luke Skywalker - last.jedi@universe.com - FALTOSO - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
@@ -55,18 +57,20 @@
   2 - Mostrar utente
   3 - Listar utentes
 ***************
-*** 124,130 ****
+*** 123,130 ****
+  5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
 ! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 125,131 ----
+--- 124,131 ----
+  5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR 0
 ! 2 - Luke Skywalker - last.jedi@universe.com - FALTOSO - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
