@@ -16,6 +16,7 @@ public class Request implements Serializable {
     _user = user;
     _work = work;
     _state = true;
+    _dayClosed = 0;
     _deadline = makeDeadline(date);
   }
 

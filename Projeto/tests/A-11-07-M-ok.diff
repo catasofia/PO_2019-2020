@@ -1,19 +1,19 @@
 *** tests/A-11-07-M-ok.out	2019-11-20 22:26:19.000000000 +0000
---- tests/A-11-07-M-ok.outhyp	2019-12-07 15:57:30.379457579 +0000
+--- tests/A-11-07-M-ok.outhyp	2019-12-07 17:47:17.312003306 +0000
 ***************
-*** 132,138 ****
+*** 90,96 ****
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+! Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - NORMAL - SUSPENSO - EUR 0
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 132,138 ----
+--- 90,96 ----
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR 0
+! Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - NORMAL - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente

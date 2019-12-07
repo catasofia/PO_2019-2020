@@ -64,7 +64,7 @@ public class User implements Serializable, Observer{
 
 	int removeWork(Request request, int day){
 		for (int i =0;i<_numRequests;i++)
-			if (_requests.get(i)==request && request.getState()){
+			if (_requests.get(i)==request){
 				request.changeState();
 				request.setClosed(day);
 				_requests.set(i,request);
@@ -151,15 +151,16 @@ public class User implements Serializable, Observer{
 
 	@Override
 	public void update(int day){
-		Boolean flag = false;
-		for (int i = 0; i < _requests.size();i++)
-			if (_requests.get(i).daysLate() > 0 && _requests.get(i).getState() && _active) flag = true;
-		if (flag) changeSituation();
+		int flag = 0;
+		for (int i = 0; i < _requests.size();i++){
+			if (_requests.get(i).daysLate()>0 && _requests.get(i).getState()) flag++;}
+		System.out.println(flag);
+		if (_numRequests==0 && !_active) _active = true;
+		else if (flag!=0) changeSituation();
 	}
 
 	void doPayFine(){ 
 		_fine = 0;
-		changeSituation();
 	}
 
 	int getFine(){

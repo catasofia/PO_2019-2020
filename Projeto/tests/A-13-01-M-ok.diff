@@ -1,48 +1,5 @@
 *** tests/A-13-01-M-ok.out	2019-11-20 22:26:59.000000000 +0000
---- tests/A-13-01-M-ok.outhyp	2019-12-07 15:57:33.669101582 +0000
-***************
-*** 20,26 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 22.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
---- 20,26 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Requisitar obra: Operação inválida: O utente 1 não pode requisitar a obra 1. Violação da regra 2.
-  Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-***************
-*** 62,72 ****
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 90.
-! O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 2 deve pagar uma multa de EUR 25.
-  O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
-  1 - Requisitar obra
---- 62,73 ----
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 1 não foi requisitada pelo utente 1.
-! Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-+ Escolha uma opção: Número inválido!
-  Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 2 deve pagar uma multa de EUR 25.
-  O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
-  1 - Requisitar obra
+--- tests/A-13-01-M-ok.outhyp	2019-12-07 17:47:19.492003306 +0000
 ***************
 *** 89,96 ****
   5 - Saldar multa de utente
@@ -53,50 +10,64 @@
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 90,97 ----
+--- 89,96 ----
   5 - Saldar multa de utente
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR 0
+! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
 ! 2 - Luke Skywalker - last.jedi@universe.com - FALTOSO - SUSPENSO - EUR 25
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
 ***************
-*** 106,113 ****
+*** 98,104 ****
+  4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
+! Escolha uma opção: Introduza o número de utente: Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+--- 98,105 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Saldar multa de utente: Operação inválida: O utente 1 não se encontra suspenso.
+! Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+  3 - Listar utentes
+***************
+*** 107,113 ****
+  0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
 ! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - SUSPENSO - EUR 25
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 107,114 ----
-  5 - Saldar multa de utente
+--- 108,114 ----
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR 0
+  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
 ! 2 - Luke Skywalker - last.jedi@universe.com - FALTOSO - SUSPENSO - EUR 25
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
 ***************
-*** 123,130 ****
-  5 - Saldar multa de utente
+*** 124,130 ****
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
 ! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
---- 124,131 ----
-  5 - Saldar multa de utente
+--- 125,131 ----
   0 - Sair
   Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
-! 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - SUSPENSO - EUR 0
-! 2 - Luke Skywalker - last.jedi@universe.com - FALTOSO - SUSPENSO - EUR 0
+  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+! 2 - Luke Skywalker - last.jedi@universe.com - FALTOSO - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente

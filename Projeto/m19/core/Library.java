@@ -139,6 +139,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
     else if (currentUser.getSituationActive())
       throw new UserActiveException(userId);
     currentUser.doPayFine();
+    System.out.println("Aqui");
     currentUser.update(_date.getDate());
   }
 
@@ -293,11 +294,10 @@ public class Library implements Serializable/* , ObservableInterface */ {
 
     currentWork.notifyObservers("ENTREGA: " + currentWork.displayWork());
     if (rv.daysLate() > 0) {
-      currentUser.changeSituation();
+      currentUser.update(_date.getDate());
       currentUser.setFine(5 * (_date.getDate() - deadline));
     }
     currentUser.update();
-    currentUser.update(_date.getDate());
     return 5 * (_date.getDate() - deadline);
   }
 
