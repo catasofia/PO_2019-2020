@@ -153,15 +153,13 @@ public class User implements Serializable, Observer{
 	public void update(int day){
 		Boolean flag = false;
 		for (int i = 0; i < _requests.size();i++)
-			if (_requests.get(i).daysLate() > 0 && _requests.get(i).getState()) flag = true;
+			if (_requests.get(i).daysLate() > 0 && _requests.get(i).getState() && _active) flag = true;
 		if (flag) changeSituation();
 	}
 
-	public void doPayFine(int dia){
+	void doPayFine(){ 
 		_fine = 0;
-		System.out.println(_fine);
-		_active = true;
-		update(dia);
+		changeSituation();
 	}
 
 	int getFine(){

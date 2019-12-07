@@ -20,7 +20,7 @@ public abstract class Work implements Serializable, ObservableInterface {
 
   private static final long serialVersionUID = 201901101348L;
 
-  public Work(int iDObra,int copies, String title, int price, Category category){
+  public Work(int iDObra, int copies, String title, int price, Category category) {
     _iDObra = iDObra;
     _copies = copies;
     _copiesAvailable = copies;
@@ -30,58 +30,57 @@ public abstract class Work implements Serializable, ObservableInterface {
     _observers = new HashMap<>();
   }
 
-  protected String getTitle(){
+  protected String getTitle() {
     return _title;
   }
 
-  protected int getCopies(){
+  protected int getCopies() {
     return _copies;
   }
 
-  protected int getPrice(){
+  protected int getPrice() {
     return _price;
   }
 
-  protected int getID(){
+  protected int getID() {
     return _iDObra;
   }
 
-  protected int getCopiesAvailable(){
+  protected int getCopiesAvailable() {
     return _copiesAvailable;
   }
 
-  protected Category getCategory(){
+  protected Category getCategory() {
     return _category;
   }
-  
-  protected void decreaseCopies(int nCopies){
+
+  protected void decreaseCopies(int nCopies) {
     _copiesAvailable -= nCopies;
   }
 
-  protected boolean areCopiesAvailable(){
+  protected boolean areCopiesAvailable() {
     return _copiesAvailable != 0;
   }
-  
+
   abstract protected String subClass();
-  
-  protected String displayWork(){
-    return getID() + " - " + getCopiesAvailable() + " de " +
-    getCopies() + " - " + subClass() +" - " + getTitle() + " - " + getPrice() +
-    " - " + getCategory().toString();
+
+  protected String displayWork() {
+    return getID() + " - " + getCopiesAvailable() + " de " + getCopies() + " - " + subClass() + " - " + getTitle()
+        + " - " + getPrice() + " - " + getCategory().toString();
   }
 
-  public void register(User observer){
+  public void register(User observer) {
     _observers.put(observer.getUserID(), observer);
   }
 
-  public void unregister(User observer){
+  public void unregister(User observer) {
     _observers.remove(observer.getUserID(), observer);
   }
 
-  public void notifyObservers(String message){
+  public void notifyObservers(String message) {
     Notification notification = new Notification(message);
     List<User> observers = new ArrayList<>(_observers.values());
-    for(User observer: observers){
+    for (User observer : observers) {
       observer.update(notification);
     }
   }
