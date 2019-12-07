@@ -291,6 +291,7 @@ public class Library implements Serializable/* , ObservableInterface  */{
      if (_date.getDate()>deadline) {
       currentUser.changeSituation();
       currentUser.setFine(5*(_date.getDate()-deadline));
+      return _date.getDate()-deadline;
     } 
     return 0;
   }

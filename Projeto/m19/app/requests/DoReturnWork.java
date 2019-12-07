@@ -2,6 +2,7 @@ package m19.app.requests;
 
 import pt.tecnico.po.ui.Input;
 import pt.tecnico.po.ui.Command;
+import pt.tecnico.po.ui.Form;
 import pt.tecnico.po.ui.DialogException;
 import m19.app.exception.NoSuchUserException;
 import m19.app.exception.NoSuchWorkException;
@@ -33,6 +34,14 @@ public class DoReturnWork extends Command<LibraryManager> {
     try {
       int rc = _receiver.returnWork(_idUser.value(), _idWork.value());
       if (rc == -1) throw new WorkNotBorrowedByUserException(_idWork.value(), _idUser.value());
+      else if (rc > 0){
+        _display.popup(Message.showFine(_idUser.value(), rc));
+        Form form = new Form();
+        Input <Boolean> option = form.addBooleanInput(Message.requestFinePaymentChoice());
+        form.parse();
+        if (option.value()){};
+
+      }
     } catch (NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());
     } catch (NoSuchWorkIdException e){

@@ -1,40 +1,32 @@
-*** tests/A-11-07-M-ok.out	2019-12-03 17:06:33.556738066 +0000
---- tests/A-11-07-M-ok.outhyp	2019-12-06 19:21:34.305405769 +0000
+*** tests/A-11-07-M-ok.out	2019-11-20 22:26:19.000000000 +0000
+--- tests/A-11-07-M-ok.outhyp	2019-12-07 00:01:13.613985446 +0000
 ***************
-*** 64,79 ****
+*** 64,75 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 60.
-! O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
+  O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 25.
-! O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
+  O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+--- 64,75 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-  Escolha uma opção: Menu Principal
-  1 - Abrir dados
-  2 - Guardar dados
---- 64,79 ----
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 12.
+  O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 5.
+  O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Número inválido!
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-+ Escolha uma opção: Número inválido!
-  Escolha uma opção: Menu Principal
-  1 - Abrir dados
-  2 - Guardar dados
 ***************
 *** 90,96 ****
   4 - Mostrar notificações de utente
@@ -53,30 +45,22 @@
   1 - Registar utente
   2 - Mostrar utente
 ***************
-*** 111,121 ****
+*** 111,117 ****
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
 ! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 25.
-! O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
+  O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+--- 111,117 ----
   1 - Requisitar obra
   2 - Devolver obra
   0 - Sair
-  Escolha uma opção: Menu Principal
-  1 - Abrir dados
-  2 - Guardar dados
---- 111,121 ----
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: O utente 1 deve pagar uma multa de EUR 5.
+  O utente deseja pagar multa (s/n)? Menu de Gestão de Requisições
   1 - Requisitar obra
   2 - Devolver obra
-  0 - Sair
-! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
-  1 - Requisitar obra
-  2 - Devolver obra
-  0 - Sair
-+ Escolha uma opção: Número inválido!
-  Escolha uma opção: Menu Principal
-  1 - Abrir dados
-  2 - Guardar dados
 ***************
 *** 132,138 ****
   4 - Mostrar notificações de utente
@@ -90,7 +74,7 @@
   4 - Mostrar notificações de utente
   5 - Saldar multa de utente
   0 - Sair
-! Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - NORMAL - SUSPENSO - EUR - 110
+! Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - NORMAL - SUSPENSO - EUR - 25
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente

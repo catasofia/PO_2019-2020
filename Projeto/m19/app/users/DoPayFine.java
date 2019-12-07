@@ -31,11 +31,7 @@ public class DoPayFine extends Command<LibraryManager> {
   public final void execute() throws DialogException {
     _form.parse();
     try{
-      Form form = new Form();
-      Input <Boolean> option = form.addBooleanInput("");
-      form.parse();
-      if (option.value()){_receiver.doPayFine(_id.value());}
-      
+      _receiver.doPayFine(_id.value());      
     } catch (NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());
     } catch(UserActiveException e){
