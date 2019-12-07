@@ -94,7 +94,7 @@ public class User implements Serializable, Observer{
 	protected String showUser(){
 		String aux = _iDUser + " - " + _name + " - " + _email + " - ";
 		aux += showSituation();
-		return aux + showNotifications();
+		return aux ;
 	}
 
 	protected String showNotification(int iDNotificacao){
@@ -141,22 +141,22 @@ public class User implements Serializable, Observer{
 
 	@Override
 	public void update(){
-		int flag=0;
-		//System.out.println(_requests.size());
-		if (_requests.size()>0) if (_requests.get(0).daysLate()>0) this._classification = new Faulty();
-		if (_requests.size()>=3){
-			for (int i=0;i<3;i++)
-			if (_requests.get(i).daysLate()>0) flag=1;
-			if (flag==0) this._classification = new Normal();
+		int flag = 0;
+		if (_requests.size() > 0) if (_requests.get(0).daysLate() > 0) this._classification = new Faulty();
+		if (_requests.size() >= 3){
+			for (int i = 0;i < 3;i++){
+				if (_requests.get(i).daysLate() > 0) flag = 1;
+				if (flag == 0) this._classification = new Normal();
+			}
 		} 
 		
-		if (_requests.size()>=5){
-		for (int i=0;i<5;i++)
-			if (_requests.get(i).daysLate()>0) flag=2;
-			if (flag==0) this._classification = new Responsible(); 
+		if (_requests.size() >= 5){
+			for (int i = 0;i < 5;i++){
+				if (_requests.get(i).daysLate() > 0) flag = 2;
+				if (flag == 0) this._classification = new Responsible(); 
+			}
 		}
-		
-}
+	}
 
 	@Override
 	public void update(int day){
