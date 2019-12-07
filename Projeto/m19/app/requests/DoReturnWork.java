@@ -40,7 +40,10 @@ public class DoReturnWork extends Command<LibraryManager> {
         Form form = new Form();
         Input <Boolean> option = form.addBooleanInput(Message.requestFinePaymentChoice());
         form.parse();
-        if (option.value()){_receiver.doPayFine(_idUser.value());}
+        System.out.println(option);
+        if (option.value()){
+          _receiver.doPayFine(_idUser.value());
+        }
       }
     } catch (NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());

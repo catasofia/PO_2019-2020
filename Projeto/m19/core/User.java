@@ -54,7 +54,7 @@ public class User implements Serializable, Observer{
 	}
 
 	protected void changeSituation(){
-		_active = !(_active);
+		_active = !_active;
 	}
 
 	void addWork(Request request){
@@ -152,14 +152,19 @@ public class User implements Serializable, Observer{
 	@Override
 	public void update(int day){
 		Boolean flag = false;
-		for (int i = 0; i<_requests.size();i++)
-			if (_requests.get(i).daysLate()>0 && _requests.get(i).getState()) flag=true;
+		for (int i = 0; i < _requests.size();i++)
+			if (_requests.get(i).daysLate() > 0 && _requests.get(i).getState()) flag = true;
 		if (flag) changeSituation();
 	}
 
 	public void doPayFine(int dia){
 		_fine = 0;
-		_active = true;
+		System.out.println(_fine);
+		for (int i = 0; i < _requests.size(); i++){
+			if (_requests.get(i).daysLate() > 0 && (_requests.get(i).getState()))
+				_active = false;
+			else _active = true;
+			}
 		update(dia);
 	}
 
