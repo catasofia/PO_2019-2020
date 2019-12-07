@@ -8,11 +8,14 @@ public class Request implements Serializable{
   private int _deadline;
   private User _user;
   private Work _work;
+  private Boolean _state;
+  private int _dayClosed;
   private static final long serialVersionUID = 201901101348L;
 
   public Request(User user, Work work, int date){
     _user = user;
     _work = work;
+    _state = true;
     _deadline = makeDeadline(date);
   }
 
@@ -24,6 +27,18 @@ public class Request implements Serializable{
   }
   int getDeadline(){
     return _deadline;
+  }
+  Boolean getState(){
+    return _state;
+  }
+  void changeState(){
+    _state = !_state;
+  }
+  void setClosed(int day){
+    _dayClosed = day;
+  }
+  int daysLate(){
+    return _dayClosed-_deadline;
   }
 
   int makeDeadline(int day){

@@ -49,10 +49,10 @@ class CheckWorkCategory implements Rule{
 class CheckRequestTwice implements Rule{
 
 	public void check(User user, Work work) throws RulesFailedException{
-		if(user.hasRequest(work)){
+/* 		if(user.hasRequest(work)){
 			throw new RulesFailedException(1);
 		}
-	}
+ */	}
 }
 
 class CheckCopiesAvailable implements Rule{

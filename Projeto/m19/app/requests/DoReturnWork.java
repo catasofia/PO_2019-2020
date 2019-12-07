@@ -10,6 +10,7 @@ import m19.app.exception.WorkNotBorrowedByUserException;
 import m19.core.LibraryManager;
 import m19.core.exception.NoSuchUserIdException;
 import m19.core.exception.NoSuchWorkIdException;
+import m19.core.exception.UserActiveException;
 
 /**
  * 4.4.2. Return a work.
@@ -39,13 +40,13 @@ public class DoReturnWork extends Command<LibraryManager> {
         Form form = new Form();
         Input <Boolean> option = form.addBooleanInput(Message.requestFinePaymentChoice());
         form.parse();
-        if (option.value()){};
+        if (option.value()){_receiver.doPayFine(_idUser.value());}
 
       }
     } catch (NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());
     } catch (NoSuchWorkIdException e){
       throw new NoSuchWorkException(e.getId());
-    } 
+    }  catch (UserActiveException e){}
   }
 }

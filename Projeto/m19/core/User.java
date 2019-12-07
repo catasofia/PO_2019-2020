@@ -2,6 +2,7 @@ package m19.core;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.Serializable;
@@ -12,10 +13,8 @@ public class User implements Serializable, Observer{
 	private String _name;
 	private String _email;
 	private List<Notification> _notifications;
-	//private List<String> _messages;
-	//private Set<Request> _activeRequests;
-	public Set<Work> _activeRequests;
-	public List<Boolean> _lastReturns;
+	private LinkedList<Request> _requests;
+	private int _numRequests;
 	private ClassificationInterface _classification;
 	private boolean _active;
 	private int _fine;
@@ -26,17 +25,10 @@ public class User implements Serializable, Observer{
 		_iDUser=iDUser;
 		_name = name;
 		_email = email;
-		_activeRequests = new HashSet<Work>();
-		//_activeRequests = new HashSet<Request>();
-		//_messages = new ArrayList<String>();
+		_requests = new LinkedList<Request>();
+		_numRequests=0;
 		_notifications = new ArrayList<Notification>();
 		_classification = new Normal();
-		_lastReturns = new ArrayList<>();
-		_lastReturns.add(true);
-		_lastReturns.add(true);
-		_lastReturns.add(true);
-		_lastReturns.add(false);
-		_lastReturns.add(false);
 		_active = true;
 		_fine = 0;
 	}
@@ -53,27 +45,44 @@ public class User implements Serializable, Observer{
 		return _email;
 	}
 
-	protected boolean hasRequest(Work work){
+	/*protected boolean hasRequest(Request work){
 		return _activeRequests.contains(work);
-	}
+	}*/
 
 	protected int getNumberRequests(){
-		return _activeRequests.size();
+		return _numRequests;
 	}
 
 	protected void changeSituation(){
 		_active = !(_active);
 	}
 
+	void addWork(Request request){
+		_requests.addFirst(request);
+		_numRequests++;
+	}
+
+	int removeWork(Request request, int day){
+		for (int i =0;i<_numRequests;i++)
+			if (_requests.get(i)==request && request.getState()){
+				request.changeState();
+				request.setClosed(day);
+				_requests.set(i,request);
+		_numRequests--;
+	return 0;}
+	return -1;
+	}
+
+
+
 	protected String showSituation(){
 		String aux=_classification.toString() + " - ";
 		if (_active) aux += "ACTIVO\n";
-		else aux += "SUSPENSO - EUR - " + _fine + "\n";
+		else aux += "SUSPENSO - EUR " + _fine + "\n";
 		return aux;
 }
 
 	protected String showUser(){
-		update();
 		String aux = _iDUser + " - " + _name + " - " + _email + " - ";
 		aux += showSituation();
 		return aux;
@@ -123,17 +132,35 @@ public class User implements Serializable, Observer{
 
 	@Override
 	public void update(){
-		/* if (_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==_lastReturns.get(3)==_lastReturns.get(4)==true) _classification = new Responsible();
-		else if(_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==true){
-			if (_classification.toString() == "Faltoso") _classification = new Normal();}
-		else if (_lastReturns.get(0)==_lastReturns.get(1)==_lastReturns.get(2)==false)
-			_classification = new Faulty(); */
+		int flag=0;
+		//System.out.println(_requests.size());
+		if (_requests.size()>0) if (_requests.get(0).daysLate()>0) this._classification = new Faulty();
+		if (_requests.size()>=3){
+			for (int i=0;i<3;i++)
+			if (_requests.get(i).daysLate()>0) flag=1;
+			if (flag==0) this._classification = new Normal();
+		} 
+		
+		if (_requests.size()>=5){
+		for (int i=0;i<5;i++)
+			if (_requests.get(i).daysLate()>0) flag=2;
+			if (flag==0) this._classification = new Responsible(); 
+		}
+		
+}
 
+	@Override
+	public void update(int day){
+		Boolean flag = false;
+		for (int i = 0; i<_requests.size();i++)
+			if (_requests.get(i).daysLate()>0 && _requests.get(i).getState()) flag=true;
+		if (flag) changeSituation();
 	}
 
-	public void doPayFine(){
+	public void doPayFine(int dia){
 		_fine = 0;
-		//_active = true;
+		_active = true;
+		update(dia);
 	}
 
 	int getFine(){

@@ -133,7 +133,7 @@ public class Library implements Serializable/* , ObservableInterface  */{
     User currentUser = _users.get(userId);
     if(currentUser == null) throw new NoSuchUserIdException(userId);
     else if(currentUser.getSituationActive()) throw new UserActiveException(userId);
-    else currentUser.doPayFine();
+    else currentUser.doPayFine(_date.getDate());
   }
 
   int getFine(int userId){
@@ -242,7 +242,7 @@ public class Library implements Serializable/* , ObservableInterface  */{
 
   //================== Requests ===================
 
-  String hashcodeRequest(int userId, int workId){ return "U"+userId+"W"+workId;}
+  String hashcodeRequest(int userId, int workId){ return "U"+userId+"W"+workId; }
   
   int requestWork(int userId, int workId) throws RulesFailedException ,NoSuchUserIdException, NoSuchWorkIdException{
     User currentUser = getUser(userId);
@@ -256,14 +256,14 @@ public class Library implements Serializable/* , ObservableInterface  */{
     if (currentWork.areCopiesAvailable()){
         Request nvRequest = new Request(currentUser, currentWork,_date.getDate());
         try{
-          for(Rule rule: _rules){
+          for(Rule rule: _rules){ //PODE TER DUAS DO MESMO GENERO, VER SE TA ATIVO/INATIVO
           rule.check(currentUser, currentWork);
         }
-        //Request_data data = new Request_data(userId,workId);
+
         _requests.put(hashcodeRequest(userId, workId), nvRequest);
-        currentUser._activeRequests.add(currentWork);
+        currentUser.addWork(nvRequest);
         currentWork.decreaseCopies(1);
-        //user.addWork(workId);
+
         return nvRequest.getDeadline();
     } catch (RulesFailedException e){
       throw new RulesFailedException(userId, workId, e.getRuleIndex());
@@ -279,21 +279,24 @@ public class Library implements Serializable/* , ObservableInterface  */{
     if(currentUser == null) throw new NoSuchUserIdException(userId);
     else if(currentWork == null) throw new NoSuchWorkIdException(workId);
 
-    if (_requests.get(hashcodeRequest(userId, workId)) ==null) return -1;
+    Request rv = _requests.get(hashcodeRequest(userId, workId));
+    if ( rv==null || !rv.getState() || currentUser.removeWork(rv,_date.getDate())==-1) return -1;
 
-    int deadline = _requests.get(hashcodeRequest(userId, workId)).getDeadline();
-    _requests.remove(hashcodeRequest(userId, workId));
-    //currentUser.removeWork(workId);
-    currentUser._activeRequests.remove(currentWork);
-    currentUser._lastReturns.add(0, !(_date.getDate()>deadline));
+    
+    int deadline = rv.getDeadline();
+    rv.changeState();
+    rv.setClosed(_date.getDate());
+
     currentWork.decreaseCopies(-1);  //Ver melhor
+
     currentWork.notifyObservers("ENTREGA: "+currentWork.displayWork());
-     if (_date.getDate()>deadline) {
+     if (rv.daysLate()>0) {
       currentUser.changeSituation();
       currentUser.setFine(5*(_date.getDate()-deadline));
-      return _date.getDate()-deadline;
     } 
-    return 0;
+    currentUser.update();
+    currentUser.update(_date.getDate());
+    return 5*(_date.getDate()-deadline);
   }
 
 
@@ -314,7 +317,9 @@ public class Library implements Serializable/* , ObservableInterface  */{
    *        number of days to advance
    */
   void changeDate(int nDay){
-    _date.changeDate(nDay);  
+    _date.changeDate(nDay);
+    for (int i=0;i<_users.size();i++)
+      _users.get(i).update(_date.getDate());
   }
 
 
