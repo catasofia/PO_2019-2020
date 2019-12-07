@@ -158,8 +158,8 @@ public class User implements Serializable, Observer{
 	}
 
 	public void doPayFine(int dia){
+		System.out.println("oi");
 		_fine = 0;
-		System.out.println(_fine);
 		_active = true;
 		update(dia);
 	}

@@ -6,6 +6,7 @@ import pt.tecnico.po.ui.Form;
 import pt.tecnico.po.ui.DialogException;
 import m19.app.exception.NoSuchUserException;
 import m19.app.exception.NoSuchWorkException;
+import m19.app.exception.UserIsActiveException;
 import m19.app.exception.WorkNotBorrowedByUserException;
 import m19.core.LibraryManager;
 import m19.core.exception.NoSuchUserIdException;
@@ -49,6 +50,8 @@ public class DoReturnWork extends Command<LibraryManager> {
       throw new NoSuchUserException(e.getId());
     } catch (NoSuchWorkIdException e){
       throw new NoSuchWorkException(e.getId());
-    }  catch (UserActiveException e){}
+    }  catch (UserActiveException e){
+      throw new UserIsActiveException(e.getId());
+    }
   }
 }

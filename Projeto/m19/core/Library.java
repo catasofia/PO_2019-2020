@@ -133,7 +133,9 @@ public class Library implements Serializable/* , ObservableInterface  */{
     User currentUser = _users.get(userId);
     if(currentUser == null) throw new NoSuchUserIdException(userId);
     else if(currentUser.getSituationActive()) throw new UserActiveException(userId);
-    else currentUser.doPayFine(_date.getDate());
+    else {
+      currentUser.doPayFine(_date.getDate());
+    }
   }
 
   int getFine(int userId){
