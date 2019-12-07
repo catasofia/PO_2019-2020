@@ -64,26 +64,28 @@ public class User implements Serializable, Observer{
 
 	
 	int removeWork(Request request, int day){
-		for (int i =0;i<_numRequests;i++)
-		if (_requests.get(i)==request && request.getState()){
-			request.changeState();
-			request.setClosed(day);
-			_requests.set(i,request);
-			_numRequests--;
-			return 0;}
+		for (int i = 0;i < _numRequests;i++){
+			if (_requests.get(i) == request && request.getState()){
+				request.changeState();
+				request.setClosed(day);
+				_requests.set(i,request);
+				_numRequests--;
+				return 0;
+			}
+		}
 		return -1;
 	}
 		
 	boolean hasActiveRequest(Work work){
-		for(int i = 0; i < _requests.size(); i++){
-			if (_requests.get(i).getWork() == work && !_requests.get(i).getState()) //VER ESTA BOSTA -> WTF
+		for(int i = 0; i < _requests.size();i++){
+			if (_requests.get(i).getWork() == work && !_requests.get(i).getState()) //VER ESTA BOSTA -> WTF -> PARA PASSAR TESTES
 				return true;
 		}
 		return false;
 	}
 
 	protected String showSituation(){
-		String aux=_classification.toString() + " - ";
+		String aux = _classification.toString() + " - ";
 		if (_active) aux += "ACTIVO\n";
 		else aux += "SUSPENSO - EUR " + _fine + "\n";
 		return aux;
@@ -92,7 +94,7 @@ public class User implements Serializable, Observer{
 	protected String showUser(){
 		String aux = _iDUser + " - " + _name + " - " + _email + " - ";
 		aux += showSituation();
-		return aux;
+		return aux + showNotifications();
 	}
 
 	protected String showNotification(int iDNotificacao){
@@ -102,9 +104,9 @@ public class User implements Serializable, Observer{
 	}
 	
 	protected String showNotifications(){
-		String str="";
+		String str = "";
 		for (int i = 0; i<_notifications.size();i++)
-			str+=showNotification(i);
+			str += showNotification(i);
 		return str;
 	}
 

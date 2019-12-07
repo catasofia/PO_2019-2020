@@ -10,6 +10,7 @@ interface Rule extends Serializable {
 }
 
 class CheckRequestTwice implements Rule {
+	//private static final long serialVersionUID = 201901101348L;
 
 	public void check(User user, Work work) throws RulesFailedException {
 		if(user.hasActiveRequest(work)){ 

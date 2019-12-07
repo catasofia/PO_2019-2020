@@ -253,23 +253,20 @@ public class Library implements Serializable/* , ObservableInterface */ {
     else if (currentWork == null)
       throw new NoSuchWorkIdException(workId);
 
-    if (currentWork.areCopiesAvailable()) {
-      Request nvRequest = new Request(currentUser, currentWork, _date.getDate());
-      try {
-        for (Rule rule : _rules) { // PODE TER DUAS DO MESMO GENERO, VER SE TA ATIVO/INATIVO
-          rule.check(currentUser, currentWork);
-        }
-
-        _requests.put(hashcodeRequest(userId, workId), nvRequest);
-        currentUser.addWork(nvRequest);
-        currentWork.decreaseCopies(1);
-
-        return nvRequest.getDeadline();
-      } catch (RulesFailedException e) {
-        throw new RulesFailedException(userId, workId, e.getRuleIndex());
+    Request nvRequest = new Request(currentUser, currentWork, _date.getDate());
+    try {
+      for (Rule rule : _rules) { // PODE TER DUAS DO MESMO GENERO, VER SE TA ATIVO/INATIVO
+        rule.check(currentUser, currentWork);
       }
-    } else
-      return -1;
+
+      _requests.put(hashcodeRequest(userId, workId), nvRequest);
+      currentUser.addWork(nvRequest);
+      currentWork.decreaseCopies(1);
+
+      return nvRequest.getDeadline();
+    } catch (RulesFailedException e) {
+      throw new RulesFailedException(userId, workId, e.getRuleIndex());
+    }
   }
 
   int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException {
@@ -285,17 +282,17 @@ public class Library implements Serializable/* , ObservableInterface */ {
     if (rv == null || !rv.getState() || currentUser.removeWork(rv, _date.getDate()) == -1)
       return -1;
 
-      int deadline = rv.getDeadline();
-      rv.changeState();
-      rv.setClosed(_date.getDate());
-      
-      currentWork.decreaseCopies(-1); // Ver melhor
-      currentWork.notifyObservers("ENTREGA: " + currentWork.displayWork());
-      
-      if (rv.daysLate() > 0) {
-        currentUser.changeSituation();
-        currentUser.setFine(5 * (_date.getDate() - deadline));
-      }
+    int deadline = rv.getDeadline();
+    rv.changeState();
+    rv.setClosed(_date.getDate());
+    
+    currentWork.decreaseCopies(-1); // Ver melhor
+    currentWork.notifyObservers("ENTREGA: " + currentWork.displayWork());
+    
+    if (rv.daysLate() > 0) {
+      currentUser.changeSituation();
+      currentUser.setFine(5 * (_date.getDate() - deadline));
+    }
 
     currentUser.update();
     return 5 * (_date.getDate() - deadline);

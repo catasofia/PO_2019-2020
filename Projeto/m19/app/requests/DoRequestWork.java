@@ -35,19 +35,19 @@ public class DoRequestWork extends Command<LibraryManager> {
     _form.parse();
     try{
       int day = _receiver.requestWork(_idUser.value(), _idWork.value());
-      if(day == -1){
-        Form form = new Form();
-        Input <Boolean> option = form.addBooleanInput(Message.requestReturnNotificationPreference());
-        form.parse();
-        if (option.value()){_receiver.addUserInterested(_idUser.value(), _idWork.value()); }
-      }
-      else _display.popup(Message.workReturnDay(_idWork.value(), day));
+      _display.popup(Message.workReturnDay(_idWork.value(), day));
     }catch(NoSuchUserIdException e){
       throw new NoSuchUserException(e.getId());
     }catch(NoSuchWorkIdException e){
       throw new NoSuchWorkException(e.getId());
     }catch(RulesFailedException e){
-      throw new RuleFailedException(e.getUser(), e.getWork(), e.getRuleIndex());
+      if(e.getRuleIndex() == 3){
+        Form form = new Form();
+        Input <Boolean> option = form.addBooleanInput(Message.requestReturnNotificationPreference());
+        form.parse();
+        if (option.value()){_receiver.addUserInterested(_idUser.value(), _idWork.value()); }
+      }
+      else throw new RuleFailedException(e.getUser(), e.getWork(), e.getRuleIndex());
     }
   }
 }
