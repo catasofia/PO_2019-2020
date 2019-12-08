@@ -10,11 +10,11 @@ public class Dvd extends Work {
     _igacNumber = igacNumber;
   }
 
-  public String getDirector() {
+  protected String getDirector() {
     return _director;
   }
 
-  public String getigacNumber() {
+  protected String getigacNumber() {
     return _igacNumber;
   }
 

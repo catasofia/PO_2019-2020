@@ -227,13 +227,11 @@ public class Library implements Serializable/* , ObservableInterface */ {
    */
   String performSearch(String term) {
     String search = "";
-    for (int id = 0; id < _nextObraId; id++) {
-      try {
-        String work = displayWork(id);
+    for (int i = 0; i < _nextObraId; i++) {
+      if (getWork(i) != null) {
+        String work = _works.get(i).displayWork();
         if (work.toLowerCase().contains(term.toLowerCase()))
           search += work;
-      } catch (NoSuchWorkIdException e) {
-        // POR AQUI ALGUMA COISA------------------------------
       }
     }
     return search;
@@ -241,6 +239,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
 
   // ================== Requests ===================
 
+  
   String hashcodeRequest(int userId, int workId) {
     return "U" + userId + "W" + workId;
   }

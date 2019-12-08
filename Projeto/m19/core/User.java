@@ -74,7 +74,7 @@ public class User implements Serializable, Observer {
 
 	boolean hasActiveRequest(Work work) {
 		for (int i = 0; i < _requests.size(); i++) {
-			if (_requests.get(i).getWork() == work && _requests.get(i).getState()) // VER ESTA BOSTA -> WTF -> PARA PASSAR
+			if (_requests.get(i).getWork().equals(work) && _requests.get(i).getState()) // VER ESTA BOSTA -> WTF -> PARA PASSAR
 																																							// TESTES
 				return true;
 		}
