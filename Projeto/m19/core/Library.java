@@ -233,7 +233,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
         if (work.toLowerCase().contains(term.toLowerCase()))
           search += work;
       } catch (NoSuchWorkIdException e) {
-        //POR AQUI ALGUMA COISA------------------------------
+        // POR AQUI ALGUMA COISA------------------------------
       }
     }
     return search;
@@ -273,30 +273,30 @@ public class Library implements Serializable/* , ObservableInterface */ {
   int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException {
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
-    // Request_data data = new Request_data(userId,workId);
+
     if (currentUser == null)
       throw new NoSuchUserIdException(userId);
     else if (currentWork == null)
       throw new NoSuchWorkIdException(workId);
 
     Request rv = _requests.get(hashcodeRequest(userId, workId));
-    if (rv == null || !rv.getState() || currentUser.removeWork(rv, _date.getDate()) == -1)
+    if (rv == null || !rv.getState() || currentUser.removeWork(rv) == -1)
       return -1;
 
-    int deadline = rv.getDeadline();
+    // System.out.println("Antes: "+rv.getState());
     rv.changeState();
+    // System.out.println("Depois: "+rv.getState());
     rv.setClosed(_date.getDate());
-    
+    // System.out.println("Estado do request entregue: " + rv.getState());
     currentWork.decreaseCopies(-1); // Ver melhor
     currentWork.notifyObservers("ENTREGA: " + currentWork.displayWork());
-    
-    if (rv.daysLate() > 0) {
-      currentUser.changeSituation();
-      currentUser.setFine(5 * (_date.getDate() - deadline));
-    }
 
+    if (rv.daysLate() > 0)
+      currentUser.setFine(5 * rv.daysLate());
+    // UPDATES
     currentUser.update();
-    return 5 * (_date.getDate() - deadline);
+    currentUser.update(_date.getDate());
+    return currentUser.getFine();
   }
 
   // ==================== Tempo ====================
