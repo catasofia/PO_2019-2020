@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.io.Serializable;
 
 public class User implements Serializable, Observer {
-	private int _iDUser;
+	private int _userId;
 	private String _name;
 	private String _email;
 	private List<Notification> _notifications;
@@ -20,8 +20,8 @@ public class User implements Serializable, Observer {
 
 	private static final long serialVersionUID = 201901101348L;
 
-	public User(int iDUser, String name, String email) {
-		_iDUser = iDUser;
+	public User(int userId, String name, String email) {
+		_userId = userId;
 		_name = name;
 		_email = email;
 		_requests = new LinkedList<Request>();
@@ -33,7 +33,7 @@ public class User implements Serializable, Observer {
 	}
 
 	int getUserID() {
-		return _iDUser;
+		return _userId;
 	}
 
 	String getName() {
@@ -71,7 +71,7 @@ public class User implements Serializable, Observer {
 
 	boolean hasActiveRequest(Work work) {
 		for (Request request : _requests) {
-			if (request.getWork().equals(work) && request.getState()) // VER ESTA BOSTA -> WTF -> PARA PASSAR// TESTES
+			if (request.getWork().equals(work) && request.getState())
 				return true;
 		}
 		return false;
@@ -87,13 +87,13 @@ public class User implements Serializable, Observer {
 	}
 
 	String showUser() {
-		String aux = _iDUser + " - " + _name + " - " + _email + " - ";
+		String aux = _userId + " - " + _name + " - " + _email + " - ";
 		aux += showSituation();
 		return aux;
 	}
 
 	String showNotification(int iDNotificacao) {
-		if (_notifications.get(iDNotificacao) != null) // ADICIONADO PARA PASSAR TESTES
+		if (_notifications.get(iDNotificacao) != null)
 			return _notifications.get(iDNotificacao).toString();
 		return "";
 	}

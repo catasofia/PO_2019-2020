@@ -27,16 +27,16 @@ public class LibraryManager implements Serializable {
     return _library.getDate();
   }
 
-  public void changeDate(int tempo) {
-    _library.changeDate(tempo);
+  public void changeDate(int date) {
+    _library.changeDate(date);
   }
 
   public int getNextUser() {
     return _library.getNextUser();
   }
 
-  public void registerUser(String nome, String email) throws UserRegistFailedException {
-    _library.registerUser(nome, email);
+  public void registerUser(String name, String email) throws UserRegistFailedException {
+    _library.registerUser(name, email);
   }
 
   public String showUser(int id) throws NoSuchUserIdException {
@@ -47,8 +47,8 @@ public class LibraryManager implements Serializable {
     return _library.showUsers();
   }
 
-  public String displayWork(int obraID) throws NoSuchWorkIdException {
-    return _library.displayWork(obraID);
+  public String displayWork(int workId) throws NoSuchWorkIdException {
+    return _library.displayWork(workId);
   }
 
   public String displayWorks() {
@@ -80,8 +80,8 @@ public class LibraryManager implements Serializable {
     return _library.showNotifications(userId);
   }
 
-  public void addUserInterested(int userid, int worid) {
-    _library.addUserInterested(userid, worid);
+  public void addUserInterested(int userId, int workId) {
+    _library.addUserInterested(userId, workId);
   }
 
   /**
@@ -169,5 +169,4 @@ public class LibraryManager implements Serializable {
       throw new ImportFileException(e);
     }
   }
-
 }

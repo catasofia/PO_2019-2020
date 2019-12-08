@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public abstract class Work implements Serializable, ObservableInterface {
-  private int _iDObra;
+  private int _workId;
   private int _copies;
   private int _copiesAvailable;
   private String _title;
@@ -19,8 +19,8 @@ public abstract class Work implements Serializable, ObservableInterface {
 
   private static final long serialVersionUID = 201901101348L;
 
-  public Work(int iDObra, int copies, String title, int price, Category category) {
-    _iDObra = iDObra;
+  public Work(int workId, int copies, String title, int price, Category category) {
+    _workId = workId;
     _copies = copies;
     _copiesAvailable = copies;
     _title = title;
@@ -41,8 +41,8 @@ public abstract class Work implements Serializable, ObservableInterface {
     return _price;
   }
 
-  protected int getID() {
-    return _iDObra;
+  protected int getId() {
+    return _workId;
   }
 
   protected int getCopiesAvailable() {
@@ -64,10 +64,11 @@ public abstract class Work implements Serializable, ObservableInterface {
   abstract protected String subClass();
 
   protected String displayWork() {
-    return getID() + " - " + getCopiesAvailable() + " de " + getCopies() + " - " + subClass() + " - " + getTitle()
+    return getId() + " - " + getCopiesAvailable() + " de " + getCopies() + " - " + subClass() + " - " + getTitle()
         + " - " + getPrice() + " - " + getCategory().toString();
   }
 
+  /*OBSERVER*/
   public void register(User observer) {
     _observers.put(observer.getUserID(), observer);
   }

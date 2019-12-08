@@ -31,18 +31,18 @@ public class Parser {
     String[] components = line.split(":");
 
     switch (components[0]) {
-    case "DVD":
-      parseDVD(components, line);
-      break;
-    case "BOOK":
-      parseBook(components, line);
-      break;
-    case "USER":
-      parseUser(components, line);
-      break;
+      case "DVD":
+        parseDVD(components, line);
+        break;
+      case "BOOK":
+        parseBook(components, line);
+        break;
+      case "USER":
+        parseUser(components, line);
+        break;
 
-    default:
-      throw new BadEntrySpecificationException("Invalid type " + components[0] + " in line " + line);
+      default:
+        throw new BadEntrySpecificationException("Invalid type " + components[0] + " in line " + line);
     }
   }
 

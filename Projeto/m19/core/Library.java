@@ -26,12 +26,12 @@ import m19.core.exception.*;
 /**
  * Class that represents the library as a whole.
  */
-public class Library implements Serializable/* , ObservableInterface */ {
+public class Library implements Serializable {
 
   /** Serial number for serialization. */
   private static final long serialVersionUID = 201901101348L;
   private int _nextUserId;
-  private int _nextObraId;
+  private int _nextWorkId;
   private Date _date;
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
@@ -41,7 +41,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
 
   public Library() {
     _nextUserId = 0;
-    _nextObraId = 0;
+    _nextWorkId = 0;
     _date = new Date();
     _users = new HashMap<>();
     _works = new HashMap<>();
@@ -79,7 +79,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
   /**
    * Returns the User of the received ID
    * 
-   * @param id ID of the User
+   * @param id Id of the User
    * @return user if he exists
    */
   User getUser(int id) {
@@ -92,7 +92,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
   /**
    * Returns the string to display the User by the given id
    * 
-   * @param id ID of the User
+   * @param id Id of the User
    * @throws NoSuchUserIdException if the given id has no user associated to it
    * @return a String to show the user associated to the given id
    */
@@ -125,6 +125,13 @@ public class Library implements Serializable/* , ObservableInterface */ {
     return allUsers;
   }
 
+  /**
+   * show all the notifications of the user acording to the id received
+   * @param userId
+   *            user id 
+   * @return String with all the user notifications
+   * @throws NoSuchUserIdException when the user doesn't exist
+   */
   String showNotifications(int userId) throws NoSuchUserIdException {
     User currentUser = _users.get(userId);
     if (currentUser == null)
@@ -132,6 +139,13 @@ public class Library implements Serializable/* , ObservableInterface */ {
     return currentUser.showNotifications();
   }
 
+  /**
+   * pays the fine of the user acording to the id received
+   * @param userId
+   *            user id who wants to pay the fine
+   * @throws NoSuchUserIdException when the user doesn't exist
+   * @throws UserActiveException when the user is active
+   */
   void doPayFine(int userId) throws NoSuchUserIdException, UserActiveException {
     User currentUser = _users.get(userId);
     if (currentUser == null)
@@ -142,6 +156,12 @@ public class Library implements Serializable/* , ObservableInterface */ {
     currentUser.update(_date.getDate());
   }
 
+  /**
+   * shows the user's fine acording to the id received
+   * @param userId
+   *            user id
+   * @return int which is the fine of the user
+   */
   int getFine(int userId) {
     User currenUser = _users.get(userId);
     return currenUser.getFine();
@@ -160,7 +180,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
    * @param copies number of copies of the book
    */
   void registerBook(String title, String author, int price, Category cat, String isbn, int copies) {
-    _works.put(_nextObraId, new Book(_nextObraId++, title, author, price, cat, isbn, copies));
+    _works.put(_nextWorkId, new Book(_nextWorkId++, title, author, price, cat, isbn, copies));
   }
 
   /**
@@ -175,7 +195,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
    * @param copies     number of copies of the DVD
    */
   void registerDVD(String title, String director, int price, Category cat, String igacNumber, int copies) {
-    _works.put(_nextObraId, new Dvd(_nextObraId++, title, director, price, cat, igacNumber, copies));
+    _works.put(_nextWorkId, new Dvd(_nextWorkId++, title, director, price, cat, igacNumber, copies));
   }
 
   /**
@@ -185,7 +205,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
    * @return the work associated to the given id
    */
   Work getWork(int id) {
-    if (id < _nextObraId)
+    if (id < _nextWorkId)
       return _works.get(id);
     else
       return null;
@@ -213,7 +233,7 @@ public class Library implements Serializable/* , ObservableInterface */ {
    */
   String displayWorks() {
     String allWorks = "";
-    for (int i = 0; i < _nextObraId; i++)
+    for (int i = 0; i < _nextWorkId; i++)
       if (getWork(i) != null)
         allWorks += _works.get(i).displayWork();
     return allWorks;
@@ -222,12 +242,13 @@ public class Library implements Serializable/* , ObservableInterface */ {
   /**
    * searchs for the term received in the argument in every work
    * 
-   * @param term term to search for
+   * @param term 
+   *        term to search for
    * @return a String to display all the works that have "term" in its description
    */
   String performSearch(String term) {
     String search = "";
-    for (int i = 0; i < _nextObraId; i++) {
+    for (int i = 0; i < _nextWorkId; i++) {
       if (getWork(i) != null) {
         String work = _works.get(i).displayWork();
         if (work.toLowerCase().contains(term.toLowerCase()))
@@ -239,10 +260,29 @@ public class Library implements Serializable/* , ObservableInterface */ {
 
   // ================== Requests ===================
 
+  /**
+   * function that determines the hashcode acording to the userId and the workId
+   * @param userId
+   *            id of the user
+   * @param workId
+   *            id of the work
+   * @return String corresponding to the hashcode
+   */
   String hashcodeRequest(int userId, int workId) {
     return "U" + userId + "W" + workId;
   }
 
+  /**
+   * User requests a work 
+   * @param userId
+   *            id of the user
+   * @param workId
+   *            id of the work
+   * @return the request's deadline
+   * @throws RulesFailedException when it is impossible to request due to a failed rule
+   * @throws NoSuchUserIdException when the user doesn't exist
+   * @throws NoSuchWorkIdException when the work doesn't exist
+   */
   int requestWork(int userId, int workId) throws RulesFailedException, NoSuchUserIdException, NoSuchWorkIdException {
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
@@ -268,6 +308,14 @@ public class Library implements Serializable/* , ObservableInterface */ {
     }
   }
 
+  /**
+   * User returns a work
+   * @param userId
+   * @param workId
+   * @return user's fine
+   * @throws NoSuchUserIdException when the user doesn't exist
+   * @throws NoSuchWorkIdException when the work doesn't exist
+   */
   int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException {
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
@@ -318,6 +366,13 @@ public class Library implements Serializable/* , ObservableInterface */ {
   }
 
   // ===============================================
+  /**
+   * add the user to observers of the work he is interested in
+   * @param userId
+   *            id of the user
+   * @param workId
+   *            id of the work
+   */
   void addUserInterested(int userId, int workId) {
     Work currentWork = _works.get(workId);
     currentWork.register(_users.get(userId));
