@@ -239,7 +239,6 @@ public class Library implements Serializable/* , ObservableInterface */ {
 
   // ================== Requests ===================
 
-  
   String hashcodeRequest(int userId, int workId) {
     return "U" + userId + "W" + workId;
   }
@@ -279,19 +278,18 @@ public class Library implements Serializable/* , ObservableInterface */ {
       throw new NoSuchWorkIdException(workId);
 
     Request rv = _requests.get(hashcodeRequest(userId, workId));
-    if (rv == null || !rv.getState() || currentUser.removeWork(rv) == -1)
+    if (rv == null || !rv.getState())
       return -1;
 
-    // System.out.println("Antes: "+rv.getState());
+    currentUser.removeWork(rv);
     rv.changeState();
-    // System.out.println("Depois: "+rv.getState());
     rv.setClosed(_date.getDate());
-    // System.out.println("Estado do request entregue: " + rv.getState());
     currentWork.decreaseCopies(-1); // Ver melhor
-    currentWork.notifyObservers("ENTREGA: " + currentWork.displayWork());
+    currentWork.notifyObservers(currentWork.displayWork());
 
     if (rv.daysLate() > 0)
       currentUser.setFine(5 * rv.daysLate());
+
     // UPDATES
     currentUser.update();
     currentUser.update(_date.getDate());
@@ -324,19 +322,6 @@ public class Library implements Serializable/* , ObservableInterface */ {
     Work currentWork = _works.get(workId);
     currentWork.register(_users.get(userId));
   }
-
-  /*
-   * public void register(User observer){ _observers.put(observer.getUserID(),
-   * observer); }
-   * 
-   * public void unregister(User observer){
-   * _observers.remove(observer.getUserID(), observer); }
-   * 
-   * public void notifyObservers(String message){ Notification notification = new
-   * Notification(message); List<User> observers = new
-   * ArrayList<>(_observers.values()); for(User observer: observers){
-   * observer.update(notification); } }
-   */
 
   // ==================== Rules ====================
 

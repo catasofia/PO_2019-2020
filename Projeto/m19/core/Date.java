@@ -10,11 +10,11 @@ public class Date implements Serializable {
 		_day = 0;
 	}
 
-	protected int getDate() {
+	int getDate() {
 		return _day;
 	}
 
-	protected void changeDate(int nDay) {
+	void changeDate(int nDay) {
 		if (nDay > 0 && _day >= 0)
 			_day += nDay;
 	}

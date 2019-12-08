@@ -55,13 +55,8 @@ public class Request implements Serializable {
     return -1;
   }
 
-  public boolean areCopiesAvailable(Work work) {
+  boolean areCopiesAvailable(Work work) {
     return _work.areCopiesAvailable();
   }
-
-  // +verificaNObras(user: Utente) : boolean+verificaCategoria(work: Obra) :
-  // boolean+verificaPreco(user: Utente, work: Obra) :
-  // boolean+requisitarObra(user: Utente, work: Obra) : void+devolverObra(user:
-  // Utente, work: Obra) : void+obterDataDevolucao(user: Utente, work: Obra) : in
 
 }

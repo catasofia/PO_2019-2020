@@ -15,7 +15,6 @@ public abstract class Work implements Serializable, ObservableInterface {
   private String _title;
   private int _price;
   private Category _category;
-  private Set<Request> _usersRequests;
   private Map<Integer, User> _observers;
 
   private static final long serialVersionUID = 201901101348L;
@@ -78,7 +77,7 @@ public abstract class Work implements Serializable, ObservableInterface {
   }
 
   public void notifyObservers(String message) {
-    Notification notification = new Notification(message);
+    Notification notification = new Notification("ENTREGA: ",message);
     List<User> observers = new ArrayList<>(_observers.values());
     for (User observer : observers) {
       observer.update(notification);

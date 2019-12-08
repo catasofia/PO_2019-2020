@@ -10,11 +10,11 @@ public class Book extends Work {
     _isbn = isbn;
   }
 
-  protected String getAuthor() {
+  String getAuthor() {
     return _author;
   }
 
-  protected String getisbn() {
+  String getisbn() {
     return _isbn;
   }
 

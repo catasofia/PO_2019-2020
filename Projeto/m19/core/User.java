@@ -32,28 +32,27 @@ public class User implements Serializable, Observer {
 		_fine = 0;
 	}
 
-	protected int getUserID() {
+	int getUserID() {
 		return _iDUser;
 	}
 
-	protected String getName() {
+	String getName() {
 		return _name;
 	}
 
-	protected String getEmail() {
+	String getEmail() {
 		return _email;
 	}
 
 	/*
-	 * protected boolean hasRequest(Request work){ return
-	 * _activeRequests.contains(work); }
+	 * boolean hasRequest(Request work){ return _activeRequests.contains(work); }
 	 */
 
-	protected int getNumberRequests() {
+	int getNumberRequests() {
 		return _numRequests;
 	}
 
-	protected void changeSituation() {
+	void changeSituation() {
 		_active = !_active;
 	}
 
@@ -62,26 +61,23 @@ public class User implements Serializable, Observer {
 		_numRequests++;
 	}
 
-	int removeWork(Request request) {
-		for (Request removeRequest: _requests) {
+	void removeWork(Request request) {
+		for (Request removeRequest : _requests) {
 			if (removeRequest.equals(request) && removeRequest.getState()) {
 				_numRequests--;
-				return 0;
 			}
 		}
-		return -1;
 	}
 
 	boolean hasActiveRequest(Work work) {
-		for (Request request: _requests) {
-			if (request.getWork().equals(work) && request.getState()) // VER ESTA BOSTA -> WTF -> PARA PASSAR
-																																							// TESTES
+		for (Request request : _requests) {
+			if (request.getWork().equals(work) && request.getState()) // VER ESTA BOSTA -> WTF -> PARA PASSAR// TESTES
 				return true;
 		}
 		return false;
 	}
 
-	protected String showSituation() {
+	String showSituation() {
 		String aux = _classification.toString() + " - ";
 		if (_active)
 			aux += "ACTIVO\n";
@@ -90,49 +86,58 @@ public class User implements Serializable, Observer {
 		return aux;
 	}
 
-	protected String showUser() {
+	String showUser() {
 		String aux = _iDUser + " - " + _name + " - " + _email + " - ";
 		aux += showSituation();
 		return aux;
 	}
 
-	protected String showNotification(int iDNotificacao) {
+	String showNotification(int iDNotificacao) {
 		if (_notifications.get(iDNotificacao) != null) // ADICIONADO PARA PASSAR TESTES
-			return _notifications.get(iDNotificacao).getMessage();
+			return _notifications.get(iDNotificacao).toString();
 		return "";
 	}
 
-	protected String showNotifications() {
+	String showNotifications() {
 		String str = "";
 		for (int i = 0; i < _notifications.size(); i++)
 			str += showNotification(i);
 		return str;
 	}
 
-	public void setClassification(ClassificationInterface classification) {
+	void setClassification(ClassificationInterface classification) {
 		_classification = classification;
 	}
 
-	public String getClassification() {
+	String getClassification() {
 		return _classification.toString();
 	}
 
-	public int getDeadline(int copies) {
+	int getFine() {
+		return _fine;
+	}
+
+	int getDeadline(int copies) {
 		return _classification.getDeadline(copies);
 	}
 
-	public void setFine(int nFine) {
+	void setFine(int nFine) {
 		_fine += nFine;
 	}
 
-	public boolean getSituationActive() {
+	boolean getSituationActive() {
 		return _active;
 	}
 
-	public int getMaxNumber() {
+	int getMaxNumber() {
 		return _classification.getMaxNumber();
 	}
 
+	void doPayFine() {
+		_fine = 0;
+	}
+
+	/* UPDATES */
 	@Override
 	public void update(Notification message) {
 		_notifications.add(message);
@@ -143,50 +148,32 @@ public class User implements Serializable, Observer {
 		int flag = 0;
 		if (_requests.size() >= 3) {
 			for (int i = 0; i < 3; i++) {
-				// System.out.println("1º"+_requests.get(i).daysLate());
 				if (_requests.get(i).daysLate() > 0)
 					flag++;
-				if (flag == 0 && _classification.toString().equals("FALTOSO"))
-					this._classification = new Normal();
-				else if (flag == 3 /* && _classification.toString().equals("NORMAL")) */)
-					_classification = new Faulty();
 			}
+			if (flag == 0 && _classification.toString().equals("FALTOSO"))
+				this._classification = new Normal();
+			else if (flag == 3)
+				_classification = new Faulty();
 		}
-		flag = 0;
-		if (_requests.size() >= 5 && !_classification.toString().equals("CUMPRIDOR")) {
+		if (_requests.size() >= 5 && !_classification.toString().equals("CUMPRIDOR") && flag == 0) {
 			for (int i = 0; i < 5; i++) {
-				// System.out.println("2º"+_requests.get(i).daysLate());
 				if (_requests.get(i).daysLate() > 0)
 					flag = 2;
-				if (flag == 0)
-					this._classification = new Responsible();
 			}
+			if (flag == 0)
+				this._classification = new Responsible();
 		}
 	}
 
 	@Override
 	public void update(int day) {
 		int flag = 0;
-		for (Request request: _requests) {
-			if ((day -request.getDeadline()) > 0 && request.getState())
+		for (Request request : _requests) {
+			if ((day - request.getDeadline()) > 0 && request.getState())
 				flag++;
 		}
-
-		// System.out.println(flag);
-		if (flag == 0 && !_active && _fine == 0)
-			_active = true;
-		else if (flag != 0 && _active)
+		if ((flag == 0 && !_active && _fine == 0) || (flag != 0 && _active) || (_fine != 0 && _active))
 			changeSituation();
-		if (_fine != 0)
-			_active = false;
 	}
-
-	void doPayFine() {
-		_fine = 0;
-	}
-
-	int getFine() {
-		return _fine;
-	}
-
 }
