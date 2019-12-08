@@ -63,8 +63,8 @@ public class User implements Serializable, Observer {
 	}
 
 	int removeWork(Request request) {
-		for (int i = 0; i < _requests.size(); i++) {
-			if (_requests.get(i).equals(request) && _requests.get(i).getState()) {
+		for (Request removeRequest: _requests) {
+			if (removeRequest.equals(request) && removeRequest.getState()) {
 				_numRequests--;
 				return 0;
 			}
@@ -73,8 +73,8 @@ public class User implements Serializable, Observer {
 	}
 
 	boolean hasActiveRequest(Work work) {
-		for (int i = 0; i < _requests.size(); i++) {
-			if (_requests.get(i).getWork().equals(work) && _requests.get(i).getState()) // VER ESTA BOSTA -> WTF -> PARA PASSAR
+		for (Request request: _requests) {
+			if (request.getWork().equals(work) && request.getState()) // VER ESTA BOSTA -> WTF -> PARA PASSAR
 																																							// TESTES
 				return true;
 		}
@@ -167,8 +167,8 @@ public class User implements Serializable, Observer {
 	@Override
 	public void update(int day) {
 		int flag = 0;
-		for (int i = 0; i < _requests.size(); i++) {
-			if ((day - _requests.get(i).getDeadline()) > 0 && _requests.get(i).getState())
+		for (Request request: _requests) {
+			if ((day -request.getDeadline()) > 0 && request.getState())
 				flag++;
 		}
 
