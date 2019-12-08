@@ -143,19 +143,19 @@ public class User implements Serializable, Observer {
 		int flag = 0;
 		if (_requests.size() >= 3) {
 			for (int i = 0; i < 3; i++) {
-				//System.out.println("1º"+_requests.get(i).daysLate());
+				// System.out.println("1º"+_requests.get(i).daysLate());
 				if (_requests.get(i).daysLate() > 0)
 					flag++;
 				if (flag == 0 && _classification.toString().equals("FALTOSO"))
 					this._classification = new Normal();
-				else if (flag==3 && _classification.toString().equals("NORMAL"))
+				else if (flag == 3 /* && _classification.toString().equals("NORMAL")) */)
 					_classification = new Faulty();
 			}
 		}
 		flag = 0;
 		if (_requests.size() >= 5 && !_classification.toString().equals("CUMPRIDOR")) {
 			for (int i = 0; i < 5; i++) {
-				//System.out.println("2º"+_requests.get(i).daysLate());
+				// System.out.println("2º"+_requests.get(i).daysLate());
 				if (_requests.get(i).daysLate() > 0)
 					flag = 2;
 				if (flag == 0)
