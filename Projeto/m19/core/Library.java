@@ -248,7 +248,6 @@ public class Library implements Serializable/* , ObservableInterface */ {
     Work currentWork = getWork(workId);
     if (currentUser == null)
       throw new NoSuchUserIdException(userId);
-
     else if (currentWork == null)
       throw new NoSuchWorkIdException(workId);
 

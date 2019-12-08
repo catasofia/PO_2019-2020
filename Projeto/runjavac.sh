@@ -34,9 +34,9 @@ rm -f saved*
 
 echo -en "\033[01;32mSUCCESS: " $SUC "of " $NUM " test" "\n"
 echo -en "\e[5m"
-echo -en "\033[01;31mFAIL: " $FAIL "of " $NUM " test" "\n"
+echo -en "\033[01;31mFAIL: " $FAIL "of " $NUM " test"
 echo -en "\e[0m"
-printf "\t\t\033[01;33m%d" $((100*$SUC/$NUM))
+printf "\t\033[01;33m%d" $((100*$SUC/$NUM))
 echo "%"
 
 find . -name '*.class' -exec rm -f {} \;
