@@ -82,6 +82,7 @@ public abstract class Work implements Serializable, ObservableInterface {
     List<User> observers = new ArrayList<>(_observers.values());
     for (User observer : observers) {
       observer.update(notification);
+      unregister(observer);
     }
   }
 }
