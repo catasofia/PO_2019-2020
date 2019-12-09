@@ -13,12 +13,12 @@ public class User implements Serializable, Observer {
 	private int _userId;
 	private String _name;
 	private String _email;
-	private List<Notification> _notifications;
-	private Map<Integer, Request> _requests;
-	private int _activeRequests;
-	private Classification _classification;
 	private boolean _active;
+	private Classification _classification;
 	private int _fine;
+	private int _activeRequests;
+	private Map<Integer, Request> _requests;
+	private List<Notification> _notifications;
 
 	private static final long serialVersionUID = 201901101348L;
 
@@ -148,6 +148,7 @@ public class User implements Serializable, Observer {
 				if (_requests.get(i).daysLate() > 0)
 					flag++;
 			}
+
 			if (flag<3)
 				_classification = new Normal();
 			else if (flag == 3)
@@ -160,7 +161,7 @@ public class User implements Serializable, Observer {
 					flag = 2;
 			}
 			if (flag == 0)
-				this._classification = new Responsible();
+				_classification = new Responsible();
 		}
 	}
 

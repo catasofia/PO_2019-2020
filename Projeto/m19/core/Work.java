@@ -15,7 +15,8 @@ public abstract class Work implements Serializable, Observable {
   private String _title;
   private int _price;
   private Category _category;
-  private Map<Integer, User> _observers;
+  private Map<Integer, User> _deliverObservers;
+  private Map<Integer, User> _requestsObservers;
 
   private static final long serialVersionUID = 201901101348L;
 
@@ -26,7 +27,8 @@ public abstract class Work implements Serializable, Observable {
     _title = title;
     _price = price;
     _category = category;
-    _observers = new HashMap<>();
+    _deliverObservers = new HashMap<>();
+    _requestsObservers = new HashMap<>();
   }
 
   protected String getTitle() {
@@ -70,16 +72,16 @@ public abstract class Work implements Serializable, Observable {
 
   /* OBSERVER */
   public void register(User observer) {
-    _observers.put(observer.getUserID(), observer);
+    _deliverObservers.put(observer.getUserID(), observer);
   }
 
   public void unregister(User observer) {
-    _observers.remove(observer.getUserID(), observer);
+    _deliverObservers.remove(observer.getUserID(), observer);
   }
 
   public void notifyObserversDeliver(String message) {
     Notification notification = new Notification("ENTREGA: ", message);
-    List<User> observers = new ArrayList<>(_observers.values());
+    List<User> observers = new ArrayList<>(_deliverObservers.values());
     for (User observer : observers) {
       observer.update(notification);
       unregister(observer);
@@ -88,7 +90,7 @@ public abstract class Work implements Serializable, Observable {
 
   public void notifyObserversRequest(String message) {
     Notification notification = new Notification("REQUISICAO: ", message);
-    List<User> observers = new ArrayList<>(_observers.values());
+    List<User> observers = new ArrayList<>(_requestsObservers.values());
     for (User observer : observers) {
       observer.update(notification);
     }

@@ -127,8 +127,8 @@ public class Library implements Serializable {
 
   /**
    * show all the notifications of the user acording to the id received
-   * @param userId
-   *            user id 
+   * 
+   * @param userId user id
    * @return String with all the user notifications
    * @throws NoSuchUserIdException when the user doesn't exist
    */
@@ -141,10 +141,10 @@ public class Library implements Serializable {
 
   /**
    * pays the fine of the user acording to the id received
-   * @param userId
-   *            user id who wants to pay the fine
+   * 
+   * @param userId user id who wants to pay the fine
    * @throws NoSuchUserIdException when the user doesn't exist
-   * @throws UserActiveException when the user is active
+   * @throws UserActiveException   when the user is active
    */
   void doPayFine(int userId) throws NoSuchUserIdException, UserActiveException {
     User currentUser = _users.get(userId);
@@ -152,15 +152,15 @@ public class Library implements Serializable {
       throw new NoSuchUserIdException(userId);
     else if (currentUser.getSituationActive())
       throw new UserActiveException(userId);
-      
+
     currentUser.doPayFine();
     currentUser.update(_date.getDate());
   }
 
   /**
    * shows the user's fine acording to the id received
-   * @param userId
-   *            user id
+   * 
+   * @param userId user id
    * @return int which is the fine of the user
    */
   int getFine(int userId) {
@@ -243,8 +243,7 @@ public class Library implements Serializable {
   /**
    * searchs for the term received in the argument in every work
    * 
-   * @param term 
-   *        term to search for
+   * @param term term to search for
    * @return a String to display all the works that have "term" in its description
    */
   String performSearch(String term) {
@@ -263,10 +262,9 @@ public class Library implements Serializable {
 
   /**
    * function that determines the hashcode acording to the userId and the workId
-   * @param userId
-   *            id of the user
-   * @param workId
-   *            id of the work
+   * 
+   * @param userId id of the user
+   * @param workId id of the work
    * @return String corresponding to the hashcode
    */
   String hashcodeRequest(int userId, int workId) {
@@ -274,19 +272,20 @@ public class Library implements Serializable {
   }
 
   /**
-   * User requests a work 
-   * @param userId
-   *            id of the user
-   * @param workId
-   *            id of the work
+   * User requests a work
+   * 
+   * @param userId id of the user
+   * @param workId id of the work
    * @return the request's deadline
-   * @throws RulesFailedException when it is impossible to request due to a failed rule
+   * @throws RulesFailedException  when it is impossible to request due to a
+   *                               failed rule
    * @throws NoSuchUserIdException when the user doesn't exist
    * @throws NoSuchWorkIdException when the work doesn't exist
    */
   int requestWork(int userId, int workId) throws RulesFailedException, NoSuchUserIdException, NoSuchWorkIdException {
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
+    // ERROR
     if (currentUser == null)
       throw new NoSuchUserIdException(userId);
     else if (currentWork == null)
@@ -294,13 +293,16 @@ public class Library implements Serializable {
 
     Request nvRequest = new Request(currentUser, currentWork, _date.getDate());
     try {
-      for (Rule rule : _rules) { // PODE TER DUAS DO MESMO GENERO, VER SE TA ATIVO/INATIVO
+
+      for (Rule rule : _rules) {
         rule.check(currentUser, currentWork);
       }
-
+      
       _requests.put(hashcodeRequest(userId, workId), nvRequest);
       currentUser.addWork(nvRequest);
       currentWork.changeCopies(-1);
+      // In the next line, in this specific submission, it doesn't do anything
+      currentWork.notifyObserversRequest(currentWork.displayWork());
 
       return nvRequest.getDeadline();
     } catch (RulesFailedException e) {
@@ -310,6 +312,7 @@ public class Library implements Serializable {
 
   /**
    * User returns a work
+   * 
    * @param userId
    * @param workId
    * @return user's fine
@@ -319,24 +322,24 @@ public class Library implements Serializable {
   int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException {
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
-    //ERROS
+    // ERROR
     if (currentUser == null)
       throw new NoSuchUserIdException(userId);
     else if (currentWork == null)
       throw new NoSuchWorkIdException(workId);
 
-    Request rv = _requests.get(hashcodeRequest(userId, workId));
-    if (rv == null || !rv.getState())
+    Request delRequest = _requests.get(hashcodeRequest(userId, workId));
+    if (delRequest == null || !delRequest.getState())
       return -1;
 
     currentUser.removeWork();
-    rv.changeState();
-    rv.setClosed(_date.getDate());
+    delRequest.changeState();
+    delRequest.setClosed(_date.getDate());
     currentWork.changeCopies(1); // Ver melhor
     currentWork.notifyObserversDeliver(currentWork.displayWork());
 
-    if (rv.daysLate() > 0)
-      currentUser.setFine(5 * rv.daysLate());
+    if (delRequest.daysLate() > 0)
+      currentUser.setFine(5 * delRequest.daysLate());
 
     // UPDATES
     currentUser.update();
@@ -368,10 +371,9 @@ public class Library implements Serializable {
   // ===============================================
   /**
    * add the user to observers of the work he is interested in
-   * @param userId
-   *            id of the user
-   * @param workId
-   *            id of the work
+   * 
+   * @param userId id of the user
+   * @param workId id of the work
    */
   void addUserInterested(int userId, int workId) {
     Work currentWork = _works.get(workId);
