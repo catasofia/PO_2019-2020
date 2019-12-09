@@ -51,7 +51,7 @@ class CheckWorkCategory implements Rule {
 
 class CheckWorkPrice implements Rule {
 	public void check(User user, Work work) throws RulesFailedException {
-		if (user.getClassification().equals("CUMPRIDOR") && work.getPrice() > 25) {
+		if (!user.getClassification().equals("CUMPRIDOR") && work.getPrice() > 25) {
 			throw new RulesFailedException(6);
 		}
 	}
