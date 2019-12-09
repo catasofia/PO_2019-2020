@@ -1,6 +1,6 @@
 package m19.core;
 
-public interface ObservableInterface {
+public interface Observable {
 	public void register(User observer);
 
 	public void unregister(User observer);

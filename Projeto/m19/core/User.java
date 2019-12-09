@@ -14,7 +14,7 @@ public class User implements Serializable, Observer {
 	private List<Notification> _notifications;
 	private LinkedList<Request> _requests;
 	private int _numRequests;
-	private ClassificationInterface _classification;
+	private Classification _classification;
 	private boolean _active;
 	private int _fine;
 
@@ -97,7 +97,7 @@ public class User implements Serializable, Observer {
 		return str;
 	}
 
-	void setClassification(ClassificationInterface classification) {
+	void setClassification(Classification classification) {
 		_classification = classification;
 	}
 

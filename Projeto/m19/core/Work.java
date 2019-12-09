@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 
-public abstract class Work implements Serializable, ObservableInterface {
+public abstract class Work implements Serializable, Observable {
   private int _workId;
   private int _copies;
   private int _copiesAvailable;
