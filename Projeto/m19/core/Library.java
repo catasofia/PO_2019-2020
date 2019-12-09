@@ -37,7 +37,6 @@ public class Library implements Serializable {
   private Map<Integer, Work> _works;
   private Map<String, Request> _requests;
   private List<Rule> _rules;
-  // private Map<User, Work> _observers;
 
   public Library() {
     _nextUserId = 0;
@@ -48,7 +47,6 @@ public class Library implements Serializable {
     _requests = new HashMap<>();
     _rules = new ArrayList<>();
     addRules();
-    // _observers = new HashMap<>();
   }
 
   // ==================== User ====================
@@ -335,7 +333,7 @@ public class Library implements Serializable {
     currentUser.removeWork();
     delRequest.changeState();
     delRequest.setClosed(_date.getDate());
-    currentWork.changeCopies(1); // Ver melhor
+    currentWork.changeCopies(1);
     currentWork.notifyObserversDeliver(currentWork.displayWork());
 
     if (delRequest.daysLate() > 0)

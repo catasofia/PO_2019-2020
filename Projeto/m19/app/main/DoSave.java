@@ -32,16 +32,16 @@ public class DoSave extends Command<LibraryManager> {
   @Override
   public final void execute(){
     if(_receiver.getFileName() != null)
-      _file2 = _receiver.getFileName();    //ficheiro já existe e guardo na variavel fil2
+      _file2 = _receiver.getFileName();
     else
       _form.parse();
 
     try{
       if(_receiver.getFileName() != null){
-        _receiver.save();       //guarda com nome antigo porque ja existe
+        _receiver.save();
       }
       else{
-        _receiver.saveAs(_file1.value());  //guarda com o novo nome recebido do utilizador;
+        _receiver.saveAs(_file1.value());
       }      
     }catch (MissingFileAssociationException e){
       System.out.println("Guardar Ficheiro: Nome de ficheiro ilegivel.");

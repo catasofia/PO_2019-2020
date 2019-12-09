@@ -4,8 +4,6 @@ import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Input;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
-// FIXME import other core concepts
-// FIXME import ui concepts
 
 /**
  * 4.3.3. Perform search according to miscellaneous criteria.

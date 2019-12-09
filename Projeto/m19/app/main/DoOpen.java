@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class DoOpen extends Command<LibraryManager> {
 
-  private Input<String> _file;  // FUI EU QUE PUS
+  private Input<String> _file;
   /**
    * @param receiver
    */
