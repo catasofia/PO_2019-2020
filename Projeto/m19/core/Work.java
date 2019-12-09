@@ -1,12 +1,10 @@
 package m19.core;
 
 import java.util.Map;
-import java.util.HashMap;
-import java.io.Serializable;
-import java.util.Set;
-import java.util.HashSet;
 import java.util.List;
+import java.util.HashMap;
 import java.util.ArrayList;
+import java.io.Serializable;
 
 public abstract class Work implements Serializable, Observable {
   private int _workId;

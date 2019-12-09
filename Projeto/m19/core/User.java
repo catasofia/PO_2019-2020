@@ -1,10 +1,7 @@
 package m19.core;
 
-import java.util.Set;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.io.Serializable;
@@ -50,6 +47,26 @@ public class User implements Serializable, Observer {
 		return _activeRequests;
 	}
 
+	String getClassification() {
+		return _classification.toString();
+	}
+
+	int getFine() {
+		return _fine;
+	}
+	
+	int getDeadline(int copies) {
+		return _classification.getDeadline(copies);
+	}
+	
+	boolean getSituationActive() {
+		return _active;
+	}
+
+	int getMaxNumber() {
+		return _classification.getMaxNumber();
+	}
+
 	void changeSituation() {
 		_active = !_active;
 	}
@@ -64,13 +81,11 @@ public class User implements Serializable, Observer {
 	}
 
 	boolean hasActiveRequest(Work work) {
-
 		for (Request request : _requests.values()) {
 			if (request.getWork().equals(work) && request.getState())
 				return true;
 		}
 		return false;
-
 	}
 
 	String showSituation() {
@@ -105,28 +120,8 @@ public class User implements Serializable, Observer {
 		_classification = classification;
 	}
 
-	String getClassification() {
-		return _classification.toString();
-	}
-
-	int getFine() {
-		return _fine;
-	}
-
-	int getDeadline(int copies) {
-		return _classification.getDeadline(copies);
-	}
-
 	void setFine(int nFine) {
 		_fine += nFine;
-	}
-
-	boolean getSituationActive() {
-		return _active;
-	}
-
-	int getMaxNumber() {
-		return _classification.getMaxNumber();
 	}
 
 	void doPayFine() {
@@ -149,12 +144,12 @@ public class User implements Serializable, Observer {
 					flag++;
 			}
 
-			if (flag<3)
+			if (flag < 3)
 				_classification = new Normal();
 			else if (flag == 3)
 				_classification = new Faulty();
 		}
-		
+
 		if (last >= 4 && flag == 0) {
 			for (int i = last; i > last - 5; i--) {
 				if (_requests.get(i).daysLate() > 0)
