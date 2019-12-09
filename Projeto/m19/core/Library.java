@@ -329,11 +329,11 @@ public class Library implements Serializable {
     if (rv == null || !rv.getState())
       return -1;
 
-    currentUser.removeWork(rv);
+    currentUser.removeWork();
     rv.changeState();
     rv.setClosed(_date.getDate());
     currentWork.changeCopies(1); // Ver melhor
-    currentWork.notifyObservers(currentWork.displayWork());
+    currentWork.notifyObserversDeliver(currentWork.displayWork());
 
     if (rv.daysLate() > 0)
       currentUser.setFine(5 * rv.daysLate());

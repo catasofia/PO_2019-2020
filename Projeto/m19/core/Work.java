@@ -68,7 +68,7 @@ public abstract class Work implements Serializable, Observable {
         + " - " + getPrice() + " - " + getCategory().toString();
   }
 
-  /*OBSERVER*/
+  /* OBSERVER */
   public void register(User observer) {
     _observers.put(observer.getUserID(), observer);
   }
@@ -77,12 +77,20 @@ public abstract class Work implements Serializable, Observable {
     _observers.remove(observer.getUserID(), observer);
   }
 
-  public void notifyObservers(String message) {
-    Notification notification = new Notification("ENTREGA: ",message);
+  public void notifyObserversDeliver(String message) {
+    Notification notification = new Notification("ENTREGA: ", message);
     List<User> observers = new ArrayList<>(_observers.values());
     for (User observer : observers) {
       observer.update(notification);
       unregister(observer);
+    }
+  }
+
+  public void notifyObserversRequest(String message) {
+    Notification notification = new Notification("REQUISICAO: ", message);
+    List<User> observers = new ArrayList<>(_observers.values());
+    for (User observer : observers) {
+      observer.update(notification);
     }
   }
 }

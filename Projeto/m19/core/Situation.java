@@ -31,7 +31,7 @@ class Faulty implements Serializable, Classification {
 	public String toString() {
 		return "FALTOSO";
 	}
-
+	
 	public int getDeadline(int copies) {
 		return 2;
 	}

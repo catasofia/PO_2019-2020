@@ -4,6 +4,8 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.ArrayList;
 import java.io.Serializable;
 
@@ -12,8 +14,8 @@ public class User implements Serializable, Observer {
 	private String _name;
 	private String _email;
 	private List<Notification> _notifications;
-	private LinkedList<Request> _requests;
-	private int _numRequests;
+	private Map<Integer, Request> _requests;
+	private int _activeRequests;
 	private Classification _classification;
 	private boolean _active;
 	private int _fine;
@@ -24,12 +26,12 @@ public class User implements Serializable, Observer {
 		_userId = userId;
 		_name = name;
 		_email = email;
-		_requests = new LinkedList<Request>();
-		_numRequests = 0;
-		_notifications = new ArrayList<Notification>();
-		_classification = new Normal();
 		_active = true;
+		_classification = new Normal();
 		_fine = 0;
+		_activeRequests = 0;
+		_requests = new HashMap<Integer, Request>();
+		_notifications = new ArrayList<Notification>();
 	}
 
 	int getUserID() {
@@ -45,7 +47,7 @@ public class User implements Serializable, Observer {
 	}
 
 	int getNumberRequests() {
-		return _numRequests;
+		return _activeRequests;
 	}
 
 	void changeSituation() {
@@ -53,20 +55,22 @@ public class User implements Serializable, Observer {
 	}
 
 	void addWork(Request request) {
-		_requests.addFirst(request);
-		_numRequests++;
+		_requests.put(_requests.size(), request);
+		_activeRequests++;
 	}
 
-	void removeWork(Request request) {
-		_numRequests--;
+	void removeWork() {
+		_activeRequests--;
 	}
 
 	boolean hasActiveRequest(Work work) {
-		for (Request request : _requests) {
+
+		for (Request request : _requests.values()) {
 			if (request.getWork().equals(work) && request.getState())
 				return true;
 		}
 		return false;
+
 	}
 
 	String showSituation() {
@@ -137,19 +141,21 @@ public class User implements Serializable, Observer {
 
 	@Override
 	public void update() {
-		int flag = 0;
-		if (_requests.size() >= 3) {
-			for (int i = 0; i < 3; i++) {
+		int flag = 0, last = _requests.size() - 1;
+
+		if (last >= 2) {
+			for (int i = last; i > last - 3; i--) {
 				if (_requests.get(i).daysLate() > 0)
 					flag++;
 			}
-			if (flag == 0 && _classification.toString().equals("FALTOSO"))
-				this._classification = new Normal();
+			if (flag<3)
+				_classification = new Normal();
 			else if (flag == 3)
 				_classification = new Faulty();
 		}
-		if (_requests.size() >= 5 && !_classification.toString().equals("CUMPRIDOR") && flag == 0) {
-			for (int i = 0; i < 5; i++) {
+		
+		if (last >= 4 && flag == 0) {
+			for (int i = last; i > last - 5; i--) {
 				if (_requests.get(i).daysLate() > 0)
 					flag = 2;
 			}
@@ -161,8 +167,8 @@ public class User implements Serializable, Observer {
 	@Override
 	public void update(int day) {
 		int flag = 0;
-		for (Request request : _requests) {
-			if ((day - request.getDeadline()) > 0 && request.getState())
+		for (Request request : _requests.values()) {
+			if (day > request.getDeadline() && request.getState())
 				flag++;
 		}
 		if ((flag == 0 && !_active && _fine == 0) || (flag != 0 && _active) || (_fine != 0 && _active))

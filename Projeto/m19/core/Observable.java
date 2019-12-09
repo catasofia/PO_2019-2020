@@ -5,5 +5,7 @@ public interface Observable {
 
 	public void unregister(User observer);
 
-	public void notifyObservers(String message);
+	public void notifyObserversDeliver(String message);
+
+	public void notifyObserversRequest(String message);
 }
