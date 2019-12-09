@@ -44,10 +44,6 @@ public class User implements Serializable, Observer {
 		return _email;
 	}
 
-	/*
-	 * boolean hasRequest(Request work){ return _activeRequests.contains(work); }
-	 */
-
 	int getNumberRequests() {
 		return _numRequests;
 	}
@@ -62,11 +58,7 @@ public class User implements Serializable, Observer {
 	}
 
 	void removeWork(Request request) {
-		for (Request removeRequest : _requests) {
-			if (removeRequest.equals(request) && removeRequest.getState()) {
-				_numRequests--;
-			}
-		}
+		_numRequests--;
 	}
 
 	boolean hasActiveRequest(Work work) {

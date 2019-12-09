@@ -152,6 +152,7 @@ public class Library implements Serializable {
       throw new NoSuchUserIdException(userId);
     else if (currentUser.getSituationActive())
       throw new UserActiveException(userId);
+      
     currentUser.doPayFine();
     currentUser.update(_date.getDate());
   }
@@ -299,7 +300,7 @@ public class Library implements Serializable {
 
       _requests.put(hashcodeRequest(userId, workId), nvRequest);
       currentUser.addWork(nvRequest);
-      currentWork.decreaseCopies(1);
+      currentWork.changeCopies(-1);
 
       return nvRequest.getDeadline();
     } catch (RulesFailedException e) {
@@ -318,7 +319,7 @@ public class Library implements Serializable {
   int returnWork(int userId, int workId) throws NoSuchUserIdException, NoSuchWorkIdException {
     User currentUser = getUser(userId);
     Work currentWork = getWork(workId);
-
+    //ERROS
     if (currentUser == null)
       throw new NoSuchUserIdException(userId);
     else if (currentWork == null)
@@ -331,7 +332,7 @@ public class Library implements Serializable {
     currentUser.removeWork(rv);
     rv.changeState();
     rv.setClosed(_date.getDate());
-    currentWork.decreaseCopies(-1); // Ver melhor
+    currentWork.changeCopies(1); // Ver melhor
     currentWork.notifyObservers(currentWork.displayWork());
 
     if (rv.daysLate() > 0)

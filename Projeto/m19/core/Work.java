@@ -53,8 +53,8 @@ public abstract class Work implements Serializable, ObservableInterface {
     return _category;
   }
 
-  protected void decreaseCopies(int nCopies) {
-    _copiesAvailable -= nCopies;
+  protected void changeCopies(int nCopies) {
+    _copiesAvailable += nCopies;
   }
 
   protected boolean areCopiesAvailable() {
