@@ -1,0 +1,19 @@
+*** tests/A-12-16-M-ok.out	2019-09-23 12:54:05.000000000 +0100
+--- tests/A-12-16-M-ok.outhyp	2019-12-10 16:13:26.266003005 +0000
+***************
+*** 119,125 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - NORMAL - SUSPENSO - EUR 0
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+--- 119,125 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - CUMPRIDOR - SUSPENSO - EUR 0
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente

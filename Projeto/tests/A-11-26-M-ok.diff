@@ -1,0 +1,19 @@
+*** tests/A-11-26-M-ok.out	2019-09-30 11:05:04.000000000 +0100
+--- tests/A-11-26-M-ok.outhyp	2019-12-10 16:13:16.426003005 +0000
+***************
+*** 146,152 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: 1 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+--- 146,152 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: 1 - Luke Skywalker - last.jedi@universe.com - CUMPRIDOR - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente

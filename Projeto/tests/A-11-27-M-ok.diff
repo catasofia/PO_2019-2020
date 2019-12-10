@@ -1,0 +1,36 @@
+*** tests/A-11-27-M-ok.out	2019-09-30 11:05:04.000000000 +0100
+--- tests/A-11-27-M-ok.outhyp	2019-12-10 16:13:16.782003005 +0000
+***************
+*** 93,99 ****
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: 1 - Luke Skywalker - last.jedi@universe.com - FALTOSO - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+--- 93,99 ----
+  4 - Mostrar notificações de utente
+  5 - Saldar multa de utente
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: 1 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+***************
+*** 114,120 ****
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Requisitar obra: Operação inválida: O utente 1 não pode requisitar a obra 6. Violação da regra 4.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+--- 114,120 ----
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 6 deve ser devolvida no dia 28.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
