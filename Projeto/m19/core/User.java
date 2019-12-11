@@ -113,6 +113,7 @@ public class User implements Serializable, Observer {
 		String str = "";
 		for (int i = 0; i < _notifications.size(); i++)
 			str += showNotification(i);
+		_notifications.clear();
 		return str;
 	}
 
