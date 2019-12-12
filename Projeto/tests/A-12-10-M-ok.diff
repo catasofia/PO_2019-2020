@@ -1,0 +1,19 @@
+*** tests/A-12-10-M-ok.out	2019-12-11 22:15:32.845877476 +0000
+--- tests/A-12-10-M-ok.outhyp	2019-12-12 16:20:39.032825182 +0000
+***************
+*** 127,133 ****
+  0 - Sair
+  Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
+  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+! 2 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente
+--- 127,133 ----
+  0 - Sair
+  Escolha uma opção: 0 - Chewbacca - chewbacca@milenium.falcon.org - NORMAL - ACTIVO
+  1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+! 2 - Luke Skywalker - last.jedi@universe.com - FALTOSO - ACTIVO
+  Menu de Gestão de Utentes
+  1 - Registar utente
+  2 - Mostrar utente

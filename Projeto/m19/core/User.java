@@ -1,6 +1,9 @@
 package m19.core;
 
 import java.util.Map;
+
+import javax.lang.model.util.ElementScanner6;
+
 import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -138,39 +141,41 @@ public class User implements Serializable, Observer {
 	@Override
 	public void update() {
 		int flag = 0, last = _requests.size() - 1;
-		int x = 3;
+/* 		int x = 3;
+		
 		if (last >= 2) {
 			for (int i = last; i > last - x && i >= 0; i--) {
 				if (!_requests.get(i).getState()) {
-					if (_requests.get(i).daysLate() > 0) {
+					if (_requests.get(i).daysLate() <= 0) {
 						flag++;
 					}
 				} else
 					x++;
 			}
-			if (flag == 3)
-			_classification = new Faulty();
-			else if (flag==0)
-				_classification = new Normal();
-		}
+			
+		} */
 
 
-		x = 5;
-		if (last >= 4 && !_classification.toString().equals("FALTOSO")) {
+		int x = 5; flag=0;
 			for (int i = last; i > last - x && i >= 0; i--) {
+				
 				if (!_requests.get(i).getState()) {
-					if (_requests.get(i).daysLate() > 0) {
+					if (_requests.get(i).daysLate() <= 0) {
 						flag++;
 					}
+					else flag=0;
 				}
 				else
 					x++;
 			}
-			if (flag == 0)
+			if (flag == 5)
 				_classification = new Responsible();
+			else if (flag == 0)
+				_classification = new Faulty();
+			else if (_classification.toString().equals("FALTOSO") && flag!=3)
+				return;
 			else
 				_classification = new Normal();
-		}
 	}
 
 	@Override
