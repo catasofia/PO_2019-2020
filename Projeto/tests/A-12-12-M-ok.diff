@@ -1,5 +1,22 @@
 *** tests/A-12-12-M-ok.out	2019-12-11 22:15:32.845877476 +0000
---- tests/A-12-12-M-ok.outhyp	2019-12-12 16:20:40.429523185 +0000
+--- tests/A-12-12-M-ok.outhyp	2019-12-12 16:45:55.186523598 +0000
+***************
+*** 108,114 ****
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 2 deve ser devolvida no dia 27.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
+--- 108,114 ----
+  1 - Requisitar obra
+  2 - Devolver obra
+  0 - Sair
+! Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 2 deve ser devolvida no dia 40.
+  Menu de Gestão de Requisições
+  1 - Requisitar obra
+  2 - Devolver obra
 ***************
 *** 133,139 ****
   4 - Mostrar notificações de utente

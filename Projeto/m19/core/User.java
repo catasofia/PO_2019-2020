@@ -140,8 +140,7 @@ public class User implements Serializable, Observer {
 
 	@Override
 	public void update() {
-		int flag = 0, last = _requests.size() - 1;
-/* 		int x = 3;
+		/* 		int x = 3;
 		
 		if (last >= 2) {
 			for (int i = last; i > last - x && i >= 0; i--) {
@@ -150,33 +149,33 @@ public class User implements Serializable, Observer {
 						flag++;
 					}
 				} else
-					x++;
+				x++;
 			}
 			
 		} */
+		
 
-
-		int x = 5; flag=0;
+		ArrayList<Request> Ok=new ArrayList<>();
+		for (int i = 0; i<_requests.size(); i++){
+			if (!_requests.get(i).getState()) Ok.add(_requests.get(i));
+		}
+		
+		int flag = 0, last = Ok.size()- 1;
+		int x = 5;
 			for (int i = last; i > last - x && i >= 0; i--) {
-				
-				if (!_requests.get(i).getState()) {
-					if (_requests.get(i).daysLate() <= 0) {
-						flag++;
-					}
-					else flag=0;
+				if (Ok.get(i).daysLate() <= 0) {
+					flag++; System.out.println(Ok.get(i));
 				}
-				else
-					x++;
 			}
 			if (flag == 5)
 				_classification = new Responsible();
 			else if (flag == 0)
 				_classification = new Faulty();
-			else if (_classification.toString().equals("FALTOSO") && flag!=3)
-				return;
-			else
+			else if (flag==3 && _classification.toString().equals("FALTOSO"))
 				_classification = new Normal();
-	}
+			else if (!_classification.toString().equals("FALTOSO")) 
+				_classification = new Normal();
+			}
 
 	@Override
 	public void update(int day) {

@@ -270,7 +270,7 @@ Escolha uma opção: Menu de Gestão de Utentes
 4 - Mostrar notificações de utente
 5 - Saldar multa de utente
 0 - Sair
-Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - NORMAL - ACTIVO
 Menu de Gestão de Utentes
 1 - Registar utente
 2 - Mostrar utente
@@ -291,12 +291,12 @@ Escolha uma opção: Menu de Gestão de Requisições
 1 - Requisitar obra
 2 - Devolver obra
 0 - Sair
-Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 22.
+Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 1 deve ser devolvida no dia 28.
 Menu de Gestão de Requisições
 1 - Requisitar obra
 2 - Devolver obra
 0 - Sair
-Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Requisitar obra: Operação inválida: O utente 1 não pode requisitar a obra 2. Violação da regra 4.
+Escolha uma opção: Introduza o número de utente: Introduza o número da obra: A obra 2 deve ser devolvida no dia 35.
 Menu de Gestão de Requisições
 1 - Requisitar obra
 2 - Devolver obra
@@ -321,7 +321,7 @@ Escolha uma opção: Menu de Gestão de Utentes
 4 - Mostrar notificações de utente
 5 - Saldar multa de utente
 0 - Sair
-Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - NORMAL - ACTIVO
 Menu de Gestão de Utentes
 1 - Registar utente
 2 - Mostrar utente
@@ -342,8 +342,7 @@ Escolha uma opção: Menu de Gestão de Requisições
 1 - Requisitar obra
 2 - Devolver obra
 0 - Sair
-Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Devolver obra: Operação inválida: A obra 2 não foi requisitada pelo utente 1.
-Menu de Gestão de Requisições
+Escolha uma opção: Introduza o número de utente: Introduza o número da obra: Menu de Gestão de Requisições
 1 - Requisitar obra
 2 - Devolver obra
 0 - Sair
@@ -363,7 +362,7 @@ Escolha uma opção: Menu de Gestão de Utentes
 4 - Mostrar notificações de utente
 5 - Saldar multa de utente
 0 - Sair
-Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - FALTOSO - ACTIVO
+Escolha uma opção: Introduza o número de utente: 1 - Darth Vader - darth@dark.force.coAm - CUMPRIDOR - ACTIVO
 Menu de Gestão de Utentes
 1 - Registar utente
 2 - Mostrar utente
