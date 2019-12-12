@@ -1,0 +1,120 @@
+[01;36mtests/A-01-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-01-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-01-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-01-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-01-05-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-02-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-02-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-02-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-02-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-03-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-03-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-03-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-03-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-03-05-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-03-06-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-03-07-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-03-08-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-03-09-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-04-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-04-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-04-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-04-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-05-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-05-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-05-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-05-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-06-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-06-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-06-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-06-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-05-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-06-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-07-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-08-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-09-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-10-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-07-11-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-08-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-08-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-08-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-08-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-08-05-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-09-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-09-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-09-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-09-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-09-05-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-09-06-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-09-07-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-05-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-06-M-ok.in -- [01;31mFAIL: tests/A-11-06-M-ok.in. See file tests/A-11-06-M-ok.diff 
+[01;36mtests/A-11-07-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-08-M-ok.in -- [01;31mFAIL: tests/A-11-08-M-ok.in. See file tests/A-11-08-M-ok.diff 
+[01;36mtests/A-11-09-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-10-M-ok.in -- [01;31mFAIL: tests/A-11-10-M-ok.in. See file tests/A-11-10-M-ok.diff 
+[01;36mtests/A-11-11-M-ok.in -- [01;31mFAIL: tests/A-11-11-M-ok.in. See file tests/A-11-11-M-ok.diff 
+[01;36mtests/A-11-12-M-ok.in -- [01;31mFAIL: tests/A-11-12-M-ok.in. See file tests/A-11-12-M-ok.diff 
+[01;36mtests/A-11-13-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-14-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-15-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-16-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-17-M-ok.in -- [01;31mFAIL: tests/A-11-17-M-ok.in. See file tests/A-11-17-M-ok.diff 
+[01;36mtests/A-11-18-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-19-M-ok.in -- [01;31mFAIL: tests/A-11-19-M-ok.in. See file tests/A-11-19-M-ok.diff 
+[01;36mtests/A-11-20-M-ok.in -- [01;31mFAIL: tests/A-11-20-M-ok.in. See file tests/A-11-20-M-ok.diff 
+[01;36mtests/A-11-21-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-22-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-23-M-ok.in -- [01;31mFAIL: tests/A-11-23-M-ok.in. See file tests/A-11-23-M-ok.diff 
+[01;36mtests/A-11-24-M-ok.in -- [01;31mFAIL: tests/A-11-24-M-ok.in. See file tests/A-11-24-M-ok.diff 
+[01;36mtests/A-11-25-M-ok.in -- [01;31mFAIL: tests/A-11-25-M-ok.in. See file tests/A-11-25-M-ok.diff 
+[01;36mtests/A-11-26-M-ok.in -- [01;31mFAIL: tests/A-11-26-M-ok.in. See file tests/A-11-26-M-ok.diff 
+[01;36mtests/A-11-27-M-ok.in -- [01;31mFAIL: tests/A-11-27-M-ok.in. See file tests/A-11-27-M-ok.diff 
+[01;36mtests/A-11-28-M-ok.in -- [01;31mFAIL: tests/A-11-28-M-ok.in. See file tests/A-11-28-M-ok.diff 
+[01;36mtests/A-11-29-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-30-M-ok.in -- [01;31mFAIL: tests/A-11-30-M-ok.in. See file tests/A-11-30-M-ok.diff 
+[01;36mtests/A-11-31-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-32-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-33-M-ok.in -- [01;31mFAIL: tests/A-11-33-M-ok.in. See file tests/A-11-33-M-ok.diff 
+[01;36mtests/A-11-34-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-35-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-36-M-ok.in -- [01;31mFAIL: tests/A-11-36-M-ok.in. See file tests/A-11-36-M-ok.diff 
+[01;36mtests/A-11-37-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-38-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-39-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-11-40-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-04-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-05-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-06-M-ok.in -- [01;31mFAIL: tests/A-12-06-M-ok.in. See file tests/A-12-06-M-ok.diff 
+[01;36mtests/A-12-07-M-ok.in -- [01;31mFAIL: tests/A-12-07-M-ok.in. See file tests/A-12-07-M-ok.diff 
+[01;36mtests/A-12-08-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-09-M-ok.in -- [01;31mFAIL: tests/A-12-09-M-ok.in. See file tests/A-12-09-M-ok.diff 
+[01;36mtests/A-12-10-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-11-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-12-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-12-13-M-ok.in -- [01;31mFAIL: tests/A-12-13-M-ok.in. See file tests/A-12-13-M-ok.diff 
+[01;36mtests/A-12-14-M-ok.in -- [01;31mFAIL: tests/A-12-14-M-ok.in. See file tests/A-12-14-M-ok.diff 
+[01;36mtests/A-12-15-M-ok.in -- [01;31mFAIL: tests/A-12-15-M-ok.in. See file tests/A-12-15-M-ok.diff 
+[01;36mtests/A-12-16-M-ok.in -- [01;31mFAIL: tests/A-12-16-M-ok.in. See file tests/A-12-16-M-ok.diff 
+[01;36mtests/A-13-01-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-13-02-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-13-03-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-13-04-M-ok.in -- [01;31mFAIL: tests/A-13-04-M-ok.in. See file tests/A-13-04-M-ok.diff 
+[01;36mtests/A-13-05-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-13-06-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-13-07-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-13-08-M-ok.in -- [01;32mSUCCESS 
+[01;36mtests/A-13-09-M-ok.in -- [01;32mSUCCESS 
+[01;32mSUCCESS:  93 of  118  test 
+[5m[01;31mFAIL:  25 of  118  test[0m	[01;33m78%

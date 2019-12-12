@@ -54,11 +54,11 @@ public class User implements Serializable, Observer {
 	int getFine() {
 		return _fine;
 	}
-	
+
 	int getDeadline(int copies) {
 		return _classification.getDeadline(copies);
 	}
-	
+
 	boolean getSituationActive() {
 		return _active;
 	}
@@ -138,26 +138,38 @@ public class User implements Serializable, Observer {
 	@Override
 	public void update() {
 		int flag = 0, last = _requests.size() - 1;
-
+		int x = 3;
 		if (last >= 2) {
-			for (int i = last; i > last - 3; i--) {
-				if (_requests.get(i).daysLate() > 0)
-					flag++;
+			for (int i = last; i > last - x && i >= 0; i--) {
+				if (!_requests.get(i).getState()) {
+					if (_requests.get(i).daysLate() > 0) {
+						flag++;
+					}
+				} else
+					x++;
 			}
-
-			if (flag < 3)
+			if (flag == 3)
+			_classification = new Faulty();
+			else if (flag==0)
 				_classification = new Normal();
-			else if (flag == 3)
-				_classification = new Faulty();
 		}
 
-		if (last >= 4 && flag == 0) {
-			for (int i = last; i > last - 5; i--) {
-				if (_requests.get(i).daysLate() > 0)
-					flag = 2;
+
+		x = 5;
+		if (last >= 4 && !_classification.toString().equals("FALTOSO")) {
+			for (int i = last; i > last - x && i >= 0; i--) {
+				if (!_requests.get(i).getState()) {
+					if (_requests.get(i).daysLate() > 0) {
+						flag++;
+					}
+				}
+				else
+					x++;
 			}
 			if (flag == 0)
 				_classification = new Responsible();
+			else
+				_classification = new Normal();
 		}
 	}
 
