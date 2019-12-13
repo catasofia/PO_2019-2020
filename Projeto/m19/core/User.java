@@ -140,42 +140,31 @@ public class User implements Serializable, Observer {
 
 	@Override
 	public void update() {
-		/* 		int x = 3;
-		
-		if (last >= 2) {
-			for (int i = last; i > last - x && i >= 0; i--) {
-				if (!_requests.get(i).getState()) {
-					if (_requests.get(i).daysLate() <= 0) {
-						flag++;
-					}
-				} else
-				x++;
-			}
-			
-		} */
-		
-
-		ArrayList<Request> Ok=new ArrayList<>();
-		for (int i = 0; i<_requests.size(); i++){
-			if (!_requests.get(i).getState()) Ok.add(_requests.get(i));
-		}
-		
-		int flag = 0, last = Ok.size()- 1;
 		int x = 5;
-			for (int i = last; i > last - x && i >= 0; i--) {
-				if (Ok.get(i).daysLate() <= 0) {
-					flag++; System.out.println(Ok.get(i));
-				}
-			}
-			if (flag == 5)
+		ArrayList<Request> Ok = new ArrayList<>();
+		for (int i = 0; i < _requests.size(); i++) {
+			if (!_requests.get(i).getState())
+			Ok.add(_requests.get(i));
+		}
+		int flag = 0, last = Ok.size() - 1;
+		if (last >= 2) {
+
+			int primeiro = Ok.get(last).daysLate();
+			int segundo = Ok.get(last - 1).daysLate();
+			int terceiro = Ok.get(last - 2).daysLate();
+			int quarto = (last - 3 >= 0) ? Ok.get(last - 3).daysLate() : 0;
+			int quinto = (last - 4 >= 0) ? Ok.get(last - 4).daysLate() : 0;
+
+			if (primeiro <= 0 && segundo <= 0 && terceiro <= 0 && quarto <= 0 && quinto <= 0 && last - 4 >= 0)
 				_classification = new Responsible();
-			else if (flag == 0)
+			else if (!(primeiro <= 0) && !(segundo <= 0) && !(terceiro <= 0))
 				_classification = new Faulty();
-			else if (flag==3 && _classification.toString().equals("FALTOSO"))
+			else if (primeiro <= 0 && segundo <= 0 && terceiro <= 0)
 				_classification = new Normal();
-			else if (!_classification.toString().equals("FALTOSO")) 
+			else if (!_classification.toString().equals("FALTOSO"))
 				_classification = new Normal();
-			}
+		}
+	}
 
 	@Override
 	public void update(int day) {

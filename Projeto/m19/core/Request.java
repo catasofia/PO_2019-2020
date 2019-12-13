@@ -48,6 +48,10 @@ public class Request implements Serializable {
     return _dayClosed - _deadline;
   }
 
+  void show(){
+    System.out.println(_user.showUser()+"\n"+_work.displayWork()+"\n"+getState());
+  }
+
   int makeDeadline(int day) {
     int copies = _work.getCopies();
     if (copies != 0)
