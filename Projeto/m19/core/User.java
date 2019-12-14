@@ -1,6 +1,7 @@
 package m19.core;
 
 import java.util.Map;
+import java.util.TreeSet;
 
 import javax.lang.model.util.ElementScanner6;
 
@@ -147,14 +148,14 @@ public class User implements Serializable, Observer {
 			Ok.add(_requests.get(i));
 		}
 		int flag = 0, last = Ok.size() - 1;
-		if (last >= 2) {
 
+		if (last >= 2) {
 			int primeiro = Ok.get(last).daysLate();
 			int segundo = Ok.get(last - 1).daysLate();
 			int terceiro = Ok.get(last - 2).daysLate();
 			int quarto = (last - 3 >= 0) ? Ok.get(last - 3).daysLate() : 0;
 			int quinto = (last - 4 >= 0) ? Ok.get(last - 4).daysLate() : 0;
-
+			System.out.println("ulti ent = "+primeiro+" seg ent = "+segundo+" ter ent = "+terceiro);
 			if (primeiro <= 0 && segundo <= 0 && terceiro <= 0 && quarto <= 0 && quinto <= 0 && last - 4 >= 0)
 				_classification = new Responsible();
 			else if (!(primeiro <= 0) && !(segundo <= 0) && !(terceiro <= 0))
