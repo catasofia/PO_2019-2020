@@ -141,7 +141,8 @@ public class User implements Serializable, Observer {
 		_notifications.add(message);
 	}
 
-	List filterList(){
+	@Override
+	public void update() {
 		ArrayList<Request> requestDelivered = new ArrayList<>();
 		for (int i = 0; i < _requests.size(); i++)
 			if (!_requests.get(i).getState())
@@ -153,12 +154,7 @@ public class User implements Serializable, Observer {
 				return r1.getNumEntregue() - r2.getNumEntregue();
 			}
 		});
-		return requestDelivered;
-	}
 
-	@Override
-	public void update() {
-		ArrayList requestDelivered = filterList();
 		int last = requestDelivered.size() - 1;
 		if (last >= 2) {
 			int primeiro = requestDelivered.get(last).daysLate();
@@ -183,7 +179,7 @@ public class User implements Serializable, Observer {
 		int flag = 0;
 		for (Request request : _requests.values()) {
 			if (day > request.getDeadline() && request.getState()){
-				flag++; 
+				flag++;
 				break;
 			}
 		}
