@@ -44,6 +44,10 @@ public class Request implements Serializable {
     _dayClosed = day;
   }
 
+  int getDayClosed(){
+    return _dayClosed;
+  }
+
   int daysLate() {
     return _dayClosed - _deadline;
   }

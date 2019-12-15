@@ -8,6 +8,8 @@ import javax.lang.model.util.ElementScanner6;
 import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.io.Serializable;
 
 public class User implements Serializable, Observer {
@@ -142,7 +144,7 @@ public class User implements Serializable, Observer {
 	@Override
 	public void update() {
 		int x = 5;
-		ArrayList<Request> Ok = new ArrayList<>();
+		/* ArrayList<Request> Ok = new ArrayList<>();
 		for (int i = 0; i < _requests.size(); i++) {
 			if (!_requests.get(i).getState())
 			Ok.add(_requests.get(i));
@@ -164,8 +166,41 @@ public class User implements Serializable, Observer {
 				_classification = new Normal();
 			else if (!_classification.toString().equals("FALTOSO"))
 				_classification = new Normal();
+		} */
+		ArrayList<Request> Ok = new ArrayList<>();
+		for(int i = 0; i < _requests.size(); i++){
+			if(!_requests.get(i).getState())
+				Ok.add(_requests.get(i));
+		}
+
+		Collections.sort(Ok, new Comparator<Request>(){
+			@Override
+			public int compare(Request r1, Request r2){
+				return r1.getDayClosed() - r2.getDayClosed();
+			}
+		});
+
+		int last = Ok.size() - 1;
+		if(last >= 2) {
+			
+			int primeiro = Ok.get(last).daysLate();
+			int segundo = Ok.get(last - 1).daysLate();
+			int terceiro = Ok.get(last - 2).daysLate();
+			int quarto = (last - 3 >= 0) ? Ok.get(last - 3).daysLate() : 0;
+			int quinto = (last - 4 >= 0) ? Ok.get(last - 4).daysLate() : 0;
+			//System.out.println("ulti ent = " + primeiro + " seg ent = " + segundo + " ter ent = " + terceiro);
+			if (primeiro <= 0 && segundo <= 0 && terceiro <= 0 && quarto <= 0 && quinto <= 0 && last - 4 >= 0)
+				_classification = new Responsible();
+			else if (!(primeiro <= 0) && !(segundo <= 0) && !(terceiro <= 0))
+				_classification = new Faulty();
+			else if (primeiro <= 0 && segundo <= 0 && terceiro <= 0)
+				_classification = new Normal();
+			else if (!_classification.toString().equals("FALTOSO"))
+				_classification = new Normal();
 		}
 	}
+
+	
 
 	@Override
 	public void update(int day) {
