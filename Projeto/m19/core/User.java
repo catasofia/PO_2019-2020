@@ -176,7 +176,7 @@ public class User implements Serializable, Observer {
 		Collections.sort(Ok, new Comparator<Request>(){
 			@Override
 			public int compare(Request r1, Request r2){
-				return r1.getDayClosed() - r2.getDayClosed();
+				return r1.getNumRequest() - r2.getNumRequest();
 			}
 		});
 
@@ -188,7 +188,8 @@ public class User implements Serializable, Observer {
 			int terceiro = Ok.get(last - 2).daysLate();
 			int quarto = (last - 3 >= 0) ? Ok.get(last - 3).daysLate() : 0;
 			int quinto = (last - 4 >= 0) ? Ok.get(last - 4).daysLate() : 0;
-			//System.out.println("ulti ent = " + primeiro + " seg ent = " + segundo + " ter ent = " + terceiro);
+			System.out.println("ulti ent = " + primeiro + " seg ent = " + segundo + " ter ent = " + terceiro);
+			System.out.println("4º ent = " + quarto + " 5º ent = " + quinto);
 			if (primeiro <= 0 && segundo <= 0 && terceiro <= 0 && quarto <= 0 && quinto <= 0 && last - 4 >= 0)
 				_classification = new Responsible();
 			else if (!(primeiro <= 0) && !(segundo <= 0) && !(terceiro <= 0))

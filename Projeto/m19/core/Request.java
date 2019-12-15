@@ -10,6 +10,7 @@ public class Request implements Serializable {
   private Work _work;
   private Boolean _state;
   private int _dayClosed;
+  private int _numRequest;
   private static final long serialVersionUID = 201901101348L;
 
   public Request(User user, Work work, int date) {
@@ -18,6 +19,15 @@ public class Request implements Serializable {
     _state = true;
     _dayClosed = 0;
     _deadline = makeDeadline(date);
+    _numRequest=0;
+  }
+
+  int getNumRequest(){
+    return _numRequest;
+  }
+
+  void setNumRequest(int num){
+    _numRequest=num;
   }
 
   User getUser() {

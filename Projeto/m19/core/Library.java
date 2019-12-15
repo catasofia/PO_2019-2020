@@ -32,6 +32,7 @@ public class Library implements Serializable {
   private static final long serialVersionUID = 201901101348L;
   private int _nextUserId;
   private int _nextWorkId;
+  private int _numRequest;
   private Date _date;
   private Map<Integer, User> _users;
   private Map<Integer, Work> _works;
@@ -47,6 +48,7 @@ public class Library implements Serializable {
     _requests = new HashMap<>();
     _rules = new ArrayList<>();
     addRules();
+    _numRequest=0;
   }
 
   // ==================== User ====================
@@ -329,7 +331,7 @@ public class Library implements Serializable {
     Request delRequest = _requests.get(hashcodeRequest(userId, workId));
     if (delRequest == null || !delRequest.getState())
       return -1;
-
+    delRequest.setNumRequest(_numRequest++);
     currentUser.removeWork();
     delRequest.changeState();
     delRequest.setClosed(_date.getDate());
