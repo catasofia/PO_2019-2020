@@ -141,56 +141,33 @@ public class User implements Serializable, Observer {
 		_notifications.add(message);
 	}
 
-	@Override
-	public void update() {
-		int x = 5;
-		/* ArrayList<Request> Ok = new ArrayList<>();
-		for (int i = 0; i < _requests.size(); i++) {
+	List filterList(){
+		ArrayList<Request> requestDelivered = new ArrayList<>();
+		for (int i = 0; i < _requests.size(); i++)
 			if (!_requests.get(i).getState())
-			Ok.add(_requests.get(i));
-		}
-		int flag = 0, last = Ok.size() - 1;
+				requestDelivered.add(_requests.get(i));
 
-		if (last >= 2) {
-			int primeiro = Ok.get(last).daysLate();
-			int segundo = Ok.get(last - 1).daysLate();
-			int terceiro = Ok.get(last - 2).daysLate();
-			int quarto = (last - 3 >= 0) ? Ok.get(last - 3).daysLate() : 0;
-			int quinto = (last - 4 >= 0) ? Ok.get(last - 4).daysLate() : 0;
-			System.out.println("ulti ent = "+primeiro+" seg ent = "+segundo+" ter ent = "+terceiro);
-			if (primeiro <= 0 && segundo <= 0 && terceiro <= 0 && quarto <= 0 && quinto <= 0 && last - 4 >= 0)
-				_classification = new Responsible();
-			else if (!(primeiro <= 0) && !(segundo <= 0) && !(terceiro <= 0))
-				_classification = new Faulty();
-			else if (primeiro <= 0 && segundo <= 0 && terceiro <= 0)
-				_classification = new Normal();
-			else if (!_classification.toString().equals("FALTOSO"))
-				_classification = new Normal();
-		} */
-		ArrayList<Request> Ok = new ArrayList<>();
-		for(int i = 0; i < _requests.size(); i++){
-			if(!_requests.get(i).getState())
-				Ok.add(_requests.get(i));
-		}
-
-		Collections.sort(Ok, new Comparator<Request>(){
+		Collections.sort(requestDelivered, new Comparator<Request>() {
 			@Override
-			public int compare(Request r1, Request r2){
-				return r1.getNumRequest() - r2.getNumRequest();
+			public int compare(Request r1, Request r2) {
+				return r1.getNumEntregue() - r2.getNumEntregue();
 			}
 		});
+		return requestDelivered;
+	}
 
-		int last = Ok.size() - 1;
-		if(last >= 2) {
-			
-			int primeiro = Ok.get(last).daysLate();
-			int segundo = Ok.get(last - 1).daysLate();
-			int terceiro = Ok.get(last - 2).daysLate();
-			int quarto = (last - 3 >= 0) ? Ok.get(last - 3).daysLate() : 0;
-			int quinto = (last - 4 >= 0) ? Ok.get(last - 4).daysLate() : 0;
-			System.out.println("ulti ent = " + primeiro + " seg ent = " + segundo + " ter ent = " + terceiro);
-			System.out.println("4º ent = " + quarto + " 5º ent = " + quinto);
-			if (primeiro <= 0 && segundo <= 0 && terceiro <= 0 && quarto <= 0 && quinto <= 0 && last - 4 >= 0)
+	@Override
+	public void update() {
+		ArrayList requestDelivered = filterList();
+		int last = requestDelivered.size() - 1;
+		if (last >= 2) {
+			int primeiro = requestDelivered.get(last).daysLate();
+			int segundo = requestDelivered.get(last - 1).daysLate();
+			int terceiro = requestDelivered.get(last - 2).daysLate();
+			int quarto = (last - 3 >= 0) ? requestDelivered.get(last - 3).daysLate() : 0;
+			int quinto = (last - 4 >= 0) ? requestDelivered.get(last - 4).daysLate() : 0;
+
+			if (primeiro <= 0 && segundo <= 0 && terceiro <= 0 && quarto <= 0 && quinto <= 0 && (last - 4) >= 0)
 				_classification = new Responsible();
 			else if (!(primeiro <= 0) && !(segundo <= 0) && !(terceiro <= 0))
 				_classification = new Faulty();
@@ -201,14 +178,14 @@ public class User implements Serializable, Observer {
 		}
 	}
 
-	
-
 	@Override
 	public void update(int day) {
 		int flag = 0;
 		for (Request request : _requests.values()) {
-			if (day > request.getDeadline() && request.getState())
-				flag++;
+			if (day > request.getDeadline() && request.getState()){
+				flag++; 
+				break;
+			}
 		}
 		if ((flag == 0 && !_active && _fine == 0) || (flag != 0 && _active) || (_fine != 0 && _active))
 			changeSituation();
